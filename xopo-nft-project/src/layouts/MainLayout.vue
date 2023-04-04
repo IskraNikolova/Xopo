@@ -1,25 +1,25 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
+    <q-header elevated class="header">
       <q-toolbar>
-        <q-btn
+        <!-- <q-btn
           flat
           dense
           round
           icon="menu"
           aria-label="Menu"
           @click="leftDrawerOpen = !leftDrawerOpen"
-        />
+        /> -->
 
         <q-toolbar-title>
-          Quasar App
+          <img src="~assets/logo.png" class="q-pt-xs" style="width: 60px;">
         </q-toolbar-title>
 
-        <div>Quasar v{{ $q.version }}</div>
+        <div>here</div>
       </q-toolbar>
     </q-header>
 
-    <q-drawer
+    <!-- <q-drawer
       v-model="leftDrawerOpen"
       show-if-above
       bordered
@@ -38,7 +38,7 @@
           v-bind="link"
         />
       </q-list>
-    </q-drawer>
+    </q-drawer> -->
 
     <q-page-container>
       <router-view />
@@ -47,7 +47,7 @@
 </template>
 
 <script>
-import EssentialLink from 'components/EssentialLink.vue'
+// import EssentialLink from 'components/EssentialLink.vue'
 
 const linksData = [
   {
@@ -96,9 +96,9 @@ const linksData = [
 
 export default {
   name: 'MainLayout',
-  components: {
-    EssentialLink
-  },
+  // components: {
+  //   EssentialLink
+  // },
   data () {
     return {
       leftDrawerOpen: false,
@@ -107,3 +107,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  .header {
+   background: rgba(174,163,0,255);
+ }
+</style>
