@@ -1,44 +1,34 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header elevated class="header">
+    <q-header elevated class="header shadow-3 text-bold" style="color: #34342f;">
       <q-toolbar>
-        <!-- <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="leftDrawerOpen = !leftDrawerOpen"
-        /> -->
-
         <q-toolbar-title>
-          <img src="~assets/logo.png" class="q-pt-xs" style="width: 60px;">
+          <img src="~assets/horo_logo.png" class="q-pt-xs" style="width: 60px;">
         </q-toolbar-title>
-
-        <div>here</div>
+        <q-tabs v-model="tab" shrink stretch>
+          <q-tab name="tab1" label="Launchpad" />
+          <q-tab name="tab2" label="Discover" />
+          <q-tab name="tab3" label="artist" />
+        </q-tabs>
+        <q-space />
+        <div>
+          <q-btn flat @click.native="connectUserWallet()">
+            <img src="~assets/wallet_icon_dark.png" class="q-mb-xs" style="width: 30px;">
+          </q-btn>
+          <q-btn
+           flat
+           >
+            <img src="~assets/person_icon_dark.png" class="q-ml-md q-mr-md q-mb-xs" style="width: 20px;">
+          </q-btn>
+        </div>
       </q-toolbar>
     </q-header>
 
-    <!-- <q-drawer
-      v-model="leftDrawerOpen"
-      show-if-above
-      bordered
-      content-class="bg-grey-1"
-    >
-      <q-list>
-        <q-item-label
-          header
-          class="text-grey-8"
-        >
-          Essential Links
-        </q-item-label>
-        <EssentialLink
-          v-for="link in essentialLinks"
-          :key="link.title"
-          v-bind="link"
-        />
-      </q-list>
-    </q-drawer> -->
+    <q-footer elevated class="header shadow-3 text-bold" style="color: #34342f;">
+      <q-toolbar>
+        <q-toolbar-title><img src="~assets/horo_logo_BW.png" class="q-pt-xs" style="width: 60px;"></q-toolbar-title>
+      </q-toolbar>
+    </q-footer>
 
     <q-page-container>
       <router-view />
@@ -47,62 +37,26 @@
 </template>
 
 <script>
-// import EssentialLink from 'components/EssentialLink.vue'
+import { ref } from 'vue'
+import { mapActions } from 'vuex'
 
-const linksData = [
-  {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev'
-  },
-  {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework'
-  },
-  {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev'
-  },
-  {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev'
-  },
-  {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev'
-  },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev'
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev'
-  }
-]
+import {
+  CONNECT_WALLET
+} from './../store/app/types'
 
 export default {
   name: 'MainLayout',
-  // components: {
-  //   EssentialLink
-  // },
   data () {
     return {
-      leftDrawerOpen: false,
-      essentialLinks: linksData
+      tab: ref('')
+    }
+  },
+  methods: {
+    ...mapActions({
+      connectWallet: CONNECT_WALLET
+    }),
+    connectUserWallet () {
+      this.connectWallet()
     }
   }
 }
@@ -110,6 +64,6 @@ export default {
 
 <style scoped>
   .header {
-   background: rgba(174,163,0,255);
+   background: rgb(114,115,110);
  }
 </style>

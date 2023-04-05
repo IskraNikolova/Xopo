@@ -1,9 +1,19 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import VuexPersistence from 'vuex-persist'
 
-// import example from './module-example'
+import app from './app'
 
 Vue.use(Vuex)
+
+const vuexLocal = new VuexPersistence({
+  storage: window.localStorage,
+  reducer: (state) => {
+    const persistState = { ...state }
+    // delete persistState.app
+    return persistState
+  }
+})
 
 /*
  * If not building with SSR mode, you can
@@ -17,12 +27,13 @@ Vue.use(Vuex)
 export default function (/* { ssrContext } */) {
   const Store = new Vuex.Store({
     modules: {
-      // example
+      app
     },
 
     // enable strict mode (adds overhead!)
     // for dev mode only
-    strict: process.env.DEBUGGING
+    plugins: [vuexLocal.plugin],
+    strict: process.env.DEV
   })
 
   return Store
