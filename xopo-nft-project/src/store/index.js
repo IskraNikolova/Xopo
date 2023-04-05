@@ -10,7 +10,7 @@ const vuexLocal = new VuexPersistence({
   storage: window.localStorage,
   reducer: (state) => {
     const persistState = { ...state }
-    // delete persistState.app
+    delete persistState.app
     return persistState
   }
 })

@@ -12,13 +12,15 @@
         </q-tabs>
         <q-space />
         <div>
-          <q-btn flat @click.native="connectUserWallet()">
+          <q-btn flat @click.native="connectUserWallet()" v-if="userAddres">
             <img src="~assets/wallet_icon_dark.png" class="q-mb-xs" style="width: 30px;">
           </q-btn>
+          <span style="color:beige" v-else>{{ userAddress }}</span>
           <q-btn
            flat
            >
-            <img src="~assets/person_icon_dark.png" class="q-ml-md q-mr-md q-mb-xs" style="width: 20px;">
+            <img src="~assets/person_icon_dark.png" class="q-ml-md q-mr-md q-mb-xs" style="width: 20px;" v-if="!avatar">
+            <img :src="avatar" class="q-mb-xs" style="width: 30px;" v-else>
           </q-btn>
         </div>
       </q-toolbar>
@@ -37,19 +39,31 @@
 </template>
 
 <script>
+// TODO watch changes of address, get another lib for images
 import { ref } from 'vue'
-import { mapActions } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 
 import {
   CONNECT_WALLET
 } from './../store/app/types'
+import { avatar } from 'src/store/app/getters'
 
 export default {
   name: 'MainLayout',
   data () {
     return {
-      tab: ref('')
+      tab: ref(''),
+      user: ''
     }
+  },
+  computed: {
+    ...mapGetters([
+      'userAddress',
+      'avatar'
+    ])
+  },
+  created () {
+    console.log(avatar)
   },
   methods: {
     ...mapActions({

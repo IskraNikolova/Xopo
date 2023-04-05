@@ -1,6 +1,7 @@
 
 export default function () {
   return {
-    userAddress: ''
+    userAddress: '',
+    avatar: ''
   }
 }
