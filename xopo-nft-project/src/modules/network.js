@@ -2,7 +2,7 @@
 // import Tx from 'ethereumjs-tx'
 // const abiDecoder = require('abi-decoder')
 
-// import config from './config'
+import config from './config'
 // import contractAbi from './../../builds/contract.json' // todo
 
 import { _generateHashedCode } from './crypto.js'
@@ -17,24 +17,36 @@ let web3 // contract
 
 // abiDecoder.addABI(contractAbi)
 
-export const connectToMetaMask = async () => {
+export const _connectToMetaMask = async () => {
   // Check if MetaMask is installed
-  if (typeof window.ethereum !== 'undefined') {
-    console.log('MetaMask is installed!')
+  if (window.ethereum.chainId) {
+    if (window.ethereum.chainId !== config.network.chainId) {
+      console.log('Xopo: wrong network')
+    }
+  } else if (typeof window.ethereum !== 'undefined') {
+    console.log('Xopo: MetaMask is installed!')
     try {
       // Request account access
       await window.ethereum.request({ method: 'eth_requestAccounts' })
       // Get the user's address
       const accounts = await window.ethereum.request({ method: 'eth_accounts' })
       const address = accounts[0]
-      console.log('Connected to MetaMask with address:', address)
+      console.log('Xopo: Connected to MetaMask with address:', address)
       return address
     } catch (error) {
-      console.error('User denied account access:', error)
+      console.error('Xopo: User denied account access:', error)
     }
   } else {
-    console.error('Please install MetaMask!')
+    console.error('Xopo: Please install MetaMask!')
   }
+}
+
+export const _subscribeToEvAccountChanged = ({ handler }) => {
+  window.ethereum.on('accountsChanged', handler)
+}
+
+export const _subscribeToEvChainChanged = ({ handler }) => {
+  window.ethereum.on('chainChanged', handler)
 }
 
 export const _initializeNetwork = async () => {
