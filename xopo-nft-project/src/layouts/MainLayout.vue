@@ -7,16 +7,21 @@
         </q-toolbar-title>
         <q-tabs v-model="tab" shrink stretch>
           <q-tab name="tab1" label="about" />
-          <q-tab name="tab2" label="Launchpad" />
-          <q-tab name="tab3" label="Discover" />
+          <q-tab name="tab2" label="launchpad" />
+          <q-tab name="tab3" label="discover" />
           <q-tab name="tab4" label="artists" />
         </q-tabs>
         <q-space />
+        <div v-if="!getStatus()">
+          <div class="custom-badge2">
+            Wrong Network
+          </div>
+        </div>
         <div>
-          <q-btn flat @click.native="connectUserWallet()">
+          <q-btn flat @click.native="connectUserWallet()" v-if="!getUser()">
             <img src="~assets/wallet_icon_dark.png" class="q-mb-xs" style="width: 30px;">
           </q-btn>
-          <div class="custom-badge">
+          <div v-else class="custom-badge">
             <q-avatar size="24px" class="q-mr-xs">
               <img :src="'data:image/png;base64,' + this.avatar + ''">
             </q-avatar>
@@ -61,16 +66,27 @@ export default {
   computed: {
     ...mapGetters([
       'userAddress',
-      'avatar'
+      'avatar',
+      'isRight'
     ])
   },
-  created () {
-    this.connectWallet()
+  watch: {
+    isRight: {
+      handler: function (v) {
+        this.getStatus()
+      }
+    }
   },
   methods: {
     ...mapActions({
       connectWallet: CONNECT_WALLET
     }),
+    getStatus () {
+      return this.isRight
+    },
+    getUser () {
+      return this.userAddress
+    },
     data () {
       if (!this.avatar) return ''
       return this.avatar
@@ -83,7 +99,7 @@ export default {
       return `${first4}...${last4}`
     },
     async connectUserWallet () {
-      if (!this.userAddress) return
+      // if (!this.userAddress) return
       await this.connectWallet()
     }
   }
@@ -105,6 +121,14 @@ export default {
 .custom-badge{
   font-size: 17px;
   padding: 3px;
+  border: 0.135rem solid;
+  border-color: #4D4D4A;
+  border-radius: 9px;
+}
+.custom-badge2{
+  font-size: 17px;
+  padding: 3px;
+  margin-right: 5px;
   border: 0.135rem solid;
   border-color: #4D4D4A;
   border-radius: 9px;

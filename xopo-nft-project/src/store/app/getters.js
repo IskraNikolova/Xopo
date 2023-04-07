@@ -9,3 +9,7 @@ export function avatar (state) {
 export function chainId (state) {
   return state.chainId
 }
+
+export function isRight (state) {
+  return state.isRight
+}

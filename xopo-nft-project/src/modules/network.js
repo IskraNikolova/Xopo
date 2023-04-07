@@ -19,11 +19,7 @@ let web3 // contract
 
 export const _connectToMetaMask = async () => {
   // Check if MetaMask is installed
-  if (window.ethereum.chainId) {
-    if (window.ethereum.chainId !== config.network.chainId) {
-      console.log('Xopo: wrong network')
-    }
-  } else if (typeof window.ethereum !== 'undefined') {
+  if (typeof window.ethereum !== 'undefined') {
     console.log('Xopo: MetaMask is installed!')
     try {
       // Request account access
@@ -32,7 +28,13 @@ export const _connectToMetaMask = async () => {
       const accounts = await window.ethereum.request({ method: 'eth_accounts' })
       const address = accounts[0]
       console.log('Xopo: Connected to MetaMask with address:', address)
-      return address
+      if (window.ethereum.chainId) {
+        if (window.ethereum.chainId !== config.network.chainId) {
+          console.log('Xopo: wrong network')
+          return { address, isRight: false }
+        }
+      }
+      return { address, isRight: true }
     } catch (error) {
       console.error('Xopo: User denied account access:', error)
     }
@@ -47,6 +49,17 @@ export const _subscribeToEvAccountChanged = ({ handler }) => {
 
 export const _subscribeToEvChainChanged = ({ handler }) => {
   window.ethereum.on('chainChanged', handler)
+}
+
+export const _switchToCurrentNetwork = async () => {
+  try {
+    await window.ethereum.request({
+      method: 'wallet_switchEthereumChain',
+      params: [{ chainId: config.network.chainId }]
+    })
+  } catch (err) {
+    console.log(err)
+  }
 }
 
 export const _initializeNetwork = async () => {
