@@ -10,6 +10,8 @@ import {
 import {
   _initializeNetwork,
   _connectToMetaMask,
+  _isMetaMaskConnected,
+  // _isMetaMaskInstalled,
   _switchToCurrentNetwork,
   _subscribeToEvChainChanged,
   _subscribeToEvAccountChanged
@@ -40,20 +42,28 @@ const connectWallet = async ({ commit, getters }) => {
     commit(IS_RIGHT_CHAIN, { isRight: true })
   }
 
-  subscribeToEvAccountChanged({ commit, getters })
+  await subscribeToEvAccountChanged({ commit, getters })
   subscribeToEvChainChanged({ commit, getters })
 }
 
-function subscribeToEvAccountChanged ({ commit, getters }) {
-  const handleAccountChange = (accounts, error) => {
+async function subscribeToEvAccountChanged ({ commit, getters }) {
+  let isMetamaskConected = await _isMetaMaskConnected()
+  // let isMetamaskInstalled = _isMetaMaskInstalled()
+  const handleAccountChange = async (accounts, error) => {
     if (error) console.error('Xopo: ' + error)
+
+    isMetamaskConected = await _isMetaMaskConnected()
+    // isMetamaskInstalled = _isMetaMaskInstalled() // todo
+    if (isMetamaskConected.length < 1) {
+      commit(CONNECT_WALLET, { userAddress: '', avatar: '' })
+    }
+
     try {
       if (accounts[0] !== getters.userAddress) {
         const avatar = new Identicon(accounts[0], 420)
           .toString()
+
         commit(CONNECT_WALLET, { userAddress: accounts[0], avatar })
-        console.log('Xopo: Wallet address changed:', accounts[0])
-        // Do something here when the wallet address changes
       }
     } catch (err) {
       console.error('Xopo: ' + err)
@@ -70,7 +80,9 @@ function subscribeToEvChainChanged ({ commit, getters }) {
     if (error) console.error('Xopo: ' + error)
     try {
       if (chainId !== getters.chainId) {
-        const isRight = chainId.toLowerCase() === '0xa86a'
+        const isRight = chainId.toLowerCase() === '0xa86a' ||
+          chainId.toLowerCase() === '0xa869' // todo config
+
         commit(CHAIN_ID_CHANGED, { chainId })
         commit(IS_RIGHT_CHAIN, { isRight })
 
