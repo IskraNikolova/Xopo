@@ -1,4 +1,5 @@
 import {
+  SET_THEME,
   CONNECT_WALLET,
   IS_RIGHT_CHAIN,
   CHAIN_ID_CHANGED,
@@ -77,7 +78,12 @@ function subscribeToEvChainChanged ({ commit, getters }) {
   })
 }
 
+function setTheme ({ commit }, theme) {
+  commit(SET_THEME, { theme })
+}
+
 export default {
+  [SET_THEME]: setTheme,
   [CONNECT_WALLET]: connectWallet,
   [SUBSCRIBE_TO_EVENT]: subscribeToEvAccountChanged
 }

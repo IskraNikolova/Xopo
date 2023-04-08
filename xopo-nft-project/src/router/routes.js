@@ -7,7 +7,34 @@ const routes = [
       { path: '', component: () => import('pages/Index.vue') }
     ]
   },
-
+  {
+    path: '/launchpad',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [
+      { path: '/launchpad', component: () => import('pages/Launchpad.vue') }
+    ]
+  },
+  {
+    path: '/about',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [
+      { path: '/about', component: () => import('pages/About.vue') }
+    ]
+  },
+  {
+    path: '/artists',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [
+      { path: '/artists', component: () => import('pages/Artists.vue') }
+    ]
+  },
+  {
+    path: '/discover',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [
+      { path: '/discover', component: () => import('pages/Discover.vue') }
+    ]
+  },
   // Always leave this as last one,
   // but you can also remove it
   {

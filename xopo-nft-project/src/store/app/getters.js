@@ -13,3 +13,7 @@ export function chainId (state) {
 export function isRight (state) {
   return state.isRight
 }
+
+export function appTheme (state) {
+  return state.theme
+}

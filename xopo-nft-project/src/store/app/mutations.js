@@ -1,4 +1,5 @@
 import {
+  SET_THEME,
   CONNECT_WALLET,
   IS_RIGHT_CHAIN,
   CHAIN_ID_CHANGED
@@ -14,6 +15,9 @@ const mutations = {
   },
   [IS_RIGHT_CHAIN]: (state, { isRight }) => {
     state.isRight = isRight
+  },
+  [SET_THEME]: (state, { theme }) => {
+    state.theme = theme
   }
 }
 

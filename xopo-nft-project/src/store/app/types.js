@@ -1,4 +1,5 @@
 export const INIT_APP = 'INIT_APP'
+export const SET_THEME = 'SET_THEME'
 export const CONNECT_WALLET = 'CONNECT_WALLET'
 export const SUBSCRIBE_TO_EVENT = 'SUBSCRIBE_TO_EVENT'
 export const CHAIN_ID_CHANGED = 'CHAIN_ID_CHANGED'
