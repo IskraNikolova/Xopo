@@ -5,10 +5,17 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
+
+import { INIT_APP } from './store/app/types'
 
 export default {
   name: 'App',
+  methods: {
+    ...mapActions({
+      initApp: INIT_APP
+    })
+  },
   watch: {
     appTheme (val) {
       document.querySelector('html').dataset.theme = this.appTheme
@@ -21,6 +28,7 @@ export default {
   },
   async created () {
     try {
+      await this.initApp()
       document.querySelector('html').dataset.theme = this.appTheme
     } catch (err) {
       console.log(err.message)

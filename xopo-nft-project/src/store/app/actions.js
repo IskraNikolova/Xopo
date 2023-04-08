@@ -1,4 +1,5 @@
 import {
+  INIT_APP,
   SET_THEME,
   CONNECT_WALLET,
   IS_RIGHT_CHAIN,
@@ -7,6 +8,7 @@ import {
 } from './types'
 
 import {
+  _initializeNetwork,
   _connectToMetaMask,
   _switchToCurrentNetwork,
   _subscribeToEvChainChanged,
@@ -15,6 +17,14 @@ import {
   from './../../modules/network.js'
 
 import Identicon from 'identicon.js'
+
+const initApp = async ({ commit, getters }) => {
+  try {
+    _initializeNetwork()
+  } catch (err) {
+    console.log(err)
+  }
+}
 
 const connectWallet = async ({ commit, getters }) => {
   const { address, isRight } = await _connectToMetaMask()
@@ -83,6 +93,7 @@ function setTheme ({ commit }, theme) {
 }
 
 export default {
+  [INIT_APP]: initApp,
   [SET_THEME]: setTheme,
   [CONNECT_WALLET]: connectWallet,
   [SUBSCRIBE_TO_EVENT]: subscribeToEvAccountChanged

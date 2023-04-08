@@ -7,9 +7,10 @@
         </q-toolbar-title>
         <q-tabs v-model="tab" shrink stretch>
           <q-tab name="tab1" label="about" @click="goToAbout()"/>
-          <q-tab name="tab2" label="launchpad" @click="goToLaunchpad()"/>
+          <q-tab name="tab2"  class="text-blue" label="launchpad" @click="goToLaunchpad()"/>
           <q-tab name="tab3" label="discover" @click="goToDiscover()"/>
           <q-tab name="tab4" label="artists" @click="goToArtists()"/>
+          <q-tab name="tab4" class="text-orange" label="Create your own NFTs" @click="goToRequestForNFTs()"/>
         </q-tabs>
         <q-space />
         <div v-if="!getStatus()">
@@ -17,7 +18,8 @@
         </div>
         <div>
           <q-btn flat @click.native="connectUserWallet()" v-if="!getUser()">
-            <img src="~assets/wallet_icon_dark.png" class="q-mb-xs" style="width: 30px;">
+            <img src="~assets/wallet_icon_dark.png" class="q-mb-xs" style="width: 30px;" v-if="appTheme!=='dark'">
+            <img src="~assets/wallet_icon_white.png" class="q-mb-xs" style="width: 30px;" v-else>
             <tooltip-style v-bind:text="'Connect Wallet'" />
           </q-btn>
           <q-btn v-else flat >
@@ -107,6 +109,9 @@ export default {
     },
     goToHome () {
       this.$router.push('/')
+    },
+    goToRequestForNFTs () {
+      this.$router.push('/requestNFTs')
     },
     getStatus () {
       return this.isRight

@@ -35,6 +35,13 @@ const routes = [
       { path: '/discover', component: () => import('pages/Discover.vue') }
     ]
   },
+  {
+    path: '/requestNFTs',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [
+      { path: '/requestNFTs', component: () => import('pages/RequestsNFTs.vue') }
+    ]
+  },
   // Always leave this as last one,
   // but you can also remove it
   {

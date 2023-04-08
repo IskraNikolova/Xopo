@@ -2,11 +2,12 @@
 
 html[data-theme="dark"] {
     body {
+        background: rgb(114,115,110);
         color: #ffffff;
-        background-color: rgba(52,52,47,255);
+        
     }
     .header {
         color: #ffffff;
-        background: rgb(114,115,110);
+        background-color: rgb(52,52,47,255);
     }
 }

@@ -17,7 +17,8 @@
       <q-carousel-slide :name="1" img-src="~assets/BANER.png" >
         <div class="absolute-bottom custom-caption carousel">
           <div class="text-h4">Introducing Our First Collection of NFTs</div>
-          <button class="text-subtitle1">Don't Miss Out!</button>
+          <br/>
+          <q-btn outline class="text-subtitle1" color="white">Don't Miss Out!</q-btn>
         </div>
       </q-carousel-slide>
       <q-carousel-slide :name="2" img-src="~assets/BANER3.jpg">
@@ -45,13 +46,4 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-  .carousel
-    border-radius: 13px
-  .custom-caption
-    width: max-content
-    text-align: left
-    padding: 12px
-    color: #ba5f11
-    background-color: rgba(0, 0, 0, .3)
-    border-radius: 12px
 </style>
