@@ -17,11 +17,62 @@
 body {
     font-family: 'OpenSans_Condensed-Regular', sans-serif;
     word-wrap: break-word;
-    // background-color: whitesmoke;
+    background-color:rgb(245, 246, 241);
+    color: #34342f;
     // background-size: 8.49px 8.49px;
   }
 
   .text-bold {
     font-family: 'OpenSans_Condensed-Bold',sans-serif;
   }
+  .header {
+    color: #34342f;
+    background: rgb(218, 220, 210);
+  }
+   .custom-badge {
+    font-size: 17px;
+    padding: 3px;
+    border: 0.135rem solid;
+    border-color: #4D4D4A;
+    border-radius: 9px;
+  }
+  .custom-badge2 {
+    padding: 5px;
+    margin-right: 5px;
+  }
+  .btn-custom {
+    border-radius: 9px;
+  }
+  .carousel {
+    border-radius: 13px;
+  }
+  .custom-caption {
+    width: max-content;
+    text-align: left;
+    padding: 12px;
+    color: #ba5f11;
+    background-color: rgba(0, 0, 0, .3);
+    border-radius: 12px;
+  }
+  .content {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+  }
+  .right-text {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20%;
+  }
+  .custom-caption2 {
+    height: 20%;
+    text-align: right;
+    color: #ffffff;
+    margin: 1% 1% 1% 1%;
+  }
+  .text-dec {
+    color: white;
+  }
+
   

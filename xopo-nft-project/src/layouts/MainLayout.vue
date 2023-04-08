@@ -1,6 +1,6 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header elevated class="header shadow-3 text-bold" style="color: #34342f;" :dark="appTheme==='dark'">
+    <q-header class="header text-bold">
       <q-toolbar>
         <q-toolbar-title>
           <img src="~assets/horo_logo.png" class="q-pt-xs" style="width: 60px;" @click="goToHome()">
@@ -13,20 +13,18 @@
         </q-tabs>
         <q-space />
         <div v-if="!getStatus()">
-          <div class="custom-badge2">
-            Wrong Network
-          </div>
+          Wrong Network
         </div>
         <div>
           <q-btn flat @click.native="connectUserWallet()" v-if="!getUser()">
             <img src="~assets/wallet_icon_dark.png" class="q-mb-xs" style="width: 30px;">
             <tooltip-style v-bind:text="'Connect Wallet'" />
           </q-btn>
-          <q-btn v-else flat class="inset-shadow btn-custom" >
+          <q-btn v-else flat >
             <q-avatar size="35px" class="q-mr-md inset-shadow-down">
               <img :src="'data:image/png;base64,' + this.avatar + ''">
             </q-avatar>
-            <span class="text-h7 address">{{ formatAddress() }}</span>
+            <span class="text-h7">{{ formatAddress() }}</span>
           </q-btn>
           <!--<q-btn
            flat
@@ -37,7 +35,7 @@
       </q-toolbar>
     </q-header>
 
-    <q-footer elevated class="header shadow-3 text-bold" style="color: #34342f;">
+    <q-footer class="header text-bold">
       <q-toolbar>
         <q-toolbar-title><img src="~assets/horo_logo_BW.png" class="q-pt-xs" style="width: 60px;"></q-toolbar-title>
         <q-btn flat icon="nights_stay" v-if="appTheme === 'default'" @click="switchTheme('dark')" />
@@ -136,36 +134,4 @@ export default {
 </script>
 
 <style scoped>
-  .header {
-   background: rgb(114,115,110);
- }
- .avatar {
-  width: 35vw;
-  max-width: 35px;
-  min-height: 35px;
-  max-height: 35px;
-  border-radius: 5px;
-  border-radius: 5px;
- }
-.custom-badge {
-  font-size: 17px;
-  padding: 3px;
-  border: 0.135rem solid;
-  border-color: #4D4D4A;
-  border-radius: 9px;
-}
-.custom-badge2 {
-  font-size: 17px;
-  padding: 3px;
-  margin-right: 5px;
-  border: 0.135rem solid;
-  border-color: #4D4D4A;
-  border-radius: 9px;
-}
-.btn-custom {
-  border-radius: 9px;
-}
-.address {
-  color: white;
-}
 </style>
