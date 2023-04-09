@@ -3,11 +3,13 @@
 html[data-theme="dark"] {
     body {
         background: rgb(114,115,110);
-        color: #ffffff;
-        
+        color: #ffffff;     
     }
     .header {
         color: #ffffff;
         background-color: rgb(52,52,47,255);
+    }
+    .q-item {
+        background: rgb(52,52,47,255);
     }
 }

@@ -22,12 +22,37 @@
             <img src="~assets/wallet_icon_white.png" class="q-mb-xs" style="width: 30px;" v-else>
             <tooltip-style v-bind:text="'Connect Wallet'" />
           </q-btn>
-          <q-btn v-else flat >
-            <q-avatar size="35px" class="q-mr-md inset-shadow-down">
-              <img :src="'data:image/png;base64,' + this.avatar + ''">
-            </q-avatar>
-            <span class="text-h7">{{ formatAddress() }}</span>
-          </q-btn>
+          <q-btn-dropdown
+            v-else
+            split
+            flat
+            push
+            no-caps
+            @click="onMainClick"
+          >
+            <template v-slot:label>
+              <div class="row items-center no-wrap">
+                <q-icon left :name="'img:data:image/png;base64,' + avatar + ''" />
+                <div class="text-center">
+                  {{ formatAddress() }}
+                </div>
+              </div>
+            </template>
+            <q-list>
+              <q-item clickable :dark="appTheme === 'dark'" v-close-popup @click="onItemClick">
+                <q-item-section avatar>
+                  <q-avatar icon="logout" color="primary" text-color="white" />
+                </q-item-section>
+                <q-item-section>
+                  <q-item-label>Logout</q-item-label>
+                  <q-item-label caption>Avalanche</q-item-label>
+                </q-item-section>
+                <q-item-section side>
+                  <q-icon name="info" color="amber" />
+                </q-item-section>
+              </q-item>
+            </q-list>
+          </q-btn-dropdown>
           <!--<q-btn
            flat
            >

@@ -47,6 +47,15 @@ export const _isMetaMaskInstalled = () => {
   return Boolean(window.ethereum && window.ethereum.isMetaMask)
 }
 
+export const logout = async () => {
+  try {
+    await window.ethereum.request({ method: 'eth_logout' })
+    console.log('User has been logged out.')
+  } catch (error) {
+    console.error(error)
+  }
+}
+
 export const _isMetaMaskConnected = async () => {
   const { ethereum } = window
   const accounts = await ethereum.request({ method: 'eth_accounts' })
