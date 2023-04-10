@@ -1,4 +1,5 @@
 import {
+  LOGOUT,
   SET_THEME,
   CONNECT_WALLET,
   IS_RIGHT_CHAIN,
@@ -6,6 +7,9 @@ import {
 } from './types'
 
 const mutations = {
+  [LOGOUT]: (state, { isSignUp }) => {
+    state.isSignUp = isSignUp
+  },
   [CONNECT_WALLET]: (state, { userAddress, avatar }) => {
     state.userAddress = userAddress
     state.avatar = avatar

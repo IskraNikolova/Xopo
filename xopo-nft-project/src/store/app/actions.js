@@ -1,4 +1,5 @@
 import {
+  LOGOUT,
   INIT_APP,
   SET_THEME,
   CONNECT_WALLET,
@@ -8,6 +9,7 @@ import {
 } from './types'
 
 import {
+  _logout,
   _initializeNetwork,
   _connectToMetaMask,
   _isMetaMaskConnected,
@@ -20,9 +22,19 @@ import {
 
 import Identicon from 'identicon.js'
 
-const initApp = async ({ commit, getters }) => {
+const initApp = async () => {
   try {
     _initializeNetwork()
+  } catch (err) {
+    console.log(err)
+  }
+}
+
+const logout = async ({ commit, dispatch }) => {
+  try {
+    const isSignUp = await _logout()
+    commit(LOGOUT, { isSignUp })
+    await dispatch(CONNECT_WALLET)
   } catch (err) {
     console.log(err)
   }
@@ -48,7 +60,7 @@ const connectWallet = async ({ commit, getters }) => {
 
 async function subscribeToEvAccountChanged ({ commit, getters }) {
   let isMetamaskConected = await _isMetaMaskConnected()
-  // let isMetamaskInstalled = _isMetaMaskInstalled()
+  // let isMetamaskInstalled = _isMetaMaskInstalled() //todo
   const handleAccountChange = async (accounts, error) => {
     if (error) console.error('Xopo: ' + error)
 
@@ -105,6 +117,7 @@ function setTheme ({ commit }, theme) {
 }
 
 export default {
+  [LOGOUT]: logout,
   [INIT_APP]: initApp,
   [SET_THEME]: setTheme,
   [CONNECT_WALLET]: connectWallet,

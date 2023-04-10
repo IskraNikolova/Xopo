@@ -1,3 +1,4 @@
+export const LOGOUT = 'LOGOUT'
 export const INIT_APP = 'INIT_APP'
 export const SET_THEME = 'SET_THEME'
 export const CONNECT_WALLET = 'CONNECT_WALLET'

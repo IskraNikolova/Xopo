@@ -17,3 +17,7 @@ export function isRight (state) {
 export function appTheme (state) {
   return state.theme
 }
+
+export function isSignUp (state) {
+  return state.isSignUp
+}

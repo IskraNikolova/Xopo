@@ -28,7 +28,6 @@
             flat
             push
             no-caps
-            @click="onMainClick"
           >
             <template v-slot:label>
               <div class="row items-center no-wrap">
@@ -39,16 +38,13 @@
               </div>
             </template>
             <q-list>
-              <q-item clickable :dark="appTheme === 'dark'" v-close-popup @click="onItemClick">
+              <q-item clickable :dark="appTheme === 'dark'" v-close-popup @click="onLogout()">
                 <q-item-section avatar>
                   <q-avatar icon="logout" color="primary" text-color="white" />
                 </q-item-section>
                 <q-item-section>
-                  <q-item-label>Logout</q-item-label>
+                  <q-item-label>Swap address</q-item-label>
                   <q-item-label caption>Avalanche</q-item-label>
-                </q-item-section>
-                <q-item-section side>
-                  <q-icon name="info" color="amber" />
                 </q-item-section>
               </q-item>
             </q-list>
@@ -81,6 +77,7 @@ import { ref } from 'vue'
 import { mapGetters, mapActions } from 'vuex'
 
 import {
+  LOGOUT,
   SET_THEME,
   CONNECT_WALLET
 } from './../store/app/types'
@@ -97,6 +94,7 @@ export default {
   },
   computed: {
     ...mapGetters([
+      'isSignUp',
       'appTheme',
       'userAddress',
       'appTheme',
@@ -113,8 +111,9 @@ export default {
   },
   methods: {
     ...mapActions({
-      connectWallet: CONNECT_WALLET,
-      setTheme: SET_THEME
+      logout: LOGOUT,
+      setTheme: SET_THEME,
+      connectWallet: CONNECT_WALLET
     }),
     switchTheme (theme) {
       if (!theme) return
@@ -143,6 +142,9 @@ export default {
     },
     getUser () {
       return this.userAddress
+    },
+    onLogout () {
+      this.logout()
     },
     data () {
       if (!this.avatar) return ''
