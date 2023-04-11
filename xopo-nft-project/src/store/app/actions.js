@@ -56,7 +56,7 @@ const connectWallet = async ({ commit, getters }) => {
   }
   commit(CONNECT_WALLET, { userAddress: address, avatar })
 
-  let accounts = getters.accounts
+  let accounts = []
   if (accounts.length > 0) {
     accounts = []
     accounts.push({ userAddress: address, avatar })
@@ -100,14 +100,17 @@ async function subscribeToEvAccountChanged ({ commit, getters }) {
       if (accounts.length < 1) {
         commit(CONNECT_WALLET, { userAddress: '', avatar: '' })
       }
+
       if (accounts[0] !== getters.userAddress) {
         const avatar = new Identicon(accounts[0], 420)
           .toString()
 
         commit(CONNECT_WALLET, { userAddress: accounts[0], avatar })
+        const users = getters.accounts
+        const acc = users.concat(new Array({ userAddress: accounts[0], avatar }))
+        commit(CONNECTED_WALLETS, { accounts: acc })
       }
     } catch (err) {
-      console.error('Xopo: ' + err)
     }
   }
 
