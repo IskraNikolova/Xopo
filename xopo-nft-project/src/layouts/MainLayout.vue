@@ -33,18 +33,30 @@
               <div class="row items-center no-wrap">
                 <q-icon left :name="'img:data:image/png;base64,' + avatar + ''" />
                 <div class="text-center">
-                  {{ formatAddress() }}
+                  {{ formatAddress(userAddress) }}
                 </div>
               </div>
             </template>
             <q-list>
-              <q-item clickable :dark="appTheme === 'dark'" v-close-popup @click="onLogout()">
+              <q-item clickable v-for=" (account, i) in accounts" v-bind:key="i" :dark="appTheme === 'dark'" v-close-popup @click="setDefaultWallet({ account })">
                 <q-item-section avatar>
-                  <q-avatar icon="logout" color="primary" text-color="white" />
+                  <q-icon left :name="'img:data:image/png;base64,' + getAvatar(account) + ''" />
                 </q-item-section>
                 <q-item-section>
-                  <q-item-label>Swap address</q-item-label>
-                  <q-item-label caption>Avalanche</q-item-label>
+                  <q-item-label>{{ getAddress(account) }}</q-item-label>
+                  <q-item-label caption>Connected</q-item-label>
+                </q-item-section>
+                <q-item-section side>
+                  <q-icon name="info" color="amber" />
+                  <tooltip-style v-bind:text="'Set ' + formatAddress(getAddress(account)) + ' as your default wallet address.'" />
+                </q-item-section>
+              </q-item>
+              <q-item clickable :dark="appTheme === 'dark'" v-close-popup @click="connectToWallets()">
+                <q-item-section avatar>
+                  <q-icon left name="logout" />
+                </q-item-section>
+                <q-item-section>
+                  <q-item-label> Connect / Disconect a New Address</q-item-label>
                 </q-item-section>
               </q-item>
             </q-list>
@@ -77,9 +89,10 @@ import { ref } from 'vue'
 import { mapGetters, mapActions } from 'vuex'
 
 import {
-  LOGOUT,
   SET_THEME,
-  CONNECT_WALLET
+  CONNECT_WALLET,
+  CONNECTED_WALLETS,
+  SET_DEFAULT_WALLET
 } from './../store/app/types'
 
 export default {
@@ -95,6 +108,7 @@ export default {
   computed: {
     ...mapGetters([
       'isSignUp',
+      'accounts',
       'appTheme',
       'userAddress',
       'appTheme',
@@ -111,9 +125,10 @@ export default {
   },
   methods: {
     ...mapActions({
-      logout: LOGOUT,
       setTheme: SET_THEME,
-      connectWallet: CONNECT_WALLET
+      connectWallet: CONNECT_WALLET,
+      connectToWallets: CONNECTED_WALLETS,
+      setDefaultWallet: SET_DEFAULT_WALLET
     }),
     switchTheme (theme) {
       if (!theme) return
@@ -143,6 +158,14 @@ export default {
     getUser () {
       return this.userAddress
     },
+    getAddress (account) {
+      if (!account) return
+      return account.userAddress.toString()
+    },
+    getAvatar (account) {
+      if (!account) return
+      return account.avatar
+    },
     onLogout () {
       this.logout()
     },
@@ -150,11 +173,11 @@ export default {
       if (!this.avatar) return ''
       return this.avatar
     },
-    formatAddress () {
-      if (!this.userAddress) return
-      const first4 = this.userAddress.slice(0, 4)
-      const last4 = this.userAddress
-        .substr(this.userAddress.length - 4)
+    formatAddress (address) {
+      if (!address) return
+      const first4 = address.slice(0, 4)
+      const last4 = address
+        .substr(address.length - 4)
       return `${first4}...${last4}`
     },
     async connectUserWallet () {

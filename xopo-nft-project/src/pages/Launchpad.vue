@@ -12,8 +12,8 @@
         <div class="text-h4">KOLODA</div>
         <div class="text-h5">by Miroslav Mihov (Eternal Mirror)</div>
       </div>
-      <div class="absolute-right carousel custom-caption custom-caption2">
-        <q-btn label="Mint your own NFT" flat class="text-bold" size="xl" icon="celebration" />
+      <div class="absolute-bottom-right carousel custom-caption">
+        <q-btn label="Mint your own NFT" flat class="text-bold" size="xl"/>
       </div>
     </q-carousel-slide>
     <q-carousel-slide :name="3" img-src="~assets/BANER3.jpg" />

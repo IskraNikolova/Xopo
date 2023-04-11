@@ -21,15 +21,15 @@ export const _connectToMetaMask = async () => {
   // Check if MetaMask is installed
   if (_isMetaMaskInstalled()) {
     try {
-      // Request account access
-      await window.ethereum.request({ method: 'eth_requestAccounts' })
-      // Get the user's address
-      const accounts = await _isMetaMaskConnected()
+      const { ethereum } = window
+
+      // Request account access and get the user's address
+      const accounts = await _requestAccounts()
       const address = accounts[0]
 
-      if (window.ethereum.chainId) {
-        if (!(window.ethereum.chainId === config.network.chainId ||
-            window.ethereum.chainId === config.network.fujiChainId)) {
+      if (ethereum.chainId) {
+        if (!(ethereum.chainId === config.network.chainId ||
+            ethereum.chainId === config.network.fujiChainId)) {
           return { address, isRight: false }
         }
       }
@@ -47,25 +47,37 @@ export const _isMetaMaskInstalled = () => {
   return Boolean(window.ethereum && window.ethereum.isMetaMask)
 }
 
-export const _logout = async () => {
-  // Logout from Metamask
+export const _getAllConnectedWallets = async () => {
   try {
-    await window.ethereum
+    const permissions = await window
+      .ethereum
       .request({ method: 'wallet_requestPermissions', params: [{ eth_accounts: {} }] })
-    const accounts = await window.ethereum.request({ method: 'eth_accounts' })
-    if (accounts.length < 1) {
-      console.log('Logout successful!')
-      return true
+    const accountsPermission = permissions.find(
+      (permission) => permission.parentCapability === 'eth_accounts'
+    )
+    if (accountsPermission) {
+      const accounts = accountsPermission.caveats['0'].value
+      return accounts
     }
   } catch (err) {
     console.error(err)
   }
 }
 
-export const _isMetaMaskConnected = async () => {
+export const _requestAccounts = async () => {
   const { ethereum } = window
-  const accounts = await ethereum.request({ method: 'eth_accounts' })
+  const accounts = await ethereum.request({ method: 'eth_requestAccounts' })
   return accounts
+}
+
+export const _setToDefaultAccount = async (address) => {
+  try {
+    web3.eth.defaultAccount = address
+    return true
+  } catch (err) {
+    console.error(err)
+    return false
+  }
 }
 
 export const _subscribeToEvAccountChanged = ({ handler }) => {

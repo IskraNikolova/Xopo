@@ -2,6 +2,10 @@ export function userAddress (state) {
   return state.userAddress
 }
 
+export function accounts (state) {
+  return state.accounts
+}
+
 export function avatar (state) {
   return state.avatar
 }

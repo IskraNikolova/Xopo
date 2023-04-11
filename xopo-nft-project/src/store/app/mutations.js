@@ -3,7 +3,8 @@ import {
   SET_THEME,
   CONNECT_WALLET,
   IS_RIGHT_CHAIN,
-  CHAIN_ID_CHANGED
+  CHAIN_ID_CHANGED,
+  CONNECTED_WALLETS
 } from './types'
 
 const mutations = {
@@ -13,6 +14,9 @@ const mutations = {
   [CONNECT_WALLET]: (state, { userAddress, avatar }) => {
     state.userAddress = userAddress
     state.avatar = avatar
+  },
+  [CONNECTED_WALLETS]: (state, { accounts }) => {
+    state.accounts = accounts
   },
   [CHAIN_ID_CHANGED]: (state, { chainId }) => {
     state.chainId = chainId
