@@ -42,6 +42,9 @@ export const AVALANCHE_TESTNET_PARAMS = {
   blockExplorerUrls: ['https://testnet.snowtrace.io/']
 }
 
+/**
+ * Add Avalanche network to the Metamask wallet.
+ */
 export const _addAvalancheNetwork = () => {
   web3.eth.givenProvider
     .request({
@@ -53,6 +56,12 @@ export const _addAvalancheNetwork = () => {
     })
 }
 
+/**
+ * Connects to the MetaMask wallet.
+ * Requests account access and gets the user's address.
+ * Returns the user's address and a boolean indicating whether they are on the right network.
+ * If MetaMask is not installed, logs an error to the console.
+ */
 export const _connectToMetaMask = async () => {
   // Check if MetaMask is installed
   if (_isMetaMaskInstalled()) {
@@ -87,12 +96,21 @@ export const _getAllConnectedWallets = async () => {
   try {
     const permissions = await window
       .ethereum
-      .request({ method: 'wallet_requestPermissions', params: [{ eth_accounts: {} }] })
-    const accountsPermission = permissions.find(
-      (permission) => permission.parentCapability === 'eth_accounts'
-    )
+      .request({
+        method: 'wallet_requestPermissions',
+        params: [{ eth_accounts: {} }]
+      })
+
+    const accountsPermission = permissions
+      .find((permission) =>
+        permission.parentCapability === 'eth_accounts'
+      )
+
     if (accountsPermission) {
-      const accounts = accountsPermission.caveats['0'].value
+      const accounts = accountsPermission
+        .caveats['0']
+        .value
+
       return accounts
     }
   } catch (err) {
@@ -136,28 +154,48 @@ export const _switchToCurrentNetwork = async () => {
   }
 }
 
+/**
+ * Initialize network and set Web3 provider.
+ * @returns {Promise<void>} Promise object that represents the initialization process.
+ */
 export const _initializeNetwork = async () => {
   try {
+    // Initialize Web3 with the WebSocket provider
     // web3 = new Web3(`https://${config.network.endpointCChain}`)
     web3 = new Web3(getProvider({ endpoint: `wss://${config.network.endpointCChain}` }))
+
+    // Initialize contract
     // contract = await new web3.eth.Contract(contractAbi, config.network.contract)
   } catch (err) {
     console.log(err)
   }
 }
 
+/**
+ * Get Web3 WebSocket provider for the specified endpoint.
+ * @param {Object} options - WebSocket endpoint options.
+ * @param {string} options.endpoint - WebSocket endpoint.
+ * @returns {Web3.providers.WebsocketProvider} Web3 WebSocket provider object.
+ */
 const getProvider = ({ endpoint }) => {
-  const provider = new Web3.providers.WebsocketProvider(endpoint)
+  const provider = new Web3
+    .providers
+    .WebsocketProvider(endpoint)
+
+  // Set up event listeners for the WebSocket provider
   provider.on('connect', () => {
     console.log('WS Connected')
   })
   provider.on('error', e => {
     console.error('WS Error' + e)
+    // Reconnect on error
     web3.setProvider(getProvider({ endpoint }))
   })
   provider.on('end', e => {
+    // Reconnect on close
     console.error('WS End' + e)
   })
+
   return provider
 }
 

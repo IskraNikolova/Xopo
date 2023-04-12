@@ -6,7 +6,8 @@ import {
   CHAIN_ID_CHANGED,
   CONNECTED_WALLETS,
   SET_DEFAULT_WALLET,
-  SUBSCRIBE_TO_EVENT
+  SUBSCRIBE_TO_ACCOUNT_CHANGED_EVENT,
+  SUBSCRIBE_TO_NETWORK_CHANGED_EVENT
 } from './types'
 
 import {
@@ -30,9 +31,13 @@ import config from './../../modules/config'
 
 import Identicon from 'identicon.js'
 
-const initApp = async ({ dispatch }) => {
+const initApp = async ({ dispatch, getters }) => {
   try {
     await _initializeNetwork()
+    if (getters.userAddress) {
+      await dispatch(SUBSCRIBE_TO_ACCOUNT_CHANGED_EVENT)
+      await dispatch(SUBSCRIBE_TO_NETWORK_CHANGED_EVENT)
+    }
   } catch (err) {
     console.log(err)
   }
@@ -47,7 +52,7 @@ const setDefaultWallet = ({ commit }, { account }) => {
   })
 }
 
-const connectWallet = async ({ commit, getters }) => {
+const connectWallet = async ({ commit, getters, dispatch }) => {
   try {
     const { address, isRight } = await _connectToMetaMask()
     let avatar = ''
@@ -71,8 +76,8 @@ const connectWallet = async ({ commit, getters }) => {
       commit(IS_RIGHT_CHAIN, { isRight: true })
     }
 
-    await subscribeToEvAccountChanged({ commit, getters })
-    await subscribeToEvChainChanged({ commit, getters })
+    await dispatch(SUBSCRIBE_TO_ACCOUNT_CHANGED_EVENT)
+    await dispatch(SUBSCRIBE_TO_NETWORK_CHANGED_EVENT)
   } catch (err) {
     console.error(err)
   }
@@ -174,5 +179,6 @@ export default {
   [CONNECT_WALLET]: connectWallet,
   [CONNECTED_WALLETS]: connectedWallets,
   [SET_DEFAULT_WALLET]: setDefaultWallet,
-  [SUBSCRIBE_TO_EVENT]: subscribeToEvAccountChanged
+  [SUBSCRIBE_TO_NETWORK_CHANGED_EVENT]: subscribeToEvChainChanged,
+  [SUBSCRIBE_TO_ACCOUNT_CHANGED_EVENT]: subscribeToEvAccountChanged
 }
