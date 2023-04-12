@@ -1,5 +1,4 @@
 import {
-  // LOGOUT,
   INIT_APP,
   SET_THEME,
   CONNECT_WALLET,
@@ -11,6 +10,7 @@ import {
 } from './types'
 
 import {
+  _addAvalancheNetwork,
   _initializeNetwork,
   _connectToMetaMask,
   _setToDefaultAccount,
@@ -21,69 +21,76 @@ import {
 }
   from './../../modules/network.js'
 
+import {
+  _getBalance
+}
+  from './../../modules/api.js'
+
+import config from './../../modules/config'
+
 import Identicon from 'identicon.js'
 
-const initApp = async () => {
+const initApp = async ({ dispatch }) => {
   try {
-    _initializeNetwork()
+    await _initializeNetwork()
   } catch (err) {
     console.log(err)
   }
 }
 
-// const logout = async ({ commit, dispatch }) => {
-//   try {
-//     const isSignUp = await _logout()
-//     commit(LOGOUT, { isSignUp })
-//     await dispatch(CONNECT_WALLET)
-//   } catch (err) {
-//     console.log(err)
-//   }
-// }
-
 const setDefaultWallet = ({ commit }, { account }) => {
   if (!account) return
   _setToDefaultAccount(account.userAddress)
-  commit(CONNECT_WALLET, { userAddress: account.userAddress, avatar: account.avatar })
+  commit(CONNECT_WALLET, {
+    userAddress: account.userAddress,
+    avatar: account.avatar
+  })
 }
 
 const connectWallet = async ({ commit, getters }) => {
-  const { address, isRight } = await _connectToMetaMask()
-  let avatar = ''
-  if (address) {
-    avatar = new Identicon(address, 420)
-      .toString()
+  try {
+    const { address, isRight } = await _connectToMetaMask()
+    let avatar = ''
+    if (address) {
+      avatar = new Identicon(address, 420)
+        .toString()
+    }
+    commit(CONNECT_WALLET, { userAddress: address, avatar })
+    const balance = await _getBalance({ address })
+
+    let accounts = []
+    if (accounts.length > 0) {
+      accounts = []
+      accounts.push({ userAddress: address, avatar, balance })
+    } else accounts.unshift({ userAddress: address, avatar, balance })
+    commit(CONNECTED_WALLETS, { accounts })
+
+    commit(IS_RIGHT_CHAIN, { isRight })
+    if (!isRight) {
+      await _addAvalancheNetwork()
+      commit(IS_RIGHT_CHAIN, { isRight: true })
+    }
+
+    await subscribeToEvAccountChanged({ commit, getters })
+    await subscribeToEvChainChanged({ commit, getters })
+  } catch (err) {
+    console.error(err)
   }
-  commit(CONNECT_WALLET, { userAddress: address, avatar })
-
-  let accounts = []
-  if (accounts.length > 0) {
-    accounts = []
-    accounts.push({ userAddress: address, avatar })
-  } else accounts.unshift({ userAddress: address, avatar })
-  commit(CONNECTED_WALLETS, { accounts })
-
-  commit(IS_RIGHT_CHAIN, { isRight })
-  if (!isRight) {
-    await _switchToCurrentNetwork()
-    commit(IS_RIGHT_CHAIN, { isRight: true })
-  }
-
-  await subscribeToEvAccountChanged({ commit, getters })
-  subscribeToEvChainChanged({ commit, getters })
 }
 
 const connectedWallets = async ({ commit }) => {
   try {
     const wallets = await _getAllConnectedWallets()
-    const accounts = wallets.map(address => {
-      let avatar = ''
-      if (address) {
-        avatar = new Identicon(address, 420).toString()
-      }
-      return { userAddress: address, avatar }
-    })
-
+    const accounts = await Promise.all(
+      wallets.map(async (address) => {
+        let avatar = ''
+        if (address) {
+          avatar = new Identicon(address, 420).toString()
+        }
+        const balance = await _getBalance({ address })
+        return { userAddress: address, avatar, balance }
+      })
+    )
     commit(CONNECTED_WALLETS, { accounts })
 
     const userAddress = accounts[0].userAddress
@@ -107,7 +114,17 @@ async function subscribeToEvAccountChanged ({ commit, getters }) {
 
         commit(CONNECT_WALLET, { userAddress: accounts[0], avatar })
         const users = getters.accounts
-        const acc = users.concat(new Array({ userAddress: accounts[0], avatar }))
+        let acc = users.concat(new Array({ userAddress: accounts[0], avatar }))
+        acc = await Promise.all(
+          acc.map(async (address) => {
+            let avatar = ''
+            if (address) {
+              avatar = new Identicon(address, 420).toString()
+            }
+            const balance = await _getBalance({ address })
+            return { userAddress: address, avatar, balance }
+          })
+        )
         commit(CONNECTED_WALLETS, { accounts: acc })
       }
     } catch (err) {
@@ -119,20 +136,23 @@ async function subscribeToEvAccountChanged ({ commit, getters }) {
   })
 }
 
-function subscribeToEvChainChanged ({ commit, getters }) {
-  const handleChainChanged = async (chainId, error) => {
+async function subscribeToEvChainChanged ({ commit, getters }) {
+  const handleChainChanged = (chainId, error) => {
     if (error) console.error('Xopo: ' + error)
     try {
       if (chainId !== getters.chainId) {
-        const isRight = chainId.toLowerCase() === '0xa86a' ||
-          chainId.toLowerCase() === '0xa869' // todo config
-
+        const isRight = chainId.toLowerCase() === config.network.cChainId
+        // chainId.toLowerCase() === '0xa869' // todo config
+        console.log('Xopo: ChainId changed:', chainId)
         commit(CHAIN_ID_CHANGED, { chainId })
         commit(IS_RIGHT_CHAIN, { isRight })
-
-        console.log('Xopo: ChainId changed:', chainId)
-        await _switchToCurrentNetwork()
-        commit(IS_RIGHT_CHAIN, { isRight: true })
+        _switchToCurrentNetwork()
+          .then((res) => {
+            if (res) commit(IS_RIGHT_CHAIN, { isRight: true })
+          })
+          .catch((err) => {
+            console.error(err)
+          })
       }
     } catch (err) {
       console.error('Xopo: ' + err)
@@ -149,7 +169,6 @@ function setTheme ({ commit }, theme) {
 }
 
 export default {
-  // [LOGOUT]: logout,
   [INIT_APP]: initApp,
   [SET_THEME]: setTheme,
   [CONNECT_WALLET]: connectWallet,

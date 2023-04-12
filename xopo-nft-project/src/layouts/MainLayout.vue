@@ -37,14 +37,14 @@
                 </div>
               </div>
             </template>
-            <q-list>
-              <q-item clickable v-for=" (account, i) in accounts" v-bind:key="i" :dark="appTheme === 'dark'" v-close-popup @click="setDefaultWallet({ account })">
+            <q-list separator :dark="appTheme==='dark'">
+              <q-item clickable v-for=" (account, i) in accounts" v-bind:key="i" :dark="appTheme === 'dark'" v-close-popup @click="setDefaultWallet({ account })" v-ripple>
                 <q-item-section avatar>
                   <q-icon left :name="'img:data:image/png;base64,' + getAvatar(account) + ''" />
                 </q-item-section>
                 <q-item-section>
                   <q-item-label>{{ getAddress(account) }}</q-item-label>
-                  <q-item-label caption>Connected</q-item-label>
+                  <q-item-label caption><span class="text-primary">Balance</span> {{ getBalance(account) }} <span class="text-bold text-negative">AVAX</span></q-item-label>
                 </q-item-section>
                 <q-item-section side>
                   <q-icon name="info" color="amber" />
@@ -72,7 +72,6 @@
 
     <q-footer class="header text-bold">
       <q-toolbar>
-        <q-toolbar-title><img src="~assets/horo_logo_BW.png" class="q-pt-xs" style="width: 60px;"></q-toolbar-title>
         <q-btn flat icon="nights_stay" v-if="appTheme === 'default'" @click="switchTheme('dark')" />
         <q-btn flat icon="wb_sunny" v-else @click="switchTheme('default')" />
       </q-toolbar>
@@ -80,6 +79,8 @@
 
     <q-page-container>
       <router-view />
+      <div class="flex flex-center q-mt-xl"><img src="~assets/horo_logo_BW.png" class="q-pt-xs" style="width: 100px;"></div>
+      <div class="flex flex-center q-mb-xl">By Xopo with ❤️ for artists everywhere.</div>
     </q-page-container>
   </q-layout>
 </template>
@@ -154,6 +155,10 @@ export default {
     },
     getStatus () {
       return this.isRight
+    },
+    getBalance (account) {
+      if (!account) return
+      return account.balance
     },
     getUser () {
       return this.userAddress

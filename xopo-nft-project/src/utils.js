@@ -266,3 +266,31 @@ export function getAvatar (id) {
     avatar: `https://www.gravatar.com/avatar/${hash}?d=identicon&s=150`
   }
 }
+
+export const c = {
+  // enpoints
+  cChainWs: 'ext/C/ws',
+
+  // EVM API
+  evm: (id) => `ext/bc/${id}/rpc`,
+  ethBlockNumber: 'eth_blockNumber',
+  ethChainID: 'eth_chainId',
+  ethNetVersion: 'net_version',
+  ethGetBalance: 'eth_getBalance',
+  paramsForBalance: (address) => [
+    address,
+    'latest'
+    // 'AVAX'
+  ],
+
+  jsonrpc: '2.0',
+  contentTypeValue: 'application/json',
+  contentTypeHeader: 'content-type',
+  cacheControlValue: 'no-cache',
+  cacheControlHeader: 'cache-control'
+}
+
+export function round (num, prec) {
+  const multiplier = Math.pow(prec, 1 || 0)
+  return Math.round((Number(num) + Number.EPSILON) * multiplier) / multiplier
+}

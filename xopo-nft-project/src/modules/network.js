@@ -1,4 +1,5 @@
 import Web3 from 'web3'
+// import injected from 'web3-react'
 // import Tx from 'ethereumjs-tx'
 // const abiDecoder = require('abi-decoder')
 
@@ -17,6 +18,41 @@ let web3 // contract
 
 // abiDecoder.addABI(contractAbi)
 
+export const AVALANCHE_MAINNET_PARAMS = {
+  chainId: '0xA86A',
+  chainName: 'Avalanche Mainnet C-Chain',
+  nativeCurrency: {
+    name: 'Avalanche',
+    symbol: 'AVAX',
+    decimals: 18
+  },
+  rpcUrls: ['https://api.avax.network/ext/bc/C/rpc'],
+  blockExplorerUrls: ['https://snowtrace.io/']
+}
+
+export const AVALANCHE_TESTNET_PARAMS = {
+  chainId: '0xA869',
+  chainName: 'Avalanche Testnet C-Chain',
+  nativeCurrency: {
+    name: 'Avalanche',
+    symbol: 'AVAX',
+    decimals: 18
+  },
+  rpcUrls: ['https://api.avax-test.network/ext/bc/C/rpc'],
+  blockExplorerUrls: ['https://testnet.snowtrace.io/']
+}
+
+export const _addAvalancheNetwork = () => {
+  web3.eth.givenProvider
+    .request({
+      method: 'wallet_addEthereumChain',
+      params: [AVALANCHE_MAINNET_PARAMS]
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+}
+
 export const _connectToMetaMask = async () => {
   // Check if MetaMask is installed
   if (_isMetaMaskInstalled()) {
@@ -28,8 +64,8 @@ export const _connectToMetaMask = async () => {
       const address = accounts[0]
 
       if (ethereum.chainId) {
-        if (!(ethereum.chainId === config.network.chainId ||
-            ethereum.chainId === config.network.fujiChainId)) {
+        if (!(ethereum.chainId === config.network.chainId)) {
+          // ethereum.chainId === config.network.fujiChainId)) {
           return { address, isRight: false }
         }
       }
@@ -94,8 +130,9 @@ export const _switchToCurrentNetwork = async () => {
       method: 'wallet_switchEthereumChain',
       params: [{ chainId: config.network.chainId }]
     })
+    return true
   } catch (err) {
-    console.log(err)
+    return false
   }
 }
 
@@ -203,8 +240,10 @@ const getProvider = ({ endpoint }) => {
 //       })
 //   })
 // }
+// export const _getBalance = async (address) => web3.eth.getBalance(address)
 
 export const hexNodeID = (id) => web3.eth.abi.encodeParameter('bytes32', stringToHex(id.substr(15)))
+
 export const stringToHex = input => web3.utils.asciiToHex(input)
 
 export const getBlockNumber = () => web3.eth.getBlockNumber()
@@ -213,6 +252,11 @@ export const _encode = (a, b) => {
   if (!a || !b) return
   const hash = _generateHashedCode(a, b)
   return web3.eth.abi.encodeParameter('bytes32', '0x' + hash)
+}
+
+export const _fromWei = (balance) => {
+  if (!web3) return
+  return web3.utils.fromWei(balance, 'ether')
 }
 
 export const utf8StringToHex = input => web3.utils.utf8ToHex(input).padEnd(66, '0')
