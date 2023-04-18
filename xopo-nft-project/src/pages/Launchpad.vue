@@ -13,7 +13,7 @@
         <div class="text-h5">by Miroslav Mihov (Eternal Mirror)</div>
       </div>
       <div class="absolute-bottom-right carousel custom-caption">
-        <q-btn label="Mint your own NFT" flat class="text-bold" size="xl"/>
+        <q-btn label="Mint your own NFT" flat class="text-bold" size="xl" @click="mint()"/>
       </div>
     </q-carousel-slide>
     <q-carousel-slide :name="3" img-src="~assets/BANER3.jpg" />
@@ -27,13 +27,30 @@
 </template>
 
 <script lang="ts">
+import { mapGetters } from 'vuex'
 import { ref } from 'vue'
+
+import {
+  _mint
+} from './../modules/network'
+
 export default {
   name: 'PageLaunchpad',
+  computed: {
+    ...mapGetters([
+      'userAddress'
+    ])
+  },
   setup () {
     return {
       slide: ref(1),
       fabRight: ref(true)
+    }
+  },
+  methods: {
+    async mint () {
+      const counts = 1
+      await _mint({ counts, value: 1, from: this.userAddress })
     }
   }
 }

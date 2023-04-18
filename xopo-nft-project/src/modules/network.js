@@ -1,22 +1,27 @@
 import Web3 from 'web3'
-// import injected from 'web3-react'
 // import Tx from 'ethereumjs-tx'
-// const abiDecoder = require('abi-decoder')
+const abiDecoder = require('abi-decoder')
 
 import config from './config'
-// import contractAbi from './../../builds/contract.json' // todo
+import contractAbi from './../../builds/koloda.json' // todo
 
-import { _generateHashedCode } from './crypto.js'
+// import {
+//   _generateHashedCode
+// } from './crypto.js'
 
-// import { getPrivateKeyBuffer, initializeKeys } from './keys.js'
+// import {
+//   getPrivateKeyBuffer,
+//   initializeKeys
+// } from './keys.js'
 
 // import {
 //   hexStringToAsciiString
 // } from './string-conversion.js'
 
-let web3 // contract
+let web3, web3M
+let contract
 
-// abiDecoder.addABI(contractAbi)
+abiDecoder.addABI(contractAbi)
 
 export const AVALANCHE_MAINNET_PARAMS = {
   chainId: '0xA86A',
@@ -126,7 +131,7 @@ export const _requestAccounts = async () => {
 
 export const _setToDefaultAccount = async (address) => {
   try {
-    web3.eth.defaultAccount = address
+    web3M.eth.defaultAccount = address
     return true
   } catch (err) {
     console.error(err)
@@ -163,9 +168,10 @@ export const _initializeNetwork = async () => {
     // Initialize Web3 with the WebSocket provider
     // web3 = new Web3(`https://${config.network.endpointCChain}`)
     web3 = new Web3(getProvider({ endpoint: `wss://${config.network.endpointCChain}` }))
+    web3M = new Web3(window.ethereum)
 
     // Initialize contract
-    // contract = await new web3.eth.Contract(contractAbi, config.network.contract)
+    contract = await new web3M.eth.Contract(contractAbi, config.network.kolodaAddress)
   } catch (err) {
     console.log(err)
   }
@@ -199,85 +205,95 @@ const getProvider = ({ endpoint }) => {
   return provider
 }
 
-// const getEstimatedGas = async ({ data, from }) => {
-//   try {
-//     const gas = await web3
-//       .eth
-//       .estimateGas({
-//         to: config.network.contract,
-//         from,
-//         data
-//       })
-//     return gas
-//   } catch (err) {
-//     return 500000
-//   }
-// }
+const getEstimatedGas = async ({ method }) => {
+  try {
+    const gas = await method.estimateGas({ gas: 5000000 })
+    return gas
+  } catch (err) {
+    return 500000
+  }
+}
 
-// const prepareTransaction = async (method, from) => {
-//   try {
-//     const data = method.encodeABI()
-//     const estimatedGas = await getEstimatedGas({ data, from })
-//     const gasPrice = await web3.eth.getGasPrice()
+const prepareTransaction = async ({ method, from, value }) => {
+  try {
+    let etherToSend = 0
+    if (value > 0) etherToSend = web3M.utils.toWei(value.toString(), 'ether')
+    const estimatedGas = await getEstimatedGas({ method })
 
-//     const transactionCount = await web3.eth.getTransactionCount(from, 'pending')
+    const tx = {
+      from,
+      gasLimit: parseInt(estimatedGas),
+      value: etherToSend
+    }
 
-//     const rawTx = {
-//       from,
-//       chainId: config.network.cChainId,
-//       nonce: parseInt(transactionCount),
-//       gasPrice: parseInt(gasPrice),
-//       gasLimit: parseInt(estimatedGas),
-//       to: config.network.contract,
-//       value: 0,
-//       data
-//     }
+    return { tx }
+  } catch (err) {
+    console.log(err)
+  }
+}
 
-//     initializeKeys()
-//     const tx = new Tx(rawTx)
-//     tx.sign(getPrivateKeyBuffer())
+/**
+ * Send a method (transaction) to the network
+ * @param {Object} method contract method
+ * @returns {Promise<string>} transaction hash
+ */
+const executeMethod = async ({ method, from, value, params }) => {
+  const response = await prepareTransaction({ method, from, value })
+  if (!response) return
+  const { tx } = response
 
-//     return {
-//       serializedTransaction: '0x' + tx.serialize().toString('hex'),
-//       transactionHash: '0x' + tx.hash().toString('hex')
-//     }
-//   } catch (err) {
-//     console.log(err)
-//   }
-// }
+  return new Promise((resolve, reject) => {
+    contract.methods.mint(...params).send(tx)
+      .on('transactionHash', function (hash) {
+        console.log('Transaction Hash:', hash)
+      })
+      .on('receipt', function (receipt) {
+        console.log('Receipt:', receipt)
+        resolve(receipt)
+      })
+      .on('error', function (error) {
+        console.error('Error:', error)
+        reject(error)
+      })
+  })
+}
 
-// /**
-//  * Send a method (transaction) to the network
-//  * @param {Object} method contract method
-//  * @returns {Promise<string>} transaction hash
-//  */
-// const executeMethod = async (method, from) => {
-//   const response = await prepareTransaction(method, from)
-//   if (!response) return
-//   const { serializedTransaction, transactionHash } = response
-//   return new Promise((resolve, reject) => {
-//     web3.eth.sendSignedTransaction(serializedTransaction)
-//       .on('transactionHash', (hash) => {
-//         resolve(hash)
-//         console.log('Transaction hash ' + hash)
-//       })
-//       .on('confirmation', (confirmationNumber, receipt) => {
-//         if (confirmationNumber > 0) {
-//           console.log('Transaction is confirmed! ' + transactionHash)
-//         }
-//       })
-//       .on('error', (err) => {
-//         if (err.message && err.message.includes('insufficient funds')) {
-//           console.log('Insufficient funds')
-//         } else if (err.message.includes('Transaction has been reverted by the EVM:')) {
-//           console.log(err)
-//           reject(new Error('Transaction Error! Possible reasons: the name is taken. if you don\'t change the name, remove it from the field or enter a new name.'))
-//         }
-//         console.log(err)
-//         reject(err)
-//       })
-//   })
-// }
+/**
+ * Send a verify code
+ * @param {Object} params parameters
+ * @param {string} params.code
+ * @param {string} params.nodeID
+ */
+
+export const _mint = async ({ counts, value, from }) => {
+  try {
+    const data = counts
+    if (!data) return
+
+    const method = contract
+      .methods
+      .mint(data)
+
+    return executeMethod({ method, value, from, params: [counts] })
+  } catch (err) {
+    throw new Error('Xopo: ' + err.message)
+  }
+}
+
+export const _getNFTByAddress = async (address) => {
+  if (!address) return
+  try {
+    const tokenIds = await contract
+      .methods
+      .walletOfOwner(address)
+      .call()
+    console.log(tokenIds)
+    return tokenIds
+  } catch (err) {
+    throw new Error('Xopo ' + err.message)
+  }
+}
+
 // export const _getBalance = async (address) => web3.eth.getBalance(address)
 
 export const hexNodeID = (id) => web3.eth.abi.encodeParameter('bytes32', stringToHex(id.substr(15)))
@@ -285,12 +301,6 @@ export const hexNodeID = (id) => web3.eth.abi.encodeParameter('bytes32', stringT
 export const stringToHex = input => web3.utils.asciiToHex(input)
 
 export const getBlockNumber = () => web3.eth.getBlockNumber()
-
-export const _encode = (a, b) => {
-  if (!a || !b) return
-  const hash = _generateHashedCode(a, b)
-  return web3.eth.abi.encodeParameter('bytes32', '0x' + hash)
-}
 
 export const _fromWei = (balance) => {
   if (!web3) return
