@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "'xopo' NFT project creates a platform for artists to showcase and sell unique digital assets as non-fungible tokens",
   "productName": "Xopo-NFT-project",
-  "author": "IskraNikolova <air_iskra@yahoo.com>",
+  "author": "IskraNikolova <airiskra@gmail.com>",
   "private": true,
   "scripts": {
     "lint": "eslint --ext .js,.vue ./",
@@ -21,8 +21,7 @@
     "quasar": "^1.0.0",
     "vue-i18n": "^8.0.0",
     "vuex-persist": "^3.1.3",
-    "web3": "^1.9.0",
-    "web3-react": "^5.0.5"
+    "web3": "^1.9.0"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.13.14",

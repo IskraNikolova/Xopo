@@ -10,7 +10,7 @@
           <q-tab name="tab2"  class="text-blue" label="launchpad" @click="goToLaunchpad()"/>
           <q-tab name="tab3" label="discover" @click="goToDiscover()"/>
           <q-tab name="tab4" label="artists" @click="goToArtists()"/>
-          <q-tab name="tab4" class="text-orange" label="Create your own NFTs" @click="goToRequestForNFTs()"/>
+          <q-tab name="tab5" class="text-orange" label="Create your own NFTs" @click="goToRequestForNFTs()"/>
         </q-tabs>
         <q-space />
         <div v-if="!getStatus()">
@@ -33,12 +33,21 @@
               <div class="row items-center no-wrap">
                 <q-icon left :name="'img:data:image/png;base64,' + avatar + ''" />
                 <div class="text-center">
-                  {{ formatAddress(userAddress) }}
+                  {{ formatAddress(userAddress) }}<br>
+                  <span class="text-h7">{{ getBalanceByUser({ userAddress }) }}</span><span> AVAX</span>
                 </div>
               </div>
             </template>
-            <q-list separator :dark="appTheme==='dark'">
-              <q-item clickable v-for=" (account, i) in accounts" v-bind:key="i" :dark="appTheme === 'dark'" v-close-popup @click="setDefaultWallet({ account })" v-ripple>
+            <q-item class="op" clickable :dark="appTheme === 'dark'" v-close-popup name="6" @click="goToDashboard()" v-ripple>
+              <q-item-section avatar>
+                <q-img src="./../assets/person_icon.png" style="width: 25px;"/>
+              </q-item-section>
+              <q-item-section>
+                <q-item-label>My dashboard</q-item-label>
+              </q-item-section>
+            </q-item>
+            <q-list separator :dark="appTheme==='dark'" >
+              <q-item class="op" clickable v-for=" (account, i) in accounts" v-bind:key="i" :dark="appTheme === 'dark'" v-close-popup @click="setDefaultWallet({ account })" v-ripple>
                 <q-item-section avatar>
                   <q-icon left :name="'img:data:image/png;base64,' + getAvatar(account) + ''" />
                 </q-item-section>
@@ -56,7 +65,7 @@
                   <q-icon left name="logout" />
                 </q-item-section>
                 <q-item-section>
-                  <q-item-label> Connect / Disconect a New Address</q-item-label>
+                  <q-item-label> Connect / Disconnect a New Address</q-item-label>
                 </q-item-section>
               </q-item>
             </q-list>
@@ -87,7 +96,15 @@
 
 <script>
 import { ref } from 'vue'
-import { mapGetters, mapActions } from 'vuex'
+
+import {
+  mapGetters,
+  mapActions
+} from 'vuex'
+
+import {
+  round
+} from './../utils'
 
 import {
   SET_THEME,
@@ -95,6 +112,7 @@ import {
   CONNECTED_WALLETS,
   SET_DEFAULT_WALLET
 } from './../store/app/types'
+import { userAddress } from 'src/store/app/getters'
 
 export default {
   name: 'MainLayout',
@@ -153,12 +171,25 @@ export default {
     goToRequestForNFTs () {
       this.$router.push('/requestNFTs')
     },
+    goToDashboard () {
+      if (!this.userAddress) return
+      this.tab = ref('')
+      this.$router.push(`/dashboard/${userAddress}`)
+    },
     getStatus () {
       return this.isRight
     },
     getBalance (account) {
       if (!account) return
       return account.balance
+    },
+    getBalanceByUser ({ userAddress }) {
+      if (!userAddress) return
+      const balance = this.accounts
+        .find(a => a.userAddress === userAddress)
+        .balance
+
+      return round(balance, 100)
     },
     getUser () {
       return this.userAddress

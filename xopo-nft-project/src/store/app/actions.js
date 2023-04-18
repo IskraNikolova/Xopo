@@ -11,9 +11,9 @@ import {
 } from './types'
 
 import {
-  _addAvalancheNetwork,
   _initializeNetwork,
   _connectToMetaMask,
+  _addAvalancheNetwork,
   _setToDefaultAccount,
   _switchToCurrentNetwork,
   _getAllConnectedWallets,
@@ -52,7 +52,7 @@ const setDefaultWallet = ({ commit }, { account }) => {
   })
 }
 
-const connectWallet = async ({ commit, getters, dispatch }) => {
+const connectWallet = async ({ commit, dispatch }) => {
   try {
     const { address, isRight } = await _connectToMetaMask()
     let avatar = ''
@@ -147,7 +147,6 @@ async function subscribeToEvChainChanged ({ commit, getters }) {
     try {
       if (chainId !== getters.chainId) {
         const isRight = chainId.toLowerCase() === config.network.cChainId
-        // chainId.toLowerCase() === '0xa869' // todo config
         console.log('Xopo: ChainId changed:', chainId)
         commit(CHAIN_ID_CHANGED, { chainId })
         commit(IS_RIGHT_CHAIN, { isRight })

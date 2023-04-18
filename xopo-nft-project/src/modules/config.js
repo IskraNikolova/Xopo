@@ -1,6 +1,6 @@
 export default {
   network: {
-    chainId: '0xa86a',
+    chainId: '0xa869', // '0xa86a',
     fujiChainId: '0xa869',
     ip: 'api.avax.network',
     protocol: 'https',

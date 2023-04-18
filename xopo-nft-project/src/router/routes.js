@@ -36,6 +36,13 @@ const routes = [
     ]
   },
   {
+    path: '/dashboard',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [
+      { path: '/dashboard/:address', component: () => import('pages/Dashboard.vue') }
+    ]
+  },
+  {
     path: '/requestNFTs',
     component: () => import('layouts/MainLayout.vue'),
     children: [

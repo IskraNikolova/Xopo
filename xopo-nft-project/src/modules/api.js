@@ -3,7 +3,7 @@ import axios from 'axios'
 import { c } from './../utils'
 import { _fromWei } from './network'
 // const { network } = require('./config').default
-const endpoint = 'https://api.avax.network:443/ext/bc/C/rpc'
+const endpoint = 'https://api.avax-test.network:443/ext/bc/C/rpc' // 'https://api.avax.network:443/ext/bc/C/rpc'
 let id = 1
 axios.defaults.headers[c.contentTypeHeader] = c.contentTypeValue
 
