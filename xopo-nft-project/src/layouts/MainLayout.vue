@@ -3,7 +3,8 @@
     <q-header class="header text-bold">
       <q-toolbar>
         <q-toolbar-title>
-          <img src="~assets/horo_logo.png" class="q-pt-xs" style="width: 60px;" @click="goToHome()">
+          <img src="~assets/horo_logo_bg.png" class="q-pt-xs" style="width: 60px;" @click="goToHome()">
+          <img src="~assets/horo_logo_tx.png" class="q-pt-xs" style="width: 60px;" @click="goToHome()">
         </q-toolbar-title>
         <q-tabs v-model="tab" shrink stretch>
           <q-tab name="tab1" label="about" @click="goToAbout()"/>
@@ -225,3 +226,10 @@ export default {
 
 <style scoped>
 </style>
+<!-- {
+  "name": "Harvest",
+  "description": "Harvest - chalk on cardboard, 2016 - by Miroslav Mihov (Eternal Mirror)",
+  "image": "ipfs://bafybeigfrrmbyok2rhk2e72pmwha5udxqvhvzk3262fy5glfswwn3kpb3y/1.jpg",
+  "collection": "Koloda",
+  "attributes": []
+} -->
