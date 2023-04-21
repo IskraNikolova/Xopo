@@ -251,9 +251,14 @@ const executeMethod = async ({ method, from, value, params }) => {
         console.log('Receipt:', receipt)
         resolve(receipt)
       })
-      .on('error', function (error) {
+      .on('error', async function (error) {
         console.error('Error:', error)
-        reject(error)
+        if (error.code === 4100) {
+          // await _getAllConnectedWallets() // todo notification for switch to other address
+          // executeMethod({ method, from, value, params })
+        } else {
+          reject(error)
+        }
       })
   })
 }
@@ -287,8 +292,36 @@ export const _getNFTByAddress = async (address) => {
       .methods
       .walletOfOwner(address)
       .call()
-    console.log(tokenIds)
+
     return tokenIds
+  } catch (err) {
+    throw new Error('Xopo ' + err.message)
+  }
+}
+
+export const _getTokenUri = async (id) => {
+  if (!id) return
+
+  try {
+    const tokenURI = await contract
+      .methods
+      .tokenURI(id)
+      .call()
+
+    return { tokenURI }
+  } catch (err) {
+    throw new Error('Xopo ' + err.message)
+  }
+}
+
+export const _pendingCount = async () => {
+  try {
+    const pendingCount = await contract
+      .methods
+      .pendingCount
+      .call()
+
+    return { pendingCount }
   } catch (err) {
     throw new Error('Xopo ' + err.message)
   }

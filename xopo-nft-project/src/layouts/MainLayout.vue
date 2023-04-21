@@ -112,7 +112,6 @@ import {
   CONNECTED_WALLETS,
   SET_DEFAULT_WALLET
 } from './../store/app/types'
-import { userAddress } from 'src/store/app/getters'
 
 export default {
   name: 'MainLayout',
@@ -174,7 +173,7 @@ export default {
     goToDashboard () {
       if (!this.userAddress) return
       this.tab = ref('')
-      this.$router.push(`/dashboard/${userAddress}`)
+      this.$router.push(`/dashboard/${this.userAddress}`)
     },
     getStatus () {
       return this.isRight
