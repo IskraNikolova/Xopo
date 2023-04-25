@@ -1,6 +1,7 @@
 export const LOGOUT = 'LOGOUT'
 export const INIT_APP = 'INIT_APP'
 export const SET_THEME = 'SET_THEME'
+export const IS_ON_FOCUS = 'IS_ON_FOCUS'
 export const IS_RIGHT_CHAIN = 'IS_RIGHT_CHAIN'
 export const CONNECT_WALLET = 'CONNECT_WALLET'
 export const CHAIN_ID_CHANGED = 'CHAIN_ID_CHANGED'

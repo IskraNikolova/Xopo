@@ -1,6 +1,7 @@
 import {
   INIT_APP,
   SET_THEME,
+  IS_ON_FOCUS,
   CONNECT_WALLET,
   IS_RIGHT_CHAIN,
   CHAIN_ID_CHANGED,
@@ -146,17 +147,27 @@ async function subscribeToEvChainChanged ({ commit, getters }) {
     if (error) console.error('Xopo: ' + error)
     try {
       if (chainId !== getters.chainId) {
-        const isRight = chainId.toLowerCase() === config.network.cChainId
-        console.log('Xopo: ChainId changed:', chainId)
+        const isRight = chainId
+          .toLowerCase() === config
+          .network
+          .cChainId
+
         commit(CHAIN_ID_CHANGED, { chainId })
         commit(IS_RIGHT_CHAIN, { isRight })
-        _switchToCurrentNetwork()
-          .then((res) => {
-            if (res) commit(IS_RIGHT_CHAIN, { isRight: true })
-          })
-          .catch((err) => {
-            console.error(err)
-          })
+        if (getters.isOnFocus) {
+          _switchToCurrentNetwork()
+            .then((res) => {
+              if (res) {
+                commit(
+                  IS_RIGHT_CHAIN,
+                  { isRight: true }
+                )
+              }
+            })
+            .catch((err) => {
+              console.error(err)
+            })
+        }
       }
     } catch (err) {
       console.error('Xopo: ' + err)
@@ -172,9 +183,28 @@ function setTheme ({ commit }, theme) {
   commit(SET_THEME, { theme })
 }
 
+function isOnFocus ({ commit }, isOnFocus) {
+  if (isOnFocus) {
+    _switchToCurrentNetwork()
+      .then((res) => {
+        if (res) {
+          commit(
+            IS_RIGHT_CHAIN,
+            { isRight: true }
+          )
+        }
+      })
+      .catch((err) => {
+        console.error(err)
+      })
+  }
+  commit(IS_ON_FOCUS, { isOnFocus })
+}
+
 export default {
   [INIT_APP]: initApp,
   [SET_THEME]: setTheme,
+  [IS_ON_FOCUS]: isOnFocus,
   [CONNECT_WALLET]: connectWallet,
   [CONNECTED_WALLETS]: connectedWallets,
   [SET_DEFAULT_WALLET]: setDefaultWallet,

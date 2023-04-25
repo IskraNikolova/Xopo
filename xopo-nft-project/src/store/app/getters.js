@@ -1,11 +1,3 @@
-export function userAddress (state) {
-  return state.userAddress
-}
-
-export function accounts (state) {
-  return state.accounts
-}
-
 export function avatar (state) {
   return state.avatar
 }
@@ -24,4 +16,16 @@ export function appTheme (state) {
 
 export function isSignUp (state) {
   return state.isSignUp
+}
+
+export function accounts (state) {
+  return state.accounts
+}
+
+export function isOnFocus (state) {
+  return state.isOnFocus
+}
+
+export function userAddress (state) {
+  return state.userAddress
 }

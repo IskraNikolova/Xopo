@@ -1,12 +1,14 @@
+import config from './../../modules/config'
 
 export default function () {
   return {
+    avatar: '',
+    accounts: [],
+    isRight: true,
+    theme: 'dark',
+    isOnFocus: true,
     isSignUp: false,
     userAddress: '',
-    accounts: [],
-    avatar: '',
-    chainId: '0xa86a', // todo get from config
-    isRight: true,
-    theme: 'dark'
+    chainId: config.network.chainId
   }
 }
