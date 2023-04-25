@@ -6,9 +6,9 @@
           <img src="~assets/horo_logo_bg.png" class="q-pt-xs" style="width: 60px;" @click="goToHome()">
           <img src="~assets/horo_logo_tx.png" class="q-pt-xs" style="width: 60px;" @click="goToHome()">
         </q-toolbar-title>
-        <q-tabs v-model="tab" shrink stretch>
+        <q-tabs v-model="tab" shrink stretch indicator-color="transparent" active-color="blue">
           <q-tab name="tab1" label="about" @click="goToAbout()"/>
-          <q-tab name="tab2"  class="text-blue" label="launchpad" @click="goToLaunchpad()"/>
+          <q-tab name="tab2" label="launchpad" @click="goToLaunchpad()"/>
           <q-tab name="tab3" label="discover" @click="goToDiscover()"/>
           <q-tab name="tab4" label="artists" @click="goToArtists()"/>
           <q-tab name="tab5" class="text-orange" label="Create your own NFTs" @click="goToRequestForNFTs()"/>
