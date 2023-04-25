@@ -166,6 +166,7 @@ export default {
       this.$router.push('/artists')
     },
     goToHome () {
+      this.tab = ref('')
       this.$router.push('/')
     },
     goToRequestForNFTs () {
