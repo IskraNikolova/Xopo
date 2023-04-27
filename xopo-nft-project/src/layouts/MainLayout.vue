@@ -3,11 +3,13 @@
     <q-header class="header text-bold">
       <q-toolbar>
         <q-toolbar-title>
-          <img src="~assets/horo_logo_bg.png" class="q-pt-xs" style="width: 60px;" @click="goToHome()">
-          <img src="~assets/horo_logo_tx.png" class="q-pt-xs" style="width: 60px;" @click="goToHome()">
+          <span class="text-princess" style="cursor: pointer;" @click="goToHome()">
+            <img src="~assets/horo_logo_bg.png" style="width: 60px;" class="q-mt-xs"/>
+            <span class="q-ml-sm" style="position: absolute; bottom: 18px;">Xopo</span>
+          </span>
         </q-toolbar-title>
-        <q-tabs v-model="tab" shrink stretch indicator-color="transparent" active-color="blue">
-          <q-tab name="tab1" label="about" @click="goToAbout()"/>
+        <q-tabs v-model="tab" shrink stretch indicator-color="transparent" active-color="grey" class="text-regular">
+          <q-tab name="tab1" label="about" @click="goToAbout()" />
           <q-tab name="tab2" label="launchpad" @click="goToLaunchpad()"/>
           <q-tab name="tab3" label="discover" @click="goToDiscover()"/>
           <q-tab name="tab4" label="artists" @click="goToArtists()"/>
@@ -33,7 +35,7 @@
             <template v-slot:label>
               <div class="row items-center no-wrap">
                 <q-icon left :name="'img:data:image/png;base64,' + avatar + ''" />
-                <div class="text-center">
+                <div class="text-center text-regular">
                   {{ formatAddress(userAddress) }}<br>
                   <span class="text-h7">{{ getBalanceByUser({ userAddress }) }}</span><span> AVAX</span>
                 </div>
@@ -47,17 +49,17 @@
                 <q-item-label>My dashboard</q-item-label>
               </q-item-section>
             </q-item>
-            <q-list separator :dark="appTheme==='dark'" >
+            <q-list class="header" separator :dark="appTheme==='dark'">
               <q-item class="op" clickable v-for=" (account, i) in accounts" v-bind:key="i" :dark="appTheme === 'dark'" v-close-popup @click="setDefaultWallet({ account })" v-ripple>
                 <q-item-section avatar>
                   <q-icon left :name="'img:data:image/png;base64,' + getAvatar(account) + ''" />
                 </q-item-section>
                 <q-item-section>
                   <q-item-label>{{ getAddress(account) }}</q-item-label>
-                  <q-item-label caption><span class="text-primary">Balance</span> {{ getBalance(account) }} <span class="text-bold text-negative">AVAX</span></q-item-label>
+                  <q-item-label caption><span class="text-primary">Balance</span> {{ getBalance(account) }} <span class="text-orange">AVAX</span></q-item-label>
                 </q-item-section>
                 <q-item-section side>
-                  <q-icon name="info" color="amber" />
+                  <q-icon name="info" color="primery"/>
                   <tooltip-style v-bind:text="'Set ' + formatAddress(getAddress(account)) + ' as your default wallet address.'" />
                 </q-item-section>
               </q-item>
@@ -90,7 +92,7 @@
     <q-page-container>
       <router-view />
       <div class="flex flex-center q-mt-xl"><img src="~assets/horo_logo_BW.png" class="q-pt-xs" style="width: 100px;"></div>
-      <div class="flex flex-center q-mb-xl">By Xopo with ❤️ for artists everywhere.</div>
+      <div class="flex flex-center q-mb-xl text-princess">By Xopo with ❤️ for artists everywhere.</div>
     </q-page-container>
   </q-layout>
 </template>

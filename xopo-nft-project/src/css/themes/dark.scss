@@ -2,14 +2,17 @@ $negative  : #f2ad37;
 
 html[data-theme="dark"] {
     body {
-        background: rgb(91 92 89);
+        background-color: rgba(0, 0, 0, 0.8);
         color: #ffffff;     
     }
     .header {
         color: #ffffff;
-        background-color: rgba(0, 0, 0, 0.6);
+        background-color: rgba(0, 0, 0, 0.4);
     }
     .q-item {
         background: rgb(52,52,47,255);
+    }
+    .custom-panel {
+        background-color: rgb(91 92 89);
     }
 }

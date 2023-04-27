@@ -58,11 +58,11 @@ export default {
   },
   methods: {
     async getIds () {
-      this.ids = await _getNFTByAddress(this.userAddress)
+      this.ids = await _getNFTByAddress(this.userAddress, 'koloda')
     },
     async getData (id) {
       try {
-        const { tokenURI } = await _getTokenUri(id)
+        const { tokenURI } = await _getTokenUri(id, 'koloda')
         const uri = this.replace(tokenURI)
         const { data } = await axios.get(uri)
         const { name, description, image } = data

@@ -31,7 +31,7 @@
         </q-tabs>
 
         <q-tab-panels
-           style="background-color: rgb(91 92 89);"
+          class="custom-panel"
            :dark="appTheme==='dark'"
            v-model="tab"
            animated
@@ -42,42 +42,6 @@
           </q-tab-panel>
 
           <q-tab-panel name="soon">
-            <div class="text-h6">
-              <div>Coming Soon</div>
-               Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            </div>
-            <div class="text-h6">
-              <div>Coming Soon</div>
-               Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            </div>
-            <div class="text-h6 ">
-              <div>Coming Soon</div>
-               Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            </div>
-            <div class="text-h6">
-              <div>Coming Soon</div>
-               Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            </div>
-            <div class="text-h6">
-              <div>Coming Soon</div>
-               Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            </div>
-            <div class="text-h6">
-              <div>Coming Soon</div>
-               Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            </div>
-            <div class="text-h6">
-              <div>Coming Soon</div>
-               Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            </div>
-            <div class="text-h6">
-              <div>Coming Soon</div>
-               Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            </div>
-            <div class="text-h6">
-              <div>Coming Soon</div>
-               Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            </div>
             <div class="text-h6">
               <div>Coming Soon</div>
                Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -118,7 +82,7 @@ export default {
   },
   methods: {
     async mint () {
-      await _mint({ counts: 1, value: 1, from: this.userAddress }) // todo
+      await _mint({ counts: 1, value: 1, from: this.userAddress, contractName: 'koloda' }) // todo
     }
   }
 }

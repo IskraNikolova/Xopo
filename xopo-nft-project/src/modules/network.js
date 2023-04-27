@@ -19,7 +19,7 @@ import contractAbi from './../../builds/koloda.json' // todo
 // } from './string-conversion.js'
 
 let web3, web3M
-let contract
+const contractsArray = {}
 
 abiDecoder.addABI(contractAbi)
 
@@ -170,8 +170,13 @@ export const _initializeNetwork = async () => {
     web3 = new Web3(getProvider({ endpoint: `wss://${config.network.endpointCChain}` }))
     web3M = new Web3(window.ethereum)
 
-    // Initialize contract
-    contract = await new web3M.eth.Contract(contractAbi, config.network.kolodaAddress)
+    const { contracts } = config.network
+
+    for (let i = 0; i < contracts.length; i++) {
+      const { name, address, abi } = contracts[i]
+      const contractInstance = new web3M.eth.Contract(abi, address)
+      contractsArray[name] = contractInstance
+    }
   } catch (err) {
     console.log(err)
   }
@@ -237,13 +242,13 @@ const prepareTransaction = async ({ method, from, value }) => {
  * @param {Object} method contract method
  * @returns {Promise<string>} transaction hash
  */
-const executeMethod = async ({ method, from, value, params }) => {
+const executeMethod = async ({ method, from, value, params, contractName }) => {
   const response = await prepareTransaction({ method, from, value })
   if (!response) return
   const { tx } = response
 
   return new Promise((resolve, reject) => {
-    contract.methods.mint(...params).send(tx)
+    contractsArray[`${contractName}`].methods.mint(...params).send(tx)
       .on('transactionHash', function (hash) {
         console.log('Transaction Hash:', hash)
       })
@@ -270,25 +275,25 @@ const executeMethod = async ({ method, from, value, params }) => {
  * @param {string} params.nodeID
  */
 
-export const _mint = async ({ counts, value, from }) => {
+export const _mint = async ({ counts, value, from, contractName }) => {
   try {
     const data = counts
     if (!data) return
 
-    const method = contract
+    const method = contractsArray[`${contractName}`]
       .methods
       .mint(data)
 
-    return executeMethod({ method, value, from, params: [counts] })
+    return executeMethod({ method, value, from, params: [counts], contractName })
   } catch (err) {
     throw new Error('Xopo: ' + err.message)
   }
 }
 
-export const _getNFTByAddress = async (address) => {
+export const _getNFTByAddress = async (address, contractName) => {
   if (!address) return
   try {
-    const tokenIds = await contract
+    const tokenIds = await contractsArray[`${contractName}`]
       .methods
       .walletOfOwner(address)
       .call()
@@ -299,11 +304,11 @@ export const _getNFTByAddress = async (address) => {
   }
 }
 
-export const _getTokenUri = async (id) => {
+export const _getTokenUri = async (id, contractName) => {
   if (!id) return
 
   try {
-    const tokenURI = await contract
+    const tokenURI = await contractsArray[`${contractName}`]
       .methods
       .tokenURI(id)
       .call()
@@ -314,9 +319,9 @@ export const _getTokenUri = async (id) => {
   }
 }
 
-export const _pendingCount = async () => {
+export const _pendingCount = async (contractName) => {
   try {
-    const pendingCount = await contract
+    const pendingCount = await contractsArray[`${contractName}`]
       .methods
       .pendingCount
       .call()

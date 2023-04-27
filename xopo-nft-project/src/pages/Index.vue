@@ -18,14 +18,14 @@
         <div class="absolute-bottom custom-caption carousel">
           <div class="text-h4">Introducing Our First Collection of NFTs</div>
           <br/>
-          <q-btn outline class="text-subtitle1" color="white">Don't Miss Out!</q-btn>
+          <q-btn outline class="text-subtitle1" color="white" label="Don't Miss Out!" @click="mint()" />
         </div>
       </q-carousel-slide>
       <q-carousel-slide :name="2" img-src="~assets/BANER.jpg" >
         <div class="absolute-bottom custom-caption carousel">
           <div class="text-h4">Introducing Our First Collection of NFTs</div>
           <br/>
-          <q-btn outline class="text-subtitle1" color="white">Don't Miss Out!</q-btn>
+          <q-btn outline class="text-subtitle1" color="white" label="Don't Miss Out!" @click="mint()" />
         </div>
       </q-carousel-slide>
       <q-carousel-slide :name="3" img-src="~assets/BANER3.jpg">
@@ -47,6 +47,12 @@ export default {
     return {
       slide: ref(1),
       autoplay: ref(true)
+    }
+  },
+  methods: {
+    mint () {
+      // todo btn
+      console.log('minted')
     }
   }
 }
