@@ -188,11 +188,14 @@ export default {
     },
     getBalanceByUser ({ userAddress }) {
       if (!userAddress) return
-      const balance = this.accounts
-        .find(a => a.userAddress === userAddress)
-        .balance
+      const user = this.accounts
+        .find(a =>
+          a.userAddress.toLowerCase() ===
+          userAddress.toLowerCase()
+        )
 
-      return round(balance, 100)
+      if (!user) return 0
+      else return round(user.balance, 100)
     },
     getUser () {
       return this.userAddress

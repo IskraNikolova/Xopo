@@ -2,7 +2,7 @@
   <q-page>
     <div>
       <div
-      v-for=" (item, i) in getCollections()"
+      v-for=" (item, i) in collection"
       v-bind:key="i"
       >
       <div
@@ -40,11 +40,35 @@ export default {
   components: {
     Card: () => import('components/card.vue')
   },
+  data () {
+    return {
+      collection: {}
+    }
+  },
+  created () {
+    if (!this.userAddress) return []
+    if (!this.userNFTsAllCollections(this.userAddress)) return []
+    this.collection = this.userNFTsAllCollections(this.userAddress)
+  },
   watch: {
     userAddress: {
       handler: async function (v) {
         await this.setUserCollection()
-      }
+        if (!this.userAddress) return {}
+        if (!this.userNFTsAllCollections(this.userAddress)) return {}
+        this.collection = this.userNFTsAllCollections(this.userAddress)
+      },
+      deep: true,
+      immediate: true
+    },
+    userNFTsAllCollections: {
+      handler: async function (v) {
+        if (!this.userAddress) return {}
+        if (!this.userNFTsAllCollections(this.userAddress)) return {}
+        this.collection = this.userNFTsAllCollections(this.userAddress)
+      },
+      deep: true,
+      immediate: true
     }
   },
   computed: {
@@ -57,11 +81,7 @@ export default {
   methods: {
     ...mapActions({
       setUserCollection: SET_USER_COLLECTIONS
-    }),
-    getCollections () {
-      if (!this.userNFTsAllCollections(this.userAddress)) return []
-      return this.userNFTsAllCollections(this.userAddress)
-    }
+    })
   }
 }
 </script>

@@ -38,10 +38,10 @@ const { contracts } = config.network
 import Identicon from 'identicon.js'
 import axios from 'axios'
 
-const initApp = async ({ dispatch, getters }) => {
+const initApp = async ({ commit, dispatch, getters }) => {
   try {
     _initializeNetwork()
-    await setUserCollection()
+    await setUserCollection({ commit, getters })
     if (getters.userAddress) {
       await dispatch(SUBSCRIBE_TO_ACCOUNT_CHANGED_EVENT)
       await dispatch(SUBSCRIBE_TO_NETWORK_CHANGED_EVENT)
@@ -57,6 +57,7 @@ const setUserCollection = async ({ commit, getters }) => {
     for (let i = 0; i < contracts.length; i++) {
       const { contractName } = contracts[i]
       const ids = await _getNFTByAddress(getters.userAddress, contractName)
+      if (!ids) return
       for (let i = 0; i < ids.length; i++) {
         const { tokenURI } = await _getTokenUri(ids[i], contractName)
         const uri = replace(tokenURI)

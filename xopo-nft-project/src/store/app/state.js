@@ -10,7 +10,6 @@ export default function () {
     isSignUp: false,
     userAddress: '',
     usersNFTsAllCollections: {},
-    userNFTsAllCollections: [],
     chainId: config.network.chainId
   }
 }
