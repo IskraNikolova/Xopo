@@ -1,13 +1,25 @@
 <template>
   <q-page>
-    <div
-      class="q-mt-md row q-gutter-md"
-      style="display: flex;
-      justify-content: center;
-      flex-wrap: wrap"
-    >
-      <div v-for=" (item, i) in all" v-bind:key="i">
-        <card v-bind:item="item"/>
+    <div>
+      <div
+      v-for=" (item, i) in userNFTsAllCollections"
+      v-bind:key="i"
+      >
+      <div
+        class="text-h4 text-capitalize"
+        style="display: flex;
+        justify-content: center;">{{ item.contractName}}
+      </div>
+      <div
+        class="row q-mt-md q-gutter-md"
+        style="display: flex;
+        justify-content: center;
+        flex-wrap: wrap"
+      >
+        <div v-for=" (collection, i) in item.nfts" v-bind:key="i">
+          <card v-bind:item="collection"/>
+        </div>
+      </div>
       </div>
     </div>
   </q-page>
@@ -17,13 +29,6 @@
 import {
   mapGetters
 } from 'vuex'
-
-import axios from 'axios'
-
-import {
-  _getTokenUri,
-  _getNFTByAddress
-} from './../modules/network'
 
 export default {
   name: 'PageDashboard',
@@ -39,47 +44,20 @@ export default {
   watch: {
     userAddress: {
       handler: async function (v) {
-        this.ids = []
-        this.all = []
-        await this.getIds()
-        await this.getAll()
       }
     }
   },
   computed: {
     ...mapGetters([
       'userAddress',
-      'appTheme'
+      'appTheme',
+      'userNFTsAllCollections'
     ])
   },
-  async created () { // todo make on store
-    await this.getIds()
-    await this.getAll()
-  },
   methods: {
-    async getIds () {
-      this.ids = await _getNFTByAddress(this.userAddress, 'koloda')
-    },
-    async getData (id) {
-      try {
-        const { tokenURI } = await _getTokenUri(id, 'koloda')
-        const uri = this.replace(tokenURI)
-        const { data } = await axios.get(uri)
-        const { name, description, image } = data
-        const url = this.replace(image)
-        return { name, description, url }
-      } catch (err) {
-        console.log(err)
-      }
-    },
-    replace (uri) {
-      if (!uri) return ''
-      return 'https://ipfs.io/ipfs/' + uri.replace('ipfs://', '')
-    },
-    async getAll () {
-      for (let i = 0; i < this.ids.length; i++) {
-        this.all.push(await this.getData(this.ids[i]))
-      }
+    getCollections () {
+      if (!this.userNFTsAllCollections) return []
+      return this.userNFTsAllCollections
     }
   }
 }

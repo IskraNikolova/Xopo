@@ -6,6 +6,7 @@
         justify-content: center;
         flex-wrap: wrap">
         <div class="q-pa-md" style="max-width: 600px">
+          <img src="~assets/xoro-site-top-banner_1.jpg" style="width: 550px;" class="q-mt-xs"/>
           <div class="text-h4 q-mb-md">Upload your artist information</div>
           Please complete the following form to provide the necessary contract information. This information will be used to create custom NFTs for you, so please be sure to provide accurate and complete details. The form includes fields for your ... and any other relevant information that may be required. Once you have submitted the form, we will review your application and contact you if further information is required.
           <br />

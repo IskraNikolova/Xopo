@@ -19,7 +19,7 @@ import contractAbi from './../../builds/koloda.json' // todo
 // } from './string-conversion.js'
 
 let web3, web3M
-const contractsArray = {}
+const contractsAll = {}
 
 abiDecoder.addABI(contractAbi)
 
@@ -163,7 +163,7 @@ export const _switchToCurrentNetwork = async () => {
  * Initialize network and set Web3 provider.
  * @returns {Promise<void>} Promise object that represents the initialization process.
  */
-export const _initializeNetwork = async () => {
+export const _initializeNetwork = () => {
   try {
     // Initialize Web3 with the WebSocket provider
     // web3 = new Web3(`https://${config.network.endpointCChain}`)
@@ -173,9 +173,9 @@ export const _initializeNetwork = async () => {
     const { contracts } = config.network
 
     for (let i = 0; i < contracts.length; i++) {
-      const { name, address, abi } = contracts[i]
+      const { contractName, address, abi } = contracts[i]
       const contractInstance = new web3M.eth.Contract(abi, address)
-      contractsArray[name] = contractInstance
+      contractsAll[contractName] = contractInstance
     }
   } catch (err) {
     console.log(err)
@@ -248,7 +248,7 @@ const executeMethod = async ({ method, from, value, params, contractName }) => {
   const { tx } = response
 
   return new Promise((resolve, reject) => {
-    contractsArray[`${contractName}`].methods.mint(...params).send(tx)
+    contractsAll[`${contractName}`].methods.mint(...params).send(tx)
       .on('transactionHash', function (hash) {
         console.log('Transaction Hash:', hash)
       })
@@ -280,7 +280,7 @@ export const _mint = async ({ counts, value, from, contractName }) => {
     const data = counts
     if (!data) return
 
-    const method = contractsArray[`${contractName}`]
+    const method = contractsAll[`${contractName}`]
       .methods
       .mint(data)
 
@@ -293,7 +293,7 @@ export const _mint = async ({ counts, value, from, contractName }) => {
 export const _getNFTByAddress = async (address, contractName) => {
   if (!address) return
   try {
-    const tokenIds = await contractsArray[`${contractName}`]
+    const tokenIds = await contractsAll[`${contractName}`]
       .methods
       .walletOfOwner(address)
       .call()
@@ -308,7 +308,7 @@ export const _getTokenUri = async (id, contractName) => {
   if (!id) return
 
   try {
-    const tokenURI = await contractsArray[`${contractName}`]
+    const tokenURI = await contractsAll[`${contractName}`]
       .methods
       .tokenURI(id)
       .call()
@@ -321,7 +321,7 @@ export const _getTokenUri = async (id, contractName) => {
 
 export const _pendingCount = async (contractName) => {
   try {
-    const pendingCount = await contractsArray[`${contractName}`]
+    const pendingCount = await contractsAll[`${contractName}`]
       .methods
       .pendingCount
       .call()

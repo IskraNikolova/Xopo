@@ -1,5 +1,5 @@
 <template>
-  <table class="q-mr-xs" style="width: 330px; height: 350px;border: 0.1px solid grey;border-radius: 2%; position: relative;">
+  <table class="q-mr-xs q-mb-xs q-ml-xs" style="width: 330px; height: 350px;border-left: 0.1px solid grey;border-bottom: 0.1px solid grey;border-bottom-left-radius: 2%; position: relative;">
       <tr>
           <td style="text-align: center; vertical-align: middle;">
               <img
@@ -14,7 +14,7 @@
       <tr>
           <td colspan="2">
             <div :dark="appTheme==='dark'" class="text-light text-no-wrap" style="font-size: 18px;margin-left: 40px;">
-              {{ item.name }}
+              {{ item.name }}&nbsp; #{{item.id }}
               <p class="text-lightIt" style="color: grey; font-size: 15px;">by Miroslav Mihov</p>
               <p class="text-light" :dark="appTheme==='dark'" style="font-size: 15px;">{{ item.description }}</p>
             </div>

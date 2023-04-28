@@ -29,3 +29,14 @@ export function isOnFocus (state) {
 export function userAddress (state) {
   return state.userAddress
 }
+
+export function userNFTsAllCollections (state) {
+  return state.userNFTsAllCollections
+}
+
+export function userCollectionByName (state, { collectionName }) {
+  return state.userNFTsAllCollections
+    .find((collection) =>
+      collection.contractName === collectionName
+    )
+}

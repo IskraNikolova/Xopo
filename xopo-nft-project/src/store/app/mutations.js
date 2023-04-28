@@ -1,3 +1,5 @@
+// import { deepMerge } from 'util'
+
 import {
   LOGOUT,
   SET_THEME,
@@ -5,7 +7,8 @@ import {
   CONNECT_WALLET,
   IS_RIGHT_CHAIN,
   CHAIN_ID_CHANGED,
-  CONNECTED_WALLETS
+  CONNECTED_WALLETS,
+  SET_USER_COLLECTIONS
 } from './types'
 
 const mutations = {
@@ -30,6 +33,27 @@ const mutations = {
   [CONNECT_WALLET]: (state, { userAddress, avatar }) => {
     state.userAddress = userAddress
     state.avatar = avatar
+  },
+  [SET_USER_COLLECTIONS]: (state, { collectionName, nfts }) => {
+    let newCollection
+    const collection = state
+      .userNFTsAllCollections
+      .find((item) =>
+        item.contractName === collectionName
+      )
+
+    if (!collection) {
+      newCollection = {
+        contractName: collectionName,
+        nfts
+      }
+      state
+        .userNFTsAllCollections
+        .push(newCollection)
+    } else {
+      // .deepMerge(state.userNFTsAllCollections, newCollection)
+      state.userNFTsAllCollections.concat(newCollection)
+    }
   }
 }
 

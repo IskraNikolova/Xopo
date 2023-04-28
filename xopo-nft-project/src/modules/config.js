@@ -18,7 +18,7 @@ export default {
       { name: 'Fuji Testnet', url: 'https://api.avax-test.network:443/' }
     ],
     contracts: [
-      { name: 'koloda', address: '0x52674570B4b8F947cf19b537bb95BE48e6cc79d4', abi: kolodaAbi }
+      { contractName: 'koloda', address: '0x52674570B4b8F947cf19b537bb95BE48e6cc79d4', abi: kolodaAbi }
     ]
   }
 }

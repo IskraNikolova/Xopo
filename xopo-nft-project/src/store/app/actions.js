@@ -7,11 +7,14 @@ import {
   CHAIN_ID_CHANGED,
   CONNECTED_WALLETS,
   SET_DEFAULT_WALLET,
+  SET_USER_COLLECTIONS,
   SUBSCRIBE_TO_ACCOUNT_CHANGED_EVENT,
   SUBSCRIBE_TO_NETWORK_CHANGED_EVENT
 } from './types'
 
 import {
+  _getTokenUri,
+  _getNFTByAddress,
   _initializeNetwork,
   _connectToMetaMask,
   _addAvalancheNetwork,
@@ -30,11 +33,15 @@ import {
 
 import config from './../../modules/config'
 
-import Identicon from 'identicon.js'
+const { contracts } = config.network
 
-const initApp = async ({ dispatch, getters }) => {
+import Identicon from 'identicon.js'
+import axios from 'axios'
+
+const initApp = async ({ commit, dispatch, getters }) => {
   try {
-    await _initializeNetwork()
+    _initializeNetwork()
+    await setUserCollection({ commit, getters })
     if (getters.userAddress) {
       await dispatch(SUBSCRIBE_TO_ACCOUNT_CHANGED_EVENT)
       await dispatch(SUBSCRIBE_TO_NETWORK_CHANGED_EVENT)
@@ -73,7 +80,7 @@ const connectWallet = async ({ commit, dispatch }) => {
 
     commit(IS_RIGHT_CHAIN, { isRight })
     if (!isRight) {
-      await _addAvalancheNetwork()
+      _addAvalancheNetwork()
       commit(IS_RIGHT_CHAIN, { isRight: true })
     }
 
@@ -201,6 +208,32 @@ function isOnFocus ({ commit }, isOnFocus) {
   commit(IS_ON_FOCUS, { isOnFocus })
 }
 
+async function setUserCollection ({ commit, getters }) {
+  try {
+    const nfts = []
+    for (let i = 0; i < contracts.length; i++) {
+      const { contractName } = contracts[i]
+      const ids = await _getNFTByAddress(getters.userAddress, contractName)
+      for (let i = 0; i < ids.length; i++) {
+        const { tokenURI } = await _getTokenUri(ids[i], contractName)
+        const uri = replace(tokenURI)
+        const { data } = await axios.get(uri)
+        const { name, description, image } = data
+        const url = replace(image)
+        nfts.push({ name, description, url, id: ids[i] })
+      }
+      commit(SET_USER_COLLECTIONS, { collectionName: contractName, nfts })
+    }
+  } catch (err) {
+    console.log(err)
+  }
+}
+
+function replace (uri) {
+  if (!uri) return ''
+  return 'https://ipfs.io/ipfs/' + uri.replace('ipfs://', '')
+}
+
 export default {
   [INIT_APP]: initApp,
   [SET_THEME]: setTheme,
@@ -208,6 +241,7 @@ export default {
   [CONNECT_WALLET]: connectWallet,
   [CONNECTED_WALLETS]: connectedWallets,
   [SET_DEFAULT_WALLET]: setDefaultWallet,
+  [SET_USER_COLLECTIONS]: setUserCollection,
   [SUBSCRIBE_TO_NETWORK_CHANGED_EVENT]: subscribeToEvChainChanged,
   [SUBSCRIBE_TO_ACCOUNT_CHANGED_EVENT]: subscribeToEvAccountChanged
 }
