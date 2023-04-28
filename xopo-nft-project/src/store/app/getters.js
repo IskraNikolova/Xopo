@@ -31,11 +31,11 @@ export function userAddress (state) {
 }
 
 export function userNFTsAllCollections (state) {
-  return state.userNFTsAllCollections
+  return (address) => state.usersNFTsAllCollections[`${address}`]
 }
 
-export function userCollectionByName (state, { collectionName }) {
-  return state.userNFTsAllCollections
+export function userCollectionByName (state) {
+  return (collectionName, address) => state.usersNFTsAllCollections[`${address}`]
     .find((collection) =>
       collection.contractName === collectionName
     )

@@ -9,6 +9,7 @@ export default function () {
     isOnFocus: true,
     isSignUp: false,
     userAddress: '',
+    usersNFTsAllCollections: {},
     userNFTsAllCollections: [],
     chainId: config.network.chainId
   }

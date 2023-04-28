@@ -2,7 +2,7 @@
   <q-page>
     <div>
       <div
-      v-for=" (item, i) in userNFTsAllCollections"
+      v-for=" (item, i) in getCollections()"
       v-bind:key="i"
       >
       <div
@@ -27,23 +27,23 @@
 
 <script>
 import {
-  mapGetters
+  mapGetters,
+  mapActions
 } from 'vuex'
+
+import {
+  SET_USER_COLLECTIONS
+} from './../store/app/types'
 
 export default {
   name: 'PageDashboard',
   components: {
     Card: () => import('components/card.vue')
   },
-  data () {
-    return {
-      ids: [],
-      all: []
-    }
-  },
   watch: {
     userAddress: {
       handler: async function (v) {
+        await this.setUserCollection()
       }
     }
   },
@@ -55,9 +55,12 @@ export default {
     ])
   },
   methods: {
+    ...mapActions({
+      setUserCollection: SET_USER_COLLECTIONS
+    }),
     getCollections () {
-      if (!this.userNFTsAllCollections) return []
-      return this.userNFTsAllCollections
+      if (!this.userNFTsAllCollections(this.userAddress)) return []
+      return this.userNFTsAllCollections(this.userAddress)
     }
   }
 }

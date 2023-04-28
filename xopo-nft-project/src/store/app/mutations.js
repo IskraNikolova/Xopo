@@ -1,4 +1,4 @@
-// import { deepMerge } from 'util'
+import { deepMerge } from './../../utils'
 
 import {
   LOGOUT,
@@ -34,25 +34,22 @@ const mutations = {
     state.userAddress = userAddress
     state.avatar = avatar
   },
-  [SET_USER_COLLECTIONS]: (state, { collectionName, nfts }) => {
-    let newCollection
-    const collection = state
-      .userNFTsAllCollections
-      .find((item) =>
-        item.contractName === collectionName
-      )
-
-    if (!collection) {
-      newCollection = {
+  [SET_USER_COLLECTIONS]: (state, { address, collectionName, nfts }) => {
+    if (!state.usersNFTsAllCollections.address) {
+      const newwallet = []
+      newwallet.push({
         contractName: collectionName,
         nfts
-      }
-      state
-        .userNFTsAllCollections
-        .push(newCollection)
+      })
+      state.usersNFTsAllCollections[`${address}`] = newwallet
     } else {
-      // .deepMerge(state.userNFTsAllCollections, newCollection)
-      state.userNFTsAllCollections.concat(newCollection)
+      const obj = {
+        address: [{
+          name: collectionName,
+          nfts
+        }]
+      }
+      deepMerge(state.usersNFTsAllCollections, obj)
     }
   }
 }

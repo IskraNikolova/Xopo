@@ -38,13 +38,38 @@ const { contracts } = config.network
 import Identicon from 'identicon.js'
 import axios from 'axios'
 
-const initApp = async ({ commit, dispatch, getters }) => {
+const initApp = async ({ dispatch, getters }) => {
   try {
     _initializeNetwork()
-    await setUserCollection({ commit, getters })
+    await setUserCollection()
     if (getters.userAddress) {
       await dispatch(SUBSCRIBE_TO_ACCOUNT_CHANGED_EVENT)
       await dispatch(SUBSCRIBE_TO_NETWORK_CHANGED_EVENT)
+    }
+  } catch (err) {
+    console.log(err)
+  }
+}
+
+const setUserCollection = async ({ commit, getters }) => {
+  try {
+    const nfts = []
+    for (let i = 0; i < contracts.length; i++) {
+      const { contractName } = contracts[i]
+      const ids = await _getNFTByAddress(getters.userAddress, contractName)
+      for (let i = 0; i < ids.length; i++) {
+        const { tokenURI } = await _getTokenUri(ids[i], contractName)
+        const uri = replace(tokenURI)
+        const { data } = await axios.get(uri)
+        const { name, description, image } = data
+        const url = replace(image)
+        nfts.push({ name, description, url, id: ids[i] })
+      }
+      commit(SET_USER_COLLECTIONS, {
+        address: getters.userAddress,
+        collectionName: contractName,
+        nfts
+      })
     }
   } catch (err) {
     console.log(err)
@@ -206,27 +231,6 @@ function isOnFocus ({ commit }, isOnFocus) {
       })
   }
   commit(IS_ON_FOCUS, { isOnFocus })
-}
-
-async function setUserCollection ({ commit, getters }) {
-  try {
-    const nfts = []
-    for (let i = 0; i < contracts.length; i++) {
-      const { contractName } = contracts[i]
-      const ids = await _getNFTByAddress(getters.userAddress, contractName)
-      for (let i = 0; i < ids.length; i++) {
-        const { tokenURI } = await _getTokenUri(ids[i], contractName)
-        const uri = replace(tokenURI)
-        const { data } = await axios.get(uri)
-        const { name, description, image } = data
-        const url = replace(image)
-        nfts.push({ name, description, url, id: ids[i] })
-      }
-      commit(SET_USER_COLLECTIONS, { collectionName: contractName, nfts })
-    }
-  } catch (err) {
-    console.log(err)
-  }
 }
 
 function replace (uri) {
