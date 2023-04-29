@@ -8,7 +8,7 @@
       <div
         class="text-h4 text-capitalize"
         style="display: flex;
-        justify-content: center;">{{ item.contractName}}
+        justify-content: center;">{{ item.contractName }}
       </div>
       <div
         class="row q-mt-md q-gutter-md"

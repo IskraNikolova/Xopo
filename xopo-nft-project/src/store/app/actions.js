@@ -1,5 +1,6 @@
 import {
   INIT_APP,
+  MINT_NFT,
   SET_THEME,
   IS_ON_FOCUS,
   CONNECT_WALLET,
@@ -13,6 +14,7 @@ import {
 } from './types'
 
 import {
+  _mint,
   _getTokenUri,
   _getNFTByAddress,
   _initializeNetwork,
@@ -139,6 +141,26 @@ const connectedWallets = async ({ commit }) => {
   }
 }
 
+const mintNft = async ({ commit, getters }, { contractName, count = 0, value = 0 }) => {
+  try {
+    commit(MINT_NFT, { isMinted: false })
+    const result = await _mint({
+      count,
+      value,
+      from: getters.userAddress,
+      contractName
+    })
+    console.log(result)
+    // todo make one more dispatch for added to usercollection on store
+    // return txhash (result?)
+    // loading animation?
+    commit(MINT_NFT, { isMinted: true })
+  } catch (err) {
+    commit(MINT_NFT, { isMinted: true })
+    console.log(err)
+  }
+}
+
 async function subscribeToEvAccountChanged ({ commit, getters }) {
   const handleAccountChange = async (accounts, error) => {
     if (error) console.error('Xopo: ' + error)
@@ -241,6 +263,7 @@ function replace (uri) {
 
 export default {
   [INIT_APP]: initApp,
+  [MINT_NFT]: mintNft,
   [SET_THEME]: setTheme,
   [IS_ON_FOCUS]: isOnFocus,
   [CONNECT_WALLET]: connectWallet,

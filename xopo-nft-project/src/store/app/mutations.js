@@ -2,6 +2,7 @@ import { deepMerge } from './../../utils'
 
 import {
   LOGOUT,
+  MINT_NFT,
   SET_THEME,
   IS_ON_FOCUS,
   CONNECT_WALLET,
@@ -14,6 +15,9 @@ import {
 const mutations = {
   [LOGOUT]: (state, { isSignUp }) => {
     state.isSignUp = isSignUp
+  },
+  [MINT_NFT]: (state, { isMinted }) => {
+    state.isMinted = isMinted
   },
   [SET_THEME]: (state, { theme }) => {
     state.theme = theme

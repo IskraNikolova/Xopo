@@ -258,12 +258,13 @@ const executeMethod = async ({ method, from, value, params, contractName }) => {
       })
       .on('error', async function (error) {
         console.error('Error:', error)
-        if (error.code === 4100) {
-          // await _getAllConnectedWallets() // todo notification for switch to other address
-          // executeMethod({ method, from, value, params })
-        } else {
-          reject(error)
-        }
+        reject(error)
+        // if (error.code === 4100) {
+        //   // await _getAllConnectedWallets() // todo notification for switch to other address
+        //   // executeMethod({ method, from, value, params })
+        // } else {
+        //   reject(error)
+        // }
       })
   })
 }
@@ -275,16 +276,22 @@ const executeMethod = async ({ method, from, value, params, contractName }) => {
  * @param {string} params.nodeID
  */
 
-export const _mint = async ({ counts, value, from, contractName }) => {
+export const _mint = async ({ count, value, from, contractName }) => {
   try {
-    const data = counts
+    const data = count
     if (!data) return
 
     const method = contractsAll[`${contractName}`]
       .methods
       .mint(data)
 
-    return executeMethod({ method, value, from, params: [counts], contractName })
+    return executeMethod({
+      method,
+      value,
+      from,
+      params: [count],
+      contractName
+    })
   } catch (err) {
     throw new Error('Xopo: ' + err.message)
   }

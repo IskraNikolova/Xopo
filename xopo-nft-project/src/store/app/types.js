@@ -1,4 +1,5 @@
 export const LOGOUT = 'LOGOUT'
+export const MINT_NFT = 'MINT_NFT'
 export const INIT_APP = 'INIT_APP'
 export const SET_THEME = 'SET_THEME'
 export const IS_ON_FOCUS = 'IS_ON_FOCUS'

@@ -10,6 +10,10 @@ export function isRight (state) {
   return state.isRight
 }
 
+export function isMinted (state) {
+  return state.isMinted
+}
+
 export function appTheme (state) {
   return state.theme
 }
