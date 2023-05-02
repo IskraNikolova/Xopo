@@ -1,11 +1,11 @@
 <template>
-  <table class="q-mr-xs q-mb-xs q-ml-xs" style="width: 330px; height: 350px;border-left: 0.1px solid grey;border-bottom: 0.1px solid grey;border-bottom-left-radius: 2%; position: relative;">
+  <table class="q-mr-xs q-mb-xs q-ml-xs" style="width: 430px; height: 450px;border-left: 0.1px solid grey;border-bottom: 0.1px solid grey;border-bottom-left-radius: 2%; position: relative;">
       <tr>
           <td style="text-align: center; vertical-align: middle;">
               <img
               :id="item.name"
               :src="item.url"
-              style="max-width: 250px;max-height: 200px;margin-top: 20px;"
+              style="max-width: 350px;max-height: 300px;margin-top: 20px;"
               >
           </td>
           </tr>

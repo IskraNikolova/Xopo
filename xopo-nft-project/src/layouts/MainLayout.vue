@@ -63,7 +63,7 @@
                   <tooltip-style v-bind:text="'Set ' + formatAddress(getAddress(account)) + ' as your default wallet address.'" />
                 </q-item-section>
               </q-item>
-              <q-item clickable :dark="appTheme === 'dark'" v-close-popup @click="connectToWallets()">
+              <q-item class="op" clickable :dark="appTheme === 'dark'" v-close-popup @click="connectToWallets()">
                 <q-item-section avatar>
                   <q-icon left name="logout" />
                 </q-item-section>
@@ -92,7 +92,8 @@
     <q-page-container>
       <router-view />
       <div class="flex flex-center q-mt-xl"><img src="~assets/horo_logo_BW.png" class="q-pt-xs" style="width: 100px;"></div>
-      <div class="flex flex-center q-mb-xl text-princess">By Xopo with ❤️ for artists everywhere.</div>
+      <div class="flex flex-center q-mt-sm text-lightIt">By Xopo with ❤️ for artists everywhere.</div>
+      <div class="flex flex-center q-mt-sm text-lightIt">Join to the 'Xopo' with us!</div>
     </q-page-container>
   </q-layout>
 </template>

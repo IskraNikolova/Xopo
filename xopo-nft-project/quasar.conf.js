@@ -119,9 +119,9 @@ module.exports = function (/* ctx */) {
       workboxPluginMode: 'GenerateSW', // 'GenerateSW' or 'InjectManifest'
       workboxOptions: {}, // only for GenerateSW
       manifest: {
-        name: 'Xopo-NFT-project',
-        short_name: 'Xopo-NFT-project',
-        description: '\'xopo\' NFT project creates a platform for artists to showcase and sell unique digital assets as non-fungible tokens',
+        name: 'Join-The-Xopo',
+        short_name: 'Join-The-Xopo',
+        description: 'Decentralized hub for artists, developers, and free speech enthusiasts. We\'re crafting a worldwide platform for creatives of all kinds, with NFTs as our canvas!',
         display: 'standalone',
         orientation: 'portrait',
         background_color: '#ffffff',
@@ -186,7 +186,7 @@ module.exports = function (/* ctx */) {
       builder: {
         // https://www.electron.build/configuration/configuration
 
-        appId: 'xopo-nft-project'
+        appId: 'join-the-xopo'
       },
 
       // More info: https://v1.quasar.dev/quasar-cli/developing-electron-apps/node-integration

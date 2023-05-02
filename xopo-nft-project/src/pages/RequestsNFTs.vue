@@ -4,10 +4,11 @@
         class="q-mt-xl q-ml-md q-mr-md"
         style="display: flex;
         justify-content: center;
+        text-align: justify;
         flex-wrap: wrap">
-        <div class="q-pa-md" style="max-width: 600px">
-          <img src="~assets/xoro-site-top-banner_1.jpg" style="width: 550px;border-radius: 8px;" class="q-mt-xs"/>
-          <div class="text-h4 q-mb-md">Upload your artist information</div>
+        <div style="max-width: 600px">
+          <img src="~assets/xoro-site-top-banner_1.jpg" style="width: 600px;border-radius: 8px;" class="q-mt-md"/>
+          <div class="text-h4 q-mb-md q-mt-md">Upload your artist information</div>
           Please complete the following form to provide the necessary contract information. This information will be used to create custom NFTs for you, so please be sure to provide accurate and complete details. The form includes fields for your ... and any other relevant information that may be required. Once you have submitted the form, we will review your application and contact you if further information is required.
           <br />
           Please note that completing this form does not guarantee that we will create nfts as the selection process depends on many criteria.
@@ -28,9 +29,9 @@
             <p>
               What type of artist are you?
             </p>
-            <q-radio color="blue" :dark="appTheme=='dark'" v-model="shape" checked-icon="task_alt" unchecked-icon="panorama_fish_eye" val="painting" label="Painting" />
-            <q-radio color="blue" :dark="appTheme=='dark'" v-model="shape" checked-icon="task_alt" unchecked-icon="panorama_fish_eye" val="music" label="Music" />
-            <q-radio color="blue" :dark="appTheme=='dark'" v-model="shape" checked-icon="task_alt" unchecked-icon="panorama_fish_eye" val="other" label="Other" />
+            <q-radio color="teal-4" :dark="appTheme=='dark'" v-model="shape" checked-icon="task_alt" unchecked-icon="panorama_fish_eye" val="painting" label="Painting" />
+            <q-radio color="teal-4" :dark="appTheme=='dark'" v-model="shape" checked-icon="task_alt" unchecked-icon="panorama_fish_eye" val="music" label="Music" />
+            <q-radio color="teal-4" :dark="appTheme=='dark'" v-model="shape" checked-icon="task_alt" unchecked-icon="panorama_fish_eye" val="other" label="Other" />
           </div>
             <q-input
               class="q-pb-md"
@@ -65,6 +66,16 @@
               v-model="email"
               placeholder="your-email@gmail.com"
               label="Email *"
+              lazy-rules
+              :rules="[ val => val && val.length > 0 || 'Please type something']"
+            />
+            <q-input
+             :dark="appTheme=='dark'"
+             :label-color="color()"
+              filled
+              type="text"
+              v-model="collectionName"
+              label="Collection name *"
               lazy-rules
               :rules="[ val => val && val.length > 0 || 'Please type something']"
             />
@@ -112,8 +123,8 @@
             <q-toggle v-model="accept" label="I accept the license and terms" />
 
             <div>
-              <q-btn label="Submit" type="submit" color="blue" :dark="appTheme=='dark'"/>
-              <q-btn label="Reset" type="reset" color="blue" flat class="q-ml-sm" :dark="appTheme=='dark'"/>
+              <q-btn label="Submit" type="submit" color="teal-4" :dark="appTheme=='dark'"/>
+              <q-btn label="Reset" type="reset" color="teal-4" flat class="q-ml-sm" :dark="appTheme=='dark'"/>
             </div>
           </q-form>
           <div class="q-mt-xl">
@@ -144,6 +155,7 @@ export default {
     return {
       name: '',
       age: null,
+      collectionName: '',
       email: '',
       instagram: '',
       twitter: '',

@@ -76,12 +76,15 @@ body {
     width: max-content;
     text-align: left;
     padding: 12px;
-    color: #ba5f11;
+    color: #f28537;
     border-radius: 12px;
     background-color: rgba(0, 0, 0, .3);
   }
   .op {
-    background-color: rgba(0, 0, 0, .3);
+    background-color: #ffffff;
+  }
+  .op:hover {
+    background-color: #ffffff;
   }
   .content {
     position: relative;

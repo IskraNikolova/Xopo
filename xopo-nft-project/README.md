@@ -1,14 +1,9 @@
 # Xopo
-Xopo is an NFT platform for artists to showcase and sell digital assets as non-fungible tokens. With intuitive navigation, and blockchain technology, xopo offers a secure and engaging experience for both artists and collectors. Explore the world of NFTs and unlock the potential of digital art with xopo.
-
-## Features
- * 
+Join the Horo community - a decentralized platform for artists, developers, and free speech advocates. We're building a global stage for musicians, painters, and creatives of all kinds, using NFTs to showcase their work. No commission fees, just direct access to buyers, collectors, and investors. Apply through our smart contract system and be part of our mission for artistic freedom and decentralization. Let's create together on Horo!
+* 
 
 ## Technology Stack
-XOPO is written in Quasar, a Vue-based framework, and uses Node.js for the server. The codebase also makes use of Webpack and Jest for building and testing the application.
-
-## Usage
-
+XOPO is written in Quasar, a Vue-based framework, Solidity.
 
 ## License
 XOPO is licensed under the MIT license.
