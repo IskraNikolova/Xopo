@@ -1,11 +1,11 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header class="header text-bold">
+    <q-header reveal class="header2 text-bold">
       <q-toolbar>
         <q-toolbar-title>
           <span class="text-princess" style="cursor: pointer;" @click="goToHome()">
             <img src="~assets/horo_logo_bg.png" style="width: 60px;" class="q-mt-xs"/>
-            <span class="q-ml-sm" style="position: absolute; bottom: 18px;">Xopo</span>
+            <span class="q-ml-sm" style="position: absolute; bottom: 18px;">JoinTheXopo</span>
           </span>
         </q-toolbar-title>
         <q-tabs v-model="tab" shrink stretch indicator-color="transparent" active-color="grey" class="text-regular">
@@ -82,7 +82,7 @@
       </q-toolbar>
     </q-header>
 
-    <q-footer class="header text-bold">
+    <q-footer reveal class="header2 text-bold">
       <q-toolbar>
         <q-btn flat icon="nights_stay" v-if="appTheme === 'default'" @click="switchTheme('dark')" />
         <q-btn flat icon="wb_sunny" v-else @click="switchTheme('default')" />

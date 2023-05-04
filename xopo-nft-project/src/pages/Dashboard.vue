@@ -5,11 +5,11 @@
       v-for=" (item, i) in collection"
       v-bind:key="i"
       >
-      <div
+      <!--<div
         class="text-h4 text-capitalize"
         style="display: flex;
         justify-content: center;">{{ item.contractName }}
-      </div>
+      </div>-->
       <div
         class="row q-mt-md q-gutter-md"
         style="display: flex;
@@ -17,7 +17,7 @@
         flex-wrap: wrap"
       >
         <div v-for=" (collection, i) in item.nfts" v-bind:key="i">
-          <card v-bind:item="collection"/>
+          <card v-bind:item="collection" v-bind:contractName="item.contractName"/>
         </div>
       </div>
       </div>

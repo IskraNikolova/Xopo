@@ -2,8 +2,12 @@ $negative  : #f2ad37;
 
 html[data-theme="dark"] {
     body {
-        background-color: rgba(0, 0, 0, 0.8);
+        background-color: rgba(30, 31, 31);
         color: #ffffff;     
+    }
+    .header2 {
+        color: #ffffff;
+        background-color:rgba(30, 31, 31, 0.8);
     }
     .header {
         color: #ffffff;
@@ -14,5 +18,8 @@ html[data-theme="dark"] {
     }
     .custom-panel {
         background-color: rgb(91 92 89);
+    }
+    .op {
+        background-color:  rgba(30, 31, 31);
     }
 }

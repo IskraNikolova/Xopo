@@ -51,6 +51,10 @@ body {
   .text-lightIt {
     font-family: 'OpenSans_Condensed-LightItalic',sans-serif;
   }
+  .header2 {
+    color: #34342f;
+    background: rgb(255, 255, 255, 0.7);
+  }
   .header {
     color: #34342f;
     background: rgb(255, 255, 255, 0.7);
@@ -81,9 +85,6 @@ body {
     background-color: rgba(0, 0, 0, .3);
   }
   .op {
-    background-color: #ffffff;
-  }
-  .op:hover {
     background-color: #ffffff;
   }
   .content {
@@ -126,5 +127,13 @@ body {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: black;
+}
+
+.bodyM {
+  background-image: url('./../assets/back.jpg');
+  height: 300px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
 }
   

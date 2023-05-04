@@ -32,8 +32,8 @@ export default {
   },
   async created () {
     try {
-      await this.initApp()
       document.querySelector('html').dataset.theme = this.appTheme
+      await this.initApp()
       window.addEventListener('blur', (event) => {
         this.isOnFocus(false)
         // event.preventDefault()

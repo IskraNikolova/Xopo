@@ -70,16 +70,6 @@
               :rules="[ val => val && val.length > 0 || 'Please type something']"
             />
             <q-input
-             :dark="appTheme=='dark'"
-             :label-color="color()"
-              filled
-              type="text"
-              v-model="collectionName"
-              label="Collection name *"
-              lazy-rules
-              :rules="[ val => val && val.length > 0 || 'Please type something']"
-            />
-            <q-input
               class="q-pb-xl"
               :dark="appTheme=='dark'"
               :label-color="color()"
@@ -91,6 +81,10 @@
               lazy-rules
               :rules="[ val => val && val.length > 0 || 'Please type something']"
             />
+            <q-toggle v-model="accept" label="I accept the license and terms" />
+            <br /><br />
+            <p class="text-warning">The following fields are not mandatory to fill out</p>
+            <br />
             <q-input
               style="margin-bottom: 6%"
               :dark="appTheme=='dark'"
@@ -117,10 +111,30 @@
               :label-color="color()"
               filled
               type="url"
-              v-model="socialLinks"
-              label="Other website/social network links (add entire URLs)"
+              v-model="discord"
+              placeholder="https://discord.gg/..."
+              label="Discord URL"
             />
-            <q-toggle v-model="accept" label="I accept the license and terms" />
+            <q-input
+              style="margin-bottom: 6%"
+              :dark="appTheme=='dark'"
+              :label-color="color()"
+              filled
+              type="url"
+              v-model="telegram"
+              placeholder="https://t.me/..."
+              label="Telegram URL"
+            />
+            <q-input
+              style="margin-bottom: 6%"
+              :dark="appTheme=='dark'"
+              :label-color="color()"
+              filled
+              type="url"
+              v-model="website"
+              placeholder="https://myWebsite"
+              label="Website (add entire URLs)"
+            />
 
             <div>
               <q-btn label="Submit" type="submit" color="teal-4" :dark="appTheme=='dark'"/>
@@ -129,7 +143,7 @@
           </q-form>
           <div class="q-mt-xl">
             <q-icon name="info" size="sm"/>
-            If you encounter any difficulties or have questions regarding filling out your data, please don't hesitate to contact us via our Discord channel. Our agents will be happy to assist you and answer any inquiries you may have.
+            If you encounter any difficulties or have questions regarding filling out your data, please don't hesitate to contact us via our <a class="text-secondary" href="https://discord.gg/frFxqv9M"> Discord channel </a>. Our agents will be happy to assist you and answer any inquiries you may have.
           </div>
           </div>
       </div>
@@ -155,13 +169,13 @@ export default {
     return {
       name: '',
       age: null,
-      collectionName: '',
       email: '',
       instagram: '',
       twitter: '',
+      discord: '',
+      telegram: '',
       website: '',
       linksToArt: [],
-      socialLinks: '',
       accept: false
     }
   },
