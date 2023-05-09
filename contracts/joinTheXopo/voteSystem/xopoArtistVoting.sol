@@ -10,7 +10,7 @@ interface IAplication{
     * @dev Adds a candidate to the list of candidates that are open for voting.
     * @param _candidate The address of the candidate to be added.
     */
-    function getCandidateforVote(address _candidate) external;
+    function addCandidateforVote(address _candidate) external;
 }
 
 // This contract allows XOPO token holders to vote for or against candidates
@@ -79,7 +79,7 @@ contract xopoArtistVoting is Modifiers {
         // Add the candidate to the candidates mapping.
         candidateVotes[_candidate] = vote;
 
-        application.getCandidateforVote(_candidate);
+        application.addCandidateforVote(_candidate);
 
         emit AddedCandidate(_candidate, block.timestamp, _votingPeriod);
 

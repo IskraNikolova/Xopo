@@ -1,20 +1,18 @@
 // SPDX-License-Identifier: MIT
-
 pragma solidity 0.8.7;
 
 import "./../utils/math/SafeMath.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract Modifiers {
+contract Modifiers is Ownable {
     using SafeMath for uint256;
-
-    address public owner = msg.sender;
 
     mapping (address => bool) internal isAdmin;
 
-    uint internal adminsCount;
+    uint public adminsCount;
 
     modifier onlyAuthorized(address _sender) {
-		require(owner == _sender);
+		require(owner() == _sender);
 		_;
 	}
 

@@ -28,9 +28,11 @@ contract Application is Modifiers, XopoStructures {
     * @dev Adds a candidate to the list of candidates that are open for voting.
     * @param _candidate The address of the candidate to be added.
     */
-    function getCandidateforVote (address _candidate)
+    function addCandidateforVote (address _candidate)
         external {
-            candidatesVotedFor[true].push(_candidate);
+            address[] memory candidateArray = new address[](1);
+            candidateArray[0] = msg.sender;
+            candidatesVotedFor[false] = candidateArray;
             emit VoteOpen(_candidate);
     }
  
@@ -63,7 +65,6 @@ contract Application is Modifiers, XopoStructures {
         bytes memory _media)
         public {
             Candidate memory _candidate = Candidate(
-    			msg.sender,
     			ArtistType(_typeOfArtist),
     			_name,
     			_age,
