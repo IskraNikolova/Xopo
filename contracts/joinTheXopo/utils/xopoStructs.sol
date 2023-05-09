@@ -2,7 +2,7 @@
 
 pragma solidity 0.8.7;
 
-contract ArtistStructures {
+contract XopoStructures {
     enum ArtistType { painting, music, other }
 
     struct InitArtistStruct {
@@ -11,7 +11,7 @@ contract ArtistStructures {
         bytes32 name;
         bytes32 email;
 		bytes32[] urls;
-        bytes media;
+        bytes32[] media;
 	}
 
 	struct ArtistStruct {
@@ -23,7 +23,7 @@ contract ArtistStructures {
         bytes bio;
         bytes32 email;
 		bytes32[] urls;
-        bytes media;
+        bytes32[] media;
 	}
 
     struct CollectionStruct {
@@ -39,10 +39,8 @@ contract ArtistStructures {
         bytes32 name;
         uint age;
         bytes32 email;
-        bytes32 collectionName;
 		bytes32[] urls;
-        bytes media;
-        bool isAcceptTerms;
+        bytes32[] media;
         uint deadline;
 	}
 }

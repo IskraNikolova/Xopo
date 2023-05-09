@@ -63,30 +63,31 @@ Allows an admin to add a new collection.
 * **'_collectionName'**: The value that contains name of collection.
 * **'_banners'**: The value that contains the link to image for banner.
 * **'_description'**: The value that contains the description of collection.
-* **'_contractAddress'**: The value that contains the contract's address.
+ **'_contractAddress'**: The value that contains the contract's address.
 
 Returns true if the collection was added successfully.
 
 ### **editCollection**
-```function editCollection(bytes[] memory _banners, bytes memory _description, address _artist, address _contract) public returns (bool)```
+```function editCollection(bytes[] memory _banners, bytes memory _description, address _artist, address _contract) public returns (bool)```*
 
 This function is used to edit the data of a collection, including banners and description. It can only be called by the contract owner or the artist. The function takes the following parameters:
-. **bytes[] memory _banners** - An array of bytes representing the new banners for the collection.
-. **bytes memory _description** - The new description for the collection.
-. **address _artist** - The address of the artist associated with the collection.
-. **address _contract** - The address of the contract associated with the collection.
+
+* **bytes[] memory _banners** - An array of bytes representing the new banners for the collection.
+* **bytes memory _description** - The new description for the collection.
+* **address _artist** - The address of the artist associated with the collection.
+* **address _contract** - The address of the contract associated with the collection.
 
 ### **editArtistInfo**
 This function allows an artist to edit their profile information. It can only be called by the contract owner or the artist. The function takes the following parameters:
 
-. **address _artist** - The artist's address
-. **bytes32 _name** - The new name for the artist
-. **bytes memory** _avatar - The new avatar for the artist
-. **bytes memory** _bio - The new bio for the artist
+* **address _artist** - The artist's address
+* **bytes32 _name** - The new name for the artist
+* **bytes memory** _avatar - The new avatar for the artist
+* **bytes memory** _bio - The new bio for the artist
 
 ### **editArtistMedia**
 This function allows an artist to edit their media information. It can only be called by the contract owner or the artist. The function takes the following parameters:
 
-. **address _artist** - The artist's address
-. **bytes32 _email** - The new email for the artist
-. **bytes memory _media** - The new media information for the artist
+* **address _artist** - The artist's address
+* **bytes32 _email** - The new email for the artist
+* **bytes memory _media** - The new media information for the artist
