@@ -1,8 +1,8 @@
 <template>
-  <div class="q-pt-xs">
+  <div class="q-pt-xl">
     <div class="row">
-      <div class="col-4"></div><div class="col-4"></div>
-      <div class="col-4">
+      <div class="col-4"></div><div class="col-5"></div>
+      <div class="col-3">
         <q-tabs
         v-model="slide"
         class="row text-h6"
@@ -18,9 +18,15 @@
     <q-carousel
     animated
     v-model="slide"
-    arrows
     navigation
     infinite
+    :autoplay="autoplay"
+    arrows
+    transition-prev="slide-right"
+    transition-next="slide-left"
+    @mouseenter="autoplay = false"
+    @mouseleave="autoplay = true"
+    @scroll = "autoplay = false"
     >
     <q-carousel-slide :name="1" img-src="~assets/BANER.png">
       <div class="absolute-bottom custom-caption carousel">
