@@ -1,7 +1,7 @@
 <template>
     <div class="q-pa-md">
       <q-layout>
-        <q-header class="header2 text-bold">
+        <q-header class="header2 text-bold q-pb-xl">
           <q-toolbar>
             <q-toolbar-title class="text-center">
                 <span class="q-ml-sm text-princess text-h5">Join The</span>

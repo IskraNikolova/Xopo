@@ -1,55 +1,121 @@
 <template>
   <div class="q-mt-xl q-ml-md q-mr-md container">
     <div class="text-center text">
-      <img class="logo" src="~assets/horo_logo_bg.png" />
-      <h1 class="text-light">Join the Xopo</h1>
-      <p class="text-h5">Decentralized hub for artists, developers, and free speech enthusiasts.</p>
-      <p class="text-bold text-h7">We're crafting a worldwide platform for creatives of all kinds, with NFTs as our canvas!</p>
+      <q-img class="logo" src="~assets/horo_logo_bg.png" />
+      <p class="text-h5 text-lightIt">We're crafting a worldwide platform for creatives of all kinds, with</p>
+      <h1 class="text-light h1">NFTs as оur canvas</h1>
+      <p class="text-h5 text-lightIt">Decentralized hub for artists, developers, and free speech enthusiasts.</p>
     </div>
-    <div class="row">
-      <div class="col-6">
-        <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
+    <div class="row first-text" style="margin-bottom: 10%;margin-top: 5%;">
+      <div class="col-4">
+        <p class="animated-text">
+          <span class="text-bold">{{ xopo.title }}</span>
+          {{ xopo.content }}
+        </p>
       </div>
-      <div class="col-6">
-        <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-6">
-        <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
-      </div>
-      <div class="col-6">
-        <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
+      <div class="col-4 text-center"></div>
+      <div class="col-4">
+        <p class="animated-text">image</p>
       </div>
     </div>
-    <div class="row">
-      <div class="col-6">
-        <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
+    <div class="row second-text" style="margin-bottom: 5%;">
+      <div class="col-4">
+        <p class="animated-text">image</p>
       </div>
-      <div class="col-6">
-        <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
+      <div class="col-4 text-center"></div>
+      <div class="col-4">
+        <p class="animated-text">
+          <span class="text-bold">{{ joinTheXopo.title }}</span>
+          {{ joinTheXopo.content }}
+        </p>
       </div>
     </div>
-    <div class="row">
-      <div class="col-6">
-        <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
+    <div class="row third-text">
+      <div class="col-4">
+        <p class="animated-text">
+          <span class="text-bold">{{ xopoToken.title }}</span>
+          {{ xopoToken.content }}
+        </p>
       </div>
-      <div class="col-6">
-        <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
+      <div class="col-4"></div>
+      <div class="col-4">
+        <p class="animated-text">image</p>
       </div>
     </div>
   </div>
 </template>
 
+<script>
+import { xopo, joinTheXopo, xopoToken } from './../modules/constants'
+
+export default {
+  name: 'PageIndex',
+  data () {
+    return {
+      xopo,
+      joinTheXopo,
+      xopoToken
+    }
+  },
+  mounted () {
+    window.addEventListener('scroll', this.handleScroll)
+    this.xopo = xopo
+    this.xopoToken = xopoToken
+    this.joinTheXopo = joinTheXopo
+  },
+  destroyed () {
+    window.removeEventListener('scroll', this.handleScroll)
+  },
+  methods: {
+    handleScroll () {
+      const h1 = document.querySelector('.h1')
+      const logo = document.querySelector('.logo')
+      const text = document.querySelector('.text')
+      const tText = document.querySelector('.third-text')
+      const fText = document.querySelector('.first-text')
+      const sText = document.querySelector('.second-text')
+      const scrollY = window.scrollY
+      const position = Math.min(10 + scrollY * 0.2, window.innerHeight)
+
+      if (scrollY >= 570) {
+        tText.classList.add('show4')
+      } else if (scrollY > 520) {
+        sText.classList.add('show3')
+      } else if (scrollY > position) {
+        fText.classList.add('show2')
+      } else if (scrollY > 0) {
+        text.classList.add('show')
+        logo.classList.add('logo-small', 'logo-below')
+      }
+
+      if (scrollY <= 0) {
+        h1.innerHTML = 'NFTs as our canvas'
+        text.classList.remove('show')
+        logo.classList.remove('logo-small', 'logo-below')
+      } else if (scrollY <= position) {
+        h1.innerHTML = '<span>NFTs as </span><span>&nbsp; &nbsp;<span>ur canvas</span>'
+        fText.classList.remove('show2')
+      } else if (scrollY <= 520) {
+        sText.classList.remove('show3')
+      } else if (scrollY <= 600) {
+        tText.classList.remove('show4')
+      }
+
+      logo.style.top = `${position}px`
+      logo.style.opacity = `${Math.max(1 - scrollY / window.innerHeight, 0)}`
+    }
+  }
+}
+</script>
+
 <style>
 .logo {
   position: fixed;
-  top: 30%;
+  top: 20%;
   left: 50%;
   width: 400px;
   height: 400px;
   margin-left: -200px;
-  transform-style: preserve-3d;
   transform: translateZ(-200px) scale(1.5);
   transition: transform 0.5s, top 0.5s;
   z-index: -1;
@@ -63,7 +129,7 @@
 }
 
 .show {
-  transform: translateZ(-100px) scale(0.5);
+  transform: translateZ(-100px) scale(0.8);
 }
 
 .show .logo {
@@ -72,11 +138,13 @@
 }
 
 .show h1 {
+  margin-bottom: 100px;
   transform: translateZ(300px) scale(2);
 }
 
 .show p {
-  transform: translateZ(500px) scale(1.6);
+  margin-bottom: 20px;
+  transform: translateZ(500px) scale(2);
 }
 
 .logo-below {
@@ -86,39 +154,54 @@
   transform: translateX(-50%) scale(0.5);
   z-index: -1;
 }
+
 .logo-small {
   width: 300px;
   height: 300px;
 }
-</style>
 
-<script>
-export default {
-  name: 'Page3DText',
-  mounted () {
-    window.addEventListener('scroll', this.handleScroll)
-  },
-  destroyed () {
-    window.removeEventListener('scroll', this.handleScroll)
-  },
-  methods: {
-    handleScroll () {
-      const logo = document.querySelector('.logo')
-      const text = document.querySelector('.text')
-      const scrollY = window.scrollY
-
-      if (scrollY > 0) {
-        text.classList.add('show')
-        logo.classList.add('logo-small', 'logo-below')
-      } else {
-        text.classList.remove('show')
-        logo.classList.remove('logo-small', 'logo-below')
-      }
-
-      logo.style.top = `${Math.min(10 + scrollY * 0.2, window.innerHeight)}px`
-      logo.style.opacity = `${Math.max(1 - scrollY / window.innerHeight, 0)}`
-    }
-
-  }
+.animated-text {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s, transform 0.6s;
 }
-</script>
+
+.first-text .logo {
+  opacity: 0;
+}
+
+.show .animated-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.show2 .animated-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.show2 .logo {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.show2 .logo {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.show3 .animated-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.show4 .animated-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.container {
+  margin-top: 3%;
+}
+
+</style>
