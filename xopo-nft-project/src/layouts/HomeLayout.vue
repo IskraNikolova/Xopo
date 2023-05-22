@@ -5,6 +5,7 @@
           <q-toolbar>
             <q-toolbar-title class="text-center">
                 <span class="q-ml-sm text-princess text-h5">Join The</span>
+                <br />
               <q-avatar>
                 <img src="~assets/horo_logo_500.png" />
               </q-avatar>
@@ -14,9 +15,9 @@
 
     <q-footer class="header2 text-bold">
         <q-tabs no-caps indicator-color="transparent" v-model="tab">
-        <q-tab name="images" label="Home" />
-        <q-tab name="videos" label="$XOPO" />
-        <q-tab name="articles" label="Roadmap" />
+        <q-tab name="home" label="Home" @click="$router.push('/')" />
+        <q-tab name="xopo" label="$XOPO" @click="$router.push('/XOPO')"/>
+        <q-tab name="team" label="Team" @click="$router.push('/team')"/>
         </q-tabs>
     </q-footer>
 
@@ -36,7 +37,7 @@ import { SET_THEME } from 'src/store/app/types'
 export default {
   setup () {
     return {
-      tab: ref('images')
+      tab: ref('home')
     }
   },
   created () {

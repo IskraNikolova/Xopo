@@ -8,6 +8,20 @@ const routes = [
     ]
   },
   {
+    path: '/XOPO-Token',
+    component: () => import('layouts/HomeLayout.vue'),
+    children: [
+      { path: '/XOPO', component: () => import('pages/XOPO.vue') }
+    ]
+  },
+  {
+    path: '/Team',
+    component: () => import('layouts/HomeLayout.vue'),
+    children: [
+      { path: '/team', component: () => import('pages/Team.vue') }
+    ]
+  },
+  {
     path: '/launchpad',
     component: () => import('layouts/MainLayout.vue'),
     children: [
