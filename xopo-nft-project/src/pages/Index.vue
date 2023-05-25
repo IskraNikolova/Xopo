@@ -1,14 +1,14 @@
 <template>
-  <div class="q-mt-xl q-ml-md q-mr-md container">
     <div class="text-center text">
-      <div class="text-princess text-h4">Join The</div>
-      <div style="margin-bottom: 8%;">
+      <div class="text-princess text-h3" style="padding-top: 8%;">Join The</div>
+      <div style="margin-bottom: 3%;">
         <img src="~assets/logos/horo_logo.svg" style="width: 45px;" />
       </div>
-      <q-img class="logo" src="~assets/logos/lp_bg.svg" style="width: 43%;"/>
-        <p class="text-regular" style="font-size: 10pt; margin-bottom: 1%;">We're crafting a worldwide platform for creatives of all kinds, with</p>
-        <p class="text-montserrat-bold" style="font-size: 32pt; margin-bottom: 1%;"><span style="background-color: #1f1f1e;padding:5px;color:white;">NFTs</span> as Our Canvas</p>
-        <p class="text-uppercase text-bold" style="font-size: 14pt;">Decentralized hub for artists, developers, and free speech enthusiasts.</p>
+      <q-img class="logo" src="~assets/logos/lp_bg.svg" style="width: 50%;margin-top: -10%;"/>
+      <p class="text-regular" style="font-size: 13pt; margin-bottom: 1%;">We're crafting a worldwide platform for creatives of all kinds, with</p>
+      <p class="text-montserrat-bold" style="font-size: 42pt; margin-bottom: 1%;"><span style="background-color: #1f1f1e;padding:5px;color:white;">NFTs</span> as Our Canvas</p>
+      <p class="text-uppercase text-bold text3" style="font-size: 18pt;">Decentralized hub for artists, developers, and free speech enthusiasts.</p>
+      <q-img src="~assets/icons/mouse.svg" style="width: 2%;margin-top: 8%;"/>
     </div>
     <!--<div class="row first-text" style="margin-bottom: 10%;margin-top: 5%;">
       <div class="col-4">
@@ -46,7 +46,6 @@
         <p class="animated-text">image</p>
       </div>
     </div>-->
-  </div>
 </template>
 
 <script>
@@ -114,7 +113,7 @@ export default {
 .logo {
   position: fixed;
   top: 20%;
-  left: 42%;
+  left: 38%;
   margin-left: -200px;
   transform: translateZ(-200px) scale(1.5);
   transition: transform 0.5s, top 0.5s;
@@ -123,11 +122,16 @@ export default {
 
 .text {
   position: relative;
-  top: 50%;
+  top: 45%;
   transform-style: preserve-3d;
   transition: transform 0.6s;
 }
-
+.text-uppercase.text-bold.text3 {
+  font-size: 18pt;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
 .show {
   transform: translateZ(-100px) scale(0.8);
 }
@@ -199,9 +203,4 @@ export default {
   opacity: 1;
   transform: translateY(0);
 }
-
-.container {
-  margin-top: 3%;
-}
-
 </style>

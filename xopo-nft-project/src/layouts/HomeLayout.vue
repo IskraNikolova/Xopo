@@ -11,7 +11,7 @@
               </q-avatar>
             </q-toolbar-title>
           </q-toolbar>
-        </q-header>-->
+        </q-header>
 
     <q-footer class="header2 text-bold">
         <q-tabs no-caps indicator-color="transparent" v-model="tab">
@@ -19,7 +19,7 @@
         <q-tab name="xopo" label="$XOPO" @click="$router.push('/XOPO')"/>
         <q-tab name="team" label="Team" @click="$router.push('/team')"/>
         </q-tabs>
-    </q-footer>
+    </q-footer>-->
 
     <q-page-container>
         <router-view />
