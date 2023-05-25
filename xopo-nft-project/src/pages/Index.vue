@@ -1,12 +1,16 @@
 <template>
   <div class="q-mt-xl q-ml-md q-mr-md container">
     <div class="text-center text">
-      <q-img class="logo" src="~assets/horo_logo_bg.png" />
-      <p class="text-h5 text-lightIt">We're crafting a worldwide platform for creatives of all kinds, with</p>
-      <h1 class="text-light h1">NFTs as оur canvas</h1>
-      <p class="text-h5 text-lightIt">Decentralized hub for artists, developers, and free speech enthusiasts.</p>
+      <div class="text-princess text-h4">Join The</div>
+      <div style="margin-bottom: 8%;">
+        <img src="~assets/logos/horo_logo.svg" style="width: 45px;" />
+      </div>
+      <q-img class="logo" src="~assets/logos/lp_bg.svg" style="width: 43%;"/>
+        <p class="text-regular" style="font-size: 10pt; margin-bottom: 1%;">We're crafting a worldwide platform for creatives of all kinds, with</p>
+        <p class="text-montserrat-bold" style="font-size: 32pt; margin-bottom: 1%;"><span style="background-color: #1f1f1e;padding:5px;color:white;">NFTs</span> as Our Canvas</p>
+        <p class="text-uppercase text-bold" style="font-size: 14pt;">Decentralized hub for artists, developers, and free speech enthusiasts.</p>
     </div>
-    <div class="row first-text" style="margin-bottom: 10%;margin-top: 5%;">
+    <!--<div class="row first-text" style="margin-bottom: 10%;margin-top: 5%;">
       <div class="col-4">
         <p class="animated-text">
           <span class="text-bold">{{ xopo.title }}</span>
@@ -41,69 +45,67 @@
       <div class="col-4">
         <p class="animated-text">image</p>
       </div>
-    </div>
+    </div>-->
   </div>
 </template>
 
 <script>
-import { xopo, joinTheXopo, xopoToken } from './../modules/constants'
+import { xopo, joinTheXopo } from './../modules/constants'
 
 export default {
   name: 'PageIndex',
   data () {
     return {
       xopo,
-      joinTheXopo,
-      xopoToken
+      joinTheXopo
     }
   },
   mounted () {
-    window.addEventListener('scroll', this.handleScroll)
+    // window.addEventListener('scroll', this.handleScroll)
     this.xopo = xopo
-    this.xopoToken = xopoToken
     this.joinTheXopo = joinTheXopo
   },
   destroyed () {
     window.removeEventListener('scroll', this.handleScroll)
   },
   methods: {
-    handleScroll () {
-      const h1 = document.querySelector('.h1')
-      const logo = document.querySelector('.logo')
-      const text = document.querySelector('.text')
-      const tText = document.querySelector('.third-text')
-      const fText = document.querySelector('.first-text')
-      const sText = document.querySelector('.second-text')
-      const scrollY = window.scrollY
-      const position = Math.min(10 + scrollY * 0.2, window.innerHeight)
+    // handleScroll () {
+    //   const h1 = document.querySelector('.h1')
+    //   const logo = document.querySelector('.logo')
+    //   const text = document.querySelector('.text')
+    //   const tText = document.querySelector('.third-text')
+    //   const fText = document.querySelector('.first-text')
+    //   const sText = document.querySelector('.second-text')
+    //   const scrollY = window.scrollY
+    //   const position = Math.min(10 + scrollY * 0.2, window.innerHeight)
 
-      if (scrollY >= 570) {
-        tText.classList.add('show4')
-      } else if (scrollY > 520) {
-        sText.classList.add('show3')
-      } else if (scrollY > position) {
-        fText.classList.add('show2')
-      } else if (scrollY > 0) {
-        text.classList.add('show')
-        logo.classList.add('logo-small', 'logo-below')
-      }
+    //   if (scrollY >= 570) {
+    //     tText.classList.add('show4')
+    //   } else if (scrollY > 520) {
+    //     sText.classList.add('show3')
+    //   } else if (scrollY > position) {
+    //     fText.classList.add('show2')
+    //   } else if (scrollY > 0) {
+    //     text.classList.add('show')
+    //     logo.classList.add('logo-small', 'logo-below')
+    //   }
 
-      if (scrollY <= 0) {
-        h1.innerHTML = 'NFTs as our canvas'
-        text.classList.remove('show')
-        logo.classList.remove('logo-small', 'logo-below')
-      } else if (scrollY <= position) {
-        h1.innerHTML = '<span>NFTs as </span><span>&nbsp; &nbsp;<span>ur canvas</span>'
-        fText.classList.remove('show2')
-      } else if (scrollY <= 520) {
-        sText.classList.remove('show3')
-      } else if (scrollY <= 600) {
-        tText.classList.remove('show4')
-      }
+    //   if (scrollY <= 0) {
+    //     h1.innerHTML = 'NFTs as our canvas'
+    //     text.classList.remove('show')
+    //     logo.classList.remove('logo-small', 'logo-below')
+    //   } else if (scrollY <= position) {
+    //     h1.innerHTML = '<span>NFTs as </span><span>&nbsp; &nbsp;<span>ur canvas</span>'
+    //     fText.classList.remove('show2')
+    //   } else if (scrollY <= 520) {
+    //     sText.classList.remove('show3')
+    //   } else if (scrollY <= 600) {
+    //     tText.classList.remove('show4')
+    //   }
 
-      logo.style.top = `${position}px`
-      logo.style.opacity = `${Math.max(1 - scrollY / window.innerHeight, 0)}`
-    }
+    //   logo.style.top = `${position}px`
+    //   logo.style.opacity = `${Math.max(1 - scrollY / window.innerHeight, 0)}`
+    // }
   }
 }
 </script>
@@ -112,9 +114,7 @@ export default {
 .logo {
   position: fixed;
   top: 20%;
-  left: 50%;
-  width: 400px;
-  height: 400px;
+  left: 42%;
   margin-left: -200px;
   transform: translateZ(-200px) scale(1.5);
   transition: transform 0.5s, top 0.5s;

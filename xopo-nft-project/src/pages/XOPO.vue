@@ -1,7 +1,7 @@
 <template>
     <div class="q-mt-xl q-ml-md q-mr-md">
       <div class="text-center text">
-        <q-img class="logo" src="~assets/XOPO_3.gif" />
+        <q-img class="logo" src="~assets/tokens/XOPO_3.gif" />
         <div class="text-h1 q-mt-xl">$XOPO</div>
       </div>
       <div class="row first-text" style="margin-bottom: 10%;margin-top: 5%;">

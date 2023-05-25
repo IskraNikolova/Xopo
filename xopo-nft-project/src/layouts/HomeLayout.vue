@@ -1,7 +1,7 @@
 <template>
     <div class="q-pa-md">
       <q-layout>
-        <q-header class="header2 text-bold q-pb-xl">
+        <!--<q-header class="header2 text-bold q-pb-xl">
           <q-toolbar>
             <q-toolbar-title class="text-center">
                 <span class="q-ml-sm text-princess text-h5">Join The</span>
@@ -11,7 +11,7 @@
               </q-avatar>
             </q-toolbar-title>
           </q-toolbar>
-        </q-header>
+        </q-header>-->
 
     <q-footer class="header2 text-bold">
         <q-tabs no-caps indicator-color="transparent" v-model="tab">
