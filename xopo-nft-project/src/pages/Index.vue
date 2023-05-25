@@ -1,4 +1,5 @@
 <template>
+  <div>
     <div class="text-center text">
       <div class="text-princess text-h3" style="padding-top: 8%;">Join The</div>
       <div style="margin-bottom: 3%;">
@@ -10,6 +11,14 @@
       <p class="text-uppercase text-bold text3" style="font-size: 18pt;">Decentralized hub for artists, developers, and free speech enthusiasts.</p>
       <q-img src="~assets/icons/mouse.svg" style="width: 2%;margin-top: 8%;"/>
     </div>
+    <div class="text-center text">
+      <p class="text-regular" style="font-size: 13pt; margin-bottom: 1%;">We're crafting a worldwide platform for creatives of all kinds, with</p>
+      <div class="text-montserrat-bold" style="font-size: 42pt; margin-bottom: 1%;">
+        <span style="background-color: #1f1f1e; padding: 5px; color: white;">NFTs</span> as <img src="~assets/logos/three_logo.svg" style="width: 5.5%; vertical-align: middle; margin-bottom: -5px;" />ur Canvas
+      </div>
+      <p class="text-uppercase text-bold text3" style="font-size: 18pt;">Decentralized hub for artists, developers, and free speech enthusiasts.</p>
+    </div>
+  </div>
     <!--<div class="row first-text" style="margin-bottom: 10%;margin-top: 5%;">
       <div class="col-4">
         <p class="animated-text">
