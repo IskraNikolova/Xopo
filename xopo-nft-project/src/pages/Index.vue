@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="text-center text">
+    <!--<div class="text-center text">
       <div class="text-princess text-h3" style="padding-top: 8%;">Join The</div>
       <div style="margin-bottom: 3%;">
         <img src="~assets/logos/horo_logo.svg" style="width: 45px;" />
@@ -10,13 +10,27 @@
       <p class="text-montserrat-bold" style="font-size: 42pt; margin-bottom: 1%;"><span style="background-color: #1f1f1e;padding:5px;color:white;">NFTs</span> as Our Canvas</p>
       <p class="text-uppercase text-bold text3" style="font-size: 18pt;">Decentralized hub for artists, developers, and free speech enthusiasts.</p>
       <q-img src="~assets/icons/mouse.svg" style="width: 2%;margin-top: 8%;"/>
-    </div>
-    <div class="text-center text">
+    </div>-->
+    <div class="text-center text2">
       <p class="text-regular" style="font-size: 13pt; margin-bottom: 1%;">We're crafting a worldwide platform for creatives of all kinds, with</p>
       <div class="text-montserrat-bold" style="font-size: 42pt; margin-bottom: 1%;">
-        <span style="background-color: #1f1f1e; padding: 5px; color: white;">NFTs</span> as <img src="~assets/logos/three_logo.svg" style="width: 5.5%; vertical-align: middle; margin-bottom: -5px;" />ur Canvas
+        <span style="background-color: #1f1f1e; padding: 5px; color: white;">NFTs</span> as <img src="~assets/logos/three_logo.svg" style="width: 13%; vertical-align: middle; margin-bottom: 7px;" />ur Canvas
       </div>
       <p class="text-uppercase text-bold text3" style="font-size: 18pt;">Decentralized hub for artists, developers, and free speech enthusiasts.</p>
+      <div class="text-center q-mb-xl">
+        <span class="q-mr-xs"><q-img src="~assets/icons/media/discord_i.svg" style="width: 20pt;" /></span>
+        <span class="q-mr-xs"><q-img src="~assets/icons/media/twiter_i.svg" style="width: 20pt;" /></span>
+        <span class="q-mr-xs"><q-img src="~assets/icons/media/instagram_i.svg" style="width: 20pt;" /></span>
+        <span class="q-mr-xs"><q-img src="~assets/icons/media/telegram_i.svg" style="width: 20pt;" /></span>
+        <span class="q-mr-xs"><q-img src="~assets/icons/media/medium_i.svg" style="width: 20pt;" /></span>
+      </div>
+      <div style="position: relative;min-width: 180%;margin-top: 12%;margin-left: -10%;">
+        <span class="anime"></span>
+        <span class="anime2"></span>
+        <span class="anime3"></span>
+        <span class="anime4"></span>
+        <span class="anime5"></span>
+      </div>
     </div>
   </div>
     <!--<div class="row first-text" style="margin-bottom: 10%;margin-top: 5%;">
@@ -135,11 +149,18 @@ export default {
   transform-style: preserve-3d;
   transition: transform 0.6s;
 }
-.text-uppercase.text-bold.text3 {
-  font-size: 18pt;
+
+.text2 {
+  position: absolute;
+  top: 10%;
+  left: 29%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  z-index: 2;
+}
+.text3 {
   max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
 }
 .show {
   transform: translateZ(-100px) scale(0.8);
@@ -211,5 +232,78 @@ export default {
 .show4 .animated-text {
   opacity: 1;
   transform: translateY(0);
+}
+.anime {
+  position: absolute;
+  top: -100px;
+  left: 0px;
+  display: block;
+  width: 220px;
+  height: 220px;
+  background-image: url('./../assets/animeImages/65.png');
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  animation: organic 12s infinite alternate ease-in-out;
+}
+.anime2 {
+  position: absolute;
+  top: 0px;
+  left: 150px;
+  display: block;
+  width: 120px;
+  height: 120px;
+  background-color: black;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  animation: organic 12s infinite alternate ease-in-out;
+}
+.anime3 {
+  position: absolute;
+  top: -25px;
+  left: 280px;
+  display: block;
+  width: 200px;
+  height: 200px;
+  background-image: url('./../assets/animeImages/1.png');
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  animation: organic 12s infinite alternate ease-in-out;
+}
+.anime4 {
+  position: absolute;
+  top: -90px;
+  left: 480px;
+  display: block;
+  width: 240px;
+  height: 240px;
+  background-image: url('./../assets/animeImages/2.png');
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  animation: organic 12s infinite alternate ease-in-out;
+}
+.anime5 {
+  position: absolute;
+  top: -140px;
+  left: 650px;
+  display: block;
+  width: 130px;
+  height: 130px;
+  background-color: black;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  animation: organic 12s infinite alternate ease-in-out;
+}
+
+@keyframes organic {
+  0% {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+
+  25% {
+    border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%;
+  }
+
+  50% {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+
+  100% {
+    border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%;
+  }
 }
 </style>
