@@ -1,6 +1,6 @@
 <template>
   <div>
-    <!--<div class="text-center text">
+    <div class="text-center text">
       <div class="text-princess text-h3" style="padding-top: 8%;">Join The</div>
       <div style="margin-bottom: 3%;">
         <img src="~assets/logos/horo_logo.svg" style="width: 45px;" />
@@ -9,9 +9,9 @@
       <p class="text-regular" style="font-size: 13pt; margin-bottom: 1%;">We're crafting a worldwide platform for creatives of all kinds, with</p>
       <p class="text-montserrat-bold" style="font-size: 42pt; margin-bottom: 1%;"><span style="background-color: #1f1f1e;padding:5px;color:white;">NFTs</span> as Our Canvas</p>
       <p class="text-uppercase text-bold text3" style="font-size: 18pt;">Decentralized hub for artists, developers, and free speech enthusiasts.</p>
-      <q-img src="~assets/icons/mouse.svg" style="width: 2%;margin-top: 8%;"/>
-    </div>-->
-    <div class="text2 absolute-top absolute-center">
+      <q-img src="~assets/icons/mouse.svg" style="width: 20pt;margin-top: 8%;"/>
+    </div>
+    <!--<div class="text2 absolute-top absolute-center">
       <p class="text-regular text-center" style="font-size: 13pt; margin-bottom: 1%;">We're crafting a worldwide platform for creatives of all kinds, with</p>
       <div class="text-montserrat-bold text-center" style="font-size: 42pt; margin-bottom: 1%;">
         <span style="background-color: #1f1f1e; padding: 5px; color: white;">NFTs</span> as <img src="~assets/logos/three_logo.svg" style="width: 13%; vertical-align: middle; margin-bottom: 7px;" />ur Canvas
@@ -31,7 +31,7 @@
         <span class="anime4"></span>
         <span class="anime5"></span>
       </div>
-    </div>
+    </div>-->
   </div>
     <!--<div class="row first-text" style="margin-bottom: 10%;margin-top: 5%;">
       <div class="col-4">
@@ -136,8 +136,7 @@ export default {
 .logo {
   position: fixed;
   top: 20%;
-  left: 38%;
-  margin-left: -200px;
+  left: 25%;
   transform: translateZ(-200px) scale(1.5);
   transition: transform 0.5s, top 0.5s;
   z-index: -1;
@@ -298,7 +297,7 @@ export default {
     border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%;
   }
 }
-  .text2 {
+.text2 {
    display: flex;
    flex-direction: column;
    align-items: center;
