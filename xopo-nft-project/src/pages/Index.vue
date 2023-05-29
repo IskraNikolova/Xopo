@@ -2,7 +2,7 @@
   <div>
     <div class="text-center"  style="padding-top: 8%;">
       <div class="text">
-        <div class="jtx-logo">
+        <div class="jtx-logo" v-if="isFirst">
           <div class="text-princess text-h3">Join The</div>
           <div style="margin-bottom: 3%;">
             <img src="~assets/logos/horo_logo.svg" style="width: 45px;" />
@@ -17,7 +17,7 @@
           <span style="background-color: #1f1f1e; padding: 5px; color: white;">NFTs</span> as <img src="~assets/logos/three_logo.svg" style="width: 8%; vertical-align: middle; margin-bottom: 7px;" />ur Canvas
         </div>
         <p class="text-uppercase text-bold t" style="font-size: 18pt;">Decentralized hub for artists, developers, and free speech enthusiasts.</p>
-        <q-img src="~assets/icons/mouse.svg" style="width: 20pt;margin-top: 8%;" v-if="isFirst"/>
+        <q-img src="~assets/icons/mouse.svg" style="width: 20pt;margin-top: 8%;"/>
       </div>
     </div>
     <div class="text2 absolute-top absolute-center">
@@ -100,7 +100,6 @@ export default {
     handleScroll () {
       const logo = document.querySelector('.logo')
       const text = document.querySelector('.text')
-      const jtxLogo = document.querySelector('.jtx-logo')
       // const tText = document.querySelector('.third-text')
       // const fText = document.querySelector('.first-text')
       // const sText = document.querySelector('.second-text')
@@ -118,15 +117,12 @@ export default {
         text.classList.add('show')
         logo.classList.add('logo-small', 'logo-below')
         this.isFirst = false
-        jtxLogo.classList.add('test')
       }
 
       if (scrollY <= 0) {
         text.classList.remove('show')
         logo.classList.remove('logo-small', 'logo-below')
         this.isFirst = true
-
-        jtxLogo.classList.remove('test')
       }
       // } else if (scrollY <= position) {
       //   fText.classList.remove('show2')
@@ -149,7 +145,7 @@ export default {
   top: 20%;
   left: 25%;
   width: 50%;
-  transform: translateZ(-200px) scale(1.5);
+  transform: translateZ(-2000px) scale(1.5);
   transition: transform 1s, top 1s;
   z-index: -1;
 }
@@ -157,7 +153,7 @@ export default {
 .text {
   position: relative;
   transform-style: preserve-3d;
-  transition: transform 0.6s;
+  transition: transform 1s;
 }
 
 .t {
@@ -165,17 +161,24 @@ export default {
   margin: 0 auto;
 }
 
+.f .s .t {
+  transform: translateZ(100px)
+}
 .show {
-  transform: translateZ(-100px) scale(0.8);
+  transform: translateZ(1000px) scale(0.8);
+  transition: transform 1s;
 }
 
 .show .logo {
-  transform: translateZ(-1000px) scale(0.5);
-  top: 40%;
+  transition: transform 1s;
+  transform: translateZ(-100px) scale(0.01);
+  top: 60%;
+  left: 35%;
 }
 
 .show p {
   transform: translateZ(500px) scale(1.5);
+  transition: transform 1s;
 }
 .show .s {
   margin: 0;
@@ -187,16 +190,13 @@ export default {
   position: absolute;
   bottom: 20px;
   left: 50%;
-  transform: translateX(-50%) scale(0.5);
+  transform: translateX(-190%) scale(0.5);
   z-index: -1;
 }
 
 .logo-small {
   width: 300px;
   height: 300px;
-}
-.test {
-  opacity: 0;
 }
 
 .animated-text {
@@ -313,13 +313,23 @@ export default {
   }
 }
 .text2 {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: flex-start;
-   height: 100%;
-   margin-top: 5%;
-   z-index: -2;
-   opacity: 0;
- }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin-top: 5%;
+  z-index: -2;
+  opacity: 0;
+  overflow-x: hidden;
+}
+
+@media (min-width: 1200px) {
+  .text-center {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 </style>
