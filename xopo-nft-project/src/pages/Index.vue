@@ -1,43 +1,58 @@
 <template>
-  <div>
-    <div class="text-center"  style="padding-top: 8%;">
-      <div class="text">
-        <div class="jtx-logo" v-if="isFirst">
-          <div class="text-princess text-h3">Join The</div>
-          <div style="margin-bottom: 3%;">
-            <img src="~assets/logos/horo_logo.svg" style="width: 45px;" />
-          </div>
+  <q-page class="flex flex-center">
+    <div class="text-center text">
+      <div class="jtx-logo" v-if="isFirst">
+        <div class="text-princess text-h3">Join The</div>
+        <q-img class="j-logo q-mb-md" src="~assets/logos/horo_logo.svg" />
+      </div>
+      <q-img class="logo" src="~assets/logos/lp_bg.svg" />
+      <div v-if="isFirst">
+        <p class="text-regular q-mb-xs first-p">
+          We're crafting a worldwide platform for creatives of all kinds, with
+        </p>
+        <p class="text-montserrat-bold q-mb-xs second-p">
+          <span class="nft-text">NFTs</span> as Our Canvas
+        </p>
+        <p class="text-uppercase text-bold third-p">
+          Decentralized hub for artists, developers, and free speech enthusiasts.
+        </p>
+        <q-img src="~assets/icons/mouse.svg" class="mouse" />
+      </div>
+      <div v-else>
+        <p class="text-regular first-p">
+          We're crafting a worldwide platform for creatives of all kinds, with
+        </p>
+        <div
+          class="text-montserrat-bold text-center q-mb-xs"
+          style="font-size: 58pt;"
+        >
+          <span class="nft-text">
+            NFTs
+          </span>
+          as <img src="~assets/logos/three_logo.svg" class="small-logo q-mb-sm"  />ur Canvas
         </div>
-        <q-img class="logo" src="~assets/logos/lp_bg.svg" style="margin-top: -10%;"/>
-        <p class="text-regular f" style="font-size: 13pt; margin-bottom: 1%;">We're crafting a worldwide platform for creatives of all kinds, with</p>
-        <div v-if="isFirst">
-          <p class="text-montserrat-bold s" style="font-size: 42pt; margin-bottom: 1%;"><span style="background-color: #1f1f1e;padding:5px;color:white;">NFTs</span> as Our Canvas</p>
+        <p
+          class="text-uppercase text-bold third-p"
+          style="font-size: 18pt;">
+          Decentralized hub for artists, developers, and free speech enthusiasts.
+        </p>
+        <div class="q-mt-md q-mb-md" style="position: relative;">
+          <span class="q-mr-xs"><q-img src="~assets/icons/media/discord_i.svg" style="width: 20pt;" /></span>
+          <span class="q-mr-xs"><q-img src="~assets/icons/media/twiter_i.svg" style="width: 20pt;" /></span>
+          <span class="q-mr-xs"><q-img src="~assets/icons/media/instagram_i.svg" style="width: 20pt;" /></span>
+          <span class="q-mr-xs"><q-img src="~assets/icons/media/telegram_i.svg" style="width: 20pt;" /></span>
+          <span class="q-mr-xs"><q-img src="~assets/icons/media/medium_i.svg" style="width: 20pt;" /></span>
         </div>
-        <div v-else class="text-montserrat-bold text-center" style="font-size: 58pt; margin-bottom: 1%;">
-          <span style="background-color: #1f1f1e; padding: 5px; color: white;">NFTs</span> as <img src="~assets/logos/three_logo.svg" style="width: 8%; vertical-align: middle; margin-bottom: 7px;" />ur Canvas
+        <div class="anime">
+          <span class="anime1"></span>
+          <span class="anime2"></span>
+          <span class="anime3"></span>
+          <span class="anime4"></span>
+          <span class="anime5"></span>
         </div>
-        <p class="text-uppercase text-bold t" style="font-size: 18pt;">Decentralized hub for artists, developers, and free speech enthusiasts.</p>
-        <q-img src="~assets/icons/mouse.svg" style="width: 20pt;margin-top: 8%;"/>
       </div>
     </div>
-    <div class="text2 absolute-top absolute-center">
-      <p class="text-uppercase text-bold text3 text-center" style="font-size: 18pt;">Decentralized hub for artists, developers, and free speech enthusiasts.</p>
-      <div class="text-center q-mb-xl">
-        <span class="q-mr-xs"><q-img src="~assets/icons/media/discord_i.svg" style="width: 20pt;" /></span>
-        <span class="q-mr-xs"><q-img src="~assets/icons/media/twiter_i.svg" style="width: 20pt;" /></span>
-        <span class="q-mr-xs"><q-img src="~assets/icons/media/instagram_i.svg" style="width: 20pt;" /></span>
-        <span class="q-mr-xs"><q-img src="~assets/icons/media/telegram_i.svg" style="width: 20pt;" /></span>
-        <span class="q-mr-xs"><q-img src="~assets/icons/media/medium_i.svg" style="width: 20pt;" /></span>
-      </div>
-      <div style="position: relative;min-width: 180%;margin-top: 1%;margin-left: 70%;">
-        <span class="anime"></span>
-        <span class="anime2"></span>
-        <span class="anime3"></span>
-        <span class="anime4"></span>
-        <span class="anime5"></span>
-      </div>
-    </div>
-  </div>
+  </q-page>
     <!--<div class="row first-text" style="margin-bottom: 10%;margin-top: 5%;">
       <div class="col-4">
         <p class="animated-text">
@@ -85,7 +100,8 @@ export default {
     return {
       xopo,
       joinTheXopo,
-      isFirst: true
+      isFirst: true,
+      isSecond: false
     }
   },
   mounted () {
@@ -113,16 +129,19 @@ export default {
       // } else if (scrollY > position) {
       //   fText.classList.add('show2')
       // } else
-      if (scrollY > 0) {
+      if (scrollY > 20) {
+        this.isSecond = true
+      } else if (scrollY > 0) {
         text.classList.add('show')
         logo.classList.add('logo-small', 'logo-below')
         this.isFirst = false
       }
 
-      if (scrollY <= 0) {
+      if (scrollY <= 5) {
         text.classList.remove('show')
         logo.classList.remove('logo-small', 'logo-below')
         this.isFirst = true
+        this.isSecond = false
       }
       // } else if (scrollY <= position) {
       //   fText.classList.remove('show2')
@@ -145,24 +164,40 @@ export default {
   top: 20%;
   left: 25%;
   width: 50%;
-  transform: translateZ(-2000px) scale(1.5);
-  transition: transform 1s, top 1s;
+  transform: translateZ(-200px) scale(3.5);
+  transition: transform 0.5s, top 0.5s;
   z-index: -1;
 }
 
 .text {
   position: relative;
+  top: 5%;
   transform-style: preserve-3d;
-  transition: transform 1s;
+  transition: transform 0.5s;
 }
-
-.t {
+.first-p {
+  font-size: 13pt;
+}
+.second-p {
+  font-size: 42pt;
+}
+.third-p {
   max-width: 600px;
   margin: 0 auto;
+  font-size: 18pt;
 }
-
-.f .s .t {
-  transform: translateZ(100px)
+.mouse {
+  width: 20pt;
+  margin-top: 8%;
+}
+.nft-text {
+  background-color: #1f1f1e;
+  padding: 5px;
+  color: white;
+}
+.small-logo {
+  width: 80pt;
+  vertical-align: middle;
 }
 .show {
   transform: translateZ(1000px) scale(0.8);
@@ -172,7 +207,6 @@ export default {
 .show .logo {
   transition: transform 1s;
   transform: translateZ(-100px) scale(0.01);
-  top: 60%;
   left: 35%;
 }
 
@@ -180,7 +214,7 @@ export default {
   transform: translateZ(500px) scale(1.5);
   transition: transform 1s;
 }
-.show .s {
+.show .second-p {
   margin: 0;
   margin-top: 3%;
   padding-bottom: 1%;
@@ -190,7 +224,6 @@ export default {
   position: absolute;
   bottom: 20px;
   left: 50%;
-  transform: translateX(-190%) scale(0.5);
   z-index: -1;
 }
 
@@ -238,8 +271,15 @@ export default {
   opacity: 1;
   transform: translateY(0);
 }
-
+.j-logo {
+  width: 45px;
+}
 .anime {
+  position: relative;
+  min-width: 160%;
+}
+
+.anime1 {
   position: absolute;
   top: -8%;
   left: 0%;
@@ -320,7 +360,7 @@ export default {
   height: 100%;
   margin-top: 5%;
   z-index: -2;
-  opacity: 0;
+  opacity: 1;
   overflow-x: hidden;
 }
 
