@@ -1,21 +1,26 @@
 <template>
   <div>
-    <div class="text-center text">
-      <div class="text-princess text-h3" style="padding-top: 8%;">Join The</div>
-      <div style="margin-bottom: 3%;">
-        <img src="~assets/logos/horo_logo.svg" style="width: 45px;" />
+    <div class="text-center"  style="padding-top: 8%;">
+      <div class="text">
+        <div class="jtx-logo">
+          <div class="text-princess text-h3">Join The</div>
+          <div style="margin-bottom: 3%;">
+            <img src="~assets/logos/horo_logo.svg" style="width: 45px;" />
+          </div>
+        </div>
+        <q-img class="logo" src="~assets/logos/lp_bg.svg" style="margin-top: -10%;"/>
+        <p class="text-regular f" style="font-size: 13pt; margin-bottom: 1%;">We're crafting a worldwide platform for creatives of all kinds, with</p>
+        <div v-if="isFirst">
+          <p class="text-montserrat-bold s" style="font-size: 42pt; margin-bottom: 1%;"><span style="background-color: #1f1f1e;padding:5px;color:white;">NFTs</span> as Our Canvas</p>
+        </div>
+        <div v-else class="text-montserrat-bold text-center" style="font-size: 58pt; margin-bottom: 1%;">
+          <span style="background-color: #1f1f1e; padding: 5px; color: white;">NFTs</span> as <img src="~assets/logos/three_logo.svg" style="width: 8%; vertical-align: middle; margin-bottom: 7px;" />ur Canvas
+        </div>
+        <p class="text-uppercase text-bold t" style="font-size: 18pt;">Decentralized hub for artists, developers, and free speech enthusiasts.</p>
+        <q-img src="~assets/icons/mouse.svg" style="width: 20pt;margin-top: 8%;" v-if="isFirst"/>
       </div>
-      <q-img class="logo" src="~assets/logos/lp_bg.svg" style="width: 50%;margin-top: -10%;"/>
-      <p class="text-regular" style="font-size: 13pt; margin-bottom: 1%;">We're crafting a worldwide platform for creatives of all kinds, with</p>
-      <p class="text-montserrat-bold" style="font-size: 42pt; margin-bottom: 1%;"><span style="background-color: #1f1f1e;padding:5px;color:white;">NFTs</span> as Our Canvas</p>
-      <p class="text-uppercase text-bold text3" style="font-size: 18pt;">Decentralized hub for artists, developers, and free speech enthusiasts.</p>
-      <q-img src="~assets/icons/mouse.svg" style="width: 20pt;margin-top: 8%;"/>
     </div>
-    <!--<div class="text2 absolute-top absolute-center">
-      <p class="text-regular text-center" style="font-size: 13pt; margin-bottom: 1%;">We're crafting a worldwide platform for creatives of all kinds, with</p>
-      <div class="text-montserrat-bold text-center" style="font-size: 42pt; margin-bottom: 1%;">
-        <span style="background-color: #1f1f1e; padding: 5px; color: white;">NFTs</span> as <img src="~assets/logos/three_logo.svg" style="width: 13%; vertical-align: middle; margin-bottom: 7px;" />ur Canvas
-      </div>
+    <div class="text2 absolute-top absolute-center">
       <p class="text-uppercase text-bold text3 text-center" style="font-size: 18pt;">Decentralized hub for artists, developers, and free speech enthusiasts.</p>
       <div class="text-center q-mb-xl">
         <span class="q-mr-xs"><q-img src="~assets/icons/media/discord_i.svg" style="width: 20pt;" /></span>
@@ -31,7 +36,7 @@
         <span class="anime4"></span>
         <span class="anime5"></span>
       </div>
-    </div>-->
+    </div>
   </div>
     <!--<div class="row first-text" style="margin-bottom: 10%;margin-top: 5%;">
       <div class="col-4">
@@ -79,11 +84,12 @@ export default {
   data () {
     return {
       xopo,
-      joinTheXopo
+      joinTheXopo,
+      isFirst: true
     }
   },
   mounted () {
-    // window.addEventListener('scroll', this.handleScroll)
+    window.addEventListener('scroll', this.handleScroll)
     this.xopo = xopo
     this.joinTheXopo = joinTheXopo
   },
@@ -92,14 +98,14 @@ export default {
   },
   methods: {
     handleScroll () {
-      // const h1 = document.querySelector('.h1')
-      // const logo = document.querySelector('.logo')
-      // const text = document.querySelector('.text')
+      const logo = document.querySelector('.logo')
+      const text = document.querySelector('.text')
+      const jtxLogo = document.querySelector('.jtx-logo')
       // const tText = document.querySelector('.third-text')
       // const fText = document.querySelector('.first-text')
       // const sText = document.querySelector('.second-text')
-      // const scrollY = window.scrollY
-      // const position = Math.min(10 + scrollY * 0.2, window.innerHeight)
+      const scrollY = window.scrollY
+      const position = Math.min(10 + scrollY * 0.2, window.innerHeight)
 
       // if (scrollY >= 570) {
       //   tText.classList.add('show4')
@@ -107,17 +113,22 @@ export default {
       //   sText.classList.add('show3')
       // } else if (scrollY > position) {
       //   fText.classList.add('show2')
-      // } else if (scrollY > 0) {
-      //   text.classList.add('show')
-      //   logo.classList.add('logo-small', 'logo-below')
-      // }
+      // } else
+      if (scrollY > 0) {
+        text.classList.add('show')
+        logo.classList.add('logo-small', 'logo-below')
+        this.isFirst = false
+        jtxLogo.classList.add('test')
+      }
 
-      // if (scrollY <= 0) {
-      //   h1.innerHTML = 'NFTs as our canvas'
-      //   text.classList.remove('show')
-      //   logo.classList.remove('logo-small', 'logo-below')
+      if (scrollY <= 0) {
+        text.classList.remove('show')
+        logo.classList.remove('logo-small', 'logo-below')
+        this.isFirst = true
+
+        jtxLogo.classList.remove('test')
+      }
       // } else if (scrollY <= position) {
-      //   h1.innerHTML = '<span>NFTs as </span><span>&nbsp; &nbsp;<span>ur canvas</span>'
       //   fText.classList.remove('show2')
       // } else if (scrollY <= 520) {
       //   sText.classList.remove('show3')
@@ -125,8 +136,8 @@ export default {
       //   tText.classList.remove('show4')
       // }
 
-      // logo.style.top = `${position}px`
-      // logo.style.opacity = `${Math.max(1 - scrollY / window.innerHeight, 0)}`
+      logo.style.top = `${position}px`
+      logo.style.opacity = `${Math.max(1 - scrollY / window.innerHeight, 0)}`
     }
   }
 }
@@ -137,8 +148,9 @@ export default {
   position: fixed;
   top: 20%;
   left: 25%;
+  width: 50%;
   transform: translateZ(-200px) scale(1.5);
-  transition: transform 0.5s, top 0.5s;
+  transition: transform 1s, top 1s;
   z-index: -1;
 }
 
@@ -148,10 +160,11 @@ export default {
   transition: transform 0.6s;
 }
 
-.text3 {
+.t {
   max-width: 600px;
   margin: 0 auto;
 }
+
 .show {
   transform: translateZ(-100px) scale(0.8);
 }
@@ -161,14 +174,13 @@ export default {
   top: 40%;
 }
 
-.show h1 {
-  margin-bottom: 100px;
-  transform: translateZ(300px) scale(2);
-}
-
 .show p {
-  margin-bottom: 20px;
-  transform: translateZ(500px) scale(2);
+  transform: translateZ(500px) scale(1.5);
+}
+.show .s {
+  margin: 0;
+  margin-top: 3%;
+  padding-bottom: 1%;
 }
 
 .logo-below {
@@ -182,6 +194,9 @@ export default {
 .logo-small {
   width: 300px;
   height: 300px;
+}
+.test {
+  opacity: 0;
 }
 
 .animated-text {
@@ -304,5 +319,7 @@ export default {
    justify-content: flex-start;
    height: 100%;
    margin-top: 5%;
+   z-index: -2;
+   opacity: 0;
  }
 </style>
