@@ -181,21 +181,14 @@ export default {
   transition: transform 0.5s, top 0.5s;
   z-index: -1;
 }
-.first-p {
-  margin-top: 3%;
-}
-.second-p {
-  margin-top: 1%;
-}
-.second-p {
-  margin-top: 1%;
-}
-.show .second-p {
-  margin-top: 1%;
-}
+.first-p,
+.second-p,
+.third-p,
+.show .second-p,
 .show .third-p {
   margin-top: 1%;
 }
+
 .small-logo {
   width: 20px;
   margin-bottom: 10px;
@@ -222,13 +215,13 @@ export default {
   color: white;
 }
 .show {
-  transform: translateZ(100px) scale(0.9);
+  transform: translateZ(100px) scale(0.93);
   transition: transform 1s;
 }
 .show .logo {
   transition: transform 1s;
   transform: translateZ(-100px) scale(0.01);
-  left: 35%;
+  left: 37%;
 }
 .show p {
   transform: translateZ(500px) scale(1);
