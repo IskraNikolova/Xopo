@@ -1,5 +1,5 @@
 <template>
-    <div class="q-pa-md">
+    <div class="q-pa-md"  style="overflow: hidden;">
       <q-layout>
         <!--<q-header class="header2 text-bold q-pb-xl">
           <q-toolbar>
