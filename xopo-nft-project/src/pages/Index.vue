@@ -1,5 +1,5 @@
 <template>
-  <q-page class="flex flex-center bodyt">
+ <q-page class="flex flex-center bodyt">
     <div class="text-center text container">
       <div v-if="isFirst">
         <div class="text-princess text-h3">Join The</div>
@@ -31,60 +31,39 @@
           class="text-uppercase text-bold third-p">
           Decentralized hub for artists, developers, and free speech enthusiasts.
         </p>
-        <div class="q-mt-xl q-mb-md">
+        <div class="q-mt-md q-mb-md">
           <span class="q-mr-xs"><q-img src="~assets/icons/media/discord_i.svg" class="media" /></span>
           <span class="q-mr-xs"><q-img src="~assets/icons/media/twiter_i.svg" class="media" /></span>
           <span class="q-mr-xs"><q-img src="~assets/icons/media/instagram_i.svg" class="media" /></span>
           <span class="q-mr-xs"><q-img src="~assets/icons/media/telegram_i.svg" class="media" /></span>
           <span class="q-mr-xs"><q-img src="~assets/icons/media/medium_i.svg"  class="media" /></span>
         </div>
-        <div class="row anime">
-          <span class="anime1"></span>
-          <span class="anime2"></span>
-          <span class="anime3"></span>
-          <span class="anime4"></span>
-          <span class="anime5"></span>
+        <div class="wrapAnime">
+            <div class="row anime">
+              <span class="anime1"></span>
+              <span class="anime2"></span>
+              <span class="anime3"></span>
+              <span class="anime4"></span>
+              <span class="anime5"></span>
+          </div>
         </div>
-        <!--<div class="title">Redefining the Value of Art: Priceless Creations in the Digital Age </div>-->
+        {{ scroll }}
+        <div class="content">
+          <div class="first-text">
+            <p class="title text-uppercase text-bold animated-text2">Priceless Creations in the Digital Age </p>
+            <p class="subTitle animated-text2">It is a long established fact that a reader will be distracted. By the readable content of a page when looking at its layout. </p>
+          </div>
+          <div class="second-text">
+            <div class="row paragraph animated-text2">
+              <div class="col q-pl-xl"><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum   it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p></div>
+              <div class="col">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum   it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+              <div class="col q-pr-xl">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum   it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </q-page>
-    <!--<div class="row first-text" style="margin-bottom: 10%;margin-top: 5%;">
-      <div class="col-4">
-        <p class="animated-text">
-          <span class="text-bold">{{ xopo.title }}</span>
-          {{ xopo.content }}
-        </p>
-      </div>
-      <div class="col-4 text-center"></div>
-      <div class="col-4">
-        <p class="animated-text">image</p>
-      </div>
-    </div>
-    <div class="row second-text" style="margin-bottom: 5%;">
-      <div class="col-4">
-        <p class="animated-text">image</p>
-      </div>
-      <div class="col-4 text-center"></div>
-      <div class="col-4">
-        <p class="animated-text">
-          <span class="text-bold">{{ joinTheXopo.title }}</span>
-          {{ joinTheXopo.content }}
-        </p>
-      </div>
-    </div>
-    <div class="row third-text">
-      <div class="col-4">
-        <p class="animated-text">
-          <span class="text-bold">{{ xopoToken.title }}</span>
-          {{ xopoToken.content }}
-        </p>
-      </div>
-      <div class="col-4"></div>
-      <div class="col-4">
-        <p class="animated-text">image</p>
-      </div>
-    </div>-->
 </template>
 
 <script>
@@ -98,7 +77,9 @@ export default {
       joinTheXopo,
       isFirst: true,
       isSecond: false,
-      isThird: false
+      isThird: false,
+      scroll: 0,
+      lastScrollTop: 0
     }
   },
   mounted () {
@@ -108,46 +89,58 @@ export default {
   },
   methods: {
     handleScroll () {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop
       const logo = document.querySelector('.logo')
       const text = document.querySelector('.text')
-      // const tText = document.querySelector('.third-text')
-      // const fText = document.querySelector('.first-text')
-      // const sText = document.querySelector('.second-text')
+      const fText = document.querySelector('.first-text')
+      const sText = document.querySelector('.second-text')
+      const anime = document.querySelector('.wrapAnime')
       const scrollY = window.scrollY
-      const position = Math.min(10 + scrollY * 0.2, window.innerHeight)
+      this.scroll = scrollY
 
-      // if (scrollY >= 570) {
-      //   tText.classList.add('show4')
-      // } else if (scrollY > 520) {
-      //   sText.classList.add('show3')
-      // } else if (scrollY > position) {
-      //   fText.classList.add('show2')
-      // } else
-      if (scrollY > 100) {
-        this.isThird = true
-      } else if (scrollY > 10) {
-        this.isSecond = true
-      } else if (scrollY > 0) {
-        text.classList.add('show')
-        logo.classList.add('logo-small', 'logo-below')
-        this.isFirst = false
+      if (scrollTop > this.lastScrollTop) {
+        // down
+        if (scrollY > 5) {
+          text.classList.add('show')
+          logo.classList.add('logo-small', 'logo-below')
+          this.isFirst = false
+          this.isSecond = true
+        }
+        if (scrollY >= 400) {
+          sText.classList.add('show3')
+        } else if (scrollY >= 350) {
+          anime.classList.add('show2')
+          anime.classList.remove('reverse')
+        } else if (scrollY >= 300) {
+          fText.classList.add('show2')
+        } else if (scrollY > 100) {
+          this.isThird = true
+        }
+      } else {
+        // up
+        if (scrollY <= 5) {
+          text.classList.remove('show')
+          logo.classList.remove('logo-small', 'logo-below')
+          this.isFirst = true
+          this.isSecond = false
+        }
+
+        anime.classList.remove('show2')
+        anime.classList.add('reverse')
+
+        if (scrollY <= 230) {
+          fText.classList.remove('show2')
+        } else if (scrollY <= 300) {
+          sText.classList.remove('show3')
+        }
+
+        if (scrollY <= 100) {
+          this.isThird = false
+        }
       }
 
-      if (scrollY <= 0) {
-        text.classList.remove('show')
-        logo.classList.remove('logo-small', 'logo-below')
-        this.isFirst = true
-        this.isSecond = false
-      }
-      // } else if (scrollY <= position) {
-      //   fText.classList.remove('show2')
-      // } else if (scrollY <= 520) {
-      //   sText.classList.remove('show3')
-      // } else if (scrollY <= 600) {
-      //   tText.classList.remove('show4')
-      // }
-
-      logo.style.top = `${position}px`
+      this.lastScrollTop = scrollTop
+      logo.style.top = `${Math.min(10 + scrollY * 0.2, window.innerHeight)}px`
       logo.style.opacity = `${Math.max(1 - scrollY / window.innerHeight, 0)}`
     },
     beforeDestroy () {
@@ -188,7 +181,6 @@ export default {
 .show .third-p {
   margin-top: 1%;
 }
-
 .small-logo {
   width: 20px;
   margin-bottom: 10px;
@@ -201,9 +193,33 @@ export default {
   transform-style: preserve-3d;
   transition: transform 0.5s;
 }
+.third-p {
+  letter-spacing: .05rem;
+}
 .title {
   clear: both;
-  max-width: 30%;
+  text-align: center;
+  margin-top: 3%;
+  font-size: 23pt;
+  letter-spacing: .05rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1%;
+}
+.subTitle {
+  max-width: 70%;
+  text-align: center;
+  font-size: 15pt;
+  margin-left: auto;
+  margin-right: auto;
+}
+.paragraph {
+  margin-top: 3%;
+  display: flex;
+  justify-content: center;
+  gap: 70px; /* Променете стойността на 20px според вашите изисквания */
+  text-align: center;
+  line-height: 2.2;
 }
 .mouse {
   width: 20pt;
@@ -215,17 +231,21 @@ export default {
   color: white;
 }
 .show {
-  transform: translateZ(100px) scale(0.93);
-  transition: transform 1s;
+  transform: translateZ(100px) scale(0.99);
+  transition: transform 2s;
 }
 .show .logo {
   transition: transform 1s;
   transform: translateZ(-100px) scale(0.01);
-  left: 37%;
+  left: 41%;
 }
 .show p {
   transform: translateZ(500px) scale(1);
   transition: transform 1s;
+}
+.show .animated-text {
+  opacity: 1;
+  transform: translateY(0);
 }
 .logo-below {
   position: absolute;
@@ -235,31 +255,28 @@ export default {
   width: 200px;
   height: 200px;
 }
+.first-text .logo {
+  opacity: 0;
+}
+.show3 p {
+  transform: translateZ(500px) scale(1);
+  transition: transform 1s;
+}
 .animated-text {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.6s, transform 0.6s;
 }
-.first-text .logo {
+.animated-text2 {
   opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s, transform 0.9s;
 }
-.show .animated-text {
+.show2 .animated-text2 {
   opacity: 1;
   transform: translateY(0);
 }
-.show2 .animated-text {
-  opacity: 1;
-  transform: translateY(0);
-}
-.show2 .logo {
-  opacity: 1;
-  transform: translateY(0);
-}
-.show2 .logo {
-  opacity: 1;
-  transform: translateY(0);
-}
-.show3 .animated-text {
+.show3 .animated-text2 {
   opacity: 1;
   transform: translateY(0);
 }
@@ -269,6 +286,10 @@ export default {
 }
 .j-logo {
   width: 45px;
+}
+.anime {
+  width: 100%;
+  margin-left: -5%;
 }
 .anime1 {
   position: static;
@@ -439,7 +460,6 @@ export default {
     margin-left: -12%;
   }
 }
-
 /* Styles for screens with a width between 540px and 1280px and a height between 720px and 800px */
 @media (min-width: 540px) and (max-width: 1280px),
        (min-height: 720px) and (max-height: 800px) {
@@ -602,34 +622,37 @@ export default {
 /* Styles for screens with a width of 1000px and a height of 1200px */
 @media (min-width: 1000px) {
   .media {
-    width: 20pt;
+    width: 31pt;
   }
   .anime1 {
-    margin-left: 10%;
     margin-top: -3%;
-    width: 21%;
-    height: 150pt;
+    width: 28%;
+    height: 200pt;
+    margin-left: auto;
+    margin-right: auto;
   }
   .anime2 {
     margin-top: 7%;
+    margin-left: -16%;
     width: 10%;
     height: 100pt;
   }
   .anime3 {
     margin-top: 2%;
-    width: 32%;
-    height: 180pt;
+    width: 28%;
+    height: 220pt;
+
   }
   .anime4 {
-    margin-top: -6%;
-    width: 26%;
-    height: 170pt;
+    margin-top: -4%;
+    width: 27%;
+    height: 200pt;
   }
   .anime5 {
-    margin-left: -7%;
-    margin-top: -3%;
+    margin-left: -10%;
+    margin-top: -8%;
     width: 10%;
-    height: 80pt;
+    height: 100pt;
   }
   .first-p {
     font-size: 13pt;
@@ -640,19 +663,64 @@ export default {
     font-size: 41pt;
   }
   .third-p {
-    font-size: 20pt;
+    font-size: 16pt;
     max-width: 70%;
     margin-left: auto;
     margin-right: auto;
   }
   .show .first-p {
-    font-size: 14pt;
+    font-size: 17pt;
   }
   .show .second-p {
-    font-size: 41pt;
+    font-size: 51pt;
   }
   .show .third-p {
+    max-width: 50%;
     font-size: 22pt;
+  }
+  .show2 .anime > .anime1 {
+    transition: transform 3s;
+    transform: translate(800px,1300px) scale(0.5);
+  }
+  .show2 .anime > .anime2 {
+    transition: transform 3.3s;
+    transform: translate(600px, 900px) scale(0.3);
+  }
+  .show2 .anime > .anime3 {
+    transition: transform 6s;
+    transform: translate(500px, 1100px) scale(0.2);
+  }
+  .show2 .anime > .anime4 {
+    transition: transform 5.8s;
+    transform: translate(400px, 1000px) scale(0.5);
+  }
+  .show2 .anime > .anime5 {
+    transition: transform 7.8s;
+    transform: translate(300px, 1200px) scale(0.1);
+  }
+  .reverse .anime > .anime1 {
+    transition: transform 3s;
+    transform: translate(-800px, -1300px) scale(0.5);
+  }
+
+  .reverse .anime > .anime2 {
+    transition: transform 3.3s;
+    transform: translate(-600px, -900px) scale(0.3);
+  }
+
+  .reverse .anime > .anime3 {
+    transition: transform 6s;
+    transform: translate(-500px, -1100px) scale(0.2);
+  }
+
+  .reverse .anime > .anime4 {
+    transition: transform 5.8s;
+    transform: translate(-400px, -1000px) scale(0.5);
+  }
+
+  .reverse .anime > .anime5 {
+    transition: transform 7.8s;
+    transform: translate(-300px, -1200px) scale(0.1);
   }
 }
 /* Styles for screens with a width 360px */
