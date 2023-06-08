@@ -51,13 +51,13 @@
         <div class="content">
           <div class="first-text">
             <p class="title text-uppercase text-bold animated-text2">Priceless Creations in the Digital Age </p>
-            <p class="subTitle animated-text2">It is a long established fact that a reader will be distracted. By the readable content of a page when looking at its layout. </p>
+            <p class="subTitle animated-text2">Welcome to <span class="text-bold">"Join The Xopo"</span>, the Ultimate Platform for NFT Creation and Artistic Empowerment</p>
           </div>
           <div class="second-text">
             <div class="row paragraph animated-text2">
-              <div class="col q-pl-xl"><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum   it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p></div>
-              <div class="col">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum   it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
-              <div class="col q-pr-xl">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum   it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+              <div class="col q-pl-xl"><p>In today's digital age, the world of art is constantly evolving. As an artist, it can be a challenge to break through the noise and gain recognition for your work. That's where <span class="text-bold">"Join The Xopo"</span> comes in - we're the ultimate platform for NFT creation, empowering artists to unlock the full potential of their masterpieces and take their creations to new heights.</p></div>
+              <div class="col">Our team of NFT experts and talented artists work together to transform your artwork into non-fungible tokens, giving it a unique value and making it more accessible to a wider audience. But <span class="text-bold">"Join The Xopo"</span> is more than just a marketplace - it's a decentralized hub for artists, developers, and free speech enthusiasts. We're here to empower you, fuel your passion, and help you forge connections in the world of digital art.</div>
+              <div class="col q-pr-xl">With our expert guidance and unwavering support, you'll be able to convert your art into NFTs and redefine the way the world views and appreciates digital art. <span class="text-bold">So what are you waiting for?</span> Join the <span class="text-bold">"Join The Xopo"</span> movement today and unlock new realms of artistic expression. Welcome to the world of NFTs - welcome to <span class="text-bold">"Join The Xopo"</span></div>
             </div>
           </div>
         </div>
@@ -106,11 +106,12 @@ export default {
           this.isFirst = false
           this.isSecond = true
         }
-        if (scrollY >= 400) {
-          sText.classList.add('show3')
-        } else if (scrollY >= 350) {
+        if (scrollY >= 300) {
           anime.classList.add('show2')
           anime.classList.remove('reverse')
+        }
+        if (scrollY >= 400) {
+          sText.classList.add('show3')
         } else if (scrollY >= 300) {
           fText.classList.add('show2')
         } else if (scrollY > 100) {
@@ -124,12 +125,14 @@ export default {
           this.isFirst = true
           this.isSecond = false
         }
-
-        anime.classList.remove('show2')
-        anime.classList.add('reverse')
+        if (scrollY <= 300) {
+          anime.classList.remove('show2')
+          anime.classList.add('reverse')
+        }
 
         if (scrollY <= 230) {
           fText.classList.remove('show2')
+          fText.classList.add('show22')
         } else if (scrollY <= 300) {
           sText.classList.remove('show3')
         }
@@ -140,7 +143,7 @@ export default {
       }
 
       this.lastScrollTop = scrollTop
-      logo.style.top = `${Math.min(10 + scrollY * 0.2, window.innerHeight)}px`
+      logo.style.top = `${Math.min(75 + scrollY * 0.2, window.innerHeight)}px`
       logo.style.opacity = `${Math.max(1 - scrollY / window.innerHeight, 0)}`
     },
     beforeDestroy () {
@@ -181,6 +184,9 @@ export default {
 .show .third-p {
   margin-top: 1%;
 }
+.show .first-p {
+  padding-top: 5%;
+}
 .small-logo {
   width: 20px;
   margin-bottom: 10px;
@@ -220,6 +226,7 @@ export default {
   gap: 70px; /* Променете стойността на 20px според вашите изисквания */
   text-align: center;
   line-height: 2.2;
+  font-size: medium;
 }
 .mouse {
   width: 20pt;
@@ -237,7 +244,7 @@ export default {
 .show .logo {
   transition: transform 1s;
   transform: translateZ(-100px) scale(0.01);
-  left: 41%;
+  left: 41.5%;
 }
 .show p {
   transform: translateZ(500px) scale(1);
@@ -265,7 +272,7 @@ export default {
 .animated-text {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.6s, transform 0.6s;
+  transition: opacity 1s, transform 0.1s;
 }
 .animated-text2 {
   opacity: 0;
@@ -277,10 +284,6 @@ export default {
   transform: translateY(0);
 }
 .show3 .animated-text2 {
-  opacity: 1;
-  transform: translateY(0);
-}
-.show4 .animated-text {
   opacity: 1;
   transform: translateY(0);
 }
@@ -721,6 +724,9 @@ export default {
   .reverse .anime > .anime5 {
     transition: transform 7.8s;
     transform: translate(-300px, -1200px) scale(0.1);
+  }
+  .show22 {
+    margin-top: -5%;
   }
 }
 /* Styles for screens with a width 360px */
