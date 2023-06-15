@@ -1,18 +1,21 @@
 <template>
  <q-page class="flex flex-center bodyt">
-    <div class="text-center text container">
+      <div  class="text-center text container">
       <div v-if="isFirst">
-        <div class="text-princess text-h3">Join The</div>
-        <q-img class="j-logo q-mb-md" src="~assets/logos/horo_logo.svg" />
+        <div class="text-princess text-h3" style="margin-left: auto;margin-right: auto; padding-top: 100px;">Join The</div>
+        <q-img class="j-logo q-mb-sm" src="~assets/logos/horo_logo.svg" />
       </div>
       <q-img class="logo" src="~assets/logos/lp_bg.svg" />
+      <q-layout @scroll="scrollHandler">
       <div v-if="isFirst">
         <p class="text-regular q-mb-xs first-p">
           We're crafting a worldwide platform for creatives of all kinds, with
         </p>
-        <p class="text-montserrat-bold q-mb-xs second-p">
+        <div
+          class="text-montserrat-bold second-p"
+        >
           <span class="nft-text">NFTs</span> as Our Canvas
-        </p>
+        </div>
         <p class="text-uppercase text-bold third-p">
           Decentralized hub for artists, developers, and free speech enthusiasts.
         </p>
@@ -47,27 +50,71 @@
               <span class="anime5"></span>
           </div>
         </div>
-        {{ scroll }}
-        <div class="content">
           <div class="first-text">
-            <p class="title text-uppercase text-bold animated-text2">Priceless Creations in the Digital Age </p>
-            <p class="subTitle animated-text2">Welcome to <span class="text-bold">"Join The Xopo"</span>, the Ultimate Platform for NFT Creation and Artistic Empowerment</p>
-          </div>
-          <div class="second-text">
-            <div class="row paragraph animated-text2">
+            <p class="title text-uppercase text-bold">Priceless Creations in the Digital Age </p>
+            <p class="subTitle">Welcome to <span class="text-bold">"Join The Xopo"</span>, the Ultimate Platform for NFT Creation and Artistic Empowerment</p>
+            <div class="row paragraph">
               <div class="col q-pl-xl"><p>In today's digital age, the world of art is constantly evolving. As an artist, it can be a challenge to break through the noise and gain recognition for your work. That's where <span class="text-bold">"Join The Xopo"</span> comes in - we're the ultimate platform for NFT creation, empowering artists to unlock the full potential of their masterpieces and take their creations to new heights.</p></div>
               <div class="col">Our team of NFT experts and talented artists work together to transform your artwork into non-fungible tokens, giving it a unique value and making it more accessible to a wider audience. But <span class="text-bold">"Join The Xopo"</span> is more than just a marketplace - it's a decentralized hub for artists, developers, and free speech enthusiasts. We're here to empower you, fuel your passion, and help you forge connections in the world of digital art.</div>
-              <div class="col q-pr-xl">With our expert guidance and unwavering support, you'll be able to convert your art into NFTs and redefine the way the world views and appreciates digital art. <span class="text-bold">So what are you waiting for?</span> Join the <span class="text-bold">"Join The Xopo"</span> movement today and unlock new realms of artistic expression. Welcome to the world of NFTs - welcome to <span class="text-bold">"Join The Xopo"</span></div>
+              <div class="col q-pr-xl">
+                <p class="">With our expert guidance and unwavering support, you'll be able to convert your art into NFTs and redefine the way the world views and appreciates digital art. <span class="text-bold">So what are you waiting for?</span> Join the <span class="text-bold">"Join The Xopo"</span> movement today and unlock new realms of artistic expression. Welcome to the world of NFTs - welcome to <span class="text-bold">"Join The Xopo"</span></p>
+                <a
+                  tag="a"
+                  href="https://medium.com/@XoroNft/how-to-become-a-wealthy-and-recognized-artist-in-todays-world-d207a36b8f2f"
+                  target="_blank"
+                  v-html="'read more...'"
+                  class="text-info"
+                ></a>
+              </div>
             </div>
+          </div>
+          <div class="second-text">
+            <div class="row paragraph" style="margin-top: 12%">
+              <div class="col q-pl-xl">
+                <p class="text-uppercase text-bold text-h5">Xopo's First Own Collection: "Koloda"</p>
+                <p class="text-h6">Minted on Avalanche, our first NFT collection will feature 85 stunning paintings<span class="text-bold"> by Bulgarian artist Miroslav Mihov (Eternal Mirror)</span>. 'Koloda' - original works of art created between 2014 and 2022 using oil paints on canvas, watercolors, and chalk on cardboard.</p>
+                <p>
+                  This collection showcases a range of styles, from beautiful classical and abstract landscapes to vividly colored artworks and paintings with mysterious figurative and symbolic images. Each piece carries a substantial charge of natural, humane, aesthetic, and philosophical energy, making it a unique and captivating addition to any art collection.
+                  As a testament to Xopo's commitment to artistic expression and innovation in the world of digital art, these artworks are available as NFTs.<span class="text-bold"> Don't miss your chance </span> to own a piece of this remarkable collection.
+                </p>
+              </div>
+              <div class="col">
+                <div class="row anime">
+                  <span class="anime6"></span>
+                  <span class="anime7"></span>
+                  <span class="anime8"></span>
+                  <span class="anime9"></span>
+                  <span class="anime10"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+        <q-img src="~assets/logos/lp_bg.svg" class="logo-footer" />
+        <div class="footer-content">
+          <q-img src="~assets/tokens/XOPO_3.gif" class="token-logo"/>
+          <div class="q-pl-xl">
+            <p class="text-uppercase text-bold text-h5">$XOPO, the native token of Xopo</p>
+            <p class="text-h6">At Xopo, the $XOPO token plays a central role in fostering a community-driven ecosystem.</p>
+            <p>
+              Our Decentralized Autonomous Organization (DAO), consisting of $XOPO token holders, plays a pivotal role in maintaining a vibrant and dynamic ecosystem where all participants have an equal say.In the DAO, collective decisions are made through a robust voting process. Once the voting is complete, the tokens used for voting are burned, symbolizing the consensus reached. Furthermore, each minted NFT generates both unique artwork and tokens, ensuring that the creative output and $XOPO tokens are intertwined.
+    These tokens serve as a powerful incentive, motivating and recognizing the contributions of our engaged community members. By holding $XOPO tokens, individuals have the opportunity to shape the destiny of Xopo while being rewarded for their active involvement.
+    Join us on this exhilarating journey, where $XOPO tokens empower artists, foster community engagement, and drive the future of NFT innovation. Together, we are building a platform that celebrates artistic expression and inclusivity, revolutionizing the way we appreciate and collect digital art.
+            </p>
           </div>
         </div>
       </div>
+      </div>
+      </q-layout>
     </div>
   </q-page>
 </template>
 
 <script>
+// import { openURL } from 'quasar'
 import { xopo, joinTheXopo } from './../modules/constants'
+import { scroll } from 'quasar'
+const { getScrollTarget, setVerticalScrollPosition } = scroll
 
 export default {
   name: 'PageIndex',
@@ -77,74 +124,74 @@ export default {
       joinTheXopo,
       isFirst: true,
       isSecond: false,
-      isThird: false,
       scroll: 0,
+      inerh: 0,
       lastScrollTop: 0
     }
   },
   mounted () {
-    window.addEventListener('scroll', this.handleScroll)
     this.xopo = xopo
     this.joinTheXopo = joinTheXopo
   },
   methods: {
-    handleScroll () {
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+    scrollHandler (event) {
+      const {
+        position,
+        direction
+        // directionChanged
+      } = event
       const logo = document.querySelector('.logo')
       const text = document.querySelector('.text')
-      const fText = document.querySelector('.first-text')
-      const sText = document.querySelector('.second-text')
+      // const fText = document.querySelector('.first-text')
+      // const sText = document.querySelector('.second-text')
+      // const tText = document.querySelector('.third-text')
       const anime = document.querySelector('.wrapAnime')
-      const scrollY = window.scrollY
-      this.scroll = scrollY
 
-      if (scrollTop > this.lastScrollTop) {
-        // down
-        if (scrollY > 5) {
-          text.classList.add('show')
-          logo.classList.add('logo-small', 'logo-below')
-          this.isFirst = false
-          this.isSecond = true
-        }
-        if (scrollY >= 300) {
-          anime.classList.add('show2')
-          anime.classList.remove('reverse')
-        }
-        if (scrollY >= 400) {
-          sText.classList.add('show3')
-        } else if (scrollY >= 300) {
-          fText.classList.add('show2')
-        } else if (scrollY > 100) {
-          this.isThird = true
-        }
-      } else {
-        // up
-        if (scrollY <= 5) {
+      if (direction === 'up') {
+        if (position <= 0) {
           text.classList.remove('show')
           logo.classList.remove('logo-small', 'logo-below')
           this.isFirst = true
           this.isSecond = false
         }
-        if (scrollY <= 300) {
+        if (position <= 650 && anime) {
           anime.classList.remove('show2')
           anime.classList.add('reverse')
         }
-
-        if (scrollY <= 230) {
-          fText.classList.remove('show2')
-          fText.classList.add('show22')
-        } else if (scrollY <= 300) {
-          sText.classList.remove('show3')
+        // if (anime) {
+        //   for (let i = 1; i <= 5; i++) {
+        //     const el = anime.querySelector(`.anime${i}`)
+        //     this.checkElementPosition(el)
+        //   }
+        // }
+      } else {
+        if (position > 1) {
+          text.classList.add('show')
+          logo.classList.add('logo-small', 'logo-below')
+          this.isFirst = false
+          this.isSecond = true
         }
-
-        if (scrollY <= 100) {
-          this.isThird = false
+        if (position >= 300 && anime) {
+          anime.classList.add('show2')
+          anime.classList.remove('reverse')
         }
       }
 
-      this.lastScrollTop = scrollTop
-      logo.style.top = `${Math.min(75 + scrollY * 0.2, window.innerHeight)}px`
-      logo.style.opacity = `${Math.max(1 - scrollY / window.innerHeight, 0)}`
+      logo.style.top = `${Math.min(75 + position * 0.2, window.innerHeight)}px`
+      logo.style.opacity = `${Math.max(1 - position / window.innerHeight, 0)}`
+    },
+    checkElementPosition (element) {
+      const rect = element.getBoundingClientRect()
+      if (rect.bottom <= 0) {
+        element.style.transform = 'translate(0, 0) scale(1)'
+      } else {
+        element.style.transform = ''
+      }
+    },
+    scrollToElement (el, duration) {
+      const target = getScrollTarget(el)
+      const offset = el.offsetTop
+      setVerticalScrollPosition(target, offset, duration)
     },
     beforeDestroy () {
       // Remove scroll event listener when component is destroyed
@@ -159,6 +206,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #1f1f1e;
 }
 .media {
   width: 20pt;
@@ -174,8 +222,23 @@ export default {
   left: 25%;
   width: 50%;
   transform: translateZ(-200px) scale(3.5);
-  transition: transform 0.5s, top 0.5s;
+  transition: transform 1.5s, top 0.5s;
   z-index: -1;
+}
+.footer-content {
+  position: fixed;
+  right: auto;
+  bottom: 100px;
+}
+.logo-footer {
+  position: relative;
+  margin-top: 8%;
+  margin-left: -25%;
+  width: 150%;
+  height: 700px;
+}
+.token-logo {
+  width: 15%;
 }
 .first-p,
 .second-p,
@@ -185,7 +248,7 @@ export default {
   margin-top: 1%;
 }
 .show .first-p {
-  padding-top: 5%;
+  padding-top: 4%;
 }
 .small-logo {
   width: 20px;
@@ -205,7 +268,7 @@ export default {
 .title {
   clear: both;
   text-align: center;
-  margin-top: 3%;
+  margin-top: 10%;
   font-size: 23pt;
   letter-spacing: .05rem;
   margin-left: auto;
@@ -213,7 +276,7 @@ export default {
   margin-bottom: 1%;
 }
 .subTitle {
-  max-width: 70%;
+  max-width: 50%;
   text-align: center;
   font-size: 15pt;
   margin-left: auto;
@@ -223,7 +286,7 @@ export default {
   margin-top: 3%;
   display: flex;
   justify-content: center;
-  gap: 70px; /* Променете стойността на 20px според вашите изисквания */
+  gap: 70px;
   text-align: center;
   line-height: 2.2;
   font-size: medium;
@@ -242,8 +305,8 @@ export default {
   transition: transform 2s;
 }
 .show .logo {
-  transition: transform 1s;
-  transform: translateZ(-100px) scale(0.01);
+  transition: transform 1.5s;
+  transform: translateY(-100px) scale(0.01);
   left: 41.5%;
 }
 .show p {
@@ -262,9 +325,7 @@ export default {
   width: 200px;
   height: 200px;
 }
-.first-text .logo {
-  opacity: 0;
-}
+
 .show3 p {
   transform: translateZ(500px) scale(1);
   transition: transform 1s;
@@ -291,8 +352,8 @@ export default {
   width: 45px;
 }
 .anime {
-  width: 100%;
-  margin-left: -5%;
+  width: 80%;
+  margin-left: 5%;
 }
 .anime1 {
   position: static;
@@ -318,7 +379,7 @@ export default {
 .anime4 {
   position: static;
   display: block;
-  background-image: url('./../assets/animeImages/color24.png');
+  background-image: url('./../assets/animeImages/face3.png');
   border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
   animation: organic 12s infinite alternate ease-in-out;
 }
@@ -327,6 +388,36 @@ export default {
   display: block;
   background-color: #1f1f1e;
   border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  animation: organic 12s infinite alternate ease-in-out;
+}
+.anime6 {
+  position: static;
+  display: block;
+  background-image: url('./../assets/animeImages/face.png');
+  animation: organic 12s infinite alternate ease-in-out;
+}
+.anime7 {
+  position: static;
+  display: block;
+  background-color: #1f1f1e;
+  animation: organic 12s infinite alternate ease-in-out;
+}
+.anime8 {
+  position: static;
+  display: block;
+  background-image: url('./../assets/animeImages/kk3.png');
+  animation: organic 12s infinite alternate ease-in-out;
+}
+.anime9 {
+  position: static;
+  display: block;
+  background-image: url('./../assets/animeImages/kk1.png');
+  animation: organic 12s infinite alternate ease-in-out;
+}
+.anime10 {
+  position: static;
+  display: block;
+  background-color: #1f1f1e;
   animation: organic 12s infinite alternate ease-in-out;
 }
 .text-center {
@@ -635,15 +726,15 @@ export default {
     margin-right: auto;
   }
   .anime2 {
-    margin-top: 7%;
-    margin-left: -16%;
-    width: 10%;
-    height: 100pt;
+    margin-top: 12%;
+    margin-left: -27%;
+    width: 15%;
+    height: 130pt;
   }
   .anime3 {
     margin-top: 2%;
-    width: 28%;
-    height: 220pt;
+    width: 22%;
+    height: 200pt;
 
   }
   .anime4 {
@@ -657,6 +748,38 @@ export default {
     width: 10%;
     height: 100pt;
   }
+  .anime6 {
+    margin-top: -3%;
+    margin-left: 20%;
+    width: 10%;
+    height: 200pt;
+    z-index: -1;
+  }
+  .anime7 {
+    margin-top: 50%;
+    width: 10%;
+    height: 50pt;
+    z-index: -1;
+  }
+  .anime8 {
+    margin-top: 4%;
+    margin-left: 15%;
+    width: 15%;
+    height: 280pt;
+    z-index: 1;
+  }
+  .anime9 {
+    margin-left: -55%;
+    margin-top: 20%;
+    width: 60%;
+    height: 60pt;
+    z-index: -1;
+  }
+  .anime10 {
+    margin-top: -8%;
+    width: 10%;
+    height: 60pt;
+  }
   .first-p {
     font-size: 13pt;
     margin-right: auto;
@@ -666,13 +789,14 @@ export default {
     font-size: 41pt;
   }
   .third-p {
-    font-size: 16pt;
+    font-size: 17pt;
     max-width: 70%;
     margin-left: auto;
     margin-right: auto;
   }
   .show .first-p {
     font-size: 17pt;
+    margin-top: -5%;
   }
   .show .second-p {
     font-size: 51pt;
@@ -683,50 +807,49 @@ export default {
   }
   .show2 .anime > .anime1 {
     transition: transform 3s;
-    transform: translate(800px,1300px) scale(0.5);
+    transform: translate(620px, 980px) scale(0.4);
+    z-index: -2;
   }
   .show2 .anime > .anime2 {
-    transition: transform 3.3s;
-    transform: translate(600px, 900px) scale(0.3);
+    transition: transform 4s;
+    transform: translate(320px, 820px) scale(0.4);
   }
   .show2 .anime > .anime3 {
     transition: transform 6s;
-    transform: translate(500px, 1100px) scale(0.2);
+    transform: translate(300px, 1110px) scale(0.5);
+    z-index: -2;
   }
   .show2 .anime > .anime4 {
-    transition: transform 5.8s;
-    transform: translate(400px, 1000px) scale(0.5);
+    transition: transform 6.5s;
+    transform: translate(130px, 1000px) scale(0.4);
   }
   .show2 .anime > .anime5 {
     transition: transform 7.8s;
-    transform: translate(300px, 1200px) scale(0.1);
+    transform: translate(-40px, 1300px) scale(0.3);
   }
   .reverse .anime > .anime1 {
     transition: transform 3s;
-    transform: translate(-800px, -1300px) scale(0.5);
+    transform: translate(0, 0) scale(1);
   }
 
   .reverse .anime > .anime2 {
     transition: transform 3.3s;
-    transform: translate(-600px, -900px) scale(0.3);
+    transform: translate(0, 0) scale(1);
   }
 
   .reverse .anime > .anime3 {
-    transition: transform 6s;
-    transform: translate(-500px, -1100px) scale(0.2);
+    transition: transform 4s;
+    transform: translate(0, 0) scale(1);
   }
 
   .reverse .anime > .anime4 {
-    transition: transform 5.8s;
-    transform: translate(-400px, -1000px) scale(0.5);
+    transition: transform 4.2s;
+    transform: translate(0, 0) scale(1);
   }
 
   .reverse .anime > .anime5 {
-    transition: transform 7.8s;
-    transform: translate(-300px, -1200px) scale(0.1);
-  }
-  .show22 {
-    margin-top: -5%;
+    transition: transform 4.8s;
+    transform: translate(0, 0) scale(1);
   }
 }
 /* Styles for screens with a width 360px */
