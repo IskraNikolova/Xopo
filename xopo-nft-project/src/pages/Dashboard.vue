@@ -17,7 +17,7 @@
         flex-wrap: wrap"
       >
         <div v-for=" (collection, i) in item.nfts" v-bind:key="i">
-          <card v-bind:item="collection" v-bind:contractName="item.contractName"/>
+          <card v-bind:item="collection"  v-bind:author="'by Miroslav Mihov'" v-bind:contractName="item.contractName"/>
         </div>
       </div>
       </div>

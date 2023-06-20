@@ -33,15 +33,15 @@ export default {
   async created () {
     try {
       document.querySelector('html').dataset.theme = this.appTheme
-      await this.initApp()
-      window.addEventListener('blur', (event) => {
-        this.isOnFocus(false)
-        // event.preventDefault()
-      })
-      window.addEventListener('focus', (event) => {
-        this.isOnFocus(true)
-        // event.preventDefault()
-      })
+      // await this.initApp()
+      // window.addEventListener('blur', (event) => {
+      //   this.isOnFocus(false)
+      //   // event.preventDefault()
+      // })
+      // window.addEventListener('focus', (event) => {
+      //   this.isOnFocus(true)
+      //   // event.preventDefault()
+      // })
     } catch (err) {
       console.log(err.message)
     }

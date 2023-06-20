@@ -43,10 +43,10 @@
         </div>
         <div class="wrapAnime">
             <div class="row anime">
-              <span class="anime1"></span>
+              <span class="anime1 background-image-fullsize"></span>
               <span class="anime2"></span>
-              <span class="anime3"></span>
-              <span class="anime4"></span>
+              <span class="anime3 background-image-fullsize"></span>
+              <span class="anime4 background-image-fullsize"></span>
               <span class="anime5"></span>
           </div>
         </div>
@@ -80,44 +80,71 @@
               </div>
               <div class="col">
                 <div class="row anime">
-                  <span class="anime6"></span>
+                  <span class="anime6 background-image-fullsize"></span>
                   <span class="anime7"></span>
-                  <span class="anime8"></span>
-                  <span class="anime9"></span>
+                  <span class="anime8 background-image-fullsize"></span>
+                  <span class="anime9 background-image-fullsize"></span>
                   <span class="anime10"></span>
                 </div>
               </div>
             </div>
           </div>
+          <p class="title text-uppercase text-bold">XOPO ROADMAP </p>
+          <p class="subTitle">What is the Journey of XOPO?</p>
+          <p class="subTitle">At our project, we envision a journey through <span class="text-bold"> ten foundational eras</span>, all humming with activity and evolving concurrently yet unfolding sequentially. Like strokes on a canvas, each era contributes to the grand tableau of our mission: to create a project that harnesses art to save the world.</p>
+          <div class="row q-mt-xl">
+            <div class="col-6 q-mt-md q-mr-xl q-ml-xl">
+              <q-img src="~assets/roadmap/gifs/all4.gif" />
+            </div>
+            <div class="col-5 roadmap-paragraph q-mt-xs">
+             We start with the <span class="text-bold text-h6">DaVinci Dawn</span>, a welcoming beacon to potential users, followed by the <span class="text-bold text-h6">Picasso Beta</span> that crafts our digital platform. The <span class="text-bold text-h6">Warhol Mint</span> users in the era of creation and commerce, setting the stage for <span class="text-bold text-h6">Hokusai Governance</span> to establish our project's guiding principles.
+
+             <br /><br />With the <span class="text-bold text-h6">O'Keeffe Stake</span>, we invite users to become part of our vision, leading us to the <span class="text-bold text-h6">Michelangelo Airdrop</span>, a token of gratitude for our early adopters. The <span class="text-bold text-h6">Kahlo Portal</span> opens doors to artists worldwide, while the <span class="text-bold text-h6">Matisse Lottery</span> gives voice to our community, enabling them to shape the project.
+
+             <br /><br />The <span class="text-bold text-h6">Van Gogh Integration</span> extends our reach, inviting more users to connect and engage.Finally, the <span class="text-bold text-h6">Kandinsky Legacy</span> solidifies our commitment to art and its causes, creating commemorative collections that resonate far beyond our platform.
+
+              <br />Each era will be detailed upon arrival, painting a vivid picture of our journey so far. For now, we invite you to explore these concepts and join us in creating a project that does more than just exist - it lives, breathes, and thrives on art and passion. The number of eras is not definitive - after all, our journey is as dynamic as the art we aim to save.
+
+              <br /><br />Welcome to our evolving masterpiece. Let's make the world our canvas!
+            </div>
+          </div>
+          <roadmap />
+          <div class="row justify-around">
+          </div>
           <div>
-        <q-img src="~assets/logos/lp_bg.svg" class="logo-footer" />
-        <div class="footer-content">
-          <q-img src="~assets/tokens/XOPO_3.gif" class="token-logo"/>
-          <div class="q-pl-xl">
-            <p class="text-uppercase text-bold text-h5">$XOPO, the native token of Xopo</p>
-            <p class="text-h6">At Xopo, the $XOPO token plays a central role in fostering a community-driven ecosystem.</p>
-            <p>
-              Our Decentralized Autonomous Organization (DAO), consisting of $XOPO token holders, plays a pivotal role in maintaining a vibrant and dynamic ecosystem where all participants have an equal say.In the DAO, collective decisions are made through a robust voting process. Once the voting is complete, the tokens used for voting are burned, symbolizing the consensus reached. Furthermore, each minted NFT generates both unique artwork and tokens, ensuring that the creative output and $XOPO tokens are intertwined.
-    These tokens serve as a powerful incentive, motivating and recognizing the contributions of our engaged community members. By holding $XOPO tokens, individuals have the opportunity to shape the destiny of Xopo while being rewarded for their active involvement.
-    Join us on this exhilarating journey, where $XOPO tokens empower artists, foster community engagement, and drive the future of NFT innovation. Together, we are building a platform that celebrates artistic expression and inclusivity, revolutionizing the way we appreciate and collect digital art.
-            </p>
+            <q-img src="~assets/logos/lp_bg.svg" class="logo-footer" />
+            <div class="footer-content">
+              <q-img src="~assets/tokens/XOPO_3.gif" class="token-logo"/>
+              <div class="q-pl-xl">
+                <p class="text-uppercase text-bold text-h5">$XOPO, the native token of Xopo</p>
+                <p class="text-h6">At Xopo, the $XOPO token plays a central role in fostering a community-driven ecosystem.</p>
+                <p>
+                  Our Decentralized Autonomous Organization (DAO), consisting of $XOPO token holders, plays a pivotal role in maintaining a vibrant and dynamic ecosystem where all participants have an equal say.In the DAO, collective decisions are made through a robust voting process. Once the voting is complete, the tokens used for voting are burned, symbolizing the consensus reached. Furthermore, each minted NFT generates both unique artwork and tokens, ensuring that the creative output and $XOPO tokens are intertwined.
+                  These tokens serve as a powerful incentive, motivating and recognizing the contributions of our engaged community members. By holding $XOPO tokens, individuals have the opportunity to shape the destiny of Xopo while being rewarded for their active involvement.
+                  Join us on this exhilarating journey, where $XOPO tokens empower artists, foster community engagement, and drive the future of NFT innovation. Together, we are building a platform that celebrates artistic expression and inclusivity, revolutionizing the way we appreciate and collect digital art.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      </div>
       </q-layout>
     </div>
   </q-page>
 </template>
 
 <script>
-// import { openURL } from 'quasar'
-import { xopo, joinTheXopo } from './../modules/constants'
 import { scroll } from 'quasar'
+import { mapGetters } from 'vuex'
+import { xopo, joinTheXopo } from './../modules/constants'
 const { getScrollTarget, setVerticalScrollPosition } = scroll
 
 export default {
   name: 'PageIndex',
+  components: {
+    // TooltipStyle: () => import('components/tooltip-style.vue')
+    // AnimatedNumber: () => import('animated-number-vue')
+    Roadmap: () => import('components/roadmap.vue')
+  },
   data () {
     return {
       xopo,
@@ -126,8 +153,27 @@ export default {
       isSecond: false,
       scroll: 0,
       inerh: 0,
-      lastScrollTop: 0
+      lastScrollTop: 0,
+      stepModel: 1,
+      arrayMarkerLabel: [
+        { value: 1, label: 'Step 1', toolText: 'Launch the welcome page to introduce the project to potential users.', text: 'WELCOME page' },
+        { value: 2, label: 'Step 2', toolText: 'Develop the beta version of the dApp, which includes a form for artists to apply, user portfolios, and pages for each artist\'s collection and minting capabilities.', text: 'DApp’s (\'Join The Xopo\') beta version' },
+        { value: 3, label: 'Step 3', toolText: 'Launch the welcome page to introduce the project to potential users.', text: '$XOPO Token & DAO: Community Governance & Rewards' },
+        { value: 4, label: 'Step 4', toolText: 'Launch the welcome page to introduce the project to potential users.', text: 'WELCOME page ' },
+        { value: 5, label: 'Step 5', toolText: 'Launch the welcome page to introduce the project to potential users.', text: 'WELCOME page' },
+        { value: 6, label: 'Step 6', toolText: 'Launch the welcome page to introduce the project to potential users.', text: 'DApp’s (\'Join The Xopo\') beta version' },
+        { value: 7, label: 'Step 7', toolText: 'Launch the welcome page to introduce the project to potential users.', text: '$XOPO Token & DAO: Community Governance & Rewards' },
+        { value: 8, label: 'Step 8', toolText: 'Launch the welcome page to introduce the project to potential users.', text: 'WELCOME page ' }
+      ]
     }
+  },
+  computed: {
+    stepLabel () {
+      return `${this.stepModel}. ${this.arrayMarkerLabel[this.stepModel - 1].text}`
+    },
+    ...mapGetters([
+      'appTheme'
+    ])
   },
   mounted () {
     this.xopo = xopo
@@ -146,9 +192,20 @@ export default {
       // const sText = document.querySelector('.second-text')
       // const tText = document.querySelector('.third-text')
       const anime = document.querySelector('.wrapAnime')
+      const cards = document.querySelectorAll('.my-card')
+      let index = 100
+      cards.forEach(function (card) {
+        const cardPosition = card.offsetTop
+        if (position > cardPosition - window.innerHeight / 3.5) {
+          card.classList.add(`animate-in-${index}`)
+        } else {
+          card.classList.remove(`animate-in-${index}`)
+        }
+        index += 20
+      })
 
       if (direction === 'up') {
-        if (position <= 0) {
+        if (position < 0) {
           text.classList.remove('show')
           logo.classList.remove('logo-small', 'logo-below')
           this.isFirst = true
@@ -192,6 +249,9 @@ export default {
       const target = getScrollTarget(el)
       const offset = el.offsetTop
       setVerticalScrollPosition(target, offset, duration)
+    },
+    test () {
+      console.log('hi')
     },
     beforeDestroy () {
       // Remove scroll event listener when component is destroyed
@@ -288,6 +348,13 @@ export default {
   justify-content: center;
   gap: 70px;
   text-align: center;
+  line-height: 2.2;
+  font-size: medium;
+}
+.roadmap-paragraph {
+  justify-content: center;
+  gap: 70px;
+  text-align: left;
   line-height: 2.2;
   font-size: medium;
 }
@@ -411,7 +478,8 @@ export default {
 .anime9 {
   position: static;
   display: block;
-  background-image: url('./../assets/animeImages/kk1.png');
+  background-image: url('./../assets/animeImages/kk.png');
+  background-size: auto;
   animation: organic 12s infinite alternate ease-in-out;
 }
 .anime10 {
@@ -419,6 +487,12 @@ export default {
   display: block;
   background-color: #1f1f1e;
   animation: organic 12s infinite alternate ease-in-out;
+}
+.background-image-fullsize {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100%;
 }
 .text-center {
   max-width: 1600px;
@@ -811,20 +885,20 @@ export default {
     z-index: -2;
   }
   .show2 .anime > .anime2 {
-    transition: transform 4s;
+    transition: transform 3.2s;
     transform: translate(320px, 820px) scale(0.4);
   }
   .show2 .anime > .anime3 {
-    transition: transform 6s;
+    transition: transform 4s;
     transform: translate(300px, 1110px) scale(0.5);
     z-index: -2;
   }
   .show2 .anime > .anime4 {
-    transition: transform 6.5s;
+    transition: transform 4.5s;
     transform: translate(130px, 1000px) scale(0.4);
   }
   .show2 .anime > .anime5 {
-    transition: transform 7.8s;
+    transition: transform 5.8s;
     transform: translate(-40px, 1300px) scale(0.3);
   }
   .reverse .anime > .anime1 {
@@ -960,5 +1034,4 @@ export default {
     margin-left: -12%;
   }
 }
-
 </style>
