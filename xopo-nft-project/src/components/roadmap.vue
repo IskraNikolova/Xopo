@@ -1,87 +1,15 @@
 <template>
-  <div class="q-pa-md cards row items-start q-gutter-md">
-    <div @click="test()" class="my-card col-2 q-ml-xl">
-        <q-card>
-        <img src="~assets/roadmap/1.png">
-
-        <q-card-section>
-        <div class="text-h6">DaVinci Dawn</div>
-        <div class="text-subtitle2"> Welcome <span class="text-primary text-h4">#1</span></div>
-        </q-card-section>
-        </q-card>
-    </div>
-    <q-card class="my-card col-2 q-ml-xl">
-        <img src="~assets/roadmap/2.png">
-
-        <q-card-section>
-        <div class="text-h6">Picasso Beta</div>
-        <div class="text-subtitle2"> DApp Beta <span class="text-primary text-h4">#2</span></div>
-        </q-card-section>
-    </q-card>
-    <q-card class="my-card col-2 q-ml-xl">
-        <img src="~assets/roadmap/3.png">
-
-        <q-card-section>
-        <div class="text-h6">Warhol Bazaar</div>
-        <div class="text-subtitle2">Marketplace <span class="text-primary text-h4">#3</span></div>
-        </q-card-section>
-    </q-card>
-    <q-card class="my-card col-2 q-ml-xl">
-        <img src="~assets/roadmap/4.png">
-
-        <q-card-section>
-        <div class="text-h6">Hokusai Governance</div>
-        <div class="text-subtitle2">Token and DAO <span class="text-primary text-h4">#4</span></div>
-        </q-card-section>
-    </q-card>
-    <q-card class="my-card col-2 q-ml-xl">
-        <img src="~assets/roadmap/5.png">
-
-        <q-card-section>
-        <div class="text-h6">O'Keeffe Stake</div>
-        <div class="text-subtitle2"> Staking and Mining <span class="text-primary text-h4">#5</span></div>
-        </q-card-section>
-    </q-card>
-    <q-card class="my-card col-2 q-ml-xl">
-        <img src="~assets/roadmap/6.png">
-
-        <q-card-section>
-        <div class="text-h6">Michelangelo Airdrop</div>
-        <div class="text-subtitle2"> Airdrop <span class="text-primary text-h4">#6</span></div>
-        </q-card-section>
-    </q-card>
-    <q-card class="my-card col-2 q-ml-xl">
-        <img src="~assets/roadmap/8.png">
-
-        <q-card-section>
-        <div class="text-h6">Kahlo Portal</div>
-        <div class="text-subtitle2"> Artist Portal <span class="text-primary text-h4">#7</span></div>
-        </q-card-section>
-    </q-card>
-    <q-card class="my-card col-2 q-ml-xl">
-        <img src="~assets/roadmap/9.png">
-
-        <q-card-section>
-        <div class="text-h6">Matisse Lottery</div>
-        <div class="text-subtitle2">Voting and Raffle <span class="text-primary text-h4">#8</span></div>
-        </q-card-section>
-    </q-card>
-    <q-card class="my-card col-2 q-ml-xl">
-        <img src="~assets/roadmap/10.png">
-
-        <q-card-section>
-        <div class="text-h6">Van Gogh Integration</div>
-        <div class="text-subtitle2">Integration <span class="text-primary text-h4">#9</span></div>
-        </q-card-section>
-    </q-card>
-    <q-card class="my-card col-2 q-ml-xl">
-        <img src="~assets/roadmap/11.png">
-
-        <q-card-section>
-        <div class="text-h6">Kandinsky Legacy</div>
-        <div class="text-subtitle2"> Sponsorship and Commemoration: <span class="text-red">#10</span></div>
-        </q-card-section>
-    </q-card>
+  <div class="q-pa-xs cards row items-start q-gutter-md flex flex-center">
+    <roadmap-card v-bind:img="'img/1.png'" v-bind:title="'DaVinci Dawn'" v-bind:index="1"/>
+    <roadmap-card v-bind:img="'img/2.png'" v-bind:title="'Picasso Beta'" v-bind:index="2"/>
+    <roadmap-card v-bind:img="'img/3.png'" v-bind:title="'Warhol Bazaar'" v-bind:index="3"/>
+    <roadmap-card v-bind:img="'img/4.png'" v-bind:title="'Hokusai Governance'" v-bind:index="4"/>
+    <roadmap-card v-bind:img="'img/5.png'" v-bind:title="'O\'Keeffe Stake'" v-bind:index="5"/>
+    <roadmap-card v-bind:img="'img/6.png'" v-bind:title="'Michelangelo Airdrop'" v-bind:index="6"/>
+    <roadmap-card v-bind:img="'img/8.png'" v-bind:title="'Kahlo Portal'" v-bind:index="7"/>
+    <roadmap-card v-bind:img="'img/9.png'" v-bind:title="'Matisse Lottery'" v-bind:index="8"/>
+    <roadmap-card v-bind:img="'img/10.png'" v-bind:title="'Van Gogh Integration'" v-bind:index="9"/>
+    <roadmap-card v-bind:img="'img/11.png'" v-bind:title="'Kandinsky Legacy'" v-bind:index="10"/>
   </div>
 </template>
 <script>
@@ -93,11 +21,14 @@ export default {
     ...mapGetters([
       'appTheme'
     ])
+  },
+  components: {
+    RoadmapCard: () => import('components/roadmap-card.vue')
   }
 }
 </script>
 <style>
-.animate-in-100 {
+  .animate-in-100 {
     transform: rotate(100deg);
   }
   .animate-in-120 {
@@ -127,17 +58,44 @@ export default {
   .animate-in-280 {
     transform: rotate(280deg);
   }
-  .cards {
-    margin-top: 5%;
+  .down-100 {
+    transition: transform cubic-bezier(9.215, 0.610, 0.355, 1);
+    transform: scale(0.1);
   }
-  .my-card {
-    width: 100%;
-    max-width: 350px;
-    min-height: 350px;
-    transition: transform 1s;
+  .down-120 {
+    transition: transform 9s cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: scale(2);
   }
-  .my-card:hover {
-    background-color: aqua;
-    cursor: pointer;
+  .down-140 {
+    transition: transform 18s;
+    transform: scale(0.8);
+  }
+  .down-160 {
+    transition: transform 8s;
+    transform: scale(1.1);
+  }
+  .down-180 {
+    transition: transform 2s cubic-bezier(0.215, 0.610, 0.355, 1);
+    transform: scale(3.4);
+  }
+  .down-200 {
+    transition: transform cubic-bezier(0.215, 0.610, 0.355, 1);
+    transform: scale(0.4);
+  }
+  .down-220 {
+    transition: transform cubic-bezier(0.215, 0.610, 0.355, 1);
+    transform: scale(0.4);
+  }
+  .down-240 {
+    transition: transform cubic-bezier(0.215, 0.610, 0.355, 1);
+    transform: scale(0.2);
+  }
+  .down-260 {
+    transition: transform cubic-bezier(0.215, 0.610, 0.355, 1);
+    transform: scale(2.4);
+  }
+  .down-280 {
+    transition: transform cubic-bezier(0.215, 0.610, 0.355, 1);
+    transform: scale(3.4);
   }
 </style>

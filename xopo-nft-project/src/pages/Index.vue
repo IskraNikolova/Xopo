@@ -93,10 +93,10 @@
           <p class="subTitle">What is the Journey of XOPO?</p>
           <p class="subTitle">At our project, we envision a journey through <span class="text-bold"> ten foundational eras</span>, all humming with activity and evolving concurrently yet unfolding sequentially. Like strokes on a canvas, each era contributes to the grand tableau of our mission: to create a project that harnesses art to save the world.</p>
           <div class="row q-mt-xl">
-            <div class="col-6 q-mt-md q-mr-xl q-ml-xl">
-              <q-img src="~assets/roadmap/gifs/all4.gif" />
+            <div class="col-4 q-mt-md q-mr-xl q-ml-xl">
+              <q-img src="~assets/roadmap/gifs/all4.gif" style="width: 70%;" />
             </div>
-            <div class="col-5 roadmap-paragraph q-mt-xs">
+            <div class="col-7 roadmap-paragraph q-mt-xs">
              We start with the <span class="text-bold text-h6">DaVinci Dawn</span>, a welcoming beacon to potential users, followed by the <span class="text-bold text-h6">Picasso Beta</span> that crafts our digital platform. The <span class="text-bold text-h6">Warhol Mint</span> users in the era of creation and commerce, setting the stage for <span class="text-bold text-h6">Hokusai Governance</span> to establish our project's guiding principles.
 
              <br /><br />With the <span class="text-bold text-h6">O'Keeffe Stake</span>, we invite users to become part of our vision, leading us to the <span class="text-bold text-h6">Michelangelo Airdrop</span>, a token of gratitude for our early adopters. The <span class="text-bold text-h6">Kahlo Portal</span> opens doors to artists worldwide, while the <span class="text-bold text-h6">Matisse Lottery</span> gives voice to our community, enabling them to shape the project.
@@ -105,7 +105,7 @@
 
               <br />Each era will be detailed upon arrival, painting a vivid picture of our journey so far. For now, we invite you to explore these concepts and join us in creating a project that does more than just exist - it lives, breathes, and thrives on art and passion. The number of eras is not definitive - after all, our journey is as dynamic as the art we aim to save.
 
-              <br /><br />Welcome to our evolving masterpiece. Let's make the world our canvas!
+              <br /><br /><span style="font-size: x-large;">Welcome to our evolving masterpiece. Let's make the world our canvas!</span>
             </div>
           </div>
           <roadmap />
@@ -196,10 +196,14 @@ export default {
       let index = 100
       cards.forEach(function (card) {
         const cardPosition = card.offsetTop
-        if (position > cardPosition - window.innerHeight / 3.5) {
+        if (position > cardPosition - window.innerHeight / 3.6) {
+          card.classList.remove(`down-${index}`)
           card.classList.add(`animate-in-${index}`)
-        } else {
+        } else if (position > cardPosition - window.innerHeight / 0.8) {
+          card.classList.remove(`down-${index}`)
           card.classList.remove(`animate-in-${index}`)
+        } else if (position > cardPosition - window.innerHeight / 0.2) {
+          card.classList.add(`down-${index}`)
         }
         index += 20
       })
