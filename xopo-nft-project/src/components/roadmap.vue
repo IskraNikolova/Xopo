@@ -1,15 +1,15 @@
 <template>
   <div class="q-pa-xs cards row items-start q-gutter-md flex flex-center">
-    <roadmap-card v-bind:img="'img/1.png'" v-bind:title="'DaVinci Dawn'" v-bind:index="1"/>
-    <roadmap-card v-bind:img="'img/2.png'" v-bind:title="'Picasso Beta'" v-bind:index="2"/>
-    <roadmap-card v-bind:img="'img/3.png'" v-bind:title="'Warhol Bazaar'" v-bind:index="3"/>
-    <roadmap-card v-bind:img="'img/4.png'" v-bind:title="'Hokusai Governance'" v-bind:index="4"/>
-    <roadmap-card v-bind:img="'img/5.png'" v-bind:title="'O\'Keeffe Stake'" v-bind:index="5"/>
-    <roadmap-card v-bind:img="'img/6.png'" v-bind:title="'Michelangelo Airdrop'" v-bind:index="6"/>
-    <roadmap-card v-bind:img="'img/8.png'" v-bind:title="'Kahlo Portal'" v-bind:index="7"/>
-    <roadmap-card v-bind:img="'img/9.png'" v-bind:title="'Matisse Lottery'" v-bind:index="8"/>
-    <roadmap-card v-bind:img="'img/10.png'" v-bind:title="'Van Gogh Integration'" v-bind:index="9"/>
-    <roadmap-card v-bind:img="'img/11.png'" v-bind:title="'Kandinsky Legacy'" v-bind:index="10"/>
+    <roadmap-card v-bind:img="require('../assets/roadmap/1.2.png')" v-bind:title1="'DaVinci'" v-bind:title2="'Dawn'" v-bind:index="1"/>
+    <roadmap-card v-bind:img="require('../assets/roadmap/2.png')" v-bind:title1="'Picasso'" v-bind:title2="'Beta'" v-bind:index="2"/>
+    <roadmap-card v-bind:img="require('../assets/roadmap/3.png')" v-bind:title1="'Warhol'" v-bind:title2="'Bazaar'" v-bind:index="3"/>
+    <roadmap-card v-bind:img="require('../assets/roadmap/4.png')" v-bind:title1="'Hokusai'" v-bind:title2="'Governance'" v-bind:index="4"/>
+    <roadmap-card v-bind:img="require('../assets/roadmap/5.png')" v-bind:title1="'O\'Keeffe'" v-bind:title2="'Stake'" v-bind:index="5"/>
+    <roadmap-card v-bind:img="require('../assets/roadmap/6.1.png')" v-bind:title1="'Michelangelo'" v-bind:title2="'Airdrop'" v-bind:index="6"/>
+    <roadmap-card v-bind:img="require('../assets/roadmap/8.png')" v-bind:title1="'Kahlo'" v-bind:title2="'Portal'" v-bind:index="7"/>
+    <roadmap-card v-bind:img="require('../assets/roadmap/9.png')" v-bind:title1="'Matisse'" v-bind:title2="'Lottery'" v-bind:index="8"/>
+    <roadmap-card v-bind:img="require('../assets/roadmap/10.png')" v-bind:title1="'Van Gogh'" v-bind:title2="'Integration'" v-bind:index="9"/>
+    <roadmap-card v-bind:img="require('../assets/roadmap/11.png')" v-bind:title1="'Kandinsky'" v-bind:title2="'Legacy'" v-bind:index="10"/>
   </div>
 </template>
 <script>
@@ -59,7 +59,7 @@ export default {
     transform: rotate(280deg);
   }
   .down-100 {
-    transition: transform cubic-bezier(9.215, 0.610, 0.355, 1);
+    transition: transform 9s cubic-bezier(9.215, 0.610, 0.355, 1);
     transform: scale(0.1);
   }
   .down-120 {
@@ -68,15 +68,15 @@ export default {
   }
   .down-140 {
     transition: transform 18s;
-    transform: scale(0.8);
+    transform: scale(1.3);
   }
   .down-160 {
     transition: transform 8s;
     transform: scale(1.1);
   }
   .down-180 {
-    transition: transform 2s cubic-bezier(0.215, 0.610, 0.355, 1);
-    transform: scale(3.4);
+    transition: transform cubic-bezier(0.215, 0.610, 0.355, 1);
+    transform: scale(1.4);
   }
   .down-200 {
     transition: transform cubic-bezier(0.215, 0.610, 0.355, 1);
@@ -92,10 +92,10 @@ export default {
   }
   .down-260 {
     transition: transform cubic-bezier(0.215, 0.610, 0.355, 1);
-    transform: scale(2.4);
+    transform: scale(1.4);
   }
   .down-280 {
     transition: transform cubic-bezier(0.215, 0.610, 0.355, 1);
-    transform: scale(3.4);
+    transform: scale(1);
   }
 </style>

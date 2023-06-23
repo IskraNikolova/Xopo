@@ -40,6 +40,7 @@
           <span class="q-mr-xs"><q-img src="~assets/icons/media/instagram_i.svg" class="media" /></span>
           <span class="q-mr-xs"><q-img src="~assets/icons/media/telegram_i.svg" class="media" /></span>
           <span class="q-mr-xs"><q-img src="~assets/icons/media/medium_i.svg"  class="media" /></span>
+          <span class="q-mr-xs"><q-img src="~assets/icons/media/discord_i.svg"  class="media" /></span>
         </div>
         <div class="wrapAnime">
             <div class="row anime">
@@ -52,8 +53,8 @@
         </div>
           <div class="first-text">
             <p class="title text-uppercase text-bold">Priceless Creations in the Digital Age </p>
-            <p class="subTitle">Welcome to <span class="text-bold">"Join The Xopo"</span>, the Ultimate Platform for NFT Creation and Artistic Empowerment</p>
-            <div class="row paragraph">
+            <p class="subTitle" style="font-size: 15pt;">Welcome to <span class="text-bold">"Join The Xopo"</span>, the Ultimate Platform for NFT Creation and Artistic Empowerment</p>
+            <div class="row paragraph wp">
               <div class="col q-pl-xl"><p>In today's digital age, the world of art is constantly evolving. As an artist, it can be a challenge to break through the noise and gain recognition for your work. That's where <span class="text-bold">"Join The Xopo"</span> comes in - we're the ultimate platform for NFT creation, empowering artists to unlock the full potential of their masterpieces and take their creations to new heights.</p></div>
               <div class="col">Our team of NFT experts and talented artists work together to transform your artwork into non-fungible tokens, giving it a unique value and making it more accessible to a wider audience. But <span class="text-bold">"Join The Xopo"</span> is more than just a marketplace - it's a decentralized hub for artists, developers, and free speech enthusiasts. We're here to empower you, fuel your passion, and help you forge connections in the world of digital art.</div>
               <div class="col q-pr-xl">
@@ -62,14 +63,14 @@
                   tag="a"
                   href="https://medium.com/@XoroNft/how-to-become-a-wealthy-and-recognized-artist-in-todays-world-d207a36b8f2f"
                   target="_blank"
-                  v-html="'read more...'"
-                  class="text-info"
+                  v-html="'Read More'"
+                  class="a-button"
                 ></a>
               </div>
             </div>
           </div>
           <div class="second-text">
-            <div class="row paragraph" style="margin-top: 12%">
+            <div class="row paragraph wp" style="margin-top: 12%">
               <div class="col q-pl-xl">
                 <p class="text-uppercase text-bold text-h5">Xopo's First Own Collection: "Koloda"</p>
                 <p class="text-h6">Minted on Avalanche, our first NFT collection will feature 85 stunning paintings<span class="text-bold"> by Bulgarian artist Miroslav Mihov (Eternal Mirror)</span>. 'Koloda' - original works of art created between 2014 and 2022 using oil paints on canvas, watercolors, and chalk on cardboard.</p>
@@ -90,25 +91,25 @@
             </div>
           </div>
           <p class="title text-uppercase text-bold">XOPO ROADMAP </p>
-          <p class="subTitle">What is the Journey of XOPO?</p>
-          <p class="subTitle">At our project, we envision a journey through <span class="text-bold"> ten foundational eras</span>, all humming with activity and evolving concurrently yet unfolding sequentially. Like strokes on a canvas, each era contributes to the grand tableau of our mission: to create a project that harnesses art to save the world.</p>
+          <p class="subTitle" style="font-size: 15pt;">What is the Journey of XOPO?</p>
+          <p class="subTitle" style="font-size: 13pt;">At our project, we envision a journey through <span class="text-bold"> ten foundational eras</span>, all humming with activity and evolving concurrently yet unfolding sequentially. Like strokes on a canvas, each era contributes to the grand tableau of our mission: to create a project that harnesses art to save the world.</p>
           <div class="row q-mt-xl">
-            <div class="col-4 q-mt-md q-mr-xl q-ml-xl">
-              <q-img src="~assets/roadmap/gifs/all4.gif" style="width: 70%;" />
+            <div class="col-4 q-mt-md q-mr-xl q-ml-xl q-mb-xl">
+              <span class="anime11 background-image-fullsize"></span>
             </div>
-            <div class="col-7 roadmap-paragraph q-mt-xs">
-             We start with the <span class="text-bold text-h6">DaVinci Dawn</span>, a welcoming beacon to potential users, followed by the <span class="text-bold text-h6">Picasso Beta</span> that crafts our digital platform. The <span class="text-bold text-h6">Warhol Mint</span> users in the era of creation and commerce, setting the stage for <span class="text-bold text-h6">Hokusai Governance</span> to establish our project's guiding principles.
+            <div class="col-7 paragraph rp">
+             We start with the <span class="text-bold">DaVinci Dawn</span>, a welcoming beacon to potential users, followed by the <span class="text-bold">Picasso Beta</span> that crafts our digital platform. The <span class="text-bold">Warhol Mint</span> users in the era of creation and commerce, setting the stage for <span class="text-bold">Hokusai Governance</span> to establish our project's guiding principles.
 
-             <br /><br />With the <span class="text-bold text-h6">O'Keeffe Stake</span>, we invite users to become part of our vision, leading us to the <span class="text-bold text-h6">Michelangelo Airdrop</span>, a token of gratitude for our early adopters. The <span class="text-bold text-h6">Kahlo Portal</span> opens doors to artists worldwide, while the <span class="text-bold text-h6">Matisse Lottery</span> gives voice to our community, enabling them to shape the project.
+             <br /><br />With the <span class="text-bold">O'Keeffe Stake</span>, we invite users to become part of our vision, leading us to the <span class="text-bold">Michelangelo Airdrop</span>, a token of gratitude for our early adopters. The <span class="text-bold">Kahlo Portal</span> opens doors to artists worldwide, while the <span class="text-bold">Matisse Lottery</span> gives voice to our community, enabling them to shape the project.
 
-             <br /><br />The <span class="text-bold text-h6">Van Gogh Integration</span> extends our reach, inviting more users to connect and engage.Finally, the <span class="text-bold text-h6">Kandinsky Legacy</span> solidifies our commitment to art and its causes, creating commemorative collections that resonate far beyond our platform.
+             <br /><br />The <span class="text-bold">Van Gogh Integration</span> extends our reach, inviting more users to connect and engage.Finally, the <span class="text-bold">Kandinsky Legacy</span> solidifies our commitment to art and its causes, creating commemorative collections that resonate far beyond our platform.
 
               <br />Each era will be detailed upon arrival, painting a vivid picture of our journey so far. For now, we invite you to explore these concepts and join us in creating a project that does more than just exist - it lives, breathes, and thrives on art and passion. The number of eras is not definitive - after all, our journey is as dynamic as the art we aim to save.
 
-              <br /><br /><span style="font-size: x-large;">Welcome to our evolving masterpiece. Let's make the world our canvas!</span>
+              <br /><br /><span style="font-size: large;">Welcome to our evolving masterpiece. Let's make the world our canvas!</span>
             </div>
           </div>
-          <roadmap />
+          <roadmap style="margin-top: 7%;"/>
           <div class="row justify-around">
           </div>
           <div>
@@ -133,7 +134,7 @@
 </template>
 
 <script>
-import { scroll } from 'quasar'
+import { scroll, openURL } from 'quasar'
 import { mapGetters } from 'vuex'
 import { xopo, joinTheXopo } from './../modules/constants'
 const { getScrollTarget, setVerticalScrollPosition } = scroll
@@ -254,6 +255,17 @@ export default {
       const offset = el.offsetTop
       setVerticalScrollPosition(target, offset, duration)
     },
+    readMore (url) {
+      console.log(url)
+      openURL(url,
+        undefined,
+        {
+          noopener: true,
+          menubar: true,
+          toolbar: true,
+          noreferrer: true
+        })
+    },
     test () {
       console.log('hi')
     },
@@ -271,6 +283,13 @@ export default {
   justify-content: center;
   align-items: center;
   color: #1f1f1e;
+}
+.a-button {
+  padding: 8px 15px;
+  border: 1px solid #dfd19d;
+  border-radius: 35px;
+  color: #dfd19d;
+  text-decoration: none;
 }
 .media {
   width: 20pt;
@@ -342,25 +361,24 @@ export default {
 .subTitle {
   max-width: 50%;
   text-align: center;
-  font-size: 15pt;
   margin-left: auto;
   margin-right: auto;
 }
 .paragraph {
+  justify-content: center;
+  gap: 70px;
+  line-height: 2.2;
+  font-size: 12pt;
+}
+.wp {
   margin-top: 3%;
   display: flex;
-  justify-content: center;
-  gap: 70px;
   text-align: center;
-  line-height: 2.2;
-  font-size: medium;
 }
-.roadmap-paragraph {
+.rp {
   justify-content: center;
-  gap: 70px;
   text-align: left;
-  line-height: 2.2;
-  font-size: medium;
+  margin-bottom: 100px;
 }
 .mouse {
   width: 20pt;
@@ -432,6 +450,7 @@ export default {
   background-image: url('./../assets/animeImages/65.png');
   border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
   animation: organic 12s infinite alternate ease-in-out;
+  animation-delay: 3s;
 }
 .anime2 {
   position: static;
@@ -446,6 +465,7 @@ export default {
   background-image: url('./../assets/animeImages/newGold.gif');
   border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
   animation: organic 12s infinite alternate ease-in-out;
+  animation-delay: 4s;
 }
 .anime4 {
   position: static;
@@ -453,6 +473,7 @@ export default {
   background-image: url('./../assets/animeImages/face3.png');
   border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
   animation: organic 12s infinite alternate ease-in-out;
+  animation-delay: 1s;
 }
 .anime5 {
   position: static;
@@ -492,6 +513,12 @@ export default {
   background-color: #1f1f1e;
   animation: organic 12s infinite alternate ease-in-out;
 }
+.anime11 {
+  position: static;
+  display: block;
+  background-image: url('./../assets/roadmap/gifs/all4.gif');
+  animation: organic 12s infinite alternate ease-in-out;
+}
 .background-image-fullsize {
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -520,7 +547,30 @@ export default {
     border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%;
   }
 }
+.reverse .anime > .anime1 {
+    transition: transform 2s;
+    transform: translate(0, 0) scale(1);
+  }
 
+  .reverse .anime > .anime2 {
+    transition: transform 2.2s;
+    transform: translate(0, 0) scale(1);
+  }
+
+  .reverse .anime > .anime3 {
+    transition: transform 3s;
+    transform: translate(0, 0) scale(1);
+  }
+
+  .reverse .anime > .anime4 {
+    transition: transform 3.5s;
+    transform: translate(0, 0) scale(1);
+  }
+
+  .reverse .anime > .anime5 {
+    transition: transform 4.1s;
+    transform: translate(0, 0) scale(1);
+  }
 /* Styles for screens with a width between 375px and 414px and a height between 667px and 896px */
 @media (min-width: 375px) and (max-width: 414px),
        (min-height: 667px) and (max-height: 896px) {
@@ -827,20 +877,19 @@ export default {
     height: 100pt;
   }
   .anime6 {
-    margin-top: -3%;
     margin-left: 20%;
     width: 10%;
     height: 200pt;
     z-index: -1;
   }
   .anime7 {
-    margin-top: 50%;
+    margin-top: 55%;
     width: 10%;
     height: 50pt;
     z-index: -1;
   }
   .anime8 {
-    margin-top: 4%;
+    margin-top: 22%;
     margin-left: 15%;
     width: 15%;
     height: 280pt;
@@ -848,15 +897,19 @@ export default {
   }
   .anime9 {
     margin-left: -55%;
-    margin-top: 20%;
-    width: 60%;
-    height: 60pt;
+    margin-top: 23%;
+    width: 55%;
+    height: 40pt;
     z-index: -1;
   }
   .anime10 {
     margin-top: -8%;
     width: 10%;
     height: 60pt;
+  }
+  .anime10 {
+    margin-top: -20%;
+    width: 80%;
   }
   .first-p {
     font-size: 13pt;
@@ -884,50 +937,27 @@ export default {
     font-size: 22pt;
   }
   .show2 .anime > .anime1 {
-    transition: transform 3s;
-    transform: translate(620px, 980px) scale(0.4);
+    transition: transform 2s;
+    transform: translate(500px, 1030px) scale(0.3);
     z-index: -2;
   }
   .show2 .anime > .anime2 {
-    transition: transform 3.2s;
-    transform: translate(320px, 820px) scale(0.4);
+    transition: transform 2.2s;
+    transform: translate(630px, 870px) scale(0.35);
   }
   .show2 .anime > .anime3 {
-    transition: transform 4s;
-    transform: translate(300px, 1110px) scale(0.5);
+    transition: transform 3s;
+    transform: translate(280px, 1180px) scale(0.3);
     z-index: -2;
   }
   .show2 .anime > .anime4 {
-    transition: transform 4.5s;
-    transform: translate(130px, 1000px) scale(0.4);
+    transition: transform 3.5s;
+    transform: translate(42px, 1080px) scale(0.38);
   }
   .show2 .anime > .anime5 {
-    transition: transform 5.8s;
-    transform: translate(-40px, 1300px) scale(0.3);
-  }
-  .reverse .anime > .anime1 {
-    transition: transform 3s;
-    transform: translate(0, 0) scale(1);
-  }
-
-  .reverse .anime > .anime2 {
-    transition: transform 3.3s;
-    transform: translate(0, 0) scale(1);
-  }
-
-  .reverse .anime > .anime3 {
-    transition: transform 4s;
-    transform: translate(0, 0) scale(1);
-  }
-
-  .reverse .anime > .anime4 {
-    transition: transform 4.2s;
-    transform: translate(0, 0) scale(1);
-  }
-
-  .reverse .anime > .anime5 {
-    transition: transform 4.8s;
-    transform: translate(0, 0) scale(1);
+    transition: transform 4.1s;
+    transform: translate(-270px, 1350px) scale(0.3);
+    z-index: -2;
   }
 }
 /* Styles for screens with a width 360px */
