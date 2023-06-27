@@ -1,4 +1,4 @@
-<template>
+<!--<template>
     <div @click="test()" class="my-card col-1">
       <q-card>
         <div class="card-content">
@@ -88,14 +88,14 @@ export default {
 .my-card {
     border-radius: 15px!important;
 }
-</style>
-<!--<template>
-    <div @click="test()" class="my-card col-1">
+</style>-->
+<template>
+    <div @click="goTo(index)" class="my-card col-1">
     <q-card>
         <img :src="img">
 
         <q-card-section style="min-height: 90px; position: relative;">
-          <div class="text-title">{{ title1 }}<br/> {{ title2 }}</div>
+          <div class="text-title">{{ getTitle1() }}<br/> {{ getTitle2() }}</div>
           <div class="text-primary index"># {{ index }}</div>
         </q-card-section>
     </q-card>
@@ -107,16 +107,12 @@ export default {
 export default {
   name: 'Roadmap-card',
   props: {
+    item: {
+      type: Object,
+      required: true
+    },
     index: {
       type: Number,
-      required: true
-    },
-    title1: {
-      type: String,
-      required: true
-    },
-    title2: {
-      type: String,
       required: true
     },
     img: {
@@ -129,8 +125,23 @@ export default {
     }
   },
   methods: {
-    test () {
-      console.log('hi')
+    goTo (i) {
+      this.$router.push({ path: `/${i}` })
+    },
+    // todo ...compound...
+    getTitle1 () {
+      if (!this.item) return
+      const titles = this.item.title.split(' ')
+      return titles[0]
+    },
+    getTitle2 () {
+      if (!this.item) return
+      const titles = this.item.title.split(' ')
+      return titles[0]
+    },
+    getDest () {
+      if (!this.item || !this.item.destination) return
+      return this.item.destination
     }
   }
 }
@@ -158,4 +169,4 @@ export default {
     padding-left: 50%;
     padding-bottom: 10%;
   }
-</style>-->
+</style>

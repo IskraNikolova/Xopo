@@ -1,29 +1,34 @@
 <template>
-  <div class="q-pa-xs cards row items-start q-gutter-md flex flex-center">
-    <roadmap-card v-bind:img="require('../assets/roadmap/1.2.png')" v-bind:title1="'DaVinci'" v-bind:title2="'Dawn'" v-bind:index="1"/>
-    <roadmap-card v-bind:img="require('../assets/roadmap/2.png')" v-bind:title1="'Picasso'" v-bind:title2="'Beta'" v-bind:index="2"/>
-    <roadmap-card v-bind:img="require('../assets/roadmap/3.png')" v-bind:title1="'Warhol'" v-bind:title2="'Bazaar'" v-bind:index="3"/>
-    <roadmap-card v-bind:img="require('../assets/roadmap/4.png')" v-bind:title1="'Hokusai'" v-bind:title2="'Governance'" v-bind:index="4"/>
-    <roadmap-card v-bind:img="require('../assets/roadmap/5.png')" v-bind:title1="'O\'Keeffe'" v-bind:title2="'Stake'" v-bind:index="5"/>
-    <roadmap-card v-bind:img="require('../assets/roadmap/6.1.png')" v-bind:title1="'Michelangelo'" v-bind:title2="'Airdrop'" v-bind:index="6"/>
-    <roadmap-card v-bind:img="require('../assets/roadmap/8.png')" v-bind:title1="'Kahlo'" v-bind:title2="'Portal'" v-bind:index="7"/>
-    <roadmap-card v-bind:img="require('../assets/roadmap/9.png')" v-bind:title1="'Matisse'" v-bind:title2="'Lottery'" v-bind:index="8"/>
-    <roadmap-card v-bind:img="require('../assets/roadmap/10.png')" v-bind:title1="'Van Gogh'" v-bind:title2="'Integration'" v-bind:index="9"/>
-    <roadmap-card v-bind:img="require('../assets/roadmap/11.png')" v-bind:title1="'Kandinsky'" v-bind:title2="'Legacy'" v-bind:index="10"/>
+  <div>
+    <div class="q-pa-xs cards row items-start q-gutter-md flex flex-center">
+      <roadmap-card
+        v-for="(item, i) in eras" v-bind:key="i"
+        v-bind:img="require(`../assets/roadmap/${i + 1}.png`)"
+        v-bind:item="item" v-bind:index="i + 1"
+      />
+    </div>
   </div>
 </template>
 <script>
-import { mapGetters } from 'vuex'
+import { c } from './../utils'
 
 export default {
   name: 'Roadmap',
-  computed: {
-    ...mapGetters([
-      'appTheme'
-    ])
-  },
   components: {
-    RoadmapCard: () => import('components/roadmap-card.vue')
+    RoadmapCard: () => import('./roadmap-card.vue')
+  },
+  data () {
+    return {
+      eras: {}
+    }
+  },
+  methods: {
+    getEras () {
+      this.eras = c.eras
+    }
+  },
+  mounted () {
+    this.getEras()
   }
 }
 </script>

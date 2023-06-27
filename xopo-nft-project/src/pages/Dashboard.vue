@@ -16,9 +16,9 @@
         justify-content: center;
         flex-wrap: wrap"
       >
-        <div v-for=" (collection, i) in item.nfts" v-bind:key="i">
+        <!--<div v-for=" (collection, i) in item.nfts" v-bind:key="i">
           <card v-bind:item="collection"  v-bind:author="'by Miroslav Mihov'" v-bind:contractName="item.contractName"/>
-        </div>
+        </div>-->
       </div>
       </div>
     </div>
@@ -38,7 +38,7 @@ import {
 export default {
   name: 'PageDashboard',
   components: {
-    Card: () => import('components/card.vue')
+    // Card: () => import('components/card.vue')
   },
   data () {
     return {

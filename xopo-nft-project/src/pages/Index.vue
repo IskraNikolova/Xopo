@@ -40,7 +40,7 @@
           <span class="q-mr-xs"><q-img src="~assets/icons/media/instagram_i.svg" class="media" /></span>
           <span class="q-mr-xs"><q-img src="~assets/icons/media/telegram_i.svg" class="media" /></span>
           <span class="q-mr-xs"><q-img src="~assets/icons/media/medium_i.svg"  class="media" /></span>
-          <span class="q-mr-xs"><q-img src="~assets/icons/media/discord_i.svg"  class="media" /></span>
+          <span class="q-mr-xs"><q-img src="~assets/icons/media/github_i.svg"  class="media" /></span>
         </div>
         <div class="wrapAnime">
             <div class="row anime">
@@ -78,6 +78,13 @@
                   This collection showcases a range of styles, from beautiful classical and abstract landscapes to vividly colored artworks and paintings with mysterious figurative and symbolic images. Each piece carries a substantial charge of natural, humane, aesthetic, and philosophical energy, making it a unique and captivating addition to any art collection.
                   As a testament to Xopo's commitment to artistic expression and innovation in the world of digital art, these artworks are available as NFTs.<span class="text-bold"> Don't miss your chance </span> to own a piece of this remarkable collection.
                 </p>
+                <a
+                  tag="a"
+                  href="https://medium.com/@XoroNft/xoponft-52af6632edab#:~:text=Our%20first%20collection,own%20an%20NFT."
+                  target="_blank"
+                  v-html="'Read More'"
+                  class="a-button"
+                ></a>
               </div>
               <div class="col">
                 <div class="row anime">
@@ -86,6 +93,8 @@
                   <span class="anime8 background-image-fullsize"></span>
                   <span class="anime9 background-image-fullsize"></span>
                   <span class="anime10"></span>
+                  <span class="anime12"></span>
+                  <span class="anime13"></span>
                 </div>
               </div>
             </div>
@@ -144,7 +153,7 @@ export default {
   components: {
     // TooltipStyle: () => import('components/tooltip-style.vue')
     // AnimatedNumber: () => import('animated-number-vue')
-    Roadmap: () => import('components/roadmap.vue')
+    Roadmap: () => import('../components/roadmap.vue')
   },
   data () {
     return {
@@ -154,24 +163,10 @@ export default {
       isSecond: false,
       scroll: 0,
       inerh: 0,
-      lastScrollTop: 0,
-      stepModel: 1,
-      arrayMarkerLabel: [
-        { value: 1, label: 'Step 1', toolText: 'Launch the welcome page to introduce the project to potential users.', text: 'WELCOME page' },
-        { value: 2, label: 'Step 2', toolText: 'Develop the beta version of the dApp, which includes a form for artists to apply, user portfolios, and pages for each artist\'s collection and minting capabilities.', text: 'DApp’s (\'Join The Xopo\') beta version' },
-        { value: 3, label: 'Step 3', toolText: 'Launch the welcome page to introduce the project to potential users.', text: '$XOPO Token & DAO: Community Governance & Rewards' },
-        { value: 4, label: 'Step 4', toolText: 'Launch the welcome page to introduce the project to potential users.', text: 'WELCOME page ' },
-        { value: 5, label: 'Step 5', toolText: 'Launch the welcome page to introduce the project to potential users.', text: 'WELCOME page' },
-        { value: 6, label: 'Step 6', toolText: 'Launch the welcome page to introduce the project to potential users.', text: 'DApp’s (\'Join The Xopo\') beta version' },
-        { value: 7, label: 'Step 7', toolText: 'Launch the welcome page to introduce the project to potential users.', text: '$XOPO Token & DAO: Community Governance & Rewards' },
-        { value: 8, label: 'Step 8', toolText: 'Launch the welcome page to introduce the project to potential users.', text: 'WELCOME page ' }
-      ]
+      lastScrollTop: 0
     }
   },
   computed: {
-    stepLabel () {
-      return `${this.stepModel}. ${this.arrayMarkerLabel[this.stepModel - 1].text}`
-    },
     ...mapGetters([
       'appTheme'
     ])
@@ -265,9 +260,6 @@ export default {
           toolbar: true,
           noreferrer: true
         })
-    },
-    test () {
-      console.log('hi')
     },
     beforeDestroy () {
       // Remove scroll event listener when component is destroyed
@@ -497,14 +489,15 @@ export default {
 .anime8 {
   position: static;
   display: block;
-  background-image: url('./../assets/animeImages/kk3.png');
+  background-image: url('./../assets/animeImages/48.jpg');
+  background-size: cover;
   animation: organic 12s infinite alternate ease-in-out;
 }
 .anime9 {
   position: static;
   display: block;
-  background-image: url('./../assets/animeImages/kk.png');
-  background-size: auto;
+  background-image: url('./../assets/animeImages/4.jpg');
+  background-size: cover;
   animation: organic 12s infinite alternate ease-in-out;
 }
 .anime10 {
@@ -517,6 +510,20 @@ export default {
   position: static;
   display: block;
   background-image: url('./../assets/roadmap/gifs/all4.gif');
+  animation: organic 12s infinite alternate ease-in-out;
+}
+.anime12 {
+  position: static;
+  display: block;
+  background-image: url('./../assets/animeImages/45.jpg');
+  background-size: cover;
+  animation: organic 12s infinite alternate ease-in-out;
+}
+.anime13 {
+  position: static;
+  display: block;
+  background-image: url('./../assets/animeImages/57.jpg');
+  background-size: cover;
   animation: organic 12s infinite alternate ease-in-out;
 }
 .background-image-fullsize {
@@ -911,6 +918,20 @@ export default {
     margin-top: -20%;
     width: 80%;
   }
+  .anime12 {
+    margin-top: -40%;
+    margin-left: 45%;
+    width: 45%;
+    height: 50pt;
+
+  }
+  .anime13 {
+    margin-top: -90%;
+    margin-left: 40%;
+    width: 16%;
+    height: 100pt;
+    z-index: -2;
+  }
   .first-p {
     font-size: 13pt;
     margin-right: auto;
@@ -947,12 +968,12 @@ export default {
   }
   .show2 .anime > .anime3 {
     transition: transform 3s;
-    transform: translate(280px, 1180px) scale(0.3);
+    transform: translate(280px, 1180px) scale(0);
     z-index: -2;
   }
   .show2 .anime > .anime4 {
     transition: transform 3.5s;
-    transform: translate(42px, 1080px) scale(0.38);
+    transform: translate(42px, 1080px) scale(0);
   }
   .show2 .anime > .anime5 {
     transition: transform 4.1s;

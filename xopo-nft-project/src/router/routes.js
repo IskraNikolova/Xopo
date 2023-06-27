@@ -15,13 +15,6 @@ const routes = [
     ]
   },
   {
-    path: '/Team',
-    component: () => import('layouts/HomeLayout.vue'),
-    children: [
-      { path: '/team', component: () => import('pages/Team.vue') }
-    ]
-  },
-  {
     path: '/launchpad',
     component: () => import('layouts/MainLayout.vue'),
     children: [
@@ -61,6 +54,76 @@ const routes = [
     component: () => import('layouts/MainLayout.vue'),
     children: [
       { path: '/requestNFTs', component: () => import('pages/RequestsNFTs.vue') }
+    ]
+  },
+  {
+    path: '/1',
+    component: () => import('layouts/HomeLayout.vue'),
+    children: [
+      { path: '/1', component: () => import('pages/roadmap/Welcome.vue') }
+    ]
+  },
+  {
+    path: '/2',
+    component: () => import('layouts/HomeLayout.vue'),
+    children: [
+      { path: '/2', component: () => import('pages/roadmap/Beta.vue') }
+    ]
+  },
+  {
+    path: '/3',
+    component: () => import('layouts/HomeLayout.vue'),
+    children: [
+      { path: '/3', component: () => import('pages/roadmap/Marketplace.vue') }
+    ]
+  },
+  {
+    path: '/4',
+    component: () => import('layouts/HomeLayout.vue'),
+    children: [
+      { path: '/4', component: () => import('pages/roadmap/TokensAndDAO.vue') }
+    ]
+  },
+  {
+    path: '/5',
+    component: () => import('layouts/HomeLayout.vue'),
+    children: [
+      { path: '/5', component: () => import('pages/roadmap/Staking.vue') }
+    ]
+  },
+  {
+    path: '/6',
+    component: () => import('layouts/HomeLayout.vue'),
+    children: [
+      { path: '/6', component: () => import('pages/roadmap/Airdrop.vue') }
+    ]
+  },
+  {
+    path: '/7',
+    component: () => import('layouts/HomeLayout.vue'),
+    children: [
+      { path: '/7', component: () => import('pages/roadmap/ArtistPortal.vue') }
+    ]
+  },
+  {
+    path: '/8',
+    component: () => import('layouts/HomeLayout.vue'),
+    children: [
+      { path: '/8', component: () => import('pages/roadmap/VotingAndRaffle.vue') }
+    ]
+  },
+  {
+    path: '/9',
+    component: () => import('layouts/HomeLayout.vue'),
+    children: [
+      { path: '/9', component: () => import('pages/roadmap/Integration.vue') }
+    ]
+  },
+  {
+    path: '/10',
+    component: () => import('layouts/HomeLayout.vue'),
+    children: [
+      { path: '/10', component: () => import('pages/roadmap/Sponsorship.vue') }
     ]
   },
   // Always leave this as last one,
