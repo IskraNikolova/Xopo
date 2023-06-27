@@ -90,21 +90,26 @@ export default {
 }
 </style>-->
 <template>
-    <div @click="goTo(index)" class="my-card col-1">
-    <q-card>
-        <img :src="img">
+  <div @click="goTo(index)" class="my-card col-1"
+    @mouseover="hovering = true" @mouseleave="hovering = false">
+    <q-card :style="hovering ? {'background': 'linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)), url(' + img + ') no-repeat center center','background-size': 'cover', 'color': 'white'} : {}">
+      <img :src="img" :style="hovering ? {'opacity': '0'} : {}" />
 
-        <q-card-section style="min-height: 90px; position: relative;">
-          <div class="text-title">{{ getTitle1() }}<br/> {{ getTitle2() }}</div>
-          <div class="text-primary index"># {{ index }}</div>
-        </q-card-section>
+      <q-card-section style="min-height: 90px; position: relative;">
+        <div class="text-title">{{ getTitle1() }}<br/> {{ getTitle2() }}</div>
+        <div class="text-primary index"># {{ index }}</div>
+      </q-card-section>
     </q-card>
-</div>
+  </div>
 </template>
 
 <script>
-
 export default {
+  data () {
+    return {
+      hovering: false
+    }
+  },
   name: 'Roadmap-card',
   props: {
     item: {
@@ -126,7 +131,7 @@ export default {
   },
   methods: {
     goTo (i) {
-      this.$router.push({ path: `/${i}` })
+      this.$router.push({ path: `${i}` })
     },
     // todo ...compound...
     getTitle1 () {
@@ -137,11 +142,7 @@ export default {
     getTitle2 () {
       if (!this.item) return
       const titles = this.item.title.split(' ')
-      return titles[0]
-    },
-    getDest () {
-      if (!this.item || !this.item.destination) return
-      return this.item.destination
+      return titles[1]
     }
   }
 }
@@ -155,18 +156,17 @@ export default {
     transition: transform 1s;
   }
   .my-card:hover {
-    background-color: #4dbdb9;
     cursor: pointer;
-    color: #4dbdb9;
   }
   .text-title {
     font-size: 100%;
     font-weight: bold;
+    text-align: center;
   }
   .index{
     position: absolute;
     bottom: 0;
-    padding-left: 50%;
+    padding-left: 25%;
     padding-bottom: 10%;
   }
 </style>

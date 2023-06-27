@@ -52,7 +52,7 @@
           </div>
         </div>
           <div class="first-text">
-            <p class="title text-uppercase text-bold">Priceless Creations in the Digital Age </p>
+            <p class="title welcomeT text-uppercase text-bold">Priceless Creations in the Digital Age </p>
             <p class="subTitle" style="font-size: 15pt;">Welcome to <span class="text-bold">"Join The Xopo"</span>, the Ultimate Platform for NFT Creation and Artistic Empowerment</p>
             <div class="row paragraph wp">
               <div class="col q-pl-xl"><p>In today's digital age, the world of art is constantly evolving. As an artist, it can be a challenge to break through the noise and gain recognition for your work. That's where <span class="text-bold">"Join The Xopo"</span> comes in - we're the ultimate platform for NFT creation, empowering artists to unlock the full potential of their masterpieces and take their creations to new heights.</p></div>
@@ -283,9 +283,6 @@ export default {
   color: #dfd19d;
   text-decoration: none;
 }
-.media {
-  width: 20pt;
-}
 .container {
   max-width: 100%;
   padding: 0 20px;
@@ -339,28 +336,6 @@ export default {
 }
 .third-p {
   letter-spacing: .05rem;
-}
-.title {
-  clear: both;
-  text-align: center;
-  margin-top: 10%;
-  font-size: 23pt;
-  letter-spacing: .05rem;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 1%;
-}
-.subTitle {
-  max-width: 50%;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-.paragraph {
-  justify-content: center;
-  gap: 70px;
-  line-height: 2.2;
-  font-size: 12pt;
 }
 .wp {
   margin-top: 3%;
