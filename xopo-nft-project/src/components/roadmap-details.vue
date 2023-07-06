@@ -2,7 +2,7 @@
     <div>
       <roadmap />
       <p class="title text-bold q-mt-xl">{{ title }}</p>
-      <p class="subTitle" style="font-size: 15pt;">"{{ subTitle }}"</p>
+      <p class="subTitle" style="font-size: 15pt;">{{ subTitle }}</p>
       <div class="row paragraph q-ml-xl" style="margin-top: 4%;text-align: right;">
         <div class="col q-pl-xl"><p><span class="text-bold">{{ text1 }}</span>: {{ text2 }}</p></div>
         <div class="col">

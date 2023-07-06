@@ -118,7 +118,29 @@
                 </div>
               </div>
             </div>
-            <p class="title text-uppercase text-bold" id="paragraph3">XOPO ROADMAP </p>
+            <div class="second-text">
+              <div class="row paragraph" id="paragraph6" style="margin-top: 12%; margin-bottom: 12%;">
+                <div class="col">
+                  <div class="row anime">
+                    <span class="anime8-1 background-image-fullsize"></span>
+                    <span class="anime9-1"></span>
+                    <span class="anime12-1"></span>
+                  </div>
+                </div>
+                <div class="col q-pr-xl">
+                  <p class="text-uppercase text-bold text-h5">JoinTheXopo: Empowering Artists with NFTs</p>
+                  <p class="text-h6">Revolutionize Your Artistic Journey in the World of NFTs</p>
+                  <p>
+                    At JoinTheXopo, we offer a seamless process for creating NFTs, giving artists the opportunity to showcase their work to a global audience. Our platform utilizes smart contracts to manage key aspects such as voting and approval.
+
+Once you join our community, you can submit your candidacy by providing images or other digital formats of your art. The community then engages in a voting process facilitated by smart contracts, deciding whether to welcome you as a team member. Once approved, you'll gain access to your own dedicated stage, where you can publish your unique art collections.
+
+JoinTheXopo empowers artists to harness the potential of NFTs, allowing you to elevate your creations and gain recognition in the ever-evolving world of digital art. We provide expert guidance and unwavering support, helping you navigate the process of converting your art into NFTs. Welcome to JoinTheXopo, where we redefine artistic expression in the realm of NFTs.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <p class="title text-uppercase text-bold q-pt-xl" id="paragraph3">XOPO ROADMAP </p>
             <p class="subTitle" style="font-size: 15pt;">What is the Journey of XOPO?</p>
             <p class="subTitle" style="font-size: 13pt;">At our project, we envision a journey through <span class="text-bold"> ten foundational eras</span>, all humming with activity and evolving concurrently yet unfolding sequentially. Like strokes on a canvas, each era contributes to the grand tableau of our mission: to create a project that harnesses art to save the world.</p>
             <div class="row q-mt-xl">
@@ -148,16 +170,17 @@
             <div class="row">
               <div class="col-2"></div>
               <member v-bind:className="'anime1m'" v-bind:text="`Meet RADoHaema, co-founder of Xopo, a dynamic player in the NFT landscape. With his unique blend of visionary leadership, collaborative efforts with top-tier artists, and a steadfast commitment to blockchain's transformative potential, he is reshaping the art market and beyond.`" v-bind:name="'RADoHaema'" v-bind:title="'co-founder'"/>
-              <member v-bind:className="'anime2m'" v-bind:text="`DarKniA, co-founder of XopoNFT, blends her international experience, Solidity expertise, and deep-rooted passion for art to drive innovation in the NFT space. With an exceptional track record in client relations, groundbreaking projects on Avalanche, and captivating art collections in both physical and digital realms, Radina embodies a unique convergence of tech-savviness and artistic flair, positioning herself as a pioneering leader in the NFT world.`" v-bind:name="'DarKniA'" v-bind:title="'co-founder, artist'"/>
-              <member v-bind:className="'anime3m'" v-bind:text="`
-Meet Iskra Nikolova, co-founder of VScout and a vital part of the Xopo team. A seasoned software engineer, she's a full-stack blockchain developer proficient in JavaScript, C#, and Solidity, as well as a knowledgeable lecturer in these languages. Her rich experience in building dApps, developing smart contracts, and crafting NFTs makes her an invaluable contributor. Iskra's efforts are instrumental in shaping our decentralized application for artists and the NFT marketplace, setting us apart in the blockchain ecosystem.`" v-bind:name="'Sh∀dowina'" v-bind:title="'CTO, Senior Software Engineer'"/>
+              <member v-bind:className="'anime2m'" v-bind:text="`
+DarKniA, co-founder of XopoNFT, is a visionary leader in the NFT space, combining international experience, Solidity expertise, and a profound passion for art. With a remarkable track record in client relations, groundbreaking projects on Avalanche, and captivating art collections, Radina stands out as a pioneering figure, blending tech-savviness with artistic flair in the world of NFTs.`" v-bind:name="'DarKniA'" v-bind:title="'co-founder, artist'"/>
+              <member v-bind:className="'anime3m'" v-bind:text="`Sh∀dowina, co-founder of VScout and a crucial member of the Xopo team, is an expert in full-stack blockchain development. With extensive experience in dApp development, smart contracts, and NFT creation, she plays a vital role in shaping our decentralized application for artists and establishing our unique position in the blockchain ecosystem.`" v-bind:name="'Sh∀dowina'" v-bind:title="'CTO, Senior Software Engineer'"/>
               <div class="col-2"></div>
             </div>
             <div class="row">
               <member v-bind:className="'anime4m'" v-bind:text="`Stefan Bachvarov is a seasoned project manager and event organizer, known for his success as co-founder and chairman of ‘Bastar studio’, NGO ‘DEMO’, and Varna youth festival ‘FUNCITY’. Now steering the helm as the project manager at ‘Xopo’, Stefan's fusion of online platform expertise, project creativity, and a passion for art and extreme sports make him a dynamic and valuable contributor to the team`" v-bind:name="'Stefan Bachvarov'" v-bind:title="'Project Manager, Musician'"/>
-              <member v-bind:className="'anime5m'" v-bind:text="` Ventsislav Bahnev is an accomplished UX/UI Designer and Web Developer, with a decade of industry experience that includes the successful completion of over 300 projects and co-founding 'Bastar Studio'. Proficient in a wide range of tools such as WordPress, Wix, and Adobe suite, Ventsislav merges his technical expertise and unique creative talent as a graffiti artist to deliver high-quality results, showcasing his dedication and exceptional attention to detail. `" v-bind:name="'Ventsislav Bahnev'" v-bind:title="'UX/UI Designer, artist'"/>
-              <member v-bind:className="'anime6m'" v-bind:text="`AzZer, is a devoted web3 enthusiast and a vital part of the XopoNFT project, where he excels in community moderation and support, facilitating various activities that nurture the web3 community. Passionate about NFTs and their integration on the Avalanche blockchain, his creativity and innovative approach continuously drive the XopoNFT project forward, reflecting his enthusiasm for technology, art, music, games, and nature.`" v-bind:name="'AzZer'" v-bind:title="'Community Manager'"/>
-              <member v-bind:className="'anime7m'" v-bind:text="`Mr.Nikolov, a seasoned digital marketing manager, offers expertise in business and marketing, focusing on copywriting backed by over five years of experience in economics and business. Combining an understanding of effective campaign creation with a passion for sales and marketing, Dani has honed their skills in copywriting, creating compelling content and solving problems creatively, making them a valuable asset in driving sales and conversions.`" v-bind:name="'Mr.Nikolov'" v-bind:title="'Digital Marketing Manager'"/>
+              <member v-bind:className="'anime5m'" v-bind:text="`Ventsislav Bahnev is a highly skilled UX/UI Designer and Web Developer with over 10 years of experience, specializing in front-end web development, UX/Web Design, and creating stunning corporate videos. His exceptional attention to detail and unwavering commitment to quality results have made him a respected expert in the industry.`" v-bind:name="'Ventsislav Bahnev'" v-bind:title="'UX/UI Designer, artist'"/>
+              <member v-bind:className="'anime6m'" v-bind:text="`AzZer is a key member of the XopoNFT project, focusing on community moderation and support. With a strong passion for NFTs and their integration on the Avalanche blockchain, AzZer's creative and innovative approach drives the project forward. His enthusiasm for technology, art, music, games, and nature further enhances his contributions to XopoNFT.`" v-bind:name="'AzZer'" v-bind:title="'Community Manager'"/>
+              <member v-bind:className="'anime7m'" v-bind:text="`
+Mr. Nikolov is an experienced digital marketing manager with expertise in business, marketing, and copywriting. Their deep understanding of effective campaign creation, coupled with their passion for sales and marketing, positions them as a valuable asset in driving sales and conversions.`" v-bind:name="'Mr.Nikolov'" v-bind:title="'Digital Marketing Manager'"/>
             </div>
             <div>
               <q-img src="~assets/logos/lp_bg.svg" class="logo-footer" />
@@ -257,6 +280,11 @@ export default {
           this.isFirst = true
           this.isSecond = false
         }
+
+        if (position <= 1500 && anime) {
+          anime.classList.remove('show3')
+          anime.classList.add('show2')
+        }
         if (position <= 650 && anime) {
           anime.classList.remove('show2')
           anime.classList.add('reverse')
@@ -274,7 +302,12 @@ export default {
           this.isFirst = false
           this.isSecond = true
         }
-        if (position >= 300 && anime) {
+        if (position >= 1500 && anime) {
+          anime.classList.add('show3')
+          anime.classList.remove('show2')
+          anime.classList.remove('reverse')
+        } else if (position >= 300 && anime) {
+          anime.classList.remove('show3')
           anime.classList.add('show2')
           anime.classList.remove('reverse')
         }
@@ -538,10 +571,24 @@ export default {
   background-size: cover;
   animation: organic 12s infinite alternate ease-in-out;
 }
+.anime8-1 {
+  position: static;
+  display: block;
+  background-image: url('./../assets/animeImages/1.jpg');
+  background-size: cover;
+  animation: organic 12s infinite alternate ease-in-out;
+}
 .anime9 {
   position: static;
   display: block;
   background-image: url('./../assets/animeImages/4.jpg');
+  background-size: cover;
+  animation: organic 12s infinite alternate ease-in-out;
+}
+.anime9-1 {
+  position: static;
+  display: block;
+  background-image: url('./../assets/animeImages/kk.png');
   background-size: cover;
   animation: organic 12s infinite alternate ease-in-out;
 }
@@ -561,6 +608,13 @@ export default {
   position: static;
   display: block;
   background-image: url('./../assets/animeImages/45.jpg');
+  background-size: cover;
+  animation: organic 12s infinite alternate ease-in-out;
+}
+.anime12-1 {
+  position: static;
+  display: block;
+  background-image: url('./../assets/animeImages/kk3.jpeg');
   background-size: cover;
   animation: organic 12s infinite alternate ease-in-out;
 }
@@ -947,8 +1001,21 @@ export default {
     height: 280pt;
     z-index: 1;
   }
-  .anime9 {
+  .anime8-1 {
+    margin-top: 22%;
+    margin-left: 35%;
+    width: 15%;
+    height: 280pt;
+  }
+  .anime9{
     margin-left: -55%;
+    margin-top: 23%;
+    width: 55%;
+    height: 40pt;
+    z-index: -1;
+  }
+  .anime9-1 {
+    margin-left: -5%;
     margin-top: 23%;
     width: 55%;
     height: 40pt;
@@ -963,12 +1030,11 @@ export default {
     margin-top: -20%;
     width: 80%;
   }
-  .anime12 {
+  .anime12, .anime12-1 {
     margin-top: -40%;
     margin-left: 45%;
     width: 45%;
     height: 50pt;
-
   }
   .anime13 {
     margin-top: -90%;
@@ -1022,7 +1088,31 @@ export default {
   }
   .show2 .anime > .anime5 {
     transition: transform 4.1s;
-    transform: translate(-270px, 1350px) scale(0.3);
+    transform: translate(-270px, 1600px) scale(0.3);
+    z-index: -2;
+  }
+  .show3 .anime > .anime3 {
+    transition: transform 3s;
+    transform: translate(-600px, 1930px) scale(0.2);
+    z-index: -2;
+  }
+  .show3 .anime > .anime2 {
+    transition: transform 3s;
+    transform: translate(-430px, 1930px) scale(0.2);
+    z-index: -2;
+  }
+  .show3 .anime > .anime4 {
+    transition: transform 3.5s;
+    transform: translate(-700px, 1890px) scale(0.3);
+  }
+  .show3 .anime > .anime1 {
+    transition: transform 2s;
+    transform: translate(-10px, 2090px) scale(0.4);
+    z-index: -2;
+  }
+  .show3 .anime > .anime5 {
+    transition: transform 2.1s;
+    transform: translate(-900px, 1990px) scale(0.4);
     z-index: -2;
   }
 }

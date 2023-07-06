@@ -1,8 +1,8 @@
 <template>
   <div class="col q-mr-sm q-ml-xs">
     <div><span :class="'' + className + ' animeM'"></span></div>
-    <div class="text-bold">{{ name }}</div>
-    <div>{{ title }}</div>
+    <div class="text-bold text-uppercase">{{ name }}</div>
+    <div class="text-bold">{{ title }}</div>
     <div>{{ text }}</div>
   </div>
 </template>
