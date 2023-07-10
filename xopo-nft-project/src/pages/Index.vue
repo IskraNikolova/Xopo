@@ -120,9 +120,9 @@
             </div>
             <div class="second-text">
               <div class="row paragraph" id="paragraph6" style="margin-top: 12%; margin-bottom: 12%;">
-                <div class="col">
+                <div class="col q-pt-xl">
                   <div class="row anime">
-                    <span class="anime8-1 background-image-fullsize"></span>
+                    <span class="anime8-1"></span>
                     <span class="anime9-1"></span>
                     <span class="anime12-1"></span>
                   </div>
@@ -132,9 +132,7 @@
                   <p class="text-h6">Revolutionize Your Artistic Journey in the World of NFTs</p>
                   <p>
                     At JoinTheXopo, we offer a seamless process for creating NFTs, giving artists the opportunity to showcase their work to a global audience. Our platform utilizes smart contracts to manage key aspects such as voting and approval.
-
-Once you join our community, you can submit your candidacy by providing images or other digital formats of your art. The community then engages in a voting process facilitated by smart contracts, deciding whether to welcome you as a team member. Once approved, you'll gain access to your own dedicated stage, where you can publish your unique art collections.
-
+You can submit your candidacy by providing images or other digital formats of your art. The community then engages in a voting process facilitated by smart contracts, deciding whether to welcome you as a team member. Once approved, you'll gain access to your own dedicated stage, where you can publish your unique art collections.
 JoinTheXopo empowers artists to harness the potential of NFTs, allowing you to elevate your creations and gain recognition in the ever-evolving world of digital art. We provide expert guidance and unwavering support, helping you navigate the process of converting your art into NFTs. Welcome to JoinTheXopo, where we redefine artistic expression in the realm of NFTs.
                   </p>
                 </div>
@@ -1002,10 +1000,10 @@ export default {
     z-index: 1;
   }
   .anime8-1 {
-    margin-top: 22%;
-    margin-left: 35%;
+    margin-left: 40%;
     width: 15%;
     height: 280pt;
+    z-index: -1;
   }
   .anime9{
     margin-left: -55%;
@@ -1015,11 +1013,10 @@ export default {
     z-index: -1;
   }
   .anime9-1 {
-    margin-left: -5%;
-    margin-top: 23%;
+    margin-top: 5%;
+    margin-left: -35%;
     width: 55%;
     height: 40pt;
-    z-index: -1;
   }
   .anime10 {
     margin-top: -8%;
@@ -1030,7 +1027,14 @@ export default {
     margin-top: -20%;
     width: 80%;
   }
-  .anime12, .anime12-1 {
+  .anime12-1 {
+    margin-top: -32%;
+    margin-left: 45%;
+    width: 75%;
+    height: 50pt;
+    z-index: -2;
+  }
+  .anime12{
     margin-top: -40%;
     margin-left: 45%;
     width: 45%;
@@ -1093,26 +1097,26 @@ export default {
   }
   .show3 .anime > .anime3 {
     transition: transform 3s;
-    transform: translate(-600px, 1930px) scale(0.2);
+    transform: translate(-610px, 1820px) scale(0.4);
     z-index: -2;
   }
   .show3 .anime > .anime2 {
     transition: transform 3s;
-    transform: translate(-430px, 1930px) scale(0.2);
+    transform: translate(-430px, 1900px) scale(0.2);
     z-index: -2;
   }
   .show3 .anime > .anime4 {
     transition: transform 3.5s;
-    transform: translate(-700px, 1890px) scale(0.3);
+    transform: translate(-600px, 1850px) scale(0.5);
   }
   .show3 .anime > .anime1 {
     transition: transform 2s;
-    transform: translate(-10px, 2090px) scale(0.4);
+    transform: translate(-35px, 2040px) scale(0.3);
     z-index: -2;
   }
   .show3 .anime > .anime5 {
     transition: transform 2.1s;
-    transform: translate(-900px, 1990px) scale(0.4);
+    transform: translate(-950px, 2100px) scale(0.4);
     z-index: -2;
   }
 }
