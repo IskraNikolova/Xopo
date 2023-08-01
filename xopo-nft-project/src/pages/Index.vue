@@ -54,12 +54,54 @@
             Decentralized hub for artists, developers, and free speech enthusiasts.
           </p>
           <div class="q-mt-md q-mb-md">
-            <span class="q-mr-xs"><q-img src="~assets/icons/media/discord_i.svg" class="media" /></span>
-            <span class="q-mr-xs"><q-img src="~assets/icons/media/twiter_i.svg" class="media" /></span>
-            <span class="q-mr-xs"><q-img src="~assets/icons/media/instagram_i.svg" class="media" /></span>
-            <span class="q-mr-xs"><q-img src="~assets/icons/media/telegram_i.svg" class="media" /></span>
-            <span class="q-mr-xs"><q-img src="~assets/icons/media/medium_i.svg"  class="media" /></span>
-            <span class="q-mr-xs"><q-img src="~assets/icons/media/github_i.svg"  class="media" /></span>
+            <a
+              class="q-mr-xs"
+              tag="a"
+              href="https://discord.gg/q8KvRKtXHw"
+              target="_blank"
+            >
+              <q-img src="~assets/icons/media/discord_i.svg" class="media" />
+            </a>
+            <a
+              class="q-mr-xs"
+              tag="a"
+              href="https://twitter.com/XopoNft"
+              target="_blank"
+            >
+              <q-img src="~assets/icons/media/twiter_i.svg"  class="media" />
+            </a>
+            <a
+              class="q-mr-xs"
+              tag="a"
+              href="https://www.instagram.com/xoponft/?hl=bg"
+              target="_blank"
+            >
+              <q-img src="~assets/icons/media/instagram_i.svg" class="media" />
+            </a>
+            <a
+              class="q-mr-xs"
+              tag="a"
+              href="https://t.me/xoponft"
+              target="_blank"
+            >
+              <q-img src="~assets/icons/media/telegram_i.svg" class="media" />
+            </a>
+            <a
+              class="q-mr-xs"
+              tag="a"
+              href="https://medium.com/@XoroNft"
+              target="_blank"
+            >
+              <q-img src="~assets/icons/media/medium_i.svg" class="media" />
+            </a>
+            <a
+              class="q-mr-xs"
+              tag="a"
+              href="https://github.com/IskraNikolova/Xopo"
+              target="_blank"
+            >
+              <q-img src="~assets/icons/media/github_i.svg" class="media" />
+            </a>
           </div>
           <div class="wrapAnime">
               <div class="row anime">
@@ -128,7 +170,7 @@
                   </div>
                 </div>
                 <div class="col q-pr-xl">
-                  <p class="text-uppercase text-bold text-h5">JoinTheXopo: Empowering Artists with NFTs</p>
+                  <p class="text-bold text-h5">JoinTheXopo: <span class="text-uppercase">Empowering Artists with </span> NFTs</p>
                   <p class="text-h6">Revolutionize Your Artistic Journey in the World of NFTs</p>
                   <p>
                     At JoinTheXopo, we offer a seamless process for creating NFTs, giving artists the opportunity to showcase their work to a global audience. Our platform utilizes smart contracts to manage key aspects such as voting and approval.
@@ -178,7 +220,7 @@ DarKniA, co-founder of XopoNFT, is a visionary leader in the NFT space, combinin
               <member v-bind:className="'anime5m'" v-bind:text="`Ventsislav Bahnev is a highly skilled UX/UI Designer and Web Developer with over 10 years of experience, specializing in front-end web development, UX/Web Design, and creating stunning corporate videos. His exceptional attention to detail and unwavering commitment to quality results have made him a respected expert in the industry.`" v-bind:name="'Ventsislav Bahnev'" v-bind:title="'UX/UI Designer, artist'"/>
               <member v-bind:className="'anime6m'" v-bind:text="`AzZer is a key member of the XopoNFT project, focusing on community moderation and support. With a strong passion for NFTs and their integration on the Avalanche blockchain, AzZer's creative and innovative approach drives the project forward. His enthusiasm for technology, art, music, games, and nature further enhances his contributions to XopoNFT.`" v-bind:name="'AzZer'" v-bind:title="'Community Manager'"/>
               <member v-bind:className="'anime7m'" v-bind:text="`
-Mr. Nikolov is an experienced digital marketing manager with expertise in business, marketing, and copywriting. Their deep understanding of effective campaign creation, coupled with their passion for sales and marketing, positions them as a valuable asset in driving sales and conversions.`" v-bind:name="'Mr.Nikolov'" v-bind:title="'Digital Marketing Manager'"/>
+Dani Nikolov is an experienced digital marketing manager with expertise in business, marketing, and copywriting. Their deep understanding of effective campaign creation, coupled with their passion for sales and marketing, positions them as a valuable asset in driving sales and conversions.`" v-bind:name="'Dani Nikolov'" v-bind:title="'Digital Marketing Manager'"/>
             </div>
             <div>
               <q-img src="~assets/logos/lp_bg.svg" class="logo-footer" />
@@ -599,7 +641,7 @@ export default {
 .anime11 {
   position: static;
   display: block;
-  background-image: url('./../assets/roadmap/gifs/all4.gif');
+  background-image: url('./../assets/roadmap/gifs/all.gif');
   animation: organic 12s infinite alternate ease-in-out;
 }
 .anime12 {
