@@ -223,17 +223,27 @@ DarKniA, co-founder of XopoNFT, is a visionary leader in the NFT space, combinin
 Dani Nikolov is an experienced digital marketing manager with expertise in business, marketing, and copywriting. Their deep understanding of effective campaign creation, coupled with their passion for sales and marketing, positions them as a valuable asset in driving sales and conversions.`" v-bind:name="'Dani Nikolov'" v-bind:title="'Digital Marketing Manager'"/>
             </div>
             <div>
-              <q-img src="~assets/logos/lp_bg.svg" class="logo-footer" />
-              <div class="footer-content" id="paragraph5">
-                <q-img src="~assets/tokens/XOPO_3.gif" class="token-logo"/>
-                <div class="q-pl-xl">
+              <div class="footer" id="paragraph5">
+                <q-img src="~assets/tokens/XOPO_3.gif" class="token-logo" />
+                <div class="token-text">
                   <p class="text-uppercase text-bold text-h5">$XOPO, the native token of Xopo</p>
                   <p class="text-h6">At Xopo, the $XOPO token plays a central role in fostering a community-driven ecosystem.</p>
-                  <p>
-                    Our Decentralized Autonomous Organization (DAO), consisting of $XOPO token holders, plays a pivotal role in maintaining a vibrant and dynamic ecosystem where all participants have an equal say.In the DAO, collective decisions are made through a robust voting process. Once the voting is complete, the tokens used for voting are burned, symbolizing the consensus reached. Furthermore, each minted NFT generates both unique artwork and tokens, ensuring that the creative output and $XOPO tokens are intertwined.
-                    These tokens serve as a powerful incentive, motivating and recognizing the contributions of our engaged community members. By holding $XOPO tokens, individuals have the opportunity to shape the destiny of Xopo while being rewarded for their active involvement.
-                    Join us on this exhilarating journey, where $XOPO tokens empower artists, foster community engagement, and drive the future of NFT innovation. Together, we are building a platform that celebrates artistic expression and inclusivity, revolutionizing the way we appreciate and collect digital art.
-                  </p>
+                  <div class="row">
+                    <div class="col q-pl-xl q-pr-xl">
+                      <span class="text-bold">Our Decentralized Autonomous Organization (DAO)</span>, consisting of $XOPO token holders, plays a pivotal role in maintaining a vibrant and dynamic ecosystem where all participants have an equal say. In the DAO, collective decisions are made through a robust voting process. Once the voting is complete, the tokens used for voting are burned, symbolizing the consensus reached. Furthermore, each minted NFT generates both unique artwork and tokens, ensuring that the creative output and $XOPO tokens are intertwined.
+                    </div>
+                    <div class="col q-pl-xl q-pr-xl">
+                      These tokens serve as a powerful incentive, motivating and recognizing the contributions of our engaged community members. By holding $XOPO tokens, individuals have the opportunity to shape the destiny of Xopo while being rewarded for their active involvement.
+                      Join us on this exhilarating journey, where $XOPO tokens empower artists, foster community engagement, and drive the future of NFT innovation. Together, we are building a platform that celebrates artistic expression and inclusivity, revolutionizing the way we appreciate and collect digital art.
+                    </div>
+                  </div>
+                  <a
+                    tag="a"
+                    href="https://medium.com/@XoroNft/how-to-become-a-wealthy-and-recognized-artist-in-todays-world-d207a36b8f2f"
+                    target="_blank"
+                    v-html="'Read More'"
+                    class="a-btn-pr q-mt-xl"
+                  ></a>
                 </div>
               </div>
             </div>
@@ -246,7 +256,7 @@ Dani Nikolov is an experienced digital marketing manager with expertise in busin
 
 <script>
 import { ref } from 'vue'
-import { scroll, openURL } from 'quasar'
+import { scroll } from 'quasar'
 import { mapGetters } from 'vuex'
 import { xopo, joinTheXopo } from './../modules/constants'
 const { getScrollTarget, setVerticalScrollPosition } = scroll
@@ -393,17 +403,6 @@ export default {
       const el = document.getElementById('paragraph5')
       this.scrollToElement(el, 3000)
     },
-    readMore (url) {
-      console.log(url)
-      openURL(url,
-        undefined,
-        {
-          noopener: true,
-          menubar: true,
-          toolbar: true,
-          noreferrer: true
-        })
-    },
     beforeDestroy () {
       // Remove scroll event listener when component is destroyed
       window.removeEventListener('scroll', this.handleScroll)
@@ -426,6 +425,15 @@ export default {
   color: #dfd19d;
   text-decoration: none;
 }
+.a-btn-pr {
+  z-index: 2;
+  padding: 8px 15px;
+  border: 1px solid #dfd19d;
+  border-radius: 35px;
+  text-decoration: none;
+  color: #1f1f1e;
+  background-color: #dfd19d;
+}
 .container {
   max-width: 100%;
   padding: 0 20px;
@@ -440,6 +448,14 @@ export default {
   transition: transform 1.5s, top 0.5s;
   z-index: -1;
 }
+.footer {
+  background-image: url('../assets/logos/lp_bg.svg');
+  background-size: cover;     /* Make the image cover the whole div */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  margin-top: 100px;
+  padding-top: 100px;
+  padding-bottom: 70px;
+}
 .footer-content {
   position: fixed;
   right: auto;
@@ -451,9 +467,15 @@ export default {
   margin-left: -25%;
   width: 150%;
   height: 700px;
+  z-index: -1; /* lower value */
 }
 .token-logo {
   width: 15%;
+  margin-top: 200px;
+}
+.token-text {
+  padding-left: 10%;
+  padding-right: 10%;
 }
 .first-p,
 .second-p,
