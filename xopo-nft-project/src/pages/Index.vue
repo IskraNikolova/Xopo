@@ -1,7 +1,7 @@
 <template>
   <div>
     <q-header class="header1 text-bold" reveal v-if="isSecond">
-      <q-toolbar>
+      <q-toolbar class="gt-sm">
         <q-toolbar-title class="q-ml-md">
             <q-avatar class="text-light q-ml-sm" >
             <img src="~assets/logos/three_logo.svg" style="width: 45px;" />
@@ -10,15 +10,59 @@
         </q-toolbar-title>
         <q-tabs v-model="tab" indicator-color="transparent" active-color="grey" class="text-regular my-tabs q-mr-md">
             <q-tab name="tab1" label="Welcome" @click="goToWelcome()" />
-            <q-tab name="tab4" label="First Collection" @click="goToKoloda()"/>
-            <q-tab name="tab4" label="Roadmap" @click="goToRoadmap()"/>
-            <q-tab name="tab4" label="Теам" @click="goToTeam()"/>
-            <q-tab name="tab4" label="$XOPO" @click="goToToken()"/>
-            <q-tab name="tab5" class="text-orange" label="Create your own NFTs" @click="goToCreateNFTs()"/>
+            <q-tab name="tab4" label="First Collection" @click="goToKoloda()" />
+            <q-tab name="tab4" label="Roadmap" @click="goToRoadmap()" />
+            <q-tab name="tab4" label="Теам" @click="goToTeam()" />
+            <q-tab name="tab4" label="$XOPO" @click="goToToken()" />
+            <q-tab name="tab5" class="text-orange" label="Create your own NFTs" @click="goToCreateNFTs()" />
         </q-tabs>
+      </q-toolbar>
+      <q-toolbar class="lt-md">
+        <q-toolbar-title class="q-ml-md">
+          <q-btn flat @click="drawer = !drawer" round dense icon="menu" />
+            <q-avatar class="text-light q-ml-sm" >
+            <img src="~assets/logos/three_logo.svg" style="width: 45px;" />
+            </q-avatar>
+            <span class="q-ml-sm text-princess">Xopo </span><span> Awaits</span>
+        </q-toolbar-title>
       </q-toolbar>
     </q-header>
     <q-page class="flex flex-center bodyt">
+      <q-drawer
+        v-model="drawer"
+        :width="200"
+        :breakpoint="500"
+        bordered
+        overlay
+      >
+        <q-scroll-area class="fit">
+          <q-list>
+
+            <div v-for="(menuItem, index) in menuList" v-bind:key="index">
+              <q-item clickable :active="menuItem.label === 'Outbox'" v-ripple @click="goto(menuItem)">
+                <q-item-section avatar>
+                  <q-icon :name="menuItem.icon" />
+                </q-item-section>
+                <q-item-section>
+                  {{ menuItem.label }}
+                </q-item-section>
+              </q-item>
+              <q-separator v-bind:key="'sep' + index"  v-if="menuItem.separator" />
+            </div>
+
+          </q-list>
+        </q-scroll-area>
+        <div class="q-mini-drawer-hide absolute" style="top: 10px; right: -0.1px">
+          <q-btn
+            flat
+            round
+            unelevated
+            color="accent"
+            icon="chevron_left"
+            @click="drawer = !drawer"
+          />
+        </div>
+      </q-drawer>
         <div  class="text-center text container">
         <div v-if="isFirst">
           <div class="text-princess text-h3" style="margin-left: auto;margin-right: auto; padding-top: 10px;">Join The</div>
@@ -261,6 +305,39 @@ import { mapGetters } from 'vuex'
 import { xopo, joinTheXopo } from './../modules/constants'
 const { getScrollTarget, setVerticalScrollPosition } = scroll
 
+const menuList = [
+  {
+    icon: 'home',
+    label: 'Wellcome',
+    separator: true
+  },
+  {
+    icon: 'collections',
+    label: 'First Collection',
+    separator: false
+  },
+  {
+    icon: 'route',
+    label: 'Roadmap',
+    separator: false
+  },
+  {
+    icon: 'groups',
+    label: 'Team',
+    separator: true
+  },
+  {
+    icon: 'token',
+    label: '$XOPO',
+    separator: false
+  },
+  {
+    icon: 'queue',
+    label: 'Create Your Own NFTs',
+    separator: false
+  }
+]
+
 export default {
   name: 'PageIndex',
   components: {
@@ -271,7 +348,8 @@ export default {
   },
   setup () {
     return {
-      tab: ref('')
+      tab: ref(''),
+      menuList
     }
   },
   data () {
@@ -282,7 +360,8 @@ export default {
       isSecond: false,
       scroll: 0,
       inerh: 0,
-      lastScrollTop: 0
+      lastScrollTop: 0,
+      drawer: false
     }
   },
   computed: {
@@ -378,6 +457,29 @@ export default {
       const target = getScrollTarget(el)
       const offset = el.offsetTop
       setVerticalScrollPosition(target, offset, duration)
+    },
+    goto (menuItem) {
+      switch (menuItem.label) {
+        case 'Wellcome':
+          this.goToWelcome()
+          break
+        case 'First Collection':
+          this.goToKoloda()
+          break
+        case 'Roadmap':
+          this.goToRoadmap()
+          break
+        case 'Team':
+          this.goToTeam()
+          break
+        case '$XOPO':
+          this.goToToken()
+          break
+        case 'Create Your Own NFTs':
+          this.goToCreateNFTs()
+          break
+      }
+      this.drawer = !this.drawer
     },
     goToWelcome () {
       const el = document.getElementById('paragraph1')
