@@ -28,69 +28,32 @@
       </q-toolbar>
     </q-header>
     <q-page class="flex flex-center bodyt">
-      <q-drawer
-        v-model="drawer"
-        :width="200"
-        :breakpoint="500"
-        bordered
-        overlay
-      >
-        <q-scroll-area class="fit">
-          <q-list>
-
-            <div v-for="(menuItem, index) in menuList" v-bind:key="index">
-              <q-item clickable :active="menuItem.label === 'Outbox'" v-ripple @click="goto(menuItem)">
-                <q-item-section avatar>
-                  <q-icon :name="menuItem.icon" />
-                </q-item-section>
-                <q-item-section>
-                  {{ menuItem.label }}
-                </q-item-section>
-              </q-item>
-              <q-separator v-bind:key="'sep' + index"  v-if="menuItem.separator" />
-            </div>
-
-          </q-list>
-        </q-scroll-area>
-        <div class="q-mini-drawer-hide absolute" style="top: 10px; right: -0.1px">
-          <q-btn
-            flat
-            round
-            unelevated
-            color="accent"
-            icon="chevron_left"
-            @click="drawer = !drawer"
-          />
-        </div>
-      </q-drawer>
-        <div  class="text-center text container">
+      <div class="text-center text container">
         <div v-if="isFirst">
-          <div class="text-princess text-h3" style="margin-left: auto;margin-right: auto; padding-top: 10px;">Join The</div>
+          <div class="text-princess text-h3 joinT">Join The</div>
           <q-img class="j-logo q-mb-xl" src="~assets/logos/horo_logo.svg" />
         </div>
         <q-img class="logo" src="~assets/logos/lp_bg.svg" />
         <q-layout @scroll="scrollHandler">
-        <div v-if="isFirst">
-          <p class="text-regular q-mb-xs first-p">
-            We're crafting a worldwide platform for creatives of all kinds, with
-          </p>
-          <div
-            class="text-montserrat-bold second-p"
-          >
-            <span class="nft-text">NFTs</span> as Our Canvas
+          <div v-if="isFirst">
+            <p class="text-regular q-mb-xl first-p">
+              We're crafting a worldwide platform for creatives of all kinds, with
+            </p>
+            <div
+              class="text-montserrat-bold second-p"
+            >
+              <span class="nft-text">NFTs</span> as Our Canvas
+            </div>
+            <p class="text-uppercase text-bold third-p">
+              Decentralized hub for artists, developers, and free speech enthusiasts.
+            </p>
+            <q-img src="~assets/icons/mouse.svg" class="mouse" />
           </div>
-          <p class="text-uppercase text-bold third-p">
-            Decentralized hub for artists, developers, and free speech enthusiasts.
-          </p>
-          <q-img src="~assets/icons/mouse.svg" class="mouse" />
-        </div>
-        <div v-else>
+          <div v-else>
           <p class="text-regular first-p">
             We're crafting a worldwide platform for creatives of all kinds, with
           </p>
-          <div
-            class="text-montserrat-bold second-p"
-          >
+          <div class="text-montserrat-bold second-p">
             <span class="nft-text">NFTs</span> as <img src="~assets/logos/three_logo.svg" class="small-logo q-mb-sm" />ur Canvas
           </div>
           <p
@@ -295,6 +258,41 @@ Dani Nikolov is an experienced digital marketing manager with expertise in busin
         </q-layout>
       </div>
     </q-page>
+    <q-drawer
+      v-model="drawer"
+      :width="200"
+      :breakpoint="500"
+      bordered
+      overlay
+    >
+      <q-scroll-area class="fit">
+        <q-list>
+
+          <div v-for="(menuItem, index) in menuList" v-bind:key="index">
+            <q-item clickable :active="menuItem.label === 'Outbox'" v-ripple @click="goto(menuItem)">
+              <q-item-section avatar>
+                <q-icon :name="menuItem.icon" />
+              </q-item-section>
+              <q-item-section>
+                {{ menuItem.label }}
+              </q-item-section>
+            </q-item>
+            <q-separator v-bind:key="'sep' + index"  v-if="menuItem.separator" />
+          </div>
+
+        </q-list>
+      </q-scroll-area>
+      <div class="q-mini-drawer-hide absolute" style="top: 10px; right: -0.1px">
+        <q-btn
+          flat
+          round
+          unelevated
+          color="accent"
+          icon="chevron_left"
+          @click="drawer = !drawer"
+        />
+      </div>
+    </q-drawer>
   </div>
 </template>
 
@@ -514,11 +512,10 @@ export default {
 </script>
 
 <style>
-.bodyt {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #1f1f1e;
+.joinT {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 10px;
 }
 .a-button {
   padding: 8px 15px;
@@ -597,7 +594,7 @@ export default {
 }
 .text {
   position: relative;
-  top: 5%;
+  margin-top: 5px;
   transform-style: preserve-3d;
   transition: transform 0.5s;
 }
@@ -624,7 +621,7 @@ export default {
   color: white;
 }
 .show {
-  transform: translateZ(100px) scale(0.99);
+  transform: translateY(50px) scale(0.99);
   transition: transform 2s;
 }
 .show .logo {
@@ -841,9 +838,13 @@ export default {
     transition: transform 4.1s;
     transform: translate(0, 0) scale(1);
   }
-/* Styles for screens with a width between 375px and 414px and a height between 667px and 896px */
-@media (min-width: 375px) and (max-width: 414px),
-       (min-height: 667px) and (max-height: 896px) {
+
+/* Styles for screens with a width between 375px and 412px and a height between 667px and 896px */
+@media (min-width: 375px) and (max-height: 896px) {
+  .show {
+    transform: translateY(-90px) scale(0.99);
+    transition: transform 2s;
+  }
   .first-p {
     font-size: 7pt;
   }
@@ -893,20 +894,15 @@ export default {
     margin-left: -12%;
   }
 }
-/* Styles for screens with a width 390px  */
-@media (min-width: 390px) and (max-width: 390px){
-  .show .first-p {
-    font-size: 11pt;
+/* Styles for screens with a min-width 412px and a min-height 892px */
+@media (min-width: 412px) and (min-height: 892px) {
+  .show {
+    transform: translateY(-60px) scale(0.99);
+    transition: transform 2s;
   }
-  .first-p {
-    font-size: 7pt;
+  .show .small-logo {
+    width: 80px;
   }
-  .third-p {
-    font-size: 12pt;
-  }
-}
-/* Styles for screens with a width 412px and a height 896px */
-@media (min-width: 412px) and (min-height: 896px) {
   .first-p {
     font-size: 7pt;
   }
@@ -952,61 +948,254 @@ export default {
     margin-left: -12%;
   }
 }
-/* Styles for screens with a width between 540px and 1280px and a height between 720px and 800px */
-@media (min-width: 540px) and (max-width: 1280px),
-       (min-height: 720px) and (max-height: 800px) {
+
+/* Styles for screens with a width between 820px and 912px and a height between 1180px and 136px */
+@media (min-width: 820px) and (max-height: 1368px) {
+    .show {
+      transform: translateY(-10px) scale(0.99);
+      transition: transform 2s;
+    }
+    .show .logo {
+      transition: transform 1.5s;
+      transform: translateY(-38px) scale(0.01);
+      left: 35%;
+    }
+    .first-p {
+      font-size: 16.5pt;
+    }
+    .second-p {
+      font-size: 50pt;
+    }
+    .third-p {
+      font-size: 21pt;
+    }
+    .media {
+      width: 30pt;
+    }
+    .show .first-p {
+      font-size: 17pt;
+    }
+    .show .second-p {
+      font-size: 50pt;
+    }
+    .show .third-p {
+      font-size: 20pt;
+    }
+    .anime1 {
+      width: 220px;
+      height: 180px;
+      margin-top: -3%;
+    }
+    .anime2 {
+      width: 100px;
+      height: 100px;
+      margin-left: -10%;
+      margin-top: 13%;
+    }
+    .anime3 {
+      width: 240px;
+      height: 200px;
+      margin-top: 2%;
+      margin-left: 0.5%;
+    }
+    .anime4 {
+      width: 220px;
+      height: 230px;
+    }
+    .anime5 {
+      width: 90px;
+      height: 90px;
+      margin-top: -6%;
+    }
+}
+
+/* Styles for screens with a 280px*/
+@media (min-width: 280px) and (max-width: 281px){
+  .show {
+    transform: translateY(-120px) scale(0.99);
+    transition: transform 2s;
+  }
+  .show .logo {
+    transition: transform 1.5s;
+    transform: translateY(-38px) scale(0.01);
+    left: 3%;
+  }
+  .media {
+    width: 15pt;
+  }
   .first-p {
-    font-size: 10pt;
+    font-size: 5pt;
   }
   .second-p {
-    font-size: 29pt;
+    font-size: 14.5pt;
   }
   .third-p {
-    font-size: 14pt;
+    font-size: 8pt;
+  }
+  .show .first-p {
+    font-size: 8pt;
+  }
+  .show .second-p {
+    font-size: 30pt;
+  }
+  .show .third-p {
+    font-size: 8pt;
+  }
+  .show .small-logo {
+    width: 60px;
+  }
+  .anime1 {
+    width: 70px;
+    height: 80px;
+    margin-top: -5%;
+    margin-left: -8%;
+    }
+  .anime2 {
+    width: 40px;
+    height: 30px;
+    margin-left: -12%;
+    margin-top: 12%;
+  }
+  .anime3 {
+    width: 70px;
+    height: 70px;
+    margin-top: 1%;
+  }
+  .anime4 {
+    width: 60px;
+    height: 70px;
+    margin-top: -3%;
+  }
+  .anime5 {
+    width: 20px;
+    height: 30px;
+    margin-top: -8%;
+    margin-left: -12%;
+  }
+}
+
+/* Styles for screens with a width 414px and a height 896px */
+@media (min-width: 414px) and (max-width: 415px) {
+  .show {
+    transform: translateY(-50px) scale(0.99);
+    transition: transform 2s;
   }
   .show .small-logo {
     width: 80px;
+  }
+  .first-p {
+    font-size: 7pt;
+  }
+  .third-p {
+    font-size: 8.4pt;
   }
   .show .first-p {
     font-size: 11pt;
   }
   .show .second-p {
-    font-size:32pt;
+    font-size: 35pt;
   }
   .show .third-p {
-    font-size: 13pt;
+    font-size: 12pt;
+  }
+  .anime {
+    margin-top: 2%;
   }
   .anime1 {
-    width: 140px;
-    height: 130px;
-    margin-top: -4%;
+    width: 90px;
+    height: 100px;
   }
   .anime2 {
-    width: 80px;
-    height: 100px;
-    margin-left: -9%;
+    width: 50px;
+    height: 60px;
+    margin-left: -8%;
     margin-top: 12%;
   }
   .anime3 {
-    width: 150px;
-    height: 130px;
+    width: 120px;
+    height: 110px;
     margin-top: 1%;
   }
   .anime4 {
-    width: 130px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     margin-top: -3%;
   }
   .anime5 {
     width: 40px;
-    height: 70px;
+    height: 60px;
     margin-top: -8%;
-    margin-left: -8%;
+    margin-left: -12%;
   }
 }
-
-/* Styles for screens with a width between 768pxpx and a height 1024px */
+/* Styles for screens with a width 361px */
+@media (min-width: 360px) and (max-width: 361px) {
+  .show {
+    transform: translateY(-120px) scale(0.99);
+    transition: transform 2s;
+  }
+  .media {
+    width: 15pt;
+  }
+  .first-p {
+    font-size: 6.9pt;
+  }
+  .second-p {
+    font-size: 20pt;
+  }
+  .third-p {
+    font-size: 11pt;
+  }
+  .show .first-p {
+    font-size: 7pt;
+  }
+  .show .second-p {
+    font-size: 30pt;
+  }
+  .show .small-logo {
+    width: 55px;
+  }
+  .show .third-p {
+    font-size: 12pt;
+  }
+  .anime1 {
+    width: 90px;
+    height: 100px;
+  }
+  .anime2 {
+    width: 40px;
+    height: 60px;
+    margin-left: -8%;
+    margin-top: 12%;
+  }
+  .anime3 {
+    width: 100px;
+    height: 110px;
+    margin-top: 1%;
+  }
+  .anime4 {
+    width: 70px;
+    height: 100px;
+    margin-top: -3%;
+  }
+  .anime5 {
+    width: 40px;
+    height: 60px;
+    margin-top: -8%;
+    margin-left: -12%;
+  }
+}
+/* Styles for screens with a width between 768px and a height 1024px */
 @media (min-width: 768px) and (max-height: 1024px) {
+  .show {
+    transform: translateY(20px) scale(0.99);
+    transition: transform 2s;
+  }
+  .show .logo {
+      transition: transform 1.5s;
+      transform: translateY(-38px) scale(0.01);
+      left: 35%;
+    }
   .first-p {
     font-size: 14pt;
   }
@@ -1059,60 +1248,84 @@ export default {
     width: 30pt;
   }
 }
-
-/* Styles for screens with a width between 820px and 912px and a height between 1180px and 136px */
-@media (min-width: 820px) and (max-width: 912px),
-       (min-height: 1180px) and (max-height: 1368px) {
-    .first-p {
-      font-size: 16.5pt;
-    }
-    .second-p {
-      font-size: 50pt;
-    }
-    .third-p {
-      font-size: 21pt;
-    }
-    .media {
-      width: 30pt;
-    }
-    .show .first-p {
-      font-size: 17pt;
-    }
-    .show .second-p {
-      font-size: 50pt;
-    }
-    .show .third-p {
-      font-size: 20pt;
-    }
-    .anime1 {
-      width: 220px;
-      height: 180px;
-      margin-top: -3%;
-    }
-    .anime2 {
-      width: 100px;
-      height: 100px;
-      margin-left: -10%;
-      margin-top: 13%;
-    }
-    .anime3 {
-      width: 240px;
-      height: 200px;
-      margin-top: 2%;
-      margin-left: 0.5%;
-    }
-    .anime4 {
-      width: 220px;
-      height: 230px;
-    }
-    .anime5 {
-      width: 90px;
-      height: 90px;
-      margin-top: -6%;
-    }
+/* Styles for screens with a width 394px  */
+@media (min-width: 390px) and (max-width: 394px){
+  .show {
+    transform: translateY(-50px) scale(0.99);
+    transition: transform 2s;
+  }
+  .show .first-p {
+    font-size: 11pt;
+  }
+  .first-p {
+    font-size: 7pt;
+  }
+  .third-p {
+    font-size: 12pt;
+  }
+}
+/* Styles for screens with a width between 540px and 1280px and a height between 720px and 800px */
+@media (min-width: 540px) and (max-width: 541px){
+  .show {
+    transform: translateY(-10px) scale(0.99);
+    transition: transform 2s;
+  }
+  .first-p {
+    font-size: 10pt;
+  }
+  .second-p {
+    font-size: 29pt;
+  }
+  .third-p {
+    font-size: 14pt;
+  }
+  .show .small-logo {
+    width: 80px;
+  }
+  .show .first-p {
+    font-size: 11pt;
+  }
+  .show .second-p {
+    font-size:32pt;
+  }
+  .show .third-p {
+    font-size: 13pt;
+  }
+  .anime1 {
+    width: 140px;
+    height: 130px;
+    margin-top: -4%;
+  }
+  .anime2 {
+    width: 80px;
+    height: 100px;
+    margin-left: -9%;
+    margin-top: 12%;
+  }
+  .anime3 {
+    width: 150px;
+    height: 130px;
+    margin-top: 1%;
+  }
+  .anime4 {
+    width: 130px;
+    height: 120px;
+    margin-top: -3%;
+  }
+  .anime5 {
+    width: 40px;
+    height: 70px;
+    margin-top: -8%;
+    margin-left: -8%;
+  }
 }
 /* Styles for screens with a width of 1000px and a height of 1200px */
 @media (min-width: 1000px) {
+  .show .logo {
+      transition: transform 1.5s;
+      transform: translateY(-98px) scale(0.01);
+      left: 38%;
+    }
   .media {
     width: 31pt;
   }
@@ -1286,112 +1499,16 @@ export default {
     z-index: -2;
   }
 }
-/* Styles for screens with a width 360px */
-@media (min-width: 360px) and (max-width: 360px) {
-  .media {
-    width: 15pt;
+/* Styles for screens with a width 1280px  */
+@media (min-width: 1280px) {
+  .show {
+    transform: translateY(90px) scale(0.99);
+    transition: transform 2s;
   }
-  .first-p {
-    font-size: 6.9pt;
-  }
-  .second-p {
-    font-size: 20pt;
-  }
-  .third-p {
-    font-size: 11pt;
-  }
-  .show .first-p {
-    font-size: 7pt;
-  }
-  .show .second-p {
-    font-size: 30pt;
-  }
-  .show .small-logo {
-    width: 55px;
-  }
-  .show .third-p {
-    font-size: 12pt;
-  }
-  .anime1 {
-    width: 90px;
-    height: 100px;
-  }
-  .anime2 {
-    width: 40px;
-    height: 60px;
-    margin-left: -8%;
-    margin-top: 12%;
-  }
-  .anime3 {
-    width: 100px;
-    height: 110px;
-    margin-top: 1%;
-  }
-  .anime4 {
-    width: 70px;
-    height: 100px;
-    margin-top: -3%;
-  }
-  .anime5 {
-    width: 40px;
-    height: 60px;
-    margin-top: -8%;
-    margin-left: -12%;
-  }
-}
-/* Styles for screens with a 280px*/
-@media (min-width: 280px) and (max-width: 280px){
-  .media {
-    width: 15pt;
-  }
-  .first-p {
-    font-size: 5pt;
-  }
-  .second-p {
-    font-size: 14.5pt;
-  }
-  .third-p {
-    font-size: 8pt;
-  }
-  .show .first-p {
-    font-size: 8pt;
-  }
-  .show .second-p {
-    font-size: 30pt;
-  }
-  .show .third-p {
-    font-size: 8pt;
-  }
-  .show .small-logo {
-    width: 60px;
-  }
-  .anime1 {
-    width: 70px;
-    height: 80px;
-    margin-top: -5%;
-    margin-left: -8%;
-    }
-  .anime2 {
-    width: 40px;
-    height: 30px;
-    margin-left: -12%;
-    margin-top: 12%;
-  }
-  .anime3 {
-    width: 70px;
-    height: 70px;
-    margin-top: 1%;
-  }
-  .anime4 {
-    width: 60px;
-    height: 70px;
-    margin-top: -3%;
-  }
-  .anime5 {
-    width: 20px;
-    height: 30px;
-    margin-top: -8%;
-    margin-left: -12%;
+  .show .logo {
+    transition: transform 1.5s;
+    transform: translateY(-108px) scale(0.01);
+    left: 42%;
   }
 }
 </style>
