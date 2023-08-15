@@ -1075,7 +1075,7 @@ export default {
   }
   .show3 .anime > .anime3 {
     transition: transform 3s;
-    transform: translate(-80px, 2250px) scale(0.8);
+    transform: translate(-80px, 2250px) scale(0.7);
     z-index: -2;
   }
   .show3 .anime > .anime2 {
