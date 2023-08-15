@@ -89,7 +89,7 @@ export default {
 .anime5m {
   position: static;
   display: block;
-  background-image: url('./../assets/team/k.jpg');
+  background-image: url('./../assets/team/v.jpg');
   background-size: cover;
   animation: organic 12s infinite alternate ease-in-out;
 }

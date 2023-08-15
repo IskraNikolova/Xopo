@@ -121,12 +121,12 @@
           </div>
             <div class="first-text" id="paragraph1">
               <p class="title welcomeT text-uppercase text-bold">Priceless Creations in the Digital Age </p>
-              <p class="subTitle" style="font-size: 15pt;">Welcome to <span class="text-bold">"Join The Xopo"</span>, the Ultimate Platform for NFT Creation and Artistic Empowerment</p>
-              <div class="row paragraph wp">
-                <div class="col q-pl-xl"><p>In today's digital age, the world of art is constantly evolving. As an artist, it can be a challenge to break through the noise and gain recognition for your work. That's where <span class="text-bold">"Join The Xopo"</span> comes in - we're the ultimate platform for NFT creation, empowering artists to unlock the full potential of their masterpieces and take their creations to new heights.</p></div>
-                <div class="col">Our team of NFT experts and talented artists work together to transform your artwork into non-fungible tokens, giving it a unique value and making it more accessible to a wider audience. But <span class="text-bold">"Join The Xopo"</span> is more than just a marketplace - it's a decentralized hub for artists, developers, and free speech enthusiasts. We're here to empower you, fuel your passion, and help you forge connections in the world of digital art.</div>
-                <div class="col q-pr-xl">
-                  <p class="">With our expert guidance and unwavering support, you'll be able to convert your art into NFTs and redefine the way the world views and appreciates digital art. <span class="text-bold">So what are you waiting for?</span> Join the <span class="text-bold">"Join The Xopo"</span> movement today and unlock new realms of artistic expression. Welcome to the world of NFTs - welcome to <span class="text-bold">"Join The Xopo"</span></p>
+              <p class="subTitle">Welcome to <span class="text-bold">"Join The Xopo"</span>, the Ultimate Platform for NFT Creation and Artistic Empowerment</p>
+              <div class="paragraph wp parent-paragraph">
+                <div class="p"><p>In today's digital age, the world of art is constantly evolving. As an artist, it can be a challenge to break through the noise and gain recognition for your work. That's where <span class="text-bold">"Join The Xopo"</span> comes in - we're the ultimate platform for NFT creation, empowering artists to unlock the full potential of their masterpieces and take their creations to new heights.</p></div>
+                <div class="p">Our team of NFT experts and talented artists work together to transform your artwork into non-fungible tokens, giving it a unique value and making it more accessible to a wider audience. But <span class="text-bold">"Join The Xopo"</span> is more than just a marketplace - it's a decentralized hub for artists, developers, and free speech enthusiasts. We're here to empower you, fuel your passion, and help you forge connections in the world of digital art.</div>
+                <div class="p">
+                  <p>With our expert guidance and unwavering support, you'll be able to convert your art into NFTs and redefine the way the world views and appreciates digital art. <span class="text-bold">So what are you waiting for?</span> Join the <span class="text-bold">"Join The Xopo"</span> movement today and unlock new realms of artistic expression. Welcome to the world of NFTs - welcome to <span class="text-bold">"Join The Xopo"</span></p>
                   <a
                     tag="a"
                     href="https://medium.com/@XoroNft/how-to-become-a-wealthy-and-recognized-artist-in-todays-world-d207a36b8f2f"
@@ -137,7 +137,7 @@
                 </div>
               </div>
             </div>
-            <div class="second-text">
+            <div class="second-text gt-sm">
               <div class="row paragraph wp" id="paragraph2" style="margin-top: 12%">
                 <div class="col q-pl-xl">
                   <p class="text-uppercase text-bold text-h5">Xopo's First Own Collection: "Koloda"</p>
@@ -165,6 +165,32 @@
                     <span class="anime13"></span>
                   </div>
                 </div>
+              </div>
+            </div>
+            <div class="second-text lt-md q-mt-xl">
+              <div class="row anime">
+                <span class="anime6 background-image-fullsize"></span>
+                <span class="anime7"></span>
+                <span class="anime8 background-image-fullsize"></span>
+                <span class="anime9 background-image-fullsize"></span>
+                <span class="anime10"></span>
+                <span class="anime12"></span>
+                <span class="anime13"></span>
+              </div>
+              <div id="paragraph2">
+                  <p class="text-uppercase text-bold text-h5 title text-center">Xopo's First Own Collection: "Koloda"</p>
+                  <p class="text-h6 subTitle text-center">Minted on Avalanche, our first NFT collection will feature 85 stunning paintings<span class="text-bold"> by Bulgarian artist Miroslav Mihov (Eternal Mirror)</span>. 'Koloda' - original works of art created between 2014 and 2022 using oil paints on canvas, watercolors, and chalk on cardboard.</p>
+                  <p class="paragraph">
+                    This collection showcases a range of styles, from beautiful classical and abstract landscapes to vividly colored artworks and paintings with mysterious figurative and symbolic images. Each piece carries a substantial charge of natural, humane, aesthetic, and philosophical energy, making it a unique and captivating addition to any art collection.
+                    As a testament to Xopo's commitment to artistic expression and innovation in the world of digital art, these artworks are available as NFTs.<span class="text-bold"> Don't miss your chance </span> to own a piece of this remarkable collection.
+                  </p>
+                  <a
+                    tag="a"
+                    href="https://medium.com/@XoroNft/xoponft-52af6632edab#:~:text=Our%20first%20collection,own%20an%20NFT."
+                    target="_blank"
+                    v-html="'Read More'"
+                    class="a-button"
+                  ></a>
               </div>
             </div>
             <div class="second-text">
@@ -601,6 +627,20 @@ export default {
 .third-p {
   letter-spacing: .05rem;
 }
+  .paragraph {
+    gap: 70px;
+    line-height: 2.2;
+    font-size: 12pt;
+  }
+  .parent-paragraph {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .p {
+    flex: 1 1 250px;
+    max-width: 400px;
+  }
 .wp {
   margin-top: 3%;
   display: flex;
@@ -838,7 +878,25 @@ export default {
     transition: transform 4.1s;
     transform: translate(0, 0) scale(1);
   }
-
+  .title {
+    clear: both;
+    text-align: center;
+    font-size: 23pt;
+    letter-spacing: .05rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .subTitle {
+    max-width: 50%;
+    font-size: 15pt;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .welcomeT {
+    margin-top: 10%;
+    margin-bottom: 1%;
+  }
 /* Styles for screens with a width between 375px and 412px and a height between 667px and 896px */
 @media (min-width: 375px) and (max-height: 896px) {
   .show {
@@ -867,31 +925,157 @@ export default {
     width: 70px;
   }
   .anime1 {
-    width: 100px;
-    height: 110px;
-    margin-top: -4%;
+    width: 70px;
+    height: 80px;
+    margin-top: -2%;
+    margin-left: 12px;
   }
   .anime2 {
-    width: 40px;
-    height: 60px;
+    width: 30px;
+    height: 50px;
     margin-left: -8%;
     margin-top: 12%;
   }
   .anime3 {
-    width: 110px;
-    height: 100px;
-    margin-top: 1%;
+    width: 80px;
+    height: 70px;
+    margin-top: 6%;
   }
   .anime4 {
-    width: 70px;
-    height: 90px;
-    margin-top: -3%;
+    width: 66px;
+    height: 80px;
+    margin-left: 2px;
   }
   .anime5 {
-    width: 40px;
-    height: 50px;
-    margin-top: -8%;
+    width: 30px;
+    height: 40px;
+    margin-top: -3%;
     margin-left: -12%;
+  }
+  .anime6 {
+    margin-left: 20%;
+    width: 10%;
+    height: 150pt;
+    z-index: -1;
+  }
+  .anime7 {
+    margin-top: 55%;
+    width: 10%;
+    height: 30pt;
+    z-index: -1;
+  }
+  .anime8 {
+    margin-top: 22%;
+    margin-left: 15%;
+    width: 15%;
+    height: 160pt;
+    z-index: 1;
+  }
+  .anime8-1 {
+    margin-left: 40%;
+    width: 15%;
+    height: 40pt;
+    z-index: -1;
+  }
+  .anime9{
+    margin-left: -55%;
+    margin-top: 23%;
+    width: 55%;
+    height: 30pt;
+    z-index: -1;
+  }
+  .anime9-1 {
+    margin-top: 5%;
+    margin-left: -35%;
+    width: 55%;
+    height: 30pt;
+  }
+  .anime10 {
+    margin-top: -8%;
+    width: 10%;
+    height: 30pt;
+  }
+  .anime10 {
+    margin-top: -20%;
+    width: 80%;
+  }
+  .anime12-1 {
+    margin-top: -32%;
+    margin-left: 45%;
+    width: 75%;
+    height: 50pt;
+    z-index: -2;
+  }
+  .anime12{
+    margin-top: -40%;
+    margin-left: 45%;
+    width: 45%;
+    height: 30pt;
+  }
+  .anime13 {
+    margin-top: -110%;
+    margin-left: 40%;
+    width: 16%;
+    height: 50pt;
+    z-index: -2;
+  }
+  .title {
+    font-size: 15pt;
+  }
+  .subTitle {
+    max-width: 80%;
+    font-size: 12pt;
+  }
+  .paragraph {
+    gap: 20px;
+    font-size: 9.5pt;
+  }
+  .show2 .anime > .anime1 {
+    transition: transform 2s;
+    transform: translate(170px, 1200px) scale(0.8);
+    z-index: -2;
+  }
+  .show2 .anime > .anime2 {
+    transition: transform 2.2s;
+    transform: translate(130px, 1120px) scale(0.35);
+  }
+  .show2 .anime > .anime3 {
+    transition: transform 3s;
+    transform: translate(20px, 1180px) scale(0);
+    z-index: -2;
+  }
+  .show2 .anime > .anime4 {
+    transition: transform 3.5s;
+    transform: translate(42px, 1080px) scale(0);
+  }
+  .show2 .anime > .anime5 {
+    transition: transform 4.1s;
+    transform: translate(20px, 1105px) scale(0.9);
+    z-index: -2;
+  }
+  .show3 .anime > .anime3 {
+    transition: transform 3s;
+    transform: translate(-610px, 1820px) scale(0.4);
+    z-index: -2;
+  }
+  .show3 .anime > .anime2 {
+    transition: transform 3s;
+    transform: translate(-430px, 1900px) scale(0.2);
+    z-index: -2;
+  }
+  .show3 .anime > .anime4 {
+    transition: transform 3.5s;
+    transform: translate(-600px, 1850px) scale(0.5);
+  }
+  .show3 .anime > .anime1 {
+    transition: transform 2s;
+    transform: translate(-35px, 2040px) scale(0.3);
+    z-index: -2;
+  }
+  .show3 .anime > .anime5 {
+    transition: transform 2.1s;
+    transform: translate(-950px, 2100px) scale(0.4);
+    z-index: -2;
   }
 }
 /* Styles for screens with a min-width 412px and a min-height 892px */
@@ -1501,6 +1685,13 @@ export default {
 }
 /* Styles for screens with a width 1280px  */
 @media (min-width: 1280px) {
+  .title {
+    font-size: 23pt;
+  }
+  .subTitle {
+    max-width: 50%;
+    font-size: 15pt;
+  }
   .show {
     transform: translateY(90px) scale(0.99);
     transition: transform 2s;
@@ -1510,5 +1701,10 @@ export default {
     transform: translateY(-108px) scale(0.01);
     left: 42%;
   }
+  .paragraph {
+    gap: 70px;
+    font-size: 12pt;
+  }
 }
+
 </style>
