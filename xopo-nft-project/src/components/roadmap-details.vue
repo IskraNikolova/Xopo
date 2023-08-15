@@ -32,7 +32,7 @@
             <a
               class="q-mr-xs"
               tag="a"
-              href="https://www.instagram.com/xoponft/?hl=bg"
+              href="https://www.instagram.com/xoponft"
               target="_blank"
             >
               <q-img src="~assets/icons/media/instagram_i.svg" class="media" />
