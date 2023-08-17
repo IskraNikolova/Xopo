@@ -236,7 +236,7 @@ JoinTheXopo empowers artists to harness the potential of NFTs, allowing you to e
             <p class="title text-uppercase text-bold q-pt-xl" id="paragraph3">XOPO ROADMAP </p>
             <p class="subTitle" style="font-size: 15pt;">What is the Journey of XOPO?</p>
             <p class="subTitle" style="font-size: 13pt;">At our project, we envision a journey through <span class="text-bold"> ten foundational eras</span>, all humming with activity and evolving concurrently yet unfolding sequentially. Like strokes on a canvas, each era contributes to the grand tableau of our mission: to create a project that harnesses art to save the world.</p>
-            <div class="row q-mt-xl">
+            <div class="row q-mt-xl gt-sm">
               <div class="col-4 q-mt-md q-mr-xl q-ml-xl q-mb-xl">
                 <span class="anime11 background-image-fullsize"></span>
               </div>
@@ -252,23 +252,53 @@ JoinTheXopo empowers artists to harness the potential of NFTs, allowing you to e
                 <br /><br /><span style="font-size: large;">Welcome to our evolving masterpiece. Let's make the world our canvas!</span>
               </div>
             </div>
+            <div class="q-mt-xl lt-md">
+              <div class="q-mt-md q-mr-xl q-ml-xl q-mb-xl">
+                <span class="anime11 background-image-fullsize"></span>
+              </div>
+              <div class="paragraph rp">
+              We start with the <span class="text-bold">DaVinci Dawn</span>, a welcoming beacon to potential users, followed by the <span class="text-bold">Picasso Beta</span> that crafts our digital platform. The <span class="text-bold">Warhol Mint</span> users in the era of creation and commerce, setting the stage for <span class="text-bold">Hokusai Governance</span> to establish our project's guiding principles.
+
+              <br /><br />With the <span class="text-bold">O'Keeffe Stake</span>, we invite users to become part of our vision, leading us to the <span class="text-bold">Michelangelo Airdrop</span>, a token of gratitude for our early adopters. The <span class="text-bold">Kahlo Portal</span> opens doors to artists worldwide, while the <span class="text-bold">Matisse Lottery</span> gives voice to our community, enabling them to shape the project.
+
+              <br /><br />The <span class="text-bold">Van Gogh Integration</span> extends our reach, inviting more users to connect and engage.Finally, the <span class="text-bold">Kandinsky Legacy</span> solidifies our commitment to art and its causes, creating commemorative collections that resonate far beyond our platform.
+
+                <br />Each era will be detailed upon arrival, painting a vivid picture of our journey so far. For now, we invite you to explore these concepts and join us in creating a project that does more than just exist - it lives, breathes, and thrives on art and passion. The number of eras is not definitive - after all, our journey is as dynamic as the art we aim to save.
+
+                <br /><br /><span style="font-size: large;">Welcome to our evolving masterpiece. Let's make the world our canvas!</span>
+              </div>
+            </div>
             <roadmap style="margin-top: 7%;margin-bottom: 10%;"/>
             <p class="title text-uppercase text-bold" id="paragraph4">Xopo Team</p>
             <p class="subTitle" style="font-size: 15pt;">Our diverse team of developers, UX/UI designers, marketing specialists, event managers, web3 enthusiasts, community moderators, musicians, artists, and more has come together with a shared vision.</p>
-            <div class="row">
+            <div class="gt-sm">
+              <div class="row">
               <div class="col-2"></div>
               <member v-bind:className="'anime0m'" v-bind:text="''" v-bind:name="'You'" v-bind:title="'?'"/>
               <div class="col-2"></div>
+              </div>
+              <div class="row">
+                <div class="col-2"></div>
+                <member v-bind:className="'anime1m'" v-bind:text="`Meet RADoHaema, co-founder of Xopo, a dynamic player in the NFT landscape. With his unique blend of visionary leadership, collaborative efforts with top-tier artists, and a steadfast commitment to blockchain's transformative potential, he is reshaping the art market and beyond.`" v-bind:name="'RADoHaema'" v-bind:title="'co-founder'"/>
+                <member v-bind:className="'anime2m'" v-bind:text="`
+  DarKniA, co-founder of XopoNFT, is a visionary leader in the NFT space, combining international experience, Solidity expertise, and a profound passion for art. With a remarkable track record in client relations, groundbreaking projects on Avalanche, and captivating art collections, Radina stands out as a pioneering figure, blending tech-savviness with artistic flair in the world of NFTs.`" v-bind:name="'DarKniA'" v-bind:title="'co-founder, artist'"/>
+                <member v-bind:className="'anime3m'" v-bind:text="`Sh∀dowina, co-founder of VScout and a crucial member of the Xopo team, is an expert in full-stack blockchain development. With extensive experience in dApp development, smart contracts, and NFT creation, she plays a vital role in shaping our decentralized application for artists and establishing our unique position in the blockchain ecosystem.`" v-bind:name="'Sh∀dowina'" v-bind:title="'CTO, Senior Software Engineer'"/>
+                <div class="col-2"></div>
+              </div>
+              <div class="row">
+                <member v-bind:className="'anime4m'" v-bind:text="`Stefan Bachvarov is a seasoned project manager and event organizer, known for his success as co-founder and chairman of ‘Bastar studio’, NGO ‘DEMO’, and Varna youth festival ‘FUNCITY’. Now steering the helm as the project manager at ‘Xopo’, Stefan's fusion of online platform expertise, project creativity, and a passion for art and extreme sports make him a dynamic and valuable contributor to the team`" v-bind:name="'Stefan Bachvarov'" v-bind:title="'Project Manager, Musician'"/>
+                <member v-bind:className="'anime5m'" v-bind:text="`Ventsislav Bahnev is a highly skilled UX/UI Designer and Web Developer with over 10 years of experience, specializing in front-end web development, UX/Web Design, and creating stunning corporate videos. His exceptional attention to detail and unwavering commitment to quality results have made him a respected expert in the industry.`" v-bind:name="'Ventsislav Bahnev'" v-bind:title="'UX/UI Designer, artist'"/>
+                <member v-bind:className="'anime6m'" v-bind:text="`AzZer is a key member of the XopoNFT project, focusing on community moderation and support. With a strong passion for NFTs and their integration on the Avalanche blockchain, AzZer's creative and innovative approach drives the project forward. His enthusiasm for technology, art, music, games, and nature further enhances his contributions to XopoNFT.`" v-bind:name="'AzZer'" v-bind:title="'Community Manager'"/>
+                <member v-bind:className="'anime7m'" v-bind:text="`
+  Dani Nikolov is an experienced digital marketing manager with expertise in business, marketing, and copywriting. Their deep understanding of effective campaign creation, coupled with their passion for sales and marketing, positions them as a valuable asset in driving sales and conversions.`" v-bind:name="'Dani Nikolov'" v-bind:title="'Digital Marketing Manager'"/>
+              </div>
             </div>
-            <div class="row">
-              <div class="col-2"></div>
+            <div class="lt-md">
+              <member v-bind:className="'anime01m'" v-bind:text="''" v-bind:name="'You'" v-bind:title="'?'"/>
               <member v-bind:className="'anime1m'" v-bind:text="`Meet RADoHaema, co-founder of Xopo, a dynamic player in the NFT landscape. With his unique blend of visionary leadership, collaborative efforts with top-tier artists, and a steadfast commitment to blockchain's transformative potential, he is reshaping the art market and beyond.`" v-bind:name="'RADoHaema'" v-bind:title="'co-founder'"/>
               <member v-bind:className="'anime2m'" v-bind:text="`
 DarKniA, co-founder of XopoNFT, is a visionary leader in the NFT space, combining international experience, Solidity expertise, and a profound passion for art. With a remarkable track record in client relations, groundbreaking projects on Avalanche, and captivating art collections, Radina stands out as a pioneering figure, blending tech-savviness with artistic flair in the world of NFTs.`" v-bind:name="'DarKniA'" v-bind:title="'co-founder, artist'"/>
               <member v-bind:className="'anime3m'" v-bind:text="`Sh∀dowina, co-founder of VScout and a crucial member of the Xopo team, is an expert in full-stack blockchain development. With extensive experience in dApp development, smart contracts, and NFT creation, she plays a vital role in shaping our decentralized application for artists and establishing our unique position in the blockchain ecosystem.`" v-bind:name="'Sh∀dowina'" v-bind:title="'CTO, Senior Software Engineer'"/>
-              <div class="col-2"></div>
-            </div>
-            <div class="row">
               <member v-bind:className="'anime4m'" v-bind:text="`Stefan Bachvarov is a seasoned project manager and event organizer, known for his success as co-founder and chairman of ‘Bastar studio’, NGO ‘DEMO’, and Varna youth festival ‘FUNCITY’. Now steering the helm as the project manager at ‘Xopo’, Stefan's fusion of online platform expertise, project creativity, and a passion for art and extreme sports make him a dynamic and valuable contributor to the team`" v-bind:name="'Stefan Bachvarov'" v-bind:title="'Project Manager, Musician'"/>
               <member v-bind:className="'anime5m'" v-bind:text="`Ventsislav Bahnev is a highly skilled UX/UI Designer and Web Developer with over 10 years of experience, specializing in front-end web development, UX/Web Design, and creating stunning corporate videos. His exceptional attention to detail and unwavering commitment to quality results have made him a respected expert in the industry.`" v-bind:name="'Ventsislav Bahnev'" v-bind:title="'UX/UI Designer, artist'"/>
               <member v-bind:className="'anime6m'" v-bind:text="`AzZer is a key member of the XopoNFT project, focusing on community moderation and support. With a strong passion for NFTs and their integration on the Avalanche blockchain, AzZer's creative and innovative approach drives the project forward. His enthusiasm for technology, art, music, games, and nature further enhances his contributions to XopoNFT.`" v-bind:name="'AzZer'" v-bind:title="'Community Manager'"/>
@@ -1018,6 +1048,11 @@ export default {
   .anime10 {
     margin-top: -20%;
     width: 80%;
+  }
+  .anime11 {
+    margin-top: 2%;
+    width: 120%;
+    height: 220pt;
   }
   .anime12-1 {
     margin-top: -42%;

@@ -21,6 +21,10 @@ export default {
   },
   name: 'Roadmap-card',
   props: {
+    col: {
+      type: Number,
+      required: true
+    },
     item: {
       type: Object,
       required: true

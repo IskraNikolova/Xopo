@@ -57,6 +57,17 @@ export default {
   filter: grayscale();
   filter: invert();
 }
+.anime01m {
+  position: static;
+  display: block;
+  background-image: url('./../assets/team/0.jpg');
+  background-size: cover;
+  animation: organic 12s infinite alternate ease-in-out;
+  margin-bottom: 2%;
+  margin-top: 5%;
+  filter: grayscale();
+  filter: invert();
+}
 .anime1m {
   position: static;
   display: block;
