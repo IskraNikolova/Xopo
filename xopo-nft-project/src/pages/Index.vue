@@ -331,6 +331,7 @@ Dani Nikolov is an experienced digital marketing manager with expertise in busin
           class="a-btn-pr"
         ></a>
       </div>
+      <media-links />
     </q-page>
     <q-drawer
       v-model="drawer"
@@ -417,7 +418,8 @@ export default {
     // AnimatedNumber: () => import('animated-number-vue')
     Roadmap: () => import('../components/roadmap.vue'),
     Roadmap2: () => import('../components/roadmap2.vue'),
-    Member: () => import('../components/member.vue')
+    Member: () => import('../components/member.vue'),
+    MediaLinks: () => import('../components/mediaLinks.vue')
   },
   setup () {
     return {

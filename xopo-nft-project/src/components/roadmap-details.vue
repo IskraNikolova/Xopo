@@ -9,60 +9,7 @@
           <span class="animeRoadmap" :style="backgroundStyle"></span>
         </div>
       </div>
-      <p class="title text-uppercase text-bold q-mt-xl" style="max-width: 50%;">
-        Decentralized hub for artists, developers, and free speech enthusiasts.
-      </p>
-      <div class="q-mt-md q-mb-md title">
-        <a
-              class="q-mr-xs"
-              tag="a"
-              href="https://discord.gg/q8KvRKtXHw"
-              target="_blank"
-            >
-              <q-img src="~assets/icons/media/discord_i.svg" class="media" />
-            </a>
-            <a
-              class="q-mr-xs"
-              tag="a"
-              href="https://twitter.com/XopoNft"
-              target="_blank"
-            >
-              <q-img src="~assets/icons/media/twiter_i.svg"  class="media" />
-            </a>
-            <a
-              class="q-mr-xs"
-              tag="a"
-              href="https://www.instagram.com/xoponft"
-              target="_blank"
-            >
-              <q-img src="~assets/icons/media/instagram_i.svg" class="media" />
-            </a>
-            <a
-              class="q-mr-xs"
-              tag="a"
-              href="https://t.me/xoponft"
-              target="_blank"
-            >
-              <q-img src="~assets/icons/media/telegram_i.svg" class="media" />
-            </a>
-            <a
-              class="q-mr-xs"
-              tag="a"
-              href="https://medium.com/@XoroNft"
-              target="_blank"
-            >
-              <q-img src="~assets/icons/media/medium_i.svg" class="media" />
-            </a>
-            <a
-              class="q-mr-xs"
-              tag="a"
-              href="https://github.com/IskraNikolova/Xopo"
-              target="_blank"
-            >
-              <q-img src="~assets/icons/media/github_i.svg" class="media" />
-            </a>
-
-      </div>
+      <media-links />
     </div>
 </template>
 
@@ -72,7 +19,8 @@ import { c } from './../utils'
 export default {
   name: 'PageAirdrop',
   components: {
-    Roadmap: () => import('./roadmap.vue')
+    Roadmap: () => import('./roadmap.vue'),
+    MediaLinks: () => import('./mediaLinks.vue')
   },
   computed: {
     index () {
