@@ -54,8 +54,6 @@ export default {
   margin-bottom: 2%;
   margin-top: 5%;
   margin-left: 42%;
-  filter: grayscale();
-  filter: invert();
 }
 .anime01m {
   position: static;

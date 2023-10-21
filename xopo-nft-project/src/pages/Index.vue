@@ -119,219 +119,217 @@
                 <span class="anime5"></span>
             </div>
           </div>
-            <div class="first-text" id="paragraph1">
-              <p class="title welcomeT text-uppercase text-bold">Priceless Creations in the Digital Age </p>
-              <p class="subTitle">Welcome to <span class="text-bold">"Join The Xopo"</span>, the Ultimate Platform for NFT Creation and Artistic Empowerment</p>
-              <div class="paragraph wp parent-paragraph">
-                <div class="p"><p>In today's digital age, the world of art is constantly evolving. As an artist, it can be a challenge to break through the noise and gain recognition for your work. That's where <span class="text-bold">"Join The Xopo"</span> comes in - we're the ultimate platform for NFT creation, empowering artists to unlock the full potential of their masterpieces and take their creations to new heights.</p></div>
-                <div class="p">Our team of NFT experts and talented artists work together to transform your artwork into non-fungible tokens, giving it a unique value and making it more accessible to a wider audience. But <span class="text-bold">"Join The Xopo"</span> is more than just a marketplace - it's a decentralized hub for artists, developers, and free speech enthusiasts. We're here to empower you, fuel your passion, and help you forge connections in the world of digital art.</div>
-                <div class="p">
-                  <p>With our expert guidance and unwavering support, you'll be able to convert your art into NFTs and redefine the way the world views and appreciates digital art. <span class="text-bold">So what are you waiting for?</span> Join the <span class="text-bold">"Join The Xopo"</span> movement today and unlock new realms of artistic expression. Welcome to the world of NFTs - welcome to <span class="text-bold">"Join The Xopo"</span></p>
-                  <a
-                    tag="a"
-                    href="https://medium.com/@XoroNft/how-to-become-a-wealthy-and-recognized-artist-in-todays-world-d207a36b8f2f"
-                    target="_blank"
-                    v-html="'Read More'"
-                    class="a-button"
-                  ></a>
+          <div class="first-text" id="paragraph1">
+            <p class="title welcomeT text-uppercase text-bold">Priceless Creations in the Digital Age </p>
+            <p class="subTitle">Welcome to <span class="text-bold">"Join The Xopo"</span>, the Ultimate Platform for NFT Creation and Artistic Empowerment</p>
+            <div class="paragraph wp parent-paragraph">
+              <div class="p"><p>In today's digital age, the world of art is constantly evolving. As an artist, it can be a challenge to break through the noise and gain recognition for your work. That's where <span class="text-bold">"Join The Xopo"</span> comes in - we're the ultimate platform for NFT creation, empowering artists to unlock the full potential of their masterpieces and take their creations to new heights.</p></div>
+              <div class="p">Our team of NFT experts and talented artists work together to transform your artwork into non-fungible tokens, giving it a unique value and making it more accessible to a wider audience. But <span class="text-bold">"Join The Xopo"</span> is more than just a marketplace - it's a decentralized hub for artists, developers, and free speech enthusiasts. We're here to empower you, fuel your passion, and help you forge connections in the world of digital art.</div>
+              <div class="p">
+                <p>With our expert guidance and unwavering support, you'll be able to convert your art into NFTs and redefine the way the world views and appreciates digital art. <span class="text-bold">So what are you waiting for?</span> Join the <span class="text-bold">"Join The Xopo"</span> movement today and unlock new realms of artistic expression. Welcome to the world of NFTs - welcome to <span class="text-bold">"Join The Xopo"</span></p>
+                <a
+                  tag="a"
+                  href="https://medium.com/@XoroNft/how-to-become-a-wealthy-and-recognized-artist-in-todays-world-d207a36b8f2f"
+                  target="_blank"
+                  v-html="'Read More'"
+                  class="a-button"
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="second-text gt-sm">
+            <div class="row paragraph wp" id="paragraph2" style="margin-top: 12%">
+              <div class="col q-pl-xl">
+                <p class="text-uppercase text-bold text-h5">Xopo's First Own Collection: "Koloda"</p>
+                <p class="text-h6">Minted on Avalanche, our first NFT collection will feature 85 stunning paintings<span class="text-bold"> by Bulgarian artist Miroslav Mihov (Eternal Mirror)</span>. 'Koloda' - original works of art created between 2014 and 2022 using oil paints on canvas, watercolors, and chalk on cardboard.</p>
+                <p>
+                  This collection showcases a range of styles, from beautiful classical and abstract landscapes to vividly colored artworks and paintings with mysterious figurative and symbolic images. Each piece carries a substantial charge of natural, humane, aesthetic, and philosophical energy, making it a unique and captivating addition to any art collection.
+                  As a testament to Xopo's commitment to artistic expression and innovation in the world of digital art, these artworks are available as NFTs.<span class="text-bold"> Don't miss your chance </span> to own a piece of this remarkable collection.
+                </p>
+                <a
+                  tag="a"
+                  href="https://medium.com/@XoroNft/xoponft-52af6632edab#:~:text=Our%20first%20collection,own%20an%20NFT."
+                  target="_blank"
+                  v-html="'Read More'"
+                  class="a-button"
+                ></a>
+              </div>
+              <div class="col">
+                <div class="row anime">
+                  <span class="anime6 background-image-fullsize"></span>
+                  <span class="anime7"></span>
+                  <span class="anime8 background-image-fullsize"></span>
+                  <span class="anime9 background-image-fullsize"></span>
+                  <span class="anime10"></span>
+                  <span class="anime12"></span>
+                  <span class="anime13"></span>
                 </div>
               </div>
             </div>
-            <div class="second-text gt-sm">
-              <div class="row paragraph wp" id="paragraph2" style="margin-top: 12%">
-                <div class="col q-pl-xl">
-                  <p class="text-uppercase text-bold text-h5">Xopo's First Own Collection: "Koloda"</p>
-                  <p class="text-h6">Minted on Avalanche, our first NFT collection will feature 85 stunning paintings<span class="text-bold"> by Bulgarian artist Miroslav Mihov (Eternal Mirror)</span>. 'Koloda' - original works of art created between 2014 and 2022 using oil paints on canvas, watercolors, and chalk on cardboard.</p>
-                  <p>
-                    This collection showcases a range of styles, from beautiful classical and abstract landscapes to vividly colored artworks and paintings with mysterious figurative and symbolic images. Each piece carries a substantial charge of natural, humane, aesthetic, and philosophical energy, making it a unique and captivating addition to any art collection.
-                    As a testament to Xopo's commitment to artistic expression and innovation in the world of digital art, these artworks are available as NFTs.<span class="text-bold"> Don't miss your chance </span> to own a piece of this remarkable collection.
-                  </p>
-                  <a
-                    tag="a"
-                    href="https://medium.com/@XoroNft/xoponft-52af6632edab#:~:text=Our%20first%20collection,own%20an%20NFT."
-                    target="_blank"
-                    v-html="'Read More'"
-                    class="a-button"
-                  ></a>
-                </div>
-                <div class="col">
-                  <div class="row anime">
-                    <span class="anime6 background-image-fullsize"></span>
-                    <span class="anime7"></span>
-                    <span class="anime8 background-image-fullsize"></span>
-                    <span class="anime9 background-image-fullsize"></span>
-                    <span class="anime10"></span>
-                    <span class="anime12"></span>
-                    <span class="anime13"></span>
-                  </div>
-                </div>
-              </div>
+          </div>
+          <div class="second-text lt-md q-mt-xl">
+            <div class="row anime">
+              <span class="anime6 background-image-fullsize"></span>
+              <span class="anime7"></span>
+              <span class="anime8 background-image-fullsize"></span>
+              <span class="anime9 background-image-fullsize"></span>
+              <span class="anime10"></span>
+              <span class="anime12"></span>
+              <span class="anime13"></span>
             </div>
-            <div class="second-text lt-md q-mt-xl">
-              <div class="row anime">
-                <span class="anime6 background-image-fullsize"></span>
-                <span class="anime7"></span>
-                <span class="anime8 background-image-fullsize"></span>
-                <span class="anime9 background-image-fullsize"></span>
-                <span class="anime10"></span>
-                <span class="anime12"></span>
-                <span class="anime13"></span>
-              </div>
-              <div id="paragraph2">
-                  <p class="text-uppercase text-bold text-h5 title text-center">Xopo's First Own Collection: "Koloda"</p>
-                  <p class="text-h6 subTitle text-center">Minted on Avalanche, our first NFT collection will feature 85 stunning paintings<span class="text-bold"> by Bulgarian artist Miroslav Mihov (Eternal Mirror)</span>. 'Koloda' - original works of art created between 2014 and 2022 using oil paints on canvas, watercolors, and chalk on cardboard.</p>
-                  <p class="paragraph">
-                    This collection showcases a range of styles, from beautiful classical and abstract landscapes to vividly colored artworks and paintings with mysterious figurative and symbolic images. Each piece carries a substantial charge of natural, humane, aesthetic, and philosophical energy, making it a unique and captivating addition to any art collection.
-                    As a testament to Xopo's commitment to artistic expression and innovation in the world of digital art, these artworks are available as NFTs.<span class="text-bold"> Don't miss your chance </span> to own a piece of this remarkable collection.
-                  </p>
-                  <a
-                    tag="a"
-                    href="https://medium.com/@XoroNft/xoponft-52af6632edab#:~:text=Our%20first%20collection,own%20an%20NFT."
-                    target="_blank"
-                    v-html="'Read More'"
-                    class="a-button"
-                  ></a>
-              </div>
+            <div id="paragraph2">
+                <p class="text-uppercase text-bold text-h5 title text-center">Xopo's First Own Collection: "Koloda"</p>
+                <p class="text-h6 subTitle text-center">Minted on Avalanche, our first NFT collection will feature 85 stunning paintings<span class="text-bold"> by Bulgarian artist Miroslav Mihov (Eternal Mirror)</span>. 'Koloda' - original works of art created between 2014 and 2022 using oil paints on canvas, watercolors, and chalk on cardboard.</p>
+                <p class="paragraph">
+                  This collection showcases a range of styles, from beautiful classical and abstract landscapes to vividly colored artworks and paintings with mysterious figurative and symbolic images. Each piece carries a substantial charge of natural, humane, aesthetic, and philosophical energy, making it a unique and captivating addition to any art collection.
+                  As a testament to Xopo's commitment to artistic expression and innovation in the world of digital art, these artworks are available as NFTs.<span class="text-bold"> Don't miss your chance </span> to own a piece of this remarkable collection.
+                </p>
+                <a
+                  tag="a"
+                  href="https://medium.com/@XoroNft/xoponft-52af6632edab#:~:text=Our%20first%20collection,own%20an%20NFT."
+                  target="_blank"
+                  v-html="'Read More'"
+                  class="a-button"
+                ></a>
             </div>
-            <div class="second-text gt-sm">
-              <div class="row paragraph" id="paragraph6" style="margin-top: 12%; margin-bottom: 12%;">
-                <div class="col q-pt-xl">
-                  <div class="row anime">
-                    <span class="anime8-1"></span>
-                    <span class="anime9-1"></span>
-                    <span class="anime12-1"></span>
-                  </div>
+          </div>
+          <div class="second-text gt-sm">
+            <div class="row paragraph" id="paragraph6" style="margin-top: 12%; margin-bottom: 12%;">
+              <div class="col q-pt-xl">
+                <div class="row anime">
+                  <span class="anime8-1"></span>
+                  <span class="anime9-1"></span>
+                  <span class="anime12-1"></span>
                 </div>
-                <div class="col q-pr-xl">
-                  <p class="text-bold text-h5">JoinTheXopo: <span class="text-uppercase">Empowering Artists with </span> NFTs</p>
-                  <p class="text-h6">Revolutionize Your Artistic Journey in the World of NFTs</p>
-                  <p>
-                    At JoinTheXopo, we offer a seamless process for creating NFTs, giving artists the opportunity to showcase their work to a global audience. Our platform utilizes smart contracts to manage key aspects such as voting and approval.
+              </div>
+              <div class="col q-pr-xl">
+                <p class="text-bold text-h5">JoinTheXopo: <span class="text-uppercase">Empowering Artists with </span> NFTs</p>
+                <p class="text-h6">Revolutionize Your Artistic Journey in the World of NFTs</p>
+                <p>
+                  At JoinTheXopo, we offer a seamless process for creating NFTs, giving artists the opportunity to showcase their work to a global audience. Our platform utilizes smart contracts to manage key aspects such as voting and approval.
 You can submit your candidacy by providing images or other digital formats of your art. The community then engages in a voting process facilitated by smart contracts, deciding whether to welcome you as a team member. Once approved, you'll gain access to your own dedicated stage, where you can publish your unique art collections.
 JoinTheXopo empowers artists to harness the potential of NFTs, allowing you to elevate your creations and gain recognition in the ever-evolving world of digital art. We provide expert guidance and unwavering support, helping you navigate the process of converting your art into NFTs. Welcome to JoinTheXopo, where we redefine artistic expression in the realm of NFTs.
-                  </p>
-                </div>
+                </p>
               </div>
             </div>
-            <div class="second-text lt-md q-mt-xl">
-              <div class="paragraph" id="paragraph6" style="margin-top: 12%; margin-bottom: 12%;">
-                <div class="q-pt-xl">
-                  <div class="row anime">
-                    <span class="anime8-1"></span>
-                    <span class="anime9-1"></span>
-                    <span class="anime12-1"></span>
-                  </div>
+          </div>
+          <div class="second-text lt-md q-mt-xl">
+            <div class="paragraph" id="paragraph6" style="margin-top: 12%; margin-bottom: 12%;">
+              <div class="q-pt-xl">
+                <div class="row anime">
+                  <span class="anime8-1"></span>
+                  <span class="anime9-1"></span>
+                  <span class="anime12-1"></span>
                 </div>
-                <div>
-                  <p class="text-bold text-h5">JoinTheXopo: <span class="text-uppercase">Empowering Artists with </span> NFTs</p>
-                  <p class="text-h6">Revolutionize Your Artistic Journey in the World of NFTs</p>
-                  <p>
-                    At JoinTheXopo, we offer a seamless process for creating NFTs, giving artists the opportunity to showcase their work to a global audience. Our platform utilizes smart contracts to manage key aspects such as voting and approval.
+              </div>
+              <div>
+                <p class="text-bold text-h5">JoinTheXopo: <span class="text-uppercase">Empowering Artists with </span> NFTs</p>
+                <p class="text-h6">Revolutionize Your Artistic Journey in the World of NFTs</p>
+                <p>
+                  At JoinTheXopo, we offer a seamless process for creating NFTs, giving artists the opportunity to showcase their work to a global audience. Our platform utilizes smart contracts to manage key aspects such as voting and approval.
 You can submit your candidacy by providing images or other digital formats of your art. The community then engages in a voting process facilitated by smart contracts, deciding whether to welcome you as a team member. Once approved, you'll gain access to your own dedicated stage, where you can publish your unique art collections.
 JoinTheXopo empowers artists to harness the potential of NFTs, allowing you to elevate your creations and gain recognition in the ever-evolving world of digital art. We provide expert guidance and unwavering support, helping you navigate the process of converting your art into NFTs. Welcome to JoinTheXopo, where we redefine artistic expression in the realm of NFTs.
-                  </p>
-                </div>
+                </p>
               </div>
             </div>
-            <p class="title text-uppercase text-bold q-pt-xl" id="paragraph3">XOPO ROADMAP </p>
-            <p class="subTitle" style="font-size: 15pt;">What is the Journey of XOPO?</p>
-            <p class="subTitle" style="font-size: 13pt;">At our project, we envision a journey through <span class="text-bold"> ten foundational eras</span>, all humming with activity and evolving concurrently yet unfolding sequentially. Like strokes on a canvas, each era contributes to the grand tableau of our mission: to create a project that harnesses art to save the world.</p>
-            <div class="row q-mt-xl gt-sm">
-              <div class="col-4 q-mt-md q-mr-xl q-ml-xl q-mb-xl">
-                <span class="anime11 background-image-fullsize"></span>
-              </div>
-              <div class="col-7 paragraph rp">
-              We start with the <span class="text-bold">DaVinci Dawn</span>, a welcoming beacon to potential users, followed by the <span class="text-bold">Picasso Beta</span> that crafts our digital platform. The <span class="text-bold">Warhol Mint</span> users in the era of creation and commerce, setting the stage for <span class="text-bold">Hokusai Governance</span> to establish our project's guiding principles.
-
-              <br /><br />With the <span class="text-bold">O'Keeffe Stake</span>, we invite users to become part of our vision, leading us to the <span class="text-bold">Michelangelo Airdrop</span>, a token of gratitude for our early adopters. The <span class="text-bold">Kahlo Portal</span> opens doors to artists worldwide, while the <span class="text-bold">Matisse Lottery</span> gives voice to our community, enabling them to shape the project.
-
-              <br /><br />The <span class="text-bold">Van Gogh Integration</span> extends our reach, inviting more users to connect and engage.Finally, the <span class="text-bold">Kandinsky Legacy</span> solidifies our commitment to art and its causes, creating commemorative collections that resonate far beyond our platform.
-
-                <br />Each era will be detailed upon arrival, painting a vivid picture of our journey so far. For now, we invite you to explore these concepts and join us in creating a project that does more than just exist - it lives, breathes, and thrives on art and passion. The number of eras is not definitive - after all, our journey is as dynamic as the art we aim to save.
-
-                <br /><br /><span style="font-size: large;">Welcome to our evolving masterpiece. Let's make the world our canvas!</span>
-              </div>
+          </div>
+          <p class="title text-uppercase text-bold q-pt-xl" id="paragraph3">XOPO ROADMAP </p>
+          <p class="subTitle" style="font-size: 15pt;">What is the Journey of XOPO?</p>
+          <p class="subTitle" style="font-size: 13pt;">At our project, we envision a journey through <span class="text-bold"> ten foundational eras</span>, all humming with activity and evolving concurrently yet unfolding sequentially. Like strokes on a canvas, each era contributes to the grand tableau of our mission: to create a project that harnesses art to save the world.</p>
+          <div class="row q-mt-xl gt-sm">
+            <div class="col-4 q-mt-md q-mr-xl q-ml-xl q-mb-xl">
+              <span class="anime11 background-image-fullsize"></span>
             </div>
-            <div class="q-mt-xl lt-md">
-              <div class="q-mt-md q-mr-xl q-ml-xl q-mb-xl">
-                <span class="anime11 background-image-fullsize"></span>
-              </div>
-              <div class="paragraph rp">
-              We start with the <span class="text-bold">DaVinci Dawn</span>, a welcoming beacon to potential users, followed by the <span class="text-bold">Picasso Beta</span> that crafts our digital platform. The <span class="text-bold">Warhol Mint</span> users in the era of creation and commerce, setting the stage for <span class="text-bold">Hokusai Governance</span> to establish our project's guiding principles.
+            <div class="col-7 paragraph rp">
+            We start with the <span class="text-bold">DaVinci Dawn</span>, a welcoming beacon to potential users, followed by the <span class="text-bold">Picasso Beta</span> that crafts our digital platform. The <span class="text-bold">Warhol Mint</span> users in the era of creation and commerce, setting the stage for <span class="text-bold">Hokusai Governance</span> to establish our project's guiding principles.
 
-              <br /><br />With the <span class="text-bold">O'Keeffe Stake</span>, we invite users to become part of our vision, leading us to the <span class="text-bold">Michelangelo Airdrop</span>, a token of gratitude for our early adopters. The <span class="text-bold">Kahlo Portal</span> opens doors to artists worldwide, while the <span class="text-bold">Matisse Lottery</span> gives voice to our community, enabling them to shape the project.
+            <br /><br />With the <span class="text-bold">O'Keeffe Stake</span>, we invite users to become part of our vision, leading us to the <span class="text-bold">Michelangelo Airdrop</span>, a token of gratitude for our early adopters. The <span class="text-bold">Kahlo Portal</span> opens doors to artists worldwide, while the <span class="text-bold">Matisse Lottery</span> gives voice to our community, enabling them to shape the project.
 
-              <br /><br />The <span class="text-bold">Van Gogh Integration</span> extends our reach, inviting more users to connect and engage.Finally, the <span class="text-bold">Kandinsky Legacy</span> solidifies our commitment to art and its causes, creating commemorative collections that resonate far beyond our platform.
+            <br /><br />The <span class="text-bold">Van Gogh Integration</span> extends our reach, inviting more users to connect and engage.Finally, the <span class="text-bold">Kandinsky Legacy</span> solidifies our commitment to art and its causes, creating commemorative collections that resonate far beyond our platform.
 
-                <br />Each era will be detailed upon arrival, painting a vivid picture of our journey so far. For now, we invite you to explore these concepts and join us in creating a project that does more than just exist - it lives, breathes, and thrives on art and passion. The number of eras is not definitive - after all, our journey is as dynamic as the art we aim to save.
+              <br />Each era will be detailed upon arrival, painting a vivid picture of our journey so far. For now, we invite you to explore these concepts and join us in creating a project that does more than just exist - it lives, breathes, and thrives on art and passion. The number of eras is not definitive - after all, our journey is as dynamic as the art we aim to save.
 
-                <br /><br /><span style="font-size: large;">Welcome to our evolving masterpiece. Let's make the world our canvas!</span>
-              </div>
+              <br /><br /><span style="font-size: large;">Welcome to our evolving masterpiece. Let's make the world our canvas!</span>
             </div>
-            <roadmap style="margin-top: 7%;margin-bottom: 10%;"/>
-            <p class="title text-uppercase text-bold" id="paragraph4">Xopo Team</p>
-            <p class="subTitle" style="font-size: 15pt;">Our diverse team of developers, UX/UI designers, marketing specialists, event managers, web3 enthusiasts, community moderators, musicians, artists, and more has come together with a shared vision.</p>
-            <div class="gt-sm">
-              <div class="row">
+          </div>
+          <div class="q-mt-xl lt-md">
+            <div class="q-mt-md q-mr-xl q-ml-xl q-mb-xl">
+              <span class="anime11 background-image-fullsize"></span>
+            </div>
+            <div class="paragraph rp">
+            We start with the <span class="text-bold">DaVinci Dawn</span>, a welcoming beacon to potential users, followed by the <span class="text-bold">Picasso Beta</span> that crafts our digital platform. The <span class="text-bold">Warhol Mint</span> users in the era of creation and commerce, setting the stage for <span class="text-bold">Hokusai Governance</span> to establish our project's guiding principles.
+
+            <br /><br />With the <span class="text-bold">O'Keeffe Stake</span>, we invite users to become part of our vision, leading us to the <span class="text-bold">Michelangelo Airdrop</span>, a token of gratitude for our early adopters. The <span class="text-bold">Kahlo Portal</span> opens doors to artists worldwide, while the <span class="text-bold">Matisse Lottery</span> gives voice to our community, enabling them to shape the project.
+
+            <br /><br />The <span class="text-bold">Van Gogh Integration</span> extends our reach, inviting more users to connect and engage.Finally, the <span class="text-bold">Kandinsky Legacy</span> solidifies our commitment to art and its causes, creating commemorative collections that resonate far beyond our platform.
+
+              <br />Each era will be detailed upon arrival, painting a vivid picture of our journey so far. For now, we invite you to explore these concepts and join us in creating a project that does more than just exist - it lives, breathes, and thrives on art and passion. The number of eras is not definitive - after all, our journey is as dynamic as the art we aim to save.
+
+              <br /><br /><span style="font-size: large;">Welcome to our evolving masterpiece. Let's make the world our canvas!</span>
+            </div>
+          </div>
+          <roadmap class="gt-sm" style="margin-top: 7%; margin-bottom: 10%;"/>
+          <roadmap2 class="lt-md" style="margin-top: 7%; margin-bottom: 10%;"/>
+          <p class="title text-uppercase text-bold" id="paragraph4">Xopo Team</p>
+          <p class="subTitle" style="font-size: 15pt;">Our diverse team of developers, UX/UI designers, marketing specialists, event managers, web3 enthusiasts, community moderators, musicians, artists, and more has come together with a shared vision.</p>
+          <div class="gt-sm">
+            <div class="row">
+            <div class="col-2"></div>
+            <member v-bind:className="'anime0m'" v-bind:text="''" v-bind:name="'You'" v-bind:title="'?'"/>
+            <div class="col-2"></div>
+            </div>
+            <div class="row">
               <div class="col-2"></div>
-              <member v-bind:className="'anime0m'" v-bind:text="''" v-bind:name="'You'" v-bind:title="'?'"/>
-              <div class="col-2"></div>
-              </div>
-              <div class="row">
-                <div class="col-2"></div>
-                <member v-bind:className="'anime1m'" v-bind:text="`Meet RADoHaema, co-founder of Xopo, a dynamic player in the NFT landscape. With his unique blend of visionary leadership, collaborative efforts with top-tier artists, and a steadfast commitment to blockchain's transformative potential, he is reshaping the art market and beyond.`" v-bind:name="'RADoHaema'" v-bind:title="'co-founder'"/>
-                <member v-bind:className="'anime2m'" v-bind:text="`
-  DarKniA, co-founder of XopoNFT, is a visionary leader in the NFT space, combining international experience, Solidity expertise, and a profound passion for art. With a remarkable track record in client relations, groundbreaking projects on Avalanche, and captivating art collections, Radina stands out as a pioneering figure, blending tech-savviness with artistic flair in the world of NFTs.`" v-bind:name="'DarKniA'" v-bind:title="'co-founder, artist'"/>
-                <member v-bind:className="'anime3m'" v-bind:text="`Sh∀dowina, co-founder of VScout and a crucial member of the Xopo team, is an expert in full-stack blockchain development. With extensive experience in dApp development, smart contracts, and NFT creation, she plays a vital role in shaping our decentralized application for artists and establishing our unique position in the blockchain ecosystem.`" v-bind:name="'Sh∀dowina'" v-bind:title="'CTO, Senior Software Engineer'"/>
-                <div class="col-2"></div>
-              </div>
-              <div class="row">
-                <member v-bind:className="'anime4m'" v-bind:text="`Stefan Bachvarov is a seasoned project manager and event organizer, known for his success as co-founder and chairman of ‘Bastar studio’, NGO ‘DEMO’, and Varna youth festival ‘FUNCITY’. Now steering the helm as the project manager at ‘Xopo’, Stefan's fusion of online platform expertise, project creativity, and a passion for art and extreme sports make him a dynamic and valuable contributor to the team`" v-bind:name="'Stefan Bachvarov'" v-bind:title="'Project Manager, Musician'"/>
-                <member v-bind:className="'anime5m'" v-bind:text="`Ventsislav Bahnev is a highly skilled UX/UI Designer and Web Developer with over 10 years of experience, specializing in front-end web development, UX/Web Design, and creating stunning corporate videos. His exceptional attention to detail and unwavering commitment to quality results have made him a respected expert in the industry.`" v-bind:name="'Ventsislav Bahnev'" v-bind:title="'UX/UI Designer, artist'"/>
-                <member v-bind:className="'anime6m'" v-bind:text="`AzZer is a key member of the XopoNFT project, focusing on community moderation and support. With a strong passion for NFTs and their integration on the Avalanche blockchain, AzZer's creative and innovative approach drives the project forward. His enthusiasm for technology, art, music, games, and nature further enhances his contributions to XopoNFT.`" v-bind:name="'AzZer'" v-bind:title="'Community Manager'"/>
-                <member v-bind:className="'anime7m'" v-bind:text="`
-  Dani Nikolov is an experienced digital marketing manager with expertise in business, marketing, and copywriting. Their deep understanding of effective campaign creation, coupled with their passion for sales and marketing, positions them as a valuable asset in driving sales and conversions.`" v-bind:name="'Dani Nikolov'" v-bind:title="'Digital Marketing Manager'"/>
-              </div>
-            </div>
-            <div class="lt-md">
-              <member v-bind:className="'anime01m'" v-bind:text="''" v-bind:name="'You'" v-bind:title="'?'"/>
               <member v-bind:className="'anime1m'" v-bind:text="`Meet RADoHaema, co-founder of Xopo, a dynamic player in the NFT landscape. With his unique blend of visionary leadership, collaborative efforts with top-tier artists, and a steadfast commitment to blockchain's transformative potential, he is reshaping the art market and beyond.`" v-bind:name="'RADoHaema'" v-bind:title="'co-founder'"/>
               <member v-bind:className="'anime2m'" v-bind:text="`
 DarKniA, co-founder of XopoNFT, is a visionary leader in the NFT space, combining international experience, Solidity expertise, and a profound passion for art. With a remarkable track record in client relations, groundbreaking projects on Avalanche, and captivating art collections, Radina stands out as a pioneering figure, blending tech-savviness with artistic flair in the world of NFTs.`" v-bind:name="'DarKniA'" v-bind:title="'co-founder, artist'"/>
               <member v-bind:className="'anime3m'" v-bind:text="`Sh∀dowina, co-founder of VScout and a crucial member of the Xopo team, is an expert in full-stack blockchain development. With extensive experience in dApp development, smart contracts, and NFT creation, she plays a vital role in shaping our decentralized application for artists and establishing our unique position in the blockchain ecosystem.`" v-bind:name="'Sh∀dowina'" v-bind:title="'CTO, Senior Software Engineer'"/>
+              <div class="col-2"></div>
+            </div>
+            <div class="row">
               <member v-bind:className="'anime4m'" v-bind:text="`Stefan Bachvarov is a seasoned project manager and event organizer, known for his success as co-founder and chairman of ‘Bastar studio’, NGO ‘DEMO’, and Varna youth festival ‘FUNCITY’. Now steering the helm as the project manager at ‘Xopo’, Stefan's fusion of online platform expertise, project creativity, and a passion for art and extreme sports make him a dynamic and valuable contributor to the team`" v-bind:name="'Stefan Bachvarov'" v-bind:title="'Project Manager, Musician'"/>
               <member v-bind:className="'anime5m'" v-bind:text="`Ventsislav Bahnev is a highly skilled UX/UI Designer and Web Developer with over 10 years of experience, specializing in front-end web development, UX/Web Design, and creating stunning corporate videos. His exceptional attention to detail and unwavering commitment to quality results have made him a respected expert in the industry.`" v-bind:name="'Ventsislav Bahnev'" v-bind:title="'UX/UI Designer, artist'"/>
               <member v-bind:className="'anime6m'" v-bind:text="`AzZer is a key member of the XopoNFT project, focusing on community moderation and support. With a strong passion for NFTs and their integration on the Avalanche blockchain, AzZer's creative and innovative approach drives the project forward. His enthusiasm for technology, art, music, games, and nature further enhances his contributions to XopoNFT.`" v-bind:name="'AzZer'" v-bind:title="'Community Manager'"/>
               <member v-bind:className="'anime7m'" v-bind:text="`
 Dani Nikolov is an experienced digital marketing manager with expertise in business, marketing, and copywriting. Their deep understanding of effective campaign creation, coupled with their passion for sales and marketing, positions them as a valuable asset in driving sales and conversions.`" v-bind:name="'Dani Nikolov'" v-bind:title="'Digital Marketing Manager'"/>
             </div>
-            <div>
-              <div class="footer" id="paragraph5">
-                <q-img src="~assets/tokens/XOPO_3.gif" class="token-logo" />
-                <div class="token-text">
-                  <p class="text-uppercase text-bold text-h5">$XOPO, the native token of Xopo</p>
-                  <p class="text-h6">At Xopo, the $XOPO token plays a central role in fostering a community-driven ecosystem.</p>
-                  <div class="row">
-                    <div class="col q-pl-xl q-pr-xl">
-                      <span class="text-bold">Our Decentralized Autonomous Organization (DAO)</span>, consisting of $XOPO token holders, plays a pivotal role in maintaining a vibrant and dynamic ecosystem where all participants have an equal say. In the DAO, collective decisions are made through a robust voting process. Once the voting is complete, the tokens used for voting are burned, symbolizing the consensus reached. Furthermore, each minted NFT generates both unique artwork and tokens, ensuring that the creative output and $XOPO tokens are intertwined.
-                    </div>
-                    <div class="col q-pl-xl q-pr-xl">
-                      These tokens serve as a powerful incentive, motivating and recognizing the contributions of our engaged community members. By holding $XOPO tokens, individuals have the opportunity to shape the destiny of Xopo while being rewarded for their active involvement.
-                      Join us on this exhilarating journey, where $XOPO tokens empower artists, foster community engagement, and drive the future of NFT innovation. Together, we are building a platform that celebrates artistic expression and inclusivity, revolutionizing the way we appreciate and collect digital art.
-                    </div>
-                  </div>
-                  <a
-                    tag="a"
-                    href="https://medium.com/@XoroNft/how-to-become-a-wealthy-and-recognized-artist-in-todays-world-d207a36b8f2f"
-                    target="_blank"
-                    v-html="'Read More'"
-                    class="a-btn-pr q-mt-xl"
-                  ></a>
-                </div>
-              </div>
-            </div>
           </div>
+          <div class="lt-md">
+            <member v-bind:className="'anime01m'" v-bind:text="''" v-bind:name="'You'" v-bind:title="'?'"/>
+            <member v-bind:className="'anime1m'" v-bind:text="`Meet RADoHaema, co-founder of Xopo, a dynamic player in the NFT landscape. With his unique blend of visionary leadership, collaborative efforts with top-tier artists, and a steadfast commitment to blockchain's transformative potential, he is reshaping the art market and beyond.`" v-bind:name="'RADoHaema'" v-bind:title="'co-founder'"/>
+            <member v-bind:className="'anime2m'" v-bind:text="`
+DarKniA, co-founder of XopoNFT, is a visionary leader in the NFT space, combining international experience, Solidity expertise, and a profound passion for art. With a remarkable track record in client relations, groundbreaking projects on Avalanche, and captivating art collections, Radina stands out as a pioneering figure, blending tech-savviness with artistic flair in the world of NFTs.`" v-bind:name="'DarKniA'" v-bind:title="'co-founder, artist'"/>
+            <member v-bind:className="'anime3m'" v-bind:text="`Sh∀dowina, co-founder of VScout and a crucial member of the Xopo team, is an expert in full-stack blockchain development. With extensive experience in dApp development, smart contracts, and NFT creation, she plays a vital role in shaping our decentralized application for artists and establishing our unique position in the blockchain ecosystem.`" v-bind:name="'Sh∀dowina'" v-bind:title="'CTO, Senior Software Engineer'"/>
+            <member v-bind:className="'anime4m'" v-bind:text="`Stefan Bachvarov is a seasoned project manager and event organizer, known for his success as co-founder and chairman of ‘Bastar studio’, NGO ‘DEMO’, and Varna youth festival ‘FUNCITY’. Now steering the helm as the project manager at ‘Xopo’, Stefan's fusion of online platform expertise, project creativity, and a passion for art and extreme sports make him a dynamic and valuable contributor to the team`" v-bind:name="'Stefan Bachvarov'" v-bind:title="'Project Manager, Musician'"/>
+            <member v-bind:className="'anime5m'" v-bind:text="`Ventsislav Bahnev is a highly skilled UX/UI Designer and Web Developer with over 10 years of experience, specializing in front-end web development, UX/Web Design, and creating stunning corporate videos. His exceptional attention to detail and unwavering commitment to quality results have made him a respected expert in the industry.`" v-bind:name="'Ventsislav Bahnev'" v-bind:title="'UX/UI Designer, artist'"/>
+            <member v-bind:className="'anime6m'" v-bind:text="`AzZer is a key member of the XopoNFT project, focusing on community moderation and support. With a strong passion for NFTs and their integration on the Avalanche blockchain, AzZer's creative and innovative approach drives the project forward. His enthusiasm for technology, art, music, games, and nature further enhances his contributions to XopoNFT.`" v-bind:name="'AzZer'" v-bind:title="'Community Manager'"/>
+            <member v-bind:className="'anime7m'" v-bind:text="`
+Dani Nikolov is an experienced digital marketing manager with expertise in business, marketing, and copywriting. Their deep understanding of effective campaign creation, coupled with their passion for sales and marketing, positions them as a valuable asset in driving sales and conversions.`" v-bind:name="'Dani Nikolov'" v-bind:title="'Digital Marketing Manager'"/>
+          </div>
+        </div>
         </q-layout>
+      </div>
+      <div class="footer" id="paragraph5">
+        <q-img src="~assets/tokens/XOPO_3.gif" class="token-logo gt-sm" />
+        <q-img src="~assets/tokens/XOPO_3.gif" class="token-logo2 lt-md" />
+        <p class="text-uppercase text-bold text-h5">$XOPO, the native token of Xopo</p>
+        <p class="text-h6">At Xopo, the $XOPO token plays a central role in fostering a community-driven ecosystem.</p>
+        <div class="row flex flex-center q-mb-xl q-pa-md">
+          <div class="col-auto col-md-4 col-xl-4 q-pr-md text-right">
+            <span class="text-bold">Our Decentralized Autonomous Organization (DAO)</span>, consisting of $XOPO token holders, plays a pivotal role in maintaining a vibrant and dynamic ecosystem where all participants have an equal say. In the DAO, collective decisions are made through a robust voting process. Once the voting is complete, the tokens used for voting are burned, symbolizing the consensus reached. Furthermore, each minted NFT generates both unique artwork and tokens, ensuring that the creative output and $XOPO tokens are intertwined.
+          </div>
+          <div class="col-auto col-md-4 col-xl-4 q-pl-md text-left">
+            These tokens serve as a powerful incentive, motivating and recognizing the contributions of our engaged community members. By holding $XOPO tokens, individuals have the opportunity to shape the destiny of Xopo while being rewarded for their active involvement.
+            Join us on this exhilarating journey, where $XOPO tokens empower artists, foster community engagement, and drive the future of NFT innovation. Together, we are building a platform that celebrates artistic expression and inclusivity, revolutionizing the way we appreciate and collect digital art.
+          </div>
+        </div>
+        <a
+          tag="a"
+          href="https://medium.com/@XoroNft/how-to-become-a-wealthy-and-recognized-artist-in-todays-world-d207a36b8f2f"
+          target="_blank"
+          v-html="'Read More'"
+          class="a-btn-pr"
+        ></a>
       </div>
     </q-page>
     <q-drawer
@@ -418,6 +416,7 @@ export default {
     // TooltipStyle: () => import('components/tooltip-style.vue')
     // AnimatedNumber: () => import('animated-number-vue')
     Roadmap: () => import('../components/roadmap.vue'),
+    Roadmap2: () => import('../components/roadmap2.vue'),
     Member: () => import('../components/member.vue')
   },
   setup () {
@@ -588,6 +587,13 @@ export default {
 </script>
 
 <style>
+.token-logo {
+    width: 6%;
+  }
+  .token-logo2 {
+    margin-top: 5%;
+    width: 10%;
+  }
 .joinT {
   margin-left: auto;
   margin-right: auto;
@@ -623,35 +629,27 @@ export default {
   transition: transform 1.5s, top 0.5s;
   z-index: -1;
 }
+
 .footer {
-  background-image: url('../assets/logos/lp_bg.svg');
-  background-size: cover;     /* Make the image cover the whole div */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  margin-top: 100px;
-  padding-top: 100px;
-  padding-bottom: 70px;
+    background-image: url('../assets/logos/logo-footer.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    text-align: center;
+    height: 100%;
+    margin-left: -20px;
+    margin-right: -20px;
+    margin-bottom: 3%;
+    margin-top: 10%;
+    padding-bottom: 5%;
+    padding-top: 2%;
 }
 .footer-content {
   position: fixed;
   right: auto;
-  bottom: 100px;
+  bottom: 10%;
 }
-.logo-footer {
-  position: relative;
-  margin-top: 8%;
-  margin-left: -25%;
-  width: 150%;
-  height: 700px;
-  z-index: -1; /* lower value */
-}
-.token-logo {
-  width: 15%;
-  margin-top: 200px;
-}
-.token-text {
-  padding-left: 10%;
-  padding-right: 10%;
-}
+
 .first-p,
 .second-p,
 .third-p,
@@ -1558,7 +1556,7 @@ export default {
     margin-left: -8%;
   }
 }
-/* Styles for screens with a width of 1000px and a height of 1200px */
+/* Styles for screens with a width of 1000px*/
 @media (min-width: 1000px) {
   .show .logo {
       transition: transform 1.5s;
@@ -1651,6 +1649,11 @@ export default {
     width: 75%;
     height: 50pt;
     z-index: -2;
+  }
+  .anime11 {
+    margin-top: 2%;
+    width: 90%;
+    height: 450pt;
   }
   .anime12{
     margin-top: -40%;

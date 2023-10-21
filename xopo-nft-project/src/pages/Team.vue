@@ -70,12 +70,12 @@ export default {
 }
 
 .first-text .logo {
-    opacity: 0;
+  opacity: 0;
 }
 
 .show2 .animated-text {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .show2 .logo {

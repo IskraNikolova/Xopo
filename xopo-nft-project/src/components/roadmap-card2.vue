@@ -1,12 +1,11 @@
 <template>
-  <div @click="goTo(index)" class="my-card col-1"
+  <div @click="goTo(index)" class="my-card col-4"
     @mouseover="hovering = true" @mouseleave="hovering = false">
     <q-card :style="hovering ? {'background': 'linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)), url(' + img + ') no-repeat center center','background-size': 'cover', 'color': 'white'} : {}">
       <img :src="img" :style="hovering ? {'opacity': '0'} : {}" />
 
       <q-card-section style="min-height: 90px; position: relative;">
         <div class="text-title">{{ getTitle1() }}<br/> {{ getTitle2() }}</div>
-        <div class="text-primary index"># {{ index }}</div>
       </q-card-section>
     </q-card>
   </div>
