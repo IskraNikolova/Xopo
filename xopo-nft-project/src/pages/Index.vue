@@ -1414,7 +1414,7 @@ export default {
 }
 
 /* Styles for screens with a width of 1000px*/
-@media (min-width: 1000px) {
+@media (min-width: 912px) {
   .show .logo {
       transition: transform 1.5s;
       transform: translateY(-98px) scale(0.01);
@@ -1625,8 +1625,52 @@ export default {
 
 /* */
 
-@media (min-width: 1024px) and (max-height: 1366){
-
+@media (min-width: 1023px) and (max-height: 1367px) {
+  .anime13 {
+    margin-top: -140%;
+    margin-left: 40%;
+    width: 16%;
+    height: 100pt;
+    z-index: -2;
+  }
+  .show2 .anime > .anime1 {
+    transition: transform 2s;
+    transform: translate(580px, 900px) scale(0.5);
+    z-index: -2;
+  }
+  .show2 .anime > .anime5 {
+    transition: transform 4.1s;
+    transform: translate(-80px, 1105px) scale(0.3);
+    z-index: -2;
+  }
+  .show2 .anime > .anime2 {
+    transition: transform 2.2s;
+    transform: translate(130px, 1120px) scale(0);
+  }
+  .show3 .anime > .anime3 {
+    transition: transform 3s;
+    transform: translate(-420px, 1590px) scale(0.5);
+    z-index: -2;
+  }
+  .show3 .anime > .anime2 {
+    transition: transform 2s;
+    transform: translate(-320px, 1670px) scale(0.4);
+    z-index: -2;
+  }
+  .show3 .anime > .anime4 {
+    transition: transform 3.5s;
+    transform: translate(-370px, 1500px) scale(0.3);
+  }
+  .show3 .anime > .anime1 {
+    transition: transform 4s;
+    transform: translate(16px, 1590px) scale(0.39);
+    z-index: -2;
+  }
+  .show3 .anime > .anime5 {
+    transition: transform 2.1s;
+    transform: translate(-384px, 1646px) scale(0.4);
+    z-index: -2;
+  }
 }
 
 /* Styles for screens with a 280px*/
