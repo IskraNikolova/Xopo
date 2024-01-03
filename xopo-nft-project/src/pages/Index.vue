@@ -948,8 +948,280 @@ export default {
     margin-bottom: 1%;
   }
 
-/* Styles for screens with a min-width 360px */
-@media (min-width: 360px) {
+/* Styles for screens with a min-width 320 and a height between 480px and 786px */
+@media (min-width: 320px),
+       (min-height: 480px) and (max-height: 786px) {
+  .show {
+    transform: translateY(-90px) scale(0.99);
+    transition: transform 2s;
+  }
+  .first-p {
+    font-size: 7pt;
+  }
+  .second-p {
+    font-size: 21pt;
+  }
+  .third-p {
+    font-size: 11pt;
+  }
+  .show .first-p {
+    font-size: 10pt;
+  }
+  .show .second-p {
+    font-size: 30pt;
+  }
+  .show .third-p {
+    font-size: 12pt;
+  }
+  .show .small-logo {
+    width: 70px;
+  }
+  .anime1 {
+    width: 30%;
+    height: 80px;
+    margin-top: -2%;
+    margin-left: 12px;
+  }
+  .anime2 {
+    width: 12%;
+    height: 30px;
+    margin-left: -8%;
+    margin-top: 16%;
+  }
+  .anime3 {
+    width: 28%;
+    height: 70px;
+    margin-top: 6%;
+  }
+  .anime4 {
+    width: 30%;
+    height: 80px;
+    margin-left: 2px;
+  }
+  .anime5 {
+    width: 12%;
+    height: 30px;
+    margin-top: -3%;
+    margin-left: -12%;
+  }
+  .anime6 {
+    margin-left: 20%;
+    width: 15%;
+    height: 130pt;
+    z-index: -1;
+  }
+  .anime7 {
+    margin-top: 68%;
+    width: 8%;
+    height: 20pt;
+    z-index: -1;
+  }
+  .anime8 {
+    margin-top: 10%;
+    margin-left: 15%;
+    width: 15%;
+    height: 130pt;
+    z-index: 1;
+  }
+  .anime8-1 {
+    margin-left: 40%;
+    width: 12%;
+    height: 140pt;
+    z-index: -1;
+  }
+  .anime9{
+    margin-left: -55%;
+    margin-top: 20%;
+    width: 66%;
+    height: 28pt;
+    z-index: -1;
+  }
+  .anime9-1 {
+    margin-top: 3%;
+    margin-left: -50%;
+    width: 60%;
+    height: 20pt;
+  }
+  .anime10 {
+    margin-top: -8%;
+    width: 10%;
+    height: 20pt;
+  }
+  .anime10 {
+    margin-top: -20%;
+    width: 80%;
+  }
+  .anime11 {
+    margin-top: 2%;
+    width: 120%;
+    height: 220pt;
+  }
+  .anime12-1 {
+    margin-top: -52%;
+    margin-left: 40%;
+    width: 95%;
+    height: 35pt;
+    z-index: -2;
+  }
+  .anime12{
+    margin-top: -50%;
+    margin-left: 45%;
+    width: 50%;
+    height: 25pt;
+  }
+  .anime13 {
+    margin-top: -115%;
+    margin-left: 40%;
+    width: 18%;
+    height: 50pt;
+    z-index: -2;
+  }
+  .title {
+    font-size: 15pt;
+  }
+  .subTitle {
+    max-width: 80%;
+    font-size: 12pt;
+  }
+  .paragraph {
+    gap: 20px;
+    font-size: 9.5pt;
+  }
+  .show2 .anime > .anime1 {
+    transition: transform 2s;
+    transform: translate(150px, 1230px) scale(0.7);
+    z-index: -2;
+  }
+  .show2 .anime > .anime2 {
+    transition: transform 2.2s;
+    transform: translate(90px, 1180px) scale(0.35);
+  }
+  .show2 .anime > .anime3 {
+    transition: transform 3s;
+    transform: translate(20px, 1180px) scale(0);
+    z-index: -2;
+  }
+  .show2 .anime > .anime4 {
+    transition: transform 3.5s;
+    transform: translate(42px, 1080px) scale(0);
+  }
+  .show2 .anime > .anime5 {
+    transition: transform 4.1s;
+    transform: translate(5px, 1195px) scale(0.8);
+    z-index: -2;
+  }
+  .show3 .anime > .anime3 {
+    transition: transform 3s;
+    transform: translate(-70px, 2450px) scale(0.7);
+    z-index: -2;
+  }
+  .show3 .anime > .anime2 {
+    transition: transform 2s;
+    transform: translate(-60px, 2530px) scale(0.4);
+    z-index: -2;
+  }
+  .show3 .anime > .anime4 {
+    transition: transform 3.5s;
+    transform: translate(-15px, 2402px) scale(0.8);
+  }
+  .show3 .anime > .anime1 {
+    transition: transform 4s;
+    transform: translate(90px, 2527px) scale(0.59);
+    z-index: -2;
+  }
+  .show3 .anime > .anime5 {
+    transition: transform 2.1s;
+    transform: translate(-154px, 2546px) scale(0.7);
+    z-index: -2;
+  }
+}
+
+/* Styles for screens with a min-width 360px and max-width 384px and a height between 639px and 668px */
+@media (min-width: 360px) and (max-width: 384px), (min-height: 639px) and (max-height: 668px) {
+  .anime1 {
+    width: 30%;
+    height: 80px;
+    margin-top: -2%;
+    margin-left: 12px;
+  }
+  .anime2 {
+    width: 12%;
+    height: 30px;
+    margin-left: -8%;
+    margin-top: 16%;
+  }
+  .anime3 {
+    width: 28%;
+    height: 70px;
+    margin-top: 6%;
+  }
+  .anime4 {
+    width: 30%;
+    height: 80px;
+    margin-left: 2px;
+  }
+  .anime5 {
+    width: 12%;
+    height: 30px;
+    margin-top: -3%;
+    margin-left: -12%;
+  }
+  .anime7 {
+    margin-top: 47%;
+    width: 10%;
+    height: 30pt;
+    z-index: -1;
+  }
+  .anime12{
+    margin-top: -40%;
+    margin-left: 51%;
+    width: 45%;
+    height: 30pt;
+  }
+  .anime13 {
+    margin-top: -95%;
+    margin-left: 40%;
+    width: 16%;
+    height: 50pt;
+  }
+  .show2 .anime > .anime1 {
+    transition: transform 2s;
+    transform: translate(170px, 1150px) scale(0.8);
+    z-index: -2;
+  }
+  .show2 .anime > .anime5 {
+    transition: transform 4.1s;
+    transform: translate(27px, 1149px) scale(0.8);
+    z-index: -2;
+  }
+  .show3 .anime > .anime3 {
+    transition: transform 3s;
+    transform: translate(-80px, 2290px) scale(0.7);
+    z-index: -2;
+  }
+  .show3 .anime > .anime2 {
+    transition: transform 2s;
+    transform: translate(-60px, 2350px) scale(0.4);
+    z-index: -2;
+  }
+  .show3 .anime > .anime4 {
+    transition: transform 3.5s;
+    transform: translate(-10px, 2260px) scale(0.7);
+  }
+  .show3 .anime > .anime1 {
+    transition: transform 4s;
+    transform: translate(110px, 2376px) scale(0.6);
+    z-index: -2;
+  }
+  .show3 .anime > .anime5 {
+    transition: transform 2.1s;
+    transform: translate(-184px, 2366px) scale(0.7);
+    z-index: -2;
+  }
+}
+
+/* Styles for screens with a min-width 410px*/
+@media (min-width: 410px) {
   .show {
     transform: translateY(-90px) scale(0.99);
     transition: transform 2s;
@@ -1005,7 +1277,7 @@ export default {
   }
   .anime6 {
     margin-left: 20%;
-    width: 10%;
+    width: 16%;
     height: 150pt;
     z-index: -1;
   }
@@ -1136,7 +1408,7 @@ export default {
 }
 
 /* Styles for screens with a min-width 412px and a min-height 892px */
-@media (min-width: 412px) and (min-height: 892px) {
+@media (min-width: 410px) and (max-width: 430px), (min-height: 723px) and (max-height: 932px) {
   .show {
     transform: translateY(-60px) scale(0.99);
     transition: transform 2s;
@@ -1625,7 +1897,7 @@ export default {
 
 /* */
 
-@media (min-width: 1023px) and (max-height: 1367px) {
+@media (min-width: 1023px) and (max-width: 1025px) {
   .anime13 {
     margin-top: -140%;
     margin-left: 40%;
@@ -1775,97 +2047,6 @@ export default {
   }
 }
 
-/* Styles for screens with a width 361px */
-@media (min-width: 360px) and (max-width: 361px) {
-  .show {
-    transform: translateY(-120px) scale(0.99);
-    transition: transform 2s;
-  }
-  .media {
-    width: 15pt;
-  }
-  .first-p {
-    font-size: 6.9pt;
-  }
-  .second-p {
-    font-size: 20pt;
-  }
-  .third-p {
-    font-size: 11pt;
-  }
-  .show .first-p {
-    font-size: 7pt;
-  }
-  .show .second-p {
-    font-size: 30pt;
-  }
-  .show .small-logo {
-    width: 55px;
-  }
-  .show .third-p {
-    font-size: 12pt;
-  }
-  .anime1 {
-    width: 90px;
-    height: 100px;
-  }
-  .anime2 {
-    width: 40px;
-    height: 60px;
-    margin-left: -8%;
-    margin-top: 12%;
-  }
-  .anime3 {
-    width: 100px;
-    height: 110px;
-    margin-top: 1%;
-  }
-  .anime4 {
-    width: 70px;
-    height: 100px;
-    margin-top: -3%;
-  }
-  .anime5 {
-    width: 40px;
-    height: 60px;
-    margin-top: -8%;
-    margin-left: -12%;
-  }
-  .show2 .anime > .anime1 {
-    transition: transform 2s;
-    transform: translate(135px, 1350px) scale(0.6);
-    z-index: -2;
-  }
-  .show2 .anime > .anime2 {
-    transition: transform 2.2s;
-    transform: translate(130px, 1120px) scale(0);
-  }
-  .show2 .anime > .anime5 {
-    transition: transform 4.1s;
-    transform: translate(20px, 1105px) scale(0);
-    z-index: -2;
-  }
-  .show3 .anime > .anime3 {
-    transition: transform 3s;
-    transform: translate(-70px, 2550px) scale(0.07);
-    z-index: -2;
-  }
-  .show3 .anime > .anime2 {
-    transition: transform 2s;
-    transform: translate(-80px, 2570px) scale(0.4);
-    z-index: -2;
-  }
-  .show3 .anime > .anime4 {
-    transition: transform 3.5s;
-    transform: translate(20px, 2420px) scale(0.8);
-  }
-  .show3 .anime > .anime1 {
-    transition: transform 4s;
-    transform: translate(130px, 2456px) scale(0.6);
-    z-index: -2;
-  }
-}
-
 /* Styles for screens with a width 391px  */
 @media (min-width: 390px) and (max-width: 391px){
   .show {
@@ -1981,4 +2162,306 @@ export default {
   }
 }
 
+@media ((min-width: 353px) and (max-width: 394px)) and ((min-height: 739px) and (max-height: 787px)) {
+  .anime1 {
+    width: 28%;
+    height: 80px;
+    margin-top: -2%;
+    margin-left: 12px;
+  }
+  .anime2 {
+    width: 12%;
+    height: 30px;
+    margin-left: -8%;
+    margin-top: 16%;
+  }
+  .anime3 {
+    width: 28%;
+    height: 70px;
+    margin-top: 6%;
+  }
+  .anime4 {
+    width: 28%;
+    height: 80px;
+    margin-left: 2px;
+  }
+  .anime5 {
+    width: 12%;
+    height: 30px;
+    margin-top: -3%;
+    margin-left: -12%;
+  }
+  .anime7 {
+    margin-top: 47%;
+    width: 10%;
+    height: 30pt;
+    z-index: -1;
+  }
+  .anime12{
+    margin-top: -40%;
+    margin-left: 51%;
+    width: 45%;
+    height: 30pt;
+  }
+  .anime13 {
+    margin-top: -95%;
+    margin-left: 40%;
+    width: 16%;
+    height: 50pt;
+  }
+  .show2 .anime > .anime1 {
+    transition: transform 2s;
+    transform: translate(170px, 1150px) scale(0.8);
+    z-index: -2;
+  }
+  .show2 .anime > .anime5 {
+    transition: transform 4.1s;
+    transform: translate(27px, 1149px) scale(0.8);
+    z-index: -2;
+  }
+  .show3 .anime > .anime3 {
+    transition: transform 3s;
+    transform: translate(-80px, 2290px) scale(0.7);
+    z-index: -2;
+  }
+  .show3 .anime > .anime2 {
+    transition: transform 2s;
+    transform: translate(-60px, 2350px) scale(0.4);
+    z-index: -2;
+  }
+  .show3 .anime > .anime4 {
+    transition: transform 3.5s;
+    transform: translate(-10px, 2260px) scale(0.7);
+  }
+  .show3 .anime > .anime1 {
+    transition: transform 4s;
+    transform: translate(110px, 2376px) scale(0.6);
+    z-index: -2;
+  }
+  .show3 .anime > .anime5 {
+    transition: transform 2.1s;
+    transform: translate(-184px, 2366px) scale(0.7);
+    z-index: -2;
+  }
+}
+
+@media ((min-width: 375px) and (max-width: 384px)) and ((min-height: 639px) and (max-height: 668px)) {
+  .show2 .anime > .anime1 {
+    transform: translate(170px, 1090px) scale(0.7);
+  }
+  .show3 .anime > .anime3 {
+    transform: translate(-70px, 2200px) scale(0.7);
+  }
+  .show3 .anime > .anime2 {
+    transform: translate(-60px, 2250px) scale(0.4);
+  }
+  .show3 .anime > .anime4 {
+    transform: translate(0px, 2141px) scale(0.7);
+  }
+  .show3 .anime > .anime1 {
+    transform: translate(120px, 2259px) scale(0.6);
+  }
+  .show3 .anime > .anime5 {
+    transform: translate(-194px, 2276px) scale(0.7);
+  }
+}
+
+@media ((min-width: 375px) and (max-width: 376px)) and ((min-height: 811px) and (max-height: 813px)) {
+  .anime1 {
+    width: 30%;
+    height: 80px;
+    margin-top: -4%;
+  }
+  .anime2 {
+    width: 10%;
+    height: 40px;
+    margin-left: -9%;
+    margin-top: 12%;
+  }
+  .anime3 {
+    width: 30%;
+    height: 80px;
+    margin-top: 1%;
+  }
+  .anime4 {
+    width: 30%;
+    height: 80px;
+    margin-top: -3%;
+  }
+  .anime5 {
+    width: 10%;
+    height: 30px;
+    margin-top: -6%;
+    margin-left: -8%;
+  }
+  .show2 .anime > .anime1 {
+    transform: translate(170px, 1090px) scale(0.7);
+  }
+  .show3 .anime > .anime3 {
+    transform: translate(-70px, 2200px) scale(0.7);
+  }
+  .show3 .anime > .anime2 {
+    transform: translate(-60px, 2250px) scale(0.4);
+  }
+  .show3 .anime > .anime4 {
+    transform: translate(0px, 2141px) scale(0.7);
+  }
+  .show3 .anime > .anime1 {
+    transform: translate(120px, 2259px) scale(0.6);
+  }
+  .show3 .anime > .anime5 {
+    transform: translate(-194px, 2276px) scale(0.7);
+  }
+}
+
+@media ((min-width: 390px) and (max-width: 394px)) and ((min-height: 785px) and (max-height: 885px)) {
+  .anime1 {
+    width: 30%;
+    height: 80px;
+    margin-top: -4%;
+  }
+  .anime2 {
+    width: 10%;
+    height: 40px;
+    margin-left: -9%;
+    margin-top: 12%;
+  }
+  .anime3 {
+    width: 30%;
+    height: 80px;
+    margin-top: 1%;
+  }
+  .anime4 {
+    width: 30%;
+    height: 80px;
+    margin-top: -3%;
+  }
+  .anime5 {
+    width: 10%;
+    height: 30px;
+    margin-top: -6%;
+    margin-left: -8%;
+  }
+  .anime7 {
+    margin-top: 45%;
+    width: 9%;
+    height: 5pt;
+  }
+  .anime12{
+    margin-top: -40%;
+    margin-left: 51%;
+    width: 50%;
+    height: 30pt;
+  }
+  .anime13 {
+    margin-top: -84%;
+    margin-left: 40%;
+    width: 15%;
+    height: 45pt;
+  }
+  .show2 .anime > .anime1 {
+    transform: translate(170px, 1080px) scale(0.63);
+  }
+  .show2 .anime > .anime2 {
+    transition: transform 2.2s;
+    transform: translate(175px, 1029px) scale(0.6);
+  }
+  .show3 .anime > .anime3 {
+    transform: translate(-70px, 2150px) scale(0.7);
+  }
+  .show3 .anime > .anime2 {
+    transform: translate(-60px, 2219px) scale(0.4);
+  }
+  .show3 .anime > .anime4 {
+    transform: translate(-10px, 2080px) scale(0.75);
+  }
+  .show3 .anime > .anime1 {
+    transform: translate(120px, 2209px) scale(0.6);
+  }
+  .show3 .anime > .anime5 {
+    transform: translate(-194px, 2240px) scale(0.75);
+  }
+  .show2 .anime > .anime5 {
+    transition: transform 4.1s;
+    transform: translate(-20px, 1155px) scale(0.76);
+  }
+}
+
+@media ((min-width: 392px) and (max-width: 394px)) and ((min-height: 785px) and (max-height: 787px)) {
+  .show3 .anime > .anime3 {
+    transform: translate(-70px, 2110px) scale(0.7);
+  }
+  .show3 .anime > .anime2 {
+    transform: translate(-60px, 2200px) scale(0.4);
+  }
+  .show3 .anime > .anime4 {
+    transform: translate(-10px, 2060px) scale(0.75);
+  }
+  .show3 .anime > .anime1 {
+    transform: translate(120px, 2200px) scale(0.6);
+  }
+  .show3 .anime > .anime5 {
+    transform: translate(-194px, 2220px) scale(0.75);
+  }
+}
+
+@media (min-height: 359px) and (max-height: 361px) {
+  .anime1 {
+    width: 30%;
+    height: 80px;
+    margin-top: -2%;
+    margin-left: 12px;
+  }
+  .anime2 {
+    width: 12%;
+    height: 30px;
+    margin-left: -8%;
+    margin-top: 12%;
+  }
+  .anime3 {
+    width: 28%;
+    height: 70px;
+    margin-top: 6%;
+  }
+  .anime4 {
+    width: 30%;
+    height: 80px;
+    margin-top: -1%;
+    margin-left: 2px;
+  }
+  .anime5 {
+    width: 12%;
+    height: 30px;
+    margin-top: -5%;
+    margin-left: -10%;
+  }
+  .anime10 {
+    margin-top: -7%;
+    width: 100%;
+  }
+  .anime12{
+    margin-top: -30%;
+  }
+  .anime13 {
+    margin-top: -65%;
+  }
+  .show2 .anime > .anime2 {
+    transform: translate(160px, 970px) scale(0.35);
+  }
+  .show2 .anime > .anime5 {
+    transform: translate(-40px, 870px) scale(0.8);
+  }
+  .show3 .anime > .anime4 {
+    transform: translate(-15px, 1680px) scale(0.8);
+  }
+  .show3 .anime > .anime1 {
+    transform: translate(190px, 1837px) scale(0.59);
+  }
+  .show3 .anime > .anime5 {
+    transform: translate(-24px, 1680px) scale(0.7);
+  }
+  .show3 .anime > .anime3 {
+    transform: translate(-100px, 1690px) scale(0.7);
+  }
+}
 </style>
